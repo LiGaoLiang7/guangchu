@@ -1,0 +1,207 @@
+//颜色的公用样式表
+
+
+$base-active-color            : rgb(217, 97, 41); // 主色 active颜色
+$base-mainbackground-color    : #f5f5f9; // 主背景色
+$secondlybackground-color     : #fff;    // 白色
+$base-mainborder-color        : #d9d8db; // 主边框色
+$main-font-color              : #0b0b0b; // 主要字体色
+$secondly-font-color          : #717171; // 次要字体色
+
+
+//公用的尺寸
+$default-font-size            : 14px;
+$large-font-size              : 16px;
+$small-font-size              : 12px;
+$list-padding                 : 20px;//列表常用内边距
+$base-padding                 : 24px;//页面常用内边距
+$list-margin                  : 20px;//列表常用外边距
+$base-margin                  : 20px;//页面常用外边距
+$base-border                  : 1px solid #dcdfe6;
+$base-border-raduis           : 3px;
+$user-form-width              : 450px;//用户信息、修改密码表单的宽度
+$header-iconfont-size         : 20px;//顶部导航、左部导航icon 大小
+$tree-title-height            : 45px;
+$login-input-height           : 56px;//登录页输入框高度
+$modal-small-width            : 480px;
+$modal-small-padding          : 20px;
+$register-code-padding-right  : 127px;
+$login-font-size              : 16px;
+$top-select-item-margin       : 20px;
+$top-select-item-width        : 240px;
+$slider-left-after-width      : 14px;
+
+
+//圆角
+.baseBorderRadius {
+  border-radius: $base-border-raduis!important;
+}
+.baseBorderRadiusTR {
+  border-radius: $base-border-raduis $base-border-raduis 0 0!important;
+}
+.baseBorderRadiusTL {
+  border-radius: $base-border-raduis 0 0 $base-border-raduis!important;
+}
+.baseBorderRadiusBR {
+  border-radius: 0 $base-border-raduis $base-border-raduis 0!important;
+}
+.baseBorderRadiusBL {
+  border-radius: 0 0 $base-border-raduis $base-border-raduis!important;
+}
+.clearBorderRadius {
+  border-radius: 0!important;
+}
+
+//清除边框
+.clearBorder {
+  border-width: 0!important;
+}
+.clearBorderTop {
+  border-top-width: 0!important;
+}
+.clearBorderRight {
+  border-right-width: 0!important;
+}
+.clearBorderBottom {
+  border-bottom-width: 0!important;
+}
+.clearBorderLeft {
+  border-left-width: 0!important;
+}
+
+//页面内边距
+.hasPadding {
+  padding: $base-padding!important;
+}
+.hasPaddingTop {
+  padding-top: $base-padding!important;
+}
+.hasPaddingRight {
+  padding-right: $base-padding!important;
+}
+.hasPaddingBottom {
+  padding-bottom: $base-padding!important;
+}
+.hasPaddingLeft {
+  padding-left: $base-padding!important;
+}
+
+//清除页面内边距
+.clearPadding {
+  padding: 0!important;
+}
+.clearPaddingTop {
+  padding-top: 0!important;
+}
+.clearPaddingRight {
+  padding-right: 0!important;
+}
+.clearPaddingBottom {
+  padding-bottom: 0!important;
+}
+.clearPaddingLeft {
+  padding-left: 0!important;
+}
+
+//页面外边距
+.hasMargin {
+  margin: $base-margin!important;
+}
+.hasMarginTop {
+  margin-top: $base-margin!important;
+}
+.hasMarginRight {
+  margin-right: $base-margin!important;
+}
+.hasMarginBottom {
+  margin-bottom: $base-margin!important;
+}
+.hasMarginLeft {
+  margin-left: $base-margin!important;
+}
+
+//清除页面外边距
+.clearMargin {
+  margin: 0!important;
+}
+.clearMarginTop {
+  margin-top: 0!important;
+}
+.clearMarginRight {
+  margin-right: 0!important;
+}
+.clearMarginBottom {
+  margin-bottom: 0!important;
+}
+.clearMarginLeft {
+  margin-left: 0!important;
+}
+
+//列表内边距
+.listPadding {
+  padding: $list-padding!important;
+}
+.listPaddingTop {
+  padding-top: $list-padding!important;
+}
+.listPaddingRight {
+  padding-right: $list-padding!important;
+}
+.listPaddingBottom {
+  padding-bottom: $list-padding!important;
+}
+.listPaddingLeft {
+  padding-left: $list-padding!important;
+}
+
+//清除列表内边距
+.clearPadding {
+  padding: 0!important;
+}
+.clearPaddingTop {
+  padding-top: 0!important;
+}
+.clearPaddingRight {
+  padding-right: 0!important;
+}
+.clearPaddingBottom {
+  padding-bottom: 0!important;
+}
+.clearPaddingLeft {
+  padding-left: 0!important;
+}
+
+//列表外边距
+.listMargin {
+  margin: $list-margin!important;
+}
+.listMarginTop {
+  margin-top: $list-margin!important;
+}
+.listMarginRight {
+  margin-right: $list-margin!important;
+}
+.listMarginBottom {
+  margin-bottom: $list-margin!important;
+}
+.listMarginLeft {
+  margin-left: $list-margin!important;
+}
+
+//清除列表外边距
+.clearMargin {
+  margin: 0!important;
+}
+.clearMarginTop {
+  margin-top: 0!important;
+}
+.clearMarginRight {
+  margin-right: 0!important;
+}
+.clearMarginBottom {
+  margin-bottom: 0!important;
+}
+.clearMarginLeft {
+  margin-left: 0!important;
+}
+

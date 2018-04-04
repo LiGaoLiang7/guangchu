@@ -1,0 +1,5 @@
+#Git 忽略
+#www/
+platforms/
+node_modules/
+
