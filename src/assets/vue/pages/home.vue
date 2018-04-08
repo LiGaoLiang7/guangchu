@@ -19,9 +19,6 @@
 </template>
 <script>
 
-// 引入framework7
-import framework7 from 'framework7/dist/framework7.esm.bundle.js';
-
 export default {
     data (){
         return{
@@ -93,21 +90,12 @@ export default {
 
         },
         initSocketurl : function(){
-
           this.app.form.fillFormData('my-form', {"wss" : "echo.websocket.org"})
         },
 
-        initapp : function(){
-          this.app = new framework7();
-
-        }
-
-
     },
-
     mounted : function(){
-        // this.initWebsocket();
-        this.initapp();
+      
     }
 };
 </script>

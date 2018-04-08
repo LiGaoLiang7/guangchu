@@ -41,6 +41,8 @@
           this.message = text;
         }
       },
+
+
       // onDone : function(err, status){
       //   if (err) {
       //    console.error(err);
@@ -57,6 +59,7 @@
       //     // ask again" box.) We can ask again at the next relevant opportunity. 
       //   }
       // }
+
     },
     mounted : function(){
       // QRScanner.prepare(this.onDone);

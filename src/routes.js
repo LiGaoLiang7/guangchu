@@ -4,12 +4,12 @@ export default [
     component: require('./assets/vue/pages/home.vue')
   },
   {
-    path: '/about/',
-    component: require('./assets/vue/pages/about.vue')
+    path: '/params/',
+    component: require('./assets/vue/pages/params.vue')
   },
   {
-    path: '/form/',
-    component: require('./assets/vue/pages/form.vue')
+    path: '/setting/',
+    component: require('./assets/vue/pages/setting.vue')
   },
   {
     path: '/dynamic-route/blog/:blogId/post/:postId/',
@@ -30,5 +30,30 @@ export default [
   {
     path: '/vuex/',
     component: require('./assets/vue/pages/vuex.vue')
+  },
+  {
+    path: '/photovoltaic/',
+    component: require('./assets/vue/pages/param-photovoltaic.vue')
+
+  },
+  {
+    path: '/battery/',
+    component: require('./assets/vue/pages/param-battery.vue')
+
+  },
+  {
+    path: '/output/',
+    component: require('./assets/vue/pages/param-output.vue')
+
+  },
+  {
+    path: '/load/',
+    component: require('./assets/vue/pages/param-load.vue')
+
+  },
+  {
+    path: '/baseinfo/',
+    component: require('./assets/vue/pages/param-baseinfo.vue')
+
   },
 ]

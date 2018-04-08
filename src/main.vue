@@ -6,11 +6,10 @@
             <f7-view url="/panel-left/" links-view=".view-main"/>
         </f7-panel>
         <f7-view url="/" :main="true" class="ios-edges"></f7-view>
-
         <f7-toolbar tabbar labels bottom class="app-main">
             <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/" text="首页" :class="{active : tabindex == 1}" @click="tabindex = 1"></f7-link>
-            <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/about/" text="参数" :class="{active : tabindex == 2}" @click="tabindex = 2"></f7-link>
-             <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/form/" text="设置" :class="{active : tabindex == 3}" @click="tabindex = 3"></f7-link>
+            <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/params/" text="参数" :class="{active : tabindex == 2}" @click="tabindex = 2"></f7-link>
+             <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/setting/" text="设置" :class="{active : tabindex == 3}" @click="tabindex = 3"></f7-link>
         </f7-toolbar>
     </div>
 </template>
@@ -41,6 +40,13 @@ export default {
   }
   .ios .app-main.navbar{
     background-color: $base-mainbackground-color;
+  }
+  .md .tabbar-labels a.link {
+    padding-top: 0px;
+    padding-bottom: 12px;
+  }
+  .md .toolbar a.link i + span{
+    margin-left: 0;
   }
   .filter{
       right: 3%;
