@@ -14,12 +14,6 @@
 import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
   export default {
     props : {
-      params : {
-        type : Array,
-        default : function(){
-          return []
-        }
-      }
     },
     data : function(){
       return {
@@ -53,6 +47,17 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     mounted : function(){
       // this.datalist =  this.params;
     },
+    computed :{
+      paramsdata : function(){
+        // 从store中获取参数
+        return this.$store.state.paramdatas;
+      }
+    },
+    watch : {
+      paramsdata : function(){
+        this.datalist = this.paramsdata;
+      }
+    },
     components: {
       f7Navbar,
       f7Page,
@@ -62,10 +67,10 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
 </script>
 
 
-<style>
+<style scoped>
 .media-list span{
     display: inline-block;
-    width: 64%;
+    width: 70%;
     text-align: left;
   }
   .media-list .params{

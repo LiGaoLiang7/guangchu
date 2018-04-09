@@ -26,7 +26,7 @@
 			loginAction: function() {
 				const self = this;
 				// Set new user into storage
-        self.userLogged({name: "User", id: "#1"});
+		        self.userLogged({name: "User", id: "#1"});
 			},
 			...mapActions(['userLogged'])
 		}

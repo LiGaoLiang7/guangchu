@@ -1,10 +1,10 @@
 <template>
   <f7-page>
-    <f7-navbar title="系统基础信息" back-link="Back" href="/params/"></f7-navbar>
+    <f7-navbar title="BMS告警信息" back-link="Back" href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName">
         <span>{{item.paramName}}</span>
-        <input type="text" class="params" v-model="item.paramValue" disabled>
+        <span class="params">{{gitstatusname(item.paramValue)}}</span>
         <em class="unit">{{item.unit}}</em>
       </f7-list-item>
     </f7-list>
@@ -14,27 +14,28 @@
 import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
   export default {
     props : {
-      // params : {
-      //   type : Array,
-      //   default : function(){
-      //     return []
-      //   }
-      // }
+      params : {
+        type : Array,
+        default : function(){
+          return []
+        }
+      }
     },
     data : function(){
       return {
         datalist : [
-          {paramName : "协议版本号",  paramValue : 0, unit : ""},
-          {paramName : "电池厂商号",  paramValue : 0, unit : ""},
-          {paramName : "Wifi SSID",  paramValue : 0, unit : ""},
-          {paramName : "Wifi password",  paramValue : 0, unit : ""}
+          {paramName : "电池高电流放电",  paramValue : 1, unit : ""},
+          {paramName : "电池高电流充电",  paramValue : 0, unit : ""},
+          {paramName : "电池温度过低",    paramValue : 0, unit : ""},
+          {paramName : "电池温度过高",    paramValue : 0, unit : ""},
+          {paramName : "电池电压过低",    paramValue : 0, unit : ""},
+          {paramName : "电池电压过高",    paramValue : 0, unit : ""},
         ]
       }
     },
-    computed : {
-      paramsdata : function(){
-        // 从store中获取参数
-        return this.$store.state.paramdatas;
+    methods : {
+      gitstatusname : function(num){
+        return num == 1 ? "异常" : "正常"
       }
     },
     mounted : function(){
@@ -49,10 +50,10 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
 </script>
 
 
-<style scoped>
+<style>
 .media-list span{
     display: inline-block;
-    width: 70%;
+    width: 76%;
     text-align: left;
   }
   .media-list .params{

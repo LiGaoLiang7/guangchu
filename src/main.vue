@@ -9,7 +9,8 @@
         <f7-toolbar tabbar labels bottom class="app-main">
             <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/" text="首页" :class="{active : tabindex == 1}" @click="tabindex = 1"></f7-link>
             <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/params/" text="参数" :class="{active : tabindex == 2}" @click="tabindex = 2"></f7-link>
-             <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/setting/" text="设置" :class="{active : tabindex == 3}" @click="tabindex = 3"></f7-link>
+            <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/warning/" text="告警" :class="{active : tabindex == 3}" @click="tabindex = 3"></f7-link>
+             <f7-link icon="iconfont icon-yongdianliang" class="toolicon" href="/setting/" text="设置" :class="{active : tabindex == 4}" @click="tabindex = 4"></f7-link>
         </f7-toolbar>
     </div>
 </template>

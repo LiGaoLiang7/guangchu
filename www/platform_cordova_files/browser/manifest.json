@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "linchargeapp",
+  "short_name": "linchargeapp",
+  "version": "com.ios.lincharge",
+  "description": "LinCharge Application!",
+  "author": "Apache Cordova Team",
+  "icons": [],
+  "start_url": "index.html"
+}

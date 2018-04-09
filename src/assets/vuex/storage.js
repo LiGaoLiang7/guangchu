@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    user: {}
+    user: {},
+    paramdatas : [], // 存储实时数据
   },
 
   actions: {
@@ -13,10 +14,14 @@ export default new Vuex.Store({
       commit('USER_LOGGED', user)
     }
   },
-
   mutations: {
     USER_LOGGED (state, user) {
       state.user = user
-    }
+    },
+    // 
+    PARAM_CHANGE (state, paramDataArray){ // 实时数据监听方法
+      state.paramdatas = paramDataArray;
+    },
+
   },
 });

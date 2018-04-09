@@ -11,7 +11,6 @@
             <f7-label>wss//</f7-label>
             <f7-input type="text" placeholder="Name" name="wss" autofocus autosave></f7-input>
             <f7-button @click="initSocket">连接</f7-button>
-            <f7-button @click="initSocketurl">默认</f7-button>
           </f7-list-item>
         </f7-list>
         <f7-block>{{message}}</f7-block>
@@ -25,6 +24,7 @@ export default {
             message : "",
             wssstring : "echo.websocket.org", 
             app : null,
+            params : [],
         }
     },
     computed : {
@@ -32,11 +32,13 @@ export default {
     },
     methods : {
         initSocket : function(){
-
-          var formdata = this.app.form.convertToData("#my-form");
-          
-          this.connWebsocket("wss://" + formdata.wss);
+          this.connWebsocket("wss://" + this.wssstring);
         },
+        // 把数据提交到状态管理中
+        pushDataIntoStore : function(){
+          this.$store.commit('PARAM_CHANGE', this.params);
+        },
+
         connWebsocket : function(socketurl){
           var _this = this;
           var count = 0;
@@ -58,28 +60,13 @@ export default {
               })(ws, count);
             };
 
-            // switch (ws.readyState) {
-            //   case WebSocket.CONNECTING:
-            //     // do something
-            //     break;
-            //   case WebSocket.OPEN:
-            //     // do something
-            //     break;
-            //   case WebSocket.CLOSING:
-            //     // do something
-            //     break;
-            //   case WebSocket.CLOSED:
-            //     // do something
-            //     break;
-            //   default:
-            //     // this never happens
-            //     break;
-            // }
-
             ws.onmessage = function(evt) {
               console.log( "Received Message: " + evt.data);
               // ws.close();
               _this.message += " " + evt.data;
+                var  dv = new DataView(evt.data);
+                console.log(dv.getInt16(0,false)); // ok
+                console.log(dv.getInt16(2,false));
 
             };
 
@@ -89,13 +76,10 @@ export default {
 
 
         },
-        initSocketurl : function(){
-          this.app.form.fillFormData('my-form', {"wss" : "echo.websocket.org"})
-        },
 
     },
     mounted : function(){
-      
+
     }
 };
 </script>

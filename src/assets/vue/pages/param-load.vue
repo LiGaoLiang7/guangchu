@@ -62,10 +62,10 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
 </script>
 
 
-<style>
+<style scoped>
 .media-list span{
     display: inline-block;
-    width: 64%;
+    width: 70%;
     text-align: left;
   }
   .media-list .params{

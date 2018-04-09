@@ -11,7 +11,6 @@
     </f7-list>
     <f7-block>
     </f7-block>
-    
     <f7-block>
       {{message}}
     </f7-block>
@@ -41,24 +40,6 @@
           this.message = text;
         }
       },
-
-
-      // onDone : function(err, status){
-      //   if (err) {
-      //    console.error(err);
-      //   }
-      //   if (status.authorized) {
-      //     QRscanner.show(); // should feel very fast. 
-      //   } else if (status.denied) {
-      //    // The video preview will remain black, and scanning is disabled. We can 
-      //    // try to ask the user to change their mind, but we'll have to send them 
-      //    // to their device settings with `QRScanner.openSettings()`. 
-      //   } else {
-      //     // we didn't get permission, but we didn't get permanently denied. (On 
-      //     // Android, a denial isn't permanent unless the user checks the "Don't 
-      //     // ask again" box.) We can ask again at the next relevant opportunity. 
-      //   }
-      // }
 
     },
     mounted : function(){

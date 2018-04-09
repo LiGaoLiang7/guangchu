@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar title="系统基础信息" back-link="Back" href="/params/"></f7-navbar>
+    <f7-navbar title="历史功率数据" back-link="Back" href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName">
         <span>{{item.paramName}}</span>
@@ -14,27 +14,19 @@
 import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
   export default {
     props : {
-      // params : {
-      //   type : Array,
-      //   default : function(){
-      //     return []
-      //   }
-      // }
+      params : {
+        type : Array,
+        default : function(){
+          return []
+        }
+      }
     },
     data : function(){
       return {
         datalist : [
-          {paramName : "协议版本号",  paramValue : 0, unit : ""},
-          {paramName : "电池厂商号",  paramValue : 0, unit : ""},
-          {paramName : "Wifi SSID",  paramValue : 0, unit : ""},
-          {paramName : "Wifi password",  paramValue : 0, unit : ""}
+          { paramName : "总放电功率",  paramValue : 1, unit : "kWh" },
+          { paramName : "总充电功率",  paramValue : 0, unit : "kWh" },
         ]
-      }
-    },
-    computed : {
-      paramsdata : function(){
-        // 从store中获取参数
-        return this.$store.state.paramdatas;
       }
     },
     mounted : function(){
@@ -52,7 +44,7 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
 <style scoped>
 .media-list span{
     display: inline-block;
-    width: 70%;
+    width: 65%;
     text-align: left;
   }
   .media-list .params{
