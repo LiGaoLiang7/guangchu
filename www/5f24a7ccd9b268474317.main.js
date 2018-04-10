@@ -30866,7 +30866,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.cusbutton[data-v-7c69b0d7]{\n  width: 90%;\n  margin: 30px auto 10px auto;\n}\n.iconitem1[data-v-7c69b0d7]{\n    margin: -29% 0 0 -28%;\n}\n.iconitem2[data-v-7c69b0d7]{\n    margin: -29% 0 0 30%;\n}\n.iconitem3[data-v-7c69b0d7]{\n    margin: 0%;\n}\n.iconitem4[data-v-7c69b0d7]{\n    margin: 26% 0 0 -28%;\n}\n.iconitem5[data-v-7c69b0d7]{\n    margin: 31% 0 0 0%;\n}\n.iconitem6[data-v-7c69b0d7]{\n    margin: 26% 0 0 30%;\n}\n.systopology[data-v-7c69b0d7]{\n  height: calc(100% - 34%)\n}\n.iconitem[data-v-7c69b0d7]{\n  width: 15%;\n  /*height: 60px;*/\n  border: 3px solid #a2a2a2;\n  background-color: #575757;\n  border-radius: 50%;\n}\n.imageicon[data-v-7c69b0d7]{\n  margin: 5px 7px;\n}\n.svg[data-v-7c69b0d7]{\n  position: absolute;\n}\n.svg1[data-v-7c69b0d7]{\n  top: -40px;\n  left: -36px;\n  transform: scale(0.3);\n}\n.svg2[data-v-7c69b0d7]{\n  top: -40px;\n  right: -49px;\n  transform: scale(0.3);\n}\n.svg3[data-v-7c69b0d7]{\n  top: 85px;\n  left: -36px;\n  transform: scale(0.3) rotateX(180deg);\n}\n.svg4[data-v-7c69b0d7]{\n top: 85px;\n  right: -49px;\n  transform: scale(0.3) rotateX(180deg);\n}\n@keyframes dash-data-v-7c69b0d7 {\nto {\n        stroke-dashoffset: 50;\n}\n}\n.path[data-v-7c69b0d7] {\n    stroke-dasharray: 5;\n    animation: dash-data-v-7c69b0d7 5s linear infinite;\n}\n@keyframes dash2-data-v-7c69b0d7 {\nto {\n        stroke-dashoffset: -50;\n}\n}\n.path2[data-v-7c69b0d7] {\n    stroke-dasharray: 5;\n    animation: dash2-data-v-7c69b0d7 5s linear infinite;\n}\n\n\n\n", ""]);
+exports.push([module.i, "\n.cusbutton[data-v-7c69b0d7]{\n  width: 90%;\n  margin: 30px auto 10px auto;\n}\n.iconitem1[data-v-7c69b0d7]{\n    margin: -29% 0 0 -28%;\n}\n.iconitem2[data-v-7c69b0d7]{\n    margin: -29% 0 0 30%;\n}\n.iconitem3[data-v-7c69b0d7]{\n    margin: 0%;\n}\n.iconitem4[data-v-7c69b0d7]{\n    margin: 26% 0 0 -28%;\n}\n.iconitem5[data-v-7c69b0d7]{\n    margin: 31% 0 0 0%;\n}\n.iconitem6[data-v-7c69b0d7]{\n    margin: 26% 0 0 30%;\n}\n.systopology[data-v-7c69b0d7]{\n  height: calc(100% - 34%)\n}\n.iconitem[data-v-7c69b0d7]{\n  width: 15%;\n  height: 15%;\n  border: 3px solid #a2a2a2;\n  background-color: #575757;\n  border-radius: 50%;\n}\n.iconitem.active[data-v-7c69b0d7]{\n  background-color: #0ff;\n}\n.imageicon[data-v-7c69b0d7]{\n  margin: 5px 7px;\n}\n.svg[data-v-7c69b0d7]{\n  position: absolute;\n}\n.svg1[data-v-7c69b0d7]{\n  transform: translate(-50%,-50%) scale(0.3);\n  margin: -19% 0 0 -13%;\n}\n.svg2[data-v-7c69b0d7]{\n  transform: translate(-50%,-50%) scale(0.3);\n  margin: -15% 0 0 19%;\n}\n.svg3[data-v-7c69b0d7]{\n  transform: translate(-50%,-50%) scale(0.3) rotateX(180deg);\n  margin: 18% 0px 0px -13%;\n}\n.svg4[data-v-7c69b0d7]{\n  margin: 13% 0 0 19%;\n  transform: translate(-50%,-50%) scale(0.3) rotateX(180deg);\n}\n.svg5[data-v-7c69b0d7]{\n    width: 4px;\n    margin-top: 17%;\n    transform: translate(-50%,-50%) scale(0.3);\n}\n.statustext[data-v-7c69b0d7]{\n  font-size: 14px;\n  color: #0ff;\n}\n.statustext1[data-v-7c69b0d7]{\n  margin: -8% 0 0 -15%;\n}\n.statustext2[data-v-7c69b0d7]{\n  margin: -8% 0 0 15%;\n}\n.statustext3[data-v-7c69b0d7]{\n  margin: 8% 0 0 -15%;\n}\n.statustext4[data-v-7c69b0d7]{\n  margin: 15% 0 0 4%;\n}\n.statustext5[data-v-7c69b0d7]{\n  margin: 8% 0 0 15%;\n}\n@keyframes dash-data-v-7c69b0d7 {\nto {\n        stroke-dashoffset: 50;\n}\n}\n.path[data-v-7c69b0d7] {\n    stroke-dasharray: 5;\n    animation: dash-data-v-7c69b0d7 5s linear infinite;\n}\n@keyframes dash2-data-v-7c69b0d7 {\nto {\n        stroke-dashoffset: -50;\n}\n}\n.path2[data-v-7c69b0d7] {\n    stroke-dasharray: 5;\n    animation: dash2-data-v-7c69b0d7 5s linear infinite;\n}\n\n", ""]);
 
 // exports
 
@@ -30935,9 +30935,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
 
 exports.default = {
   data: function data() {
@@ -30945,7 +30942,10 @@ exports.default = {
       message: "",
       wssstring: "echo.websocket.org",
       app: null,
-      params: []
+      params: [],
+      active: "",
+      // isdeviceactive 设备是否在使用中
+      isdeviceactive: [1, 1, 1, 1, 1, 1, 1]
     };
   },
 
@@ -30982,7 +30982,6 @@ exports.default = {
         console.log(dv.getInt16(0, false)); // ok
         console.log(dv.getInt16(2, false));
       };
-
       ws.onclose = function (evt) {
         console.log("Connection closed.");
       };
@@ -31014,7 +31013,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("工作状态     NA")]), _vm._v(" "), _c('f7-block', {
     staticClass: "relt systopology"
   }, [_c('svg', {
-    staticClass: "path2 svg svg1",
+    staticClass: "svg svg1 absCV",
+    class: {
+      path2: _vm.isdeviceactive[0] == 1
+    },
     attrs: {
       "id": "图层_1",
       "data-name": "图层 1",
@@ -31037,7 +31039,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "transform": "translate(214.83 114.33)"
     }
   })]), _vm._v(" "), _c('svg', {
-    staticClass: "path2 svg svg2",
+    staticClass: "svg svg2 absCV",
+    class: {
+      path2: _vm.isdeviceactive[1] == 1
+    },
     attrs: {
       "id": "图层_1",
       "data-name": "图层 1",
@@ -31053,7 +31058,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "stroke-width": "4"
     }
   })]), _vm._v(" "), _c('svg', {
-    staticClass: "path2 svg svg3",
+    staticClass: "svg svg3 absCV",
+    class: {
+      path2: _vm.isdeviceactive[2] == 1
+    },
     attrs: {
       "id": "图层_1",
       "data-name": "图层 1",
@@ -31076,7 +31084,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "transform": "translate(214.83 114.33)"
     }
   })]), _vm._v(" "), _c('svg', {
-    staticClass: "path2 svg svg4",
+    staticClass: "svg svg4 absCV",
+    class: {
+      path2: _vm.isdeviceactive[3] == 1
+    },
     attrs: {
       "id": "图层_1",
       "data-name": "图层 1",
@@ -31091,8 +31102,33 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "stroke-miterlimit": "10",
       "stroke-width": "4"
     }
+  })]), _vm._v(" "), _c('svg', {
+    staticClass: "path svg svg5 absCV",
+    class: {
+      path2: _vm.isdeviceactive[4] == 1
+    },
+    attrs: {
+      "id": "图层_1",
+      "data-name": "图层 1",
+      "xmlns": "http://www.w3.org/2000/svg",
+      "viewBox": "0 0 1 140"
+    }
+  }, [_c('defs'), _c('title', [_vm._v("line142")]), _c('line', {
+    staticClass: "cls-1",
+    attrs: {
+      "x1": "0.5",
+      "x2": "0.5",
+      "y2": "140",
+      "fill": "none",
+      "stroke": "#000",
+      "stroke-miterlimit": "10",
+      "stroke-width": "5"
+    }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "iconitem abs absCV iconitem1"
+    staticClass: "iconitem abs absCV iconitem1",
+    class: {
+      active: _vm.isdeviceactive[0] == 1
+    }
   }, [_c('img', {
     staticClass: "imageicon pure-img",
     attrs: {
@@ -31102,7 +31138,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "alt": ""
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "iconitem abs absCV iconitem2"
+    staticClass: "iconitem abs absCV iconitem2",
+    class: {
+      active: _vm.isdeviceactive[1] == 1
+    }
   }, [_c('img', {
     staticClass: "imageicon pure-img",
     attrs: {
@@ -31112,7 +31151,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "alt": ""
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "iconitem abs absCV iconitem3"
+    staticClass: "iconitem abs absCV iconitem3",
+    class: {
+      active: _vm.isdeviceactive[2] == 1
+    }
   }, [_c('img', {
     staticClass: "imageicon pure-img",
     attrs: {
@@ -31122,7 +31164,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "alt": ""
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "iconitem abs absCV iconitem4"
+    staticClass: "iconitem abs absCV iconitem4",
+    class: {
+      active: _vm.isdeviceactive[3] == 1
+    }
   }, [_c('img', {
     staticClass: "imageicon pure-img",
     attrs: {
@@ -31132,7 +31177,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "alt": ""
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "iconitem abs absCV iconitem5"
+    staticClass: "iconitem abs absCV iconitem5",
+    class: {
+      active: _vm.isdeviceactive[4] == 1
+    }
   }, [_c('img', {
     staticClass: "imageicon pure-img",
     attrs: {
@@ -31142,7 +31190,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "alt": ""
     }
   })]), _vm._v(" "), _c('div', {
-    staticClass: "iconitem abs absCV iconitem6"
+    staticClass: "iconitem abs absCV iconitem6",
+    class: {
+      active: _vm.isdeviceactive[5] == 1
+    }
   }, [_c('img', {
     staticClass: "imageicon pure-img",
     attrs: {
@@ -31151,7 +31202,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "width": "40",
       "alt": ""
     }
-  })])])], 1)
+  })]), _vm._v(" "), _c('span', {
+    staticClass: "statustext statustext1 abs absCV"
+  }, [_vm._v("NA")]), _vm._v(" "), _c('span', {
+    staticClass: "statustext statustext2 abs absCV"
+  }, [_vm._v("NA")]), _vm._v(" "), _c('span', {
+    staticClass: "statustext statustext3 abs absCV"
+  }, [_vm._v("NA")]), _vm._v(" "), _c('span', {
+    staticClass: "statustext statustext4 abs absCV"
+  }, [_vm._v("NA")]), _vm._v(" "), _c('span', {
+    staticClass: "statustext statustext5 abs absCV"
+  }, [_vm._v("NA")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -31694,7 +31755,7 @@ exports.default = {
   props: {},
   data: function data() {
     return {
-      datalist: [{ paramName: "PV1 电压", paramValue: 0, unit: "V" }, { paramName: "PV1 电流", paramValue: 0, unit: "A" }, { paramName: "PVI 功率", paramValue: 0, unit: "W" }, { paramName: "PV2 电压", paramValue: 0, unit: "V" }, { paramName: "PV2 功率", paramValue: 0, unit: "W" }, { paramName: "逆变 A 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 A 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 B 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 B 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 C 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 C 相电流", paramValue: 0, unit: "A" }, { paramName: "电网频率", paramValue: 0, unit: "Hz" }, { paramName: "系统有功功率", paramValue: 0, unit: "VA" }, { paramName: "系统无功功率", paramValue: 0, unit: "W" }, { paramName: "电池电流", paramValue: 0, unit: "A" }, { paramName: "电池电压", paramValue: 0, unit: "V" }, { paramName: "铅酸电池剩余容量", paramValue: 0, unit: "%" }, { paramName: "软件版本号高位", paramValue: 0, unit: "" }, { paramName: "软件版本号低位", paramValue: 0, unit: "" }, { paramName: "充电次数", paramValue: 0, unit: "" }, { paramName: "放电次数", paramValue: 0, unit: "" }]
+      datalist: [{ paramName: "PV1 电压", paramValue: 0, unit: "V" }, { paramName: "PV1 电流", paramValue: 0, unit: "A" }, { paramName: "PVI 功率", paramValue: 0, unit: "W" }, { paramName: "PV2 电压", paramValue: 0, unit: "V" }, { paramName: "PV2 电流", paramValue: 0, unit: "A" }, { paramName: "PV2 功率", paramValue: 0, unit: "W" }, { paramName: "直流正母线电压", paramValue: 0, unit: "V" }, { paramName: "直流负母线电压", paramValue: 0, unit: "V" }, { paramName: "直流双边母线电压", paramValue: 0, unit: "V" }, { paramName: "直流功率", paramValue: 0, unit: "W" }]
     };
   },
   mounted: function mounted() {
@@ -32081,7 +32142,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.media-list span[data-v-65fc7d39]{\n    display: inline-block;\n    width: 70%;\n    text-align: left;\n}\n.media-list .params[data-v-65fc7d39]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n", ""]);
+exports.push([module.i, "\n.media-list span[data-v-65fc7d39]{\n    display: inline-block;\n    width: 69%;\n    text-align: left;\n}\n.media-list .params[data-v-65fc7d39]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n", ""]);
 
 // exports
 
@@ -32108,7 +32169,7 @@ exports.default = {
   props: {},
   data: function data() {
     return {
-      datalist: [{ paramName: "PV1 电压", paramValue: 0, unit: "V" }, { paramName: "PV1 电流", paramValue: 0, unit: "A" }, { paramName: "PVI 功率", paramValue: 0, unit: "W" }, { paramName: "PV2 电压", paramValue: 0, unit: "V" }, { paramName: "PV2 功率", paramValue: 0, unit: "W" }, { paramName: "逆变 A 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 A 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 B 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 B 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 C 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 C 相电流", paramValue: 0, unit: "A" }, { paramName: "电网频率", paramValue: 0, unit: "Hz" }, { paramName: "系统有功功率", paramValue: 0, unit: "VA" }, { paramName: "系统无功功率", paramValue: 0, unit: "W" }, { paramName: "电池电流", paramValue: 0, unit: "A" }, { paramName: "电池电压", paramValue: 0, unit: "V" }, { paramName: "铅酸电池剩余容量", paramValue: 0, unit: "%" }, { paramName: "软件版本号高位", paramValue: 0, unit: "" }, { paramName: "软件版本号低位", paramValue: 0, unit: "" }, { paramName: "充电次数", paramValue: 0, unit: "" }, { paramName: "放电次数", paramValue: 0, unit: "" }]
+      datalist: [{ paramName: "电网 A 相电压", paramValue: 0, unit: "V" }, { paramName: "电网 AB 线电压", paramValue: 0, unit: "V" }, { paramName: "电网 A 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 B 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 B 相电流", paramValue: 0, unit: "A" }, { paramName: "电网 B 相电压", paramValue: 0, unit: "V" }, { paramName: "电网 BC 线电压", paramValue: 0, unit: "V" }, { paramName: "电网 B 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 C 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 C 相电流", paramValue: 0, unit: "A" }, { paramName: "电网 C 相电压", paramValue: 0, unit: "V" }, { paramName: "电网 CA 线电压", paramValue: 0, unit: "V" }, { paramName: "电网 C 相电流", paramValue: 0, unit: "V" }, { paramName: "电网频率", paramValue: 0, unit: "Hz" }, { paramName: "功率因数", paramValue: 0, unit: "" }, { paramName: "系统有功功率", paramValue: 0, unit: "VA" }, { paramName: "系统无功功率", paramValue: 0, unit: "W" }, { paramName: "系统视在功率", paramValue: 0, unit: "Var" }]
     };
   },
   computed: {
@@ -32326,7 +32387,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      datalist: [{ paramName: "PV1 电压", paramValue: 0, unit: "V" }, { paramName: "PV1 电流", paramValue: 0, unit: "A" }, { paramName: "PVI 功率", paramValue: 0, unit: "W" }, { paramName: "PV2 电压", paramValue: 0, unit: "V" }, { paramName: "PV2 功率", paramValue: 0, unit: "W" }, { paramName: "逆变 A 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 A 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 B 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 B 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 C 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 C 相电流", paramValue: 0, unit: "A" }, { paramName: "电网频率", paramValue: 0, unit: "Hz" }, { paramName: "系统有功功率", paramValue: 0, unit: "VA" }, { paramName: "系统无功功率", paramValue: 0, unit: "W" }, { paramName: "电池电流", paramValue: 0, unit: "A" }, { paramName: "电池电压", paramValue: 0, unit: "V" }, { paramName: "铅酸电池剩余容量", paramValue: 0, unit: "%" }, { paramName: "软件版本号高位", paramValue: 0, unit: "" }, { paramName: "软件版本号低位", paramValue: 0, unit: "" }, { paramName: "充电次数", paramValue: 0, unit: "" }, { paramName: "放电次数", paramValue: 0, unit: "" }]
+      datalist: [{ paramName: "逆变 A 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 A 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 B 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 B 相电流", paramValue: 0, unit: "A" }, { paramName: "逆变 C 相电压", paramValue: 0, unit: "V" }, { paramName: "逆变 C 相电流", paramValue: 0, unit: "A" }, { paramName: "电网频率", paramValue: 0, unit: "Hz" }, { paramName: "功率因数", paramValue: 0, unit: "" }, { paramName: "系统有功功率", paramValue: 0, unit: "VA" }, { paramName: "系统无功功率", paramValue: 0, unit: "W" }, { paramName: "系统视在功率", paramValue: 0, unit: "Var" }]
     };
   },
   mounted: function mounted() {
@@ -32533,7 +32594,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      datalist: [{ paramName: "协议版本号", paramValue: 0, unit: "" }, { paramName: "电池厂商号", paramValue: 0, unit: "" }, { paramName: "Wifi SSID", paramValue: 0, unit: "" }, { paramName: "Wifi password", paramValue: 0, unit: "" }]
+      datalist: [{ paramName: "软件版本号高位", paramValue: 0, unit: "" }, { paramName: "软件版本号低位", paramValue: 0, unit: "" }, { paramName: "并机地址", paramValue: 0, unit: "" }, { paramName: "工作效率", paramValue: 0, unit: "" }]
     };
   },
   computed: {
@@ -32850,7 +32911,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.media-list span{\n    display: inline-block;\n    width: 76%;\n    text-align: left;\n}\n.media-list .params{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n", ""]);
+exports.push([module.i, "\n.media-list span{\n    display: inline-block;\n    width: 76%;\n    text-align: left;\n}\n.media-list .params{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n.media-list span.params{\n    width: 20%;\n    display: inline-block;\n    line-height: 30px;\n}\n", ""]);
 
 // exports
 
@@ -33245,7 +33306,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.media-list span[data-v-53a6753c]{\n    display: inline-block;\n    width: 65%;\n    text-align: left;\n}\n.media-list .params[data-v-53a6753c]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n", ""]);
+exports.push([module.i, "\n.media-list span[data-v-53a6753c]{\n    display: inline-block;\n    width: 65%;\n    text-align: left;\n}\n.media-list .params[data-v-53a6753c]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n.media-list span.params[data-v-53a6753c]{\n    width: 20%;\n    display: inline-block;\n    line-height: 30px;\n}\n", ""]);
 
 // exports
 
