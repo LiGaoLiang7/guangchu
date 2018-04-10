@@ -8,45 +8,31 @@
         </f7-navbar>
           <button class="button button-outline cusbutton">工作状态     NA</button>
         <f7-block class="relt systopology">
-
               <!-- 连线 -->
-
-              <svg id="图层_1" data-name="图层 1" class="path2 svg svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
-              <svg id="图层_1" data-name="图层 1" class="path2 svg svg2"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg>
-
-
-
-              
-              <svg id="图层_1" data-name="图层 1" class="path2 svg svg3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
-              <svg id="图层_1" data-name="图层 1" class="path2 svg svg4"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg>
-              
-              
-              <!-- <svg id="图层_1" data-name="图层 1" class="svg svg5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 98"><defs></defs><title>line2</title><line x1="0.5" x2="0.5" y2="98" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg> -->
-
-
-
+              <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
+              <svg id="图层_1" data-name="图层 1" class="svg svg2 absCV" :class="{path2 : isdeviceactive[1] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg>
+              <svg id="图层_1" data-name="图层 1" class="svg svg3 absCV" :class="{path2 : isdeviceactive[2] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
+              <svg id="图层_1" data-name="图层 1" class="svg svg4 absCV" :class="{path2 : isdeviceactive[3] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg>
+              <svg id="图层_1" data-name="图层 1" class="path svg svg5 absCV" :class="{path2 : isdeviceactive[4] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 140"><defs></defs><title>line142</title><line class="cls-1" x1="0.5" x2="0.5" y2="140" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="5"/></svg>
               <!-- 设备图标 -->
-              <div class="iconitem abs absCV iconitem1">
+              <div class="iconitem abs absCV iconitem1" :class="{active : isdeviceactive[0] == 1}">
                 <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem2">
+              <div class="iconitem abs absCV iconitem2" :class="{active : isdeviceactive[1] == 1}">
                 <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem3">
+              <div class="iconitem abs absCV iconitem3" :class="{active : isdeviceactive[2] == 1}">
                 <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem4">
+              <div class="iconitem abs absCV iconitem4" :class="{active : isdeviceactive[3] == 1}">
                 <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem5">
+              <div class="iconitem abs absCV iconitem5" :class="{active : isdeviceactive[4] == 1}">
                 <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem6">
+              <div class="iconitem abs absCV iconitem6" :class="{active : isdeviceactive[5] == 1}">
                 <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
               </div>
-              
-
-
         </f7-block>
     </f7-page>
 </template>
@@ -58,10 +44,14 @@ export default {
             wssstring : "echo.websocket.org", 
             app : null,
             params : [],
+            active : "",
+            // isdeviceactive 设备是否在使用中
+
+            isdeviceactive : [1,1,1,1,1,1,1],
+
         }
     },
     computed : {
-
     },
     methods : {
         initSocket : function(){
@@ -102,10 +92,10 @@ export default {
         },
     },
     mounted : function(){
-
     }
 };
 </script>
+
 
 <style scoped>
   .cusbutton{
@@ -135,62 +125,59 @@ export default {
   }
   .iconitem{
     width: 15%;
-    /*height: 60px;*/
+    height: 15%;
     border: 3px solid #a2a2a2;
     background-color: #575757;
     border-radius: 50%;
   }
+  .iconitem.active{
+    background-color: #0ff;
+  }
   .imageicon{
     margin: 5px 7px;
   }
-   .svg{
+  .svg{
     position: absolute;
   }
   .svg1{
-    top: -40px;
-    left: -36px;
-    transform: scale(0.3);
+    transform: translate(-50%,-50%) scale(0.3);
+    margin: -19% 0 0 -13%;
   }
   .svg2{
-    top: -40px;
-    right: -49px;
-    transform: scale(0.3);
-
+    transform: translate(-50%,-50%) scale(0.3);
+    margin: -15% 0 0 19%;
   }
   .svg3{
-    top: 85px;
-    left: -36px;
-    transform: scale(0.3) rotateX(180deg);
+    transform: translate(-50%,-50%) scale(0.3) rotateX(180deg);
+    margin: 18% 0px 0px -13%;
   }
   .svg4{
-   top: 85px;
-    right: -49px;
-    transform: scale(0.3) rotateX(180deg);
+    margin: 13% 0 0 19%;
+    transform: translate(-50%,-50%) scale(0.3) rotateX(180deg);
   }
-
+  .svg5{
+      width: 4px;
+      margin-top: 17%;
+      transform: translate(-50%,-50%) scale(0.3);
+  }
   @keyframes dash {
       to {
           stroke-dashoffset: 50;
       }
   }
-
   .path {
       stroke-dasharray: 5;
       animation: dash 5s linear infinite;
   }
-
   @keyframes dash2 {
       to {
           stroke-dashoffset: -50;
       }
   }
-
   .path2 {
       stroke-dasharray: 5;
       animation: dash2 5s linear infinite;
   }
-
-
 
 </style>
 

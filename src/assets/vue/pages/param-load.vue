@@ -24,29 +24,17 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     data : function(){
       return {
         datalist : [
-          {paramName : "PV1 电压",  paramValue : 0, unit : "V"},
-          {paramName : "PV1 电流",  paramValue : 0, unit : "A"},
-          {paramName : "PVI 功率",  paramValue : 0, unit : "W"},
-          {paramName : "PV2 电压",  paramValue : 0, unit : "V"},
-          {paramName : "PV2 功率",  paramValue : 0, unit : "W"},
-          
           {paramName : "逆变 A 相电压",  paramValue : 0, unit : "V"},
           {paramName : "逆变 A 相电流",  paramValue : 0, unit : "A"},
           {paramName : "逆变 B 相电压",  paramValue : 0, unit : "V"},
           {paramName : "逆变 B 相电流",  paramValue : 0, unit : "A"},
           {paramName : "逆变 C 相电压",  paramValue : 0, unit : "V"},
           {paramName : "逆变 C 相电流",  paramValue : 0, unit : "A"},
-
           {paramName : "电网频率",  paramValue : 0, unit : "Hz"},
+          {paramName : "功率因数",  paramValue : 0, unit : ""},
           {paramName : "系统有功功率",  paramValue : 0, unit : "VA"},
           {paramName : "系统无功功率",  paramValue : 0, unit : "W"},
-          {paramName : "电池电流",  paramValue : 0, unit : "A"},
-          {paramName : "电池电压",  paramValue : 0, unit : "V"},
-          {paramName : "铅酸电池剩余容量",  paramValue : 0, unit : "%"},
-          {paramName : "软件版本号高位",  paramValue : 0, unit : ""},
-          {paramName : "软件版本号低位",  paramValue : 0, unit : ""},
-          {paramName : "充电次数",  paramValue : 0, unit : ""},
-          {paramName : "放电次数",  paramValue : 0, unit : ""},
+          {paramName : "系统视在功率",  paramValue : 0, unit : "Var"},
         ]
       }
     },

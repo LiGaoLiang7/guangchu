@@ -55,4 +55,9 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     border-radius: 9px;
     width: 20% !important;
   }
+   .media-list span.params{
+    width: 20%;
+    display: inline-block;
+    line-height: 30px;
+  }
 </style>

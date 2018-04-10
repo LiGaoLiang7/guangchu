@@ -24,10 +24,10 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     data : function(){
       return {
         datalist : [
-          {paramName : "协议版本号",  paramValue : 0, unit : ""},
-          {paramName : "电池厂商号",  paramValue : 0, unit : ""},
-          {paramName : "Wifi SSID",  paramValue : 0, unit : ""},
-          {paramName : "Wifi password",  paramValue : 0, unit : ""}
+          {paramName : "软件版本号高位",  paramValue : 0, unit : ""},
+          {paramName : "软件版本号低位",  paramValue : 0, unit : ""},
+          {paramName : "并机地址",  paramValue : 0, unit : ""},
+          {paramName : "工作效率",  paramValue : 0, unit : ""}
         ]
       }
     },
