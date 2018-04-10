@@ -37,7 +37,8 @@
               <div class="iconitem abs absCV iconitem6" :class="{active : isdeviceactive[5] == 1}">
                 <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
               </div>
-
+              
+              <!--  参数信息显示 -->
               <span class="statustext statustext1 abs absCV">NA</span>
               <span class="statustext statustext2 abs absCV">NA</span>
               <span class="statustext statustext3 abs absCV">NA</span>
@@ -52,7 +53,9 @@ export default {
     data (){
         return{
             message : "",
-            wssstring : "echo.websocket.org", 
+            // wssstring : "echo.websocket.org", 
+            wssstring : "10.211.4.137:9001", 
+            // wssstring : "10.211.4.132:31337", 
             app : null,
             params : [],
             active : "",
@@ -64,51 +67,116 @@ export default {
     },
     methods : {
         initSocket : function(){
-          this.connWebsocket("wss://" + this.wssstring);
+          this.connWebsocket("ws://" + this.wssstring);
         },
+
         // 把数据提交到状态管理中
         pushDataIntoStore : function(){
           this.$store.commit('PARAM_CHANGE', this.params);
         },
         connWebsocket : function(socketurl){
           var _this = this;
+
           var count = 0;
+
           console.log(socketurl);
+
           var  ws = new WebSocket(socketurl);
           ws.onopen = function(evt) {
-            console.log("Connection open ..."); 
+            ws.binaryType = 'arraybuffer';
             ws.send("Hello WebSockets!");
-            (function(socket, count){
-              setInterval(function(){
-                socket.send("hello " + count);
-                count++;
-              }, 1000);
-            })(ws, count);
           };
+
           ws.onmessage = function(evt) {
             console.log( "Received Message: " + evt.data);
-            _this.message += " " + evt.data;
 
-            var  dv = new DataView(evt.data);
-            // ws.close();
-            console.log(dv.getInt16(0,false)); // ok
-            console.log(dv.getInt16(2,false));
+            // var dv = new DataView(evt.data);
+            // 
+            // 造假数据
+            var buffer = new ArrayBuffer(19);
+            var uint8View = new DataView(buffer);
+            // 手动设置dataview
+            //byteOffset   表示从内存的哪个字节开始
+            //value           该对应字节将被设置的值
+            //littleEndian  字节序，true为小端字节序，false或者不填为大端字节序
+            uint8View.setUint8(0,0xfe);
+            uint8View.setUint8(0, 0xfe); 
+            uint8View.setUint8(1, 0x55); 
+            uint8View.setUint8(2, 0x14); 
+            uint8View.setUint8(3, 0x64); 
+            uint8View.setUint8(4, 0x0a); 
+            uint8View.setUint8(5, 0x0b); 
+            uint8View.setUint8(6, 0x01); 
+            uint8View.setUint8(7, 0xF4); 
+            uint8View.setUint8(8, 0x00); 
+            uint8View.setUint8(9, 0x64); 
+            uint8View.setUint8(10, 0x00); 
+            uint8View.setUint8(11, 0x32); 
+            uint8View.setUint8(12, 0x00); 
+            uint8View.setUint8(13, 0x50); 
+            uint8View.setUint8(14, 0x00); 
+            uint8View.setUint8(15, 0x64); 
+            uint8View.setUint8(16, 0x11); 
+            uint8View.setUint8(17, 0x12); 
+            uint8View.setUint8(18, 0xAE);
+
+            _this.praseData(uint8View);
+
           };
           ws.onclose = function(evt) {
             console.log("Connection closed.");
           };  
         },
-        // 解析二进制数据
+        // 解析二进制 batearray 数据
         praseData : function(dataview){
+            if(dataview.byteLength > 0){
+                var start       =  dataview.getInt16(0,false);  // 起始帧   2字节
+                var start_addr  =  dataview.getUint8(2,false);   // 起始地址 1字节
+                var target_addr =  dataview.getUint8(3,false);   // 目标地址 1字节
+                var command     =  dataview.getUint8(4,false);   // 命令字   1字节
+                if(Number(start) == -427){   //    包起始帧 0xFE 0x55
+                    
+                    if(start_addr == 0x14 && target_addr == 0x64){ // PCU->APP 地址为0X14，目标地址0x64
+                        // console.log("PCU 发给 APP");
+                        var length = dataview.getInt8(5,false);
 
+                        if(dataview.getUint8(6 + length + 1, false) == 0xAE){ // 数据包完整 有结束
 
+                          switch (command) {
+                            case 0x0A:
+                              // 电池信息
+                              // 
+                              this.praseBatteryData(dataview, 6, length); // 数据从6开始， 截止是6+length
+                              break;
+                            default:
+                              // statements_def
+                              break;
+                          }
+                        }
+                    }
+                    if(start_addr == 0x64 && target_addr == 0x14){ // APP->PCU 地址为0X14，目标地址0x64
+                    }
+                }
+                else{
+                  // 丢弃数据包
+                }
+            }
+        }, 
 
-          
+      // 解析电池数据段
+      praseBatteryData : function(datalist, start, length){
+        while(datalist.getUint8(start, false) !== 0xAE){
 
-
+          console.log(datalist.getUint8(start, false));
+          start++;
+        
         }
+      }
+    
     },
     mounted : function(){
+      // 连接websocket
+      this.initSocket();
     }
 };
 </script>
