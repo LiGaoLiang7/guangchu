@@ -23,7 +23,12 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
           {paramName : "温度",  paramValue : 0, unit : "℃"},
           {paramName : "SOC",  paramValue : 0, unit : "%"},
           {paramName : "SOH",  paramValue : 0, unit : "%"},
-          {paramName : "充放电状态",  paramValue : 0, unit : ""},
+          {paramName : "充放电状态",  paramValue : 0, unit : "", format : function(num){
+              if(num == 0x11) return "充电";
+              if(num == 0x22) return "放电";
+              if(num == 0x33) return "待机";
+              return Number(num).toString(16);
+          }},
           // 0x11 充电 0x22 放电 0x33 待机
         ]
       }
@@ -31,9 +36,38 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     computed : {
       paramsdata : function(){
         // 从store中获取参数
-        return this.$store.state.paramdatas;
+        // return this.$store.state.paramsbattery;
+        return this.$store.getters.paramsBattery;  // 从getters中获取
       }
     },
+    watch : {
+      paramsdata : function(){
+        // 发生变化也要设置
+        this.setValueInParamList();
+      }
+    },
+
+    methods : {
+
+      // 设置数据用来显示
+      setValueInParamList : function(){
+        if(this.paramsdata.length == 0) return;
+        
+        for(var i = 0; i < this.datalist.length; i++){
+          this.datalist[i].paramValue = this.paramsdata[i].paramValue;
+          
+          // 如果需要格式化解析
+          if(this.datalist[i].hasOwnProperty("format")){
+            this.datalist[i].paramValue = this.datalist[i].format(this.paramsdata[i].paramValue);
+          }
+        } 
+      } 
+    },
+
+    mounted : function(){
+      this.setValueInParamList();
+    },
+
     components: {
       f7Navbar,
       f7Page,

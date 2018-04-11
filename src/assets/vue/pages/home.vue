@@ -8,8 +8,6 @@
         </f7-navbar>
           <button class="button button-outline cusbutton">工作状态     NA</button>
         <f7-block class="relt systopology">
-              
-
               <!-- 连线 -->
               <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
               <svg id="图层_1" data-name="图层 1" class="svg svg2 absCV" :class="{path2 : isdeviceactive[1] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg>
@@ -17,7 +15,6 @@
               <svg id="图层_1" data-name="图层 1" class="svg svg4 absCV" :class="{path2 : isdeviceactive[3] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg>
               <svg id="图层_1" data-name="图层 1" class="path svg svg5 absCV" :class="{path2 : isdeviceactive[4] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 140"><defs></defs><title>line142</title><line class="cls-1" x1="0.5" x2="0.5" y2="140" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="5"/></svg>
               
-
               <!-- 设备图标 -->
               <div class="iconitem abs absCV iconitem1" :class="{active : isdeviceactive[0] == 1}">
                 <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
@@ -57,7 +54,18 @@ export default {
             wssstring : "10.211.4.137:9001", 
             // wssstring : "10.211.4.132:31337", 
             app : null,
-            params : [],
+            params : [
+            ],
+
+            params_battery : [
+              {paramName : "电池电压",  paramValue : 0,  byte : 2,  unit : "V"}, // 储能
+              {paramName : "电池电流",  paramValue : 0,  byte : 2,  unit : "A"}, // 储能
+              {paramName : "温度",  paramValue : 0,  byte : 2,  unit : "℃"}, // 储能
+              {paramName : "SOC",  paramValue : 0,  byte : 2,  unit : "%"}, // 储能
+              {paramName : "SOH",  paramValue : 0,  byte : 2,  unit : "%"}, // 储能
+              {paramName : "充放电状态",  paramValue : 0,  byte : 1,  unit : ""}, // 储能
+            ],
+
             active : "",
             // isdeviceactive 设备是否在使用中
             isdeviceactive : [1,1,1,1,1,1,1],
@@ -89,9 +97,7 @@ export default {
 
           ws.onmessage = function(evt) {
             console.log( "Received Message: " + evt.data);
-
             // var dv = new DataView(evt.data);
-            // 
             // 造假数据
             var buffer = new ArrayBuffer(19);
             var uint8View = new DataView(buffer);
@@ -119,7 +125,6 @@ export default {
             uint8View.setUint8(16, 0x11); 
             uint8View.setUint8(17, 0x12); 
             uint8View.setUint8(18, 0xAE);
-
             _this.praseData(uint8View);
 
           };
@@ -127,34 +132,40 @@ export default {
             console.log("Connection closed.");
           };  
         },
+
         // 解析二进制 batearray 数据
         praseData : function(dataview){
             if(dataview.byteLength > 0){
-                var start       =  dataview.getInt16(0,false);  // 起始帧   2字节
+                var start       =  dataview.getUint16(0,false);  // 起始帧   2字节
                 var start_addr  =  dataview.getUint8(2,false);   // 起始地址 1字节
                 var target_addr =  dataview.getUint8(3,false);   // 目标地址 1字节
                 var command     =  dataview.getUint8(4,false);   // 命令字   1字节
-                if(Number(start) == -427){   //    包起始帧 0xFE 0x55
+                if(Number(start) == 0xFE55){   //    包起始帧 0xFE 0x55
                     
-                    if(start_addr == 0x14 && target_addr == 0x64){ // PCU->APP 地址为0X14，目标地址0x64
-                        // console.log("PCU 发给 APP");
+                    if(start_addr == 0x14 && target_addr == 0x64){ // PCU->APP 起始地址为0X14，目标地址0x64
+
                         var length = dataview.getInt8(5,false);
 
                         if(dataview.getUint8(6 + length + 1, false) == 0xAE){ // 数据包完整 有结束
 
                           switch (command) {
-                            case 0x0A:
-                              // 电池信息
-                              // 
+
+                            case 0x0A: // 储能电池信息
+                              
                               this.praseBatteryData(dataview, 6, length); // 数据从6开始， 截止是6+length
+
+                              this.$store.commit('PARAM_BATTERY_CHANGE', this.params_battery);
                               break;
                             default:
                               // statements_def
                               break;
                           }
+
+                          // 解析完成
+                          // console.log(JSON.stringify(this.params_battery, 4, " "));
                         }
                     }
-                    if(start_addr == 0x64 && target_addr == 0x14){ // APP->PCU 地址为0X14，目标地址0x64
+                    if(start_addr == 0x64 && target_addr == 0x14){ // APP->PCU 起始地址为0x64，目标地址0X14
                     }
                 }
                 else{
@@ -165,14 +176,20 @@ export default {
 
       // 解析电池数据段
       praseBatteryData : function(datalist, start, length){
-        while(datalist.getUint8(start, false) !== 0xAE){
+        var offset = 0;
+        for(var i = 0; i < this.params_battery.length; i++){
 
-          console.log(datalist.getUint8(start, false));
-          start++;
-        
+          if(this.params_battery[i].byte == 2){ // 2个字节的数据
+
+            this.params_battery[i].paramValue = datalist.getUint16(start + offset, false);
+            offset += 2;
+          }else{ // 1个字节的数据
+
+            this.params_battery[i].paramValue = datalist.getUint8(start + offset, false);
+            offset += 1;
+          }
         }
       }
-    
     },
     mounted : function(){
       // 连接websocket
