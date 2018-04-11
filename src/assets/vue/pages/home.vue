@@ -9,30 +9,40 @@
           <button class="button button-outline cusbutton">工作状态     NA</button>
         <f7-block class="relt systopology">
               <!-- 连线 -->
-              <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
-              <svg id="图层_1" data-name="图层 1" class="svg svg2 absCV" :class="{path2 : isdeviceactive[1] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg>
-              <svg id="图层_1" data-name="图层 1" class="svg svg3 absCV" :class="{path2 : isdeviceactive[2] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
-              <svg id="图层_1" data-name="图层 1" class="svg svg4 absCV" :class="{path2 : isdeviceactive[3] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/></svg>
-              <svg id="图层_1" data-name="图层 1" class="path svg svg5 absCV" :class="{path2 : isdeviceactive[4] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 140"><defs></defs><title>line142</title><line class="cls-1" x1="0.5" x2="0.5" y2="140" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="5"/></svg>
+              <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
+
+              <svg id="图层_1" data-name="图层 1" class="svg svg2 absCV" :class="{path2 : isdeviceactive[1] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/></svg>
+
+              <svg id="图层_1" data-name="图层 1" class="svg svg3 absCV" :class="{path2 : isdeviceactive[3] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
+
+              <svg id="图层_1" data-name="图层 1" class="svg svg4 absCV" :class="{path2 : isdeviceactive[5] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/></svg>
+
+              <svg id="图层_1" data-name="图层 1" class="path svg svg5 absCV" :class="{path4 : isdeviceactive[4] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 50"><defs></defs><title>line142</title><line class="cls-1" x1="0.5" x2="0.5" y2="50" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="10"/></svg>
               
               <!-- 设备图标 -->
-              <div class="iconitem abs absCV iconitem1" :class="{active : isdeviceactive[0] == 1}">
-                <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
+              <div class="iconitem abs absCV iconitem1">
+                <img v-if="isdeviceactive[0] == 1" src="../../images/solar@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                <img v-if="isdeviceactive[0] == 0" src="../../images/solar_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem2" :class="{active : isdeviceactive[1] == 1}">
-                <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
+              <div class="iconitem abs absCV iconitem2">
+                <img v-if="isdeviceactive[1] == 1" src="../../images/elect@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                <img v-if="isdeviceactive[1] == 0" src="../../images/elect_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem3" :class="{active : isdeviceactive[2] == 1}">
-                <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
+              <div class="iconitem abs absCV iconitem3">
+                <img v-if="isdeviceactive[2] == 1" src="../../images/backuo@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                <img v-if="isdeviceactive[2] == 0" src="../../images/backuo_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem4" :class="{active : isdeviceactive[3] == 1}">
-                <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
+              <div class="iconitem abs absCV iconitem4">
+                <img v-if="isdeviceactive[3] == 1" src="../../images/battery@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                <img v-if="isdeviceactive[3] == 0" src="../../images/battery_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem5" :class="{active : isdeviceactive[4] == 1}">
-                <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
+              <div class="iconitem abs absCV iconitem5">
+                <img v-if="isdeviceactive[4] == 1" src="../../images/fuzai@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                <img v-if="isdeviceactive[4] == 0" src="../../images/fuzai_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
               </div>
-              <div class="iconitem abs absCV iconitem6" :class="{active : isdeviceactive[5] == 1}">
-                <img src="../../images/icon_solar.png" class="imageicon pure-img" height="40" width="40" alt="">
+              <div class="iconitem abs absCV iconitem6">
+                <img v-if="isdeviceactive[5] == 1" src="../../images/ongrid@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                <img v-if="isdeviceactive[5] == 0" src="../../images/ongrid_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
               </div>
               
               <!--  参数信息显示 -->
@@ -56,19 +66,67 @@ export default {
             app : null,
             params : [
             ],
-
+            // 储能电池实时数据
             params_battery : [
-              {paramName : "电池电压",  paramValue : 0,  byte : 2,  unit : "V"}, // 储能
-              {paramName : "电池电流",  paramValue : 0,  byte : 2,  unit : "A"}, // 储能
-              {paramName : "温度",  paramValue : 0,  byte : 2,  unit : "℃"}, // 储能
-              {paramName : "SOC",  paramValue : 0,  byte : 2,  unit : "%"}, // 储能
-              {paramName : "SOH",  paramValue : 0,  byte : 2,  unit : "%"}, // 储能
-              {paramName : "充放电状态",  paramValue : 0,  byte : 1,  unit : ""}, // 储能
+              {paramName : "电池电压",              paramValue : 0, byte : 2, unit : "V"  },
+              {paramName : "电池电流",              paramValue : 0, byte : 2, unit : "A"  },
+              {paramName : "温度",                  paramValue : 0, byte : 2, unit : "℃" },
+              {paramName : "SOC",                   paramValue : 0, byte : 2, unit : "%"  },
+              {paramName : "SOH",                   paramValue : 0, byte : 2, unit : "%"  },
+              {paramName : "充放电状态",            paramValue : 0, byte : 1, unit : ""   }
+            ],
+            // 控制柜实时数据
+            params_ctrlcab : [
+              { paramName : "PV1电压",              paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "PV1电流",              paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "PVI功率",              paramValue : 0, byte : 2, unit : "W"  },
+              { paramName : "PV2电压",              paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "PV2电流",              paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "PV2功率",              paramValue : 0, byte : 2, unit : "W"  },
+              { paramName : "逆变A相电压",          paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "逆变A相电流",          paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "电网A相电压",          paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "电网AB线电压",         paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "电网A相电流",          paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "逆变B相电压",          paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "逆变B相电流",          paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "电网B相电压",          paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "电网BC线电压",         paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "电网B相电流",          paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "逆变C相电压",          paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "逆变C相电流",          paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "电网C相电压",          paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "电网CA线电压",         paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "电网C相电流",          paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "电网频率",             paramValue : 0, byte : 2, unit : "Hz" },
+              { paramName : "功率因数",             paramValue : 0, byte : 2, unit :  ""  },
+              { paramName : "系统有功功率",         paramValue : 0, byte : 2, unit : "VA" },
+              { paramName : "系统无功功率",         paramValue : 0, byte : 2, unit : "W"  },
+              { paramName : "系统视在功率",         paramValue : 0, byte : 2, unit : "Var"},
+              { paramName : "电池电流",             paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "电池电压",             paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "直流正母线电压",       paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "直流负母线电压",       paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "直流双边母线电压",     paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "直流功率",             paramValue : 0, byte : 2, unit : "W"  },
+              { paramName : "环境温度",             paramValue : 0, byte : 2, unit : "℃" },
+              { paramName : "铅酸电池剩余容量",     paramValue : 0, byte : 2, unit : "%"  },
+              { paramName : "铅酸电池剩余备电时间", paramValue : 0, byte : 2, unit : "Min"},
+              { paramName : "设备类型编码",         paramValue : 0, byte : 2, unit : ""   },
+              { paramName : "软件版本号高位",       paramValue : 0, byte : 2, unit : ""   },
+              { paramName : "软件版本号低位",       paramValue : 0, byte : 2, unit : ""   },
+              { paramName : "并机地址",             paramValue : 0, byte : 2, unit : ""   },
+              { paramName : "工作效率",             paramValue : 0, byte : 2, unit : ""   },
+              { paramName : "充电次数",             paramValue : 0, byte : 2, unit : ""   },
+              { paramName : "放电次数",             paramValue : 0, byte : 2, unit : ""   },
+              { paramName : "模块A1 温度",          paramValue : 0, byte : 2, unit : "℃" },
+              { paramName : "模块B1 温度",          paramValue : 0, byte : 2, unit : "℃" },
+              { paramName : "模块C1 温度",          paramValue : 0, byte : 2, unit : "℃" }
             ],
 
             active : "",
             // isdeviceactive 设备是否在使用中
-            isdeviceactive : [1,1,1,1,1,1,1],
+            isdeviceactive : [1,1,1,1,1,0],
         }
     },
     computed : {
@@ -105,7 +163,6 @@ export default {
             //byteOffset   表示从内存的哪个字节开始
             //value           该对应字节将被设置的值
             //littleEndian  字节序，true为小端字节序，false或者不填为大端字节序
-            uint8View.setUint8(0,0xfe);
             uint8View.setUint8(0, 0xfe); 
             uint8View.setUint8(1, 0x55); 
             uint8View.setUint8(2, 0x14); 
@@ -150,12 +207,21 @@ export default {
 
                           switch (command) {
 
-                            case 0x0A: // 储能电池信息
+                            case 0x0A: // 储能电池信息 
                               
-                              this.praseBatteryData(dataview, 6, length); // 数据从6开始， 截止是6+length
+                              this.praseBatteryData(dataview, 6, length); // 数据从6开始 截止是6+length
 
                               this.$store.commit('PARAM_BATTERY_CHANGE', this.params_battery);
                               break;
+
+                            case 0x0B: // 控制柜信息
+                              
+                              this.prasCtrlcabData(dataview, 6, length);
+
+                              // this.$store.commit('PARAM_BATTERY_CHANGE', this.params_battery);
+                              break;
+
+
                             default:
                               // statements_def
                               break;
@@ -189,6 +255,25 @@ export default {
             offset += 1;
           }
         }
+      },
+
+      // 解析控制柜数据
+      prasCtrlcabData : function(datalist, start, length){
+
+        var offset = 0;
+        for(var i = 0; i < this.params_ctrlcab.length; i++){
+
+          if(this.params_ctrlcab[i].byte == 2){ // 2个字节的数据
+
+            this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
+            offset += 2;
+          }else{ // 1个字节的数据
+
+            this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
+            offset += 1;
+          }
+        }
+
       }
     },
     mounted : function(){
@@ -199,8 +284,8 @@ export default {
 </script>
 
 
-<style scoped>
-
+<style  lang="scss" scoped>
+  @import "../../sass/publicSize";
   .cusbutton{
     width: 90%;
     margin: 30px auto 10px auto; 
@@ -218,7 +303,7 @@ export default {
       margin: 26% 0 0 -28%;
   }
   .iconitem5{
-      margin: 38% 0 0 0%;
+      margin: 26% 0 0 0%;
   }
   .iconitem6{
       margin: 26% 0 0 30%;
@@ -231,15 +316,15 @@ export default {
   .iconitem{
     width: 15%;
     height: 15%;
-    border: 3px solid #a2a2a2;
-    background-color: #575757;
+    // border: 3px solid #a2a2a2;
+    // background-color: #575757;
     border-radius: 50%;
   }
   .iconitem.active{
-    background-color: #0ff;
+    background-color: $base-active-color;
   }
   .imageicon{
-    margin: 5px 7px;
+    margin: 0;
   }
   .svg{
     position: absolute;
@@ -261,14 +346,14 @@ export default {
     transform: translate(-50%,-50%) scale(0.3) rotateX(180deg);
   }
   .svg5{
-      width: 4px;
+      width: 7px;
       margin-top: 17%;
       transform: translate(-50%,-50%) scale(0.3);
   }
 
   .statustext{
     font-size: 14px;
-    color: #0ff;
+    color: $base-active-color;
 
   }
   .statustext1{
@@ -286,11 +371,13 @@ export default {
   .statustext5{
     margin: 8% 0 0 15%;
   }
+
   @keyframes dash {
       to {
           stroke-dashoffset: 50;
       }
   }
+
   .path {
       stroke-dasharray: 5;
       animation: dash 5s linear infinite;
@@ -300,11 +387,32 @@ export default {
           stroke-dashoffset: -50;
       }
   }
+
   .path2 {
       stroke-dasharray: 5;
       animation: dash2 5s linear infinite;
   }
 
+@keyframes dash3 {
+      to {
+          stroke-dashoffset: 50;
+      }
+  }
+
+  .path3 {
+      stroke-dasharray: 2.5;
+      animation: dash3 10s linear infinite;
+  }
+  @keyframes dash4 {
+      to {
+          stroke-dashoffset: -50;
+      }
+  }
+  
+  .path4 {
+      stroke-dasharray: 2.5;
+      animation: dash4 10s linear infinite;
+  }
 </style>
 
 

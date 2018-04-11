@@ -40,7 +40,7 @@ let theme = 'auto';
 if (document.location.search.indexOf('theme=') >= 0) {
   theme = document.location.search.split('theme=')[1].split('&')[0];
 }
-theme = 'ios';
+theme = 'md';
 
 // Init Vue App
 export default new Vue({
@@ -52,9 +52,9 @@ export default new Vue({
     app,
   },
   framework7: {
-    root : '#app',
     id: 'io.framework7.testapp',
     theme, //theme  md or ios
   },
   routes,
 });
+

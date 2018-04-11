@@ -17,13 +17,14 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     },
     data : function(){
       return {
+        
         datalist : [
-          {paramName : "电池电压",  paramValue : 0, unit : "V"},
-          {paramName : "电池电流",  paramValue : 0, unit : "A"},
-          {paramName : "温度",  paramValue : 0, unit : "℃"},
-          {paramName : "SOC",  paramValue : 0, unit : "%"},
-          {paramName : "SOH",  paramValue : 0, unit : "%"},
-          {paramName : "充放电状态",  paramValue : 0, unit : "", format : function(num){
+          { paramName : "电池电压",    paramValue : 0,  unit : "V" },
+          { paramName : "电池电流",    paramValue : 0,  unit : "A" },
+          { paramName : "温度",        paramValue : 0,  unit : "℃"},
+          { paramName : "SOC",         paramValue : 0,  unit : "%" },
+          { paramName : "SOH",         paramValue : 0,  unit : "%" },
+          { paramName : "充放电状态",  paramValue : 0,  unit : "", format : function(num){
               if(num == 0x11) return "充电";
               if(num == 0x22) return "放电";
               if(num == 0x33) return "待机";

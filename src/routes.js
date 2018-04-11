@@ -11,27 +11,10 @@ export default [
     path: '/setting/', // 系统设置主页
     component: require('./assets/vue/pages/setting.vue')
   },
-  // {
-  //   path: '/dynamic-route/blog/:blogId/post/:postId/',
-  //   component: require('./assets/vue/pages/dynamic-route.vue')
-  // },
   {
     path: '/panel-left/',
     component: require('./assets/vue/pages/panel-left.vue')
   },
-
-  // {
-  //   path: '/color-themes/',
-  //   component: require('./assets/vue/pages/color-themes.vue')
-  // },
-  // {
-  //   path: '/chat/',
-  //   component: require('./assets/vue/pages/chat.vue')
-  // },
-  // {
-  //   path: '/vuex/',
-  //   component: require('./assets/vue/pages/vuex.vue')
-  // },
   {
     path: '/photovoltaic/', // 光伏实时数据
     component: require('./assets/vue/pages/param-photovoltaic.vue')

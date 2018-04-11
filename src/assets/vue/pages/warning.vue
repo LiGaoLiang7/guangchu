@@ -7,14 +7,18 @@
         <div class="title">故障告警</div>
     </f7-navbar>
     <!-- <f7-block-title>参数设置</f7-block-title> -->
-    <f7-list class="media-list">
-      <f7-list-item link="/bmswarning/" media="http://placehold.it/50x50" title="BMS告警信息">
+    <f7-list class="paramlist link-list">
+      <f7-list-item link="/bmswarning/" title="BMS告警信息">
+        <i class="icon iconfont icon-BMS"></i>
       </f7-list-item>
-      <f7-list-item link="/syswarning/" media="http://placehold.it/50x50" title="系统故障状态">
+      <f7-list-item link="/syswarning/" title="系统故障状态">
+        <i class="icon iconfont icon-xitongguzhangzhuangtai"></i>
       </f7-list-item>
-      <f7-list-item link="/hiswarning/" media="http://placehold.it/50x50" title="历史告警">
+      <f7-list-item link="/hiswarning/" title="历史告警">
+        <i class="icon iconfont icon-lishigaojing"></i>
       </f7-list-item>
-      <f7-list-item link="/hispower/" media="http://placehold.it/50x50" title="历史功率">
+      <f7-list-item link="/hispower/" title="历史功率">
+        <i class="icon iconfont icon-lishigongshuai"></i>
       </f7-list-item>
     </f7-list>
   </f7-page>

@@ -1,6 +1,7 @@
 <template>
   <f7-page>
-    <f7-navbar title="系统设置" back-link="Back"></f7-navbar>
+    <f7-navbar title="系统设置" back-link="Back" >
+    </f7-navbar>
     <div class="block block-strong">
       控制命令设置
     </div>

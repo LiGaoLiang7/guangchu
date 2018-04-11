@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     user: {},
-    paramdatas : [], // 存储实时数据
+    paramsbattery : [], // 存储储能实时数据
   },
 
   actions: {
@@ -18,10 +18,16 @@ export default new Vuex.Store({
     USER_LOGGED (state, user) {
       state.user = user
     },
-    // 
-    PARAM_CHANGE (state, paramDataArray){ // 实时数据监听方法
-      state.paramdatas = paramDataArray;
-    },
+    PARAM_BATTERY_CHANGE (state, batteryParamData){ // 储能电池实时数据
+      state.paramsbattery = batteryParamData;
+    }
 
   },
+  getters: {
+    paramsBattery: state => {
+      return state.paramsbattery;
+    }
+  }
+
+
 });
