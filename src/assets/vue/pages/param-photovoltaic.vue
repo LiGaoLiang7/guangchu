@@ -20,6 +20,10 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
 
         datalist : [
 
+          { paramName : "直流功率",             paramValue : 0, byte : 2, unit : "W"  , isshow : 1 },
+          { paramName : "直流正母线电压",       paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
+          { paramName : "直流负母线电压",       paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
+          { paramName : "直流双边母线电压",     paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
           { paramName : "PV1电压",              paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
           { paramName : "PV1电流",              paramValue : 0, byte : 2, unit : "A"  , isshow : 1 },
           { paramName : "PVI功率",              paramValue : 0, byte : 2, unit : "W"  , isshow : 1 },
@@ -48,10 +52,6 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
           { paramName : "系统视在功率",         paramValue : 0, byte : 2, unit : "Var", isshow : 0 },
           { paramName : "电池电流",             paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
           { paramName : "电池电压",             paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "直流正母线电压",       paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
-          { paramName : "直流负母线电压",       paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
-          { paramName : "直流双边母线电压",     paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
-          { paramName : "直流功率",             paramValue : 0, byte : 2, unit : "W"  , isshow : 1 },
           { paramName : "环境温度",             paramValue : 0, byte : 2, unit : "℃" , isshow : 0 },
           { paramName : "铅酸电池剩余容量",     paramValue : 0, byte : 2, unit : "%"  , isshow : 0 },
           { paramName : "铅酸电池剩余备电时间", paramValue : 0, byte : 2, unit : "Min", isshow : 0 },
@@ -68,19 +68,43 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
         ]
       }
     },
-    mounted : function(){
-      // this.datalist =  this.params;
-    },
-    computed :{
+   
+    computed : {
       paramsdata : function(){
         // 从store中获取参数
-        return this.$store.state.paramdatas;
+        return this.$store.getters.paramsCab;  // 从getters中获取
       }
     },
     watch : {
       paramsdata : function(){
-        this.datalist = this.paramsdata;
+        // console.log(JSON.stringify(this.paramsdata, "-", 4)); 
+        this.setValueInParamList();
       }
+    },
+
+    methods : {
+
+      setValueInParamList : function(){
+        if(this.paramsdata.length > 0){
+
+          for(var i = 0; i < this.datalist.length; i++){
+
+              if(this.datalist[i].isshow == 1){
+
+                for(var j = 0; j < this.paramsdata.length; j++){
+                  if(this.paramsdata[j].paramName == this.datalist[i].paramName){
+                    this.datalist[i].paramValue = this.paramsdata[j].paramValue;
+                    continue;
+                  }
+                }
+              }
+          }
+        }
+      }
+      
+    },
+     mounted : function(){
+      this.setValueInParamList();
     },
     components: {
       f7Navbar,

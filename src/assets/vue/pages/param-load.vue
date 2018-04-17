@@ -24,32 +24,32 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     data : function(){
       return {
         datalist : [
+          { paramName : "系统有功功率",         paramValue : 0, byte : 2, unit : "VA" , isshow : 1 },
+          { paramName : "系统无功功率",         paramValue : 0, byte : 2, unit : "W"  , isshow : 1 },
+          { paramName : "系统视在功率",         paramValue : 0, byte : 2, unit : "Var", isshow : 1 },
+          { paramName : "逆变A相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 1 },
+          { paramName : "逆变B相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 1 },
+          { paramName : "逆变C相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 1 },
+          { paramName : "逆变A相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
+          { paramName : "逆变B相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
+          { paramName : "逆变C相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
+          { paramName : "电网频率",             paramValue : 0, byte : 2, unit : "Hz" , isshow : 1 },
+          { paramName : "功率因数",             paramValue : 0, byte : 2, unit :  ""  , isshow : 1 },
           { paramName : "PV1电压",              paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "PV1电流",              paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
           { paramName : "PVI功率",              paramValue : 0, byte : 2, unit : "W"  , isshow : 0 },
           { paramName : "PV2电压",              paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "PV2电流",              paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
           { paramName : "PV2功率",              paramValue : 0, byte : 2, unit : "W"  , isshow : 0 },
-          { paramName : "逆变A相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
-          { paramName : "逆变A相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 1 },
           { paramName : "电网A相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "电网AB线电压",         paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "电网A相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "逆变B相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
-          { paramName : "逆变B相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 1 },
           { paramName : "电网B相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "电网BC线电压",         paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "电网B相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "逆变C相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 1 },
-          { paramName : "逆变C相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 1 },
           { paramName : "电网C相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "电网CA线电压",         paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "电网C相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "电网频率",             paramValue : 0, byte : 2, unit : "Hz" , isshow : 1 },
-          { paramName : "功率因数",             paramValue : 0, byte : 2, unit :  ""  , isshow : 1 },
-          { paramName : "系统有功功率",         paramValue : 0, byte : 2, unit : "VA" , isshow : 1 },
-          { paramName : "系统无功功率",         paramValue : 0, byte : 2, unit : "W"  , isshow : 1 },
-          { paramName : "系统视在功率",         paramValue : 0, byte : 2, unit : "Var", isshow : 1 },
           { paramName : "电池电流",             paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
           { paramName : "电池电压",             paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
           { paramName : "直流正母线电压",       paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
@@ -72,8 +72,37 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
         ]
       }
     },
+    computed : {
+      paramsdata : function(){
+        // 从store中获取参数
+        return this.$store.getters.paramsCab;  // 从getters中获取
+      }
+    },
+    watch : {
+      paramsdata : function(){
+        // console.log(JSON.stringify(this.paramsdata, "-", 4)); 
+        this.setValueInParamList();
+      }
+    },
+
+    methods : {
+      setValueInParamList : function(){
+        if(this.paramsdata.length > 0){
+          for(var i = 0; i < this.paramsdata.length; i++){
+
+              for(var j = 0; j < this.datalist.length; j++){
+                if(this.paramsdata[i].paramName == this.datalist[j].paramName)
+                  this.datalist[j].paramValue = this.paramsdata[i].paramValue;
+              }
+          }
+        }
+      }
+    },
+
+
     mounted : function(){
-      // this.datalist =  this.params;
+      // 
+      this.setValueInParamList();
     },
     components: {
       f7Navbar,
@@ -82,12 +111,10 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     },
   };
 </script>
-
-
 <style scoped>
 .media-list span{
     display: inline-block;
-    width: 70%;
+    width: 68%;
     text-align: left;
   }
   .media-list .params{

@@ -21,28 +21,40 @@
               
               <!-- 设备图标 -->
               <div class="iconitem abs absCV iconitem1">
+              <a href="/photovoltaic/">
                 <img v-if="isdeviceactive[0] == 1" src="../../images/solar@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
                 <img v-if="isdeviceactive[0] == 0" src="../../images/solar_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              </a>
               </div>
               <div class="iconitem abs absCV iconitem2">
+              <a href="/output/">
                 <img v-if="isdeviceactive[1] == 1" src="../../images/elect@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
                 <img v-if="isdeviceactive[1] == 0" src="../../images/elect_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              </a>
               </div>
               <div class="iconitem abs absCV iconitem3">
+              <a href="/params/">
                 <img v-if="isdeviceactive[2] == 1" src="../../images/backuo@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
                 <img v-if="isdeviceactive[2] == 0" src="../../images/backuo_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              </a>  
               </div>
               <div class="iconitem abs absCV iconitem4">
+              <a href="/battery/">
                 <img v-if="isdeviceactive[3] == 1" src="../../images/battery@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
                 <img v-if="isdeviceactive[3] == 0" src="../../images/battery_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              </a>
               </div>
               <div class="iconitem abs absCV iconitem5">
+              <a href="/load/">
                 <img v-if="isdeviceactive[4] == 1" src="../../images/fuzai@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
                 <img v-if="isdeviceactive[4] == 0" src="../../images/fuzai_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              </a>
               </div>
               <div class="iconitem abs absCV iconitem6">
+              <a href="/load/">
                 <img v-if="isdeviceactive[5] == 1" src="../../images/ongrid@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
                 <img v-if="isdeviceactive[5] == 0" src="../../images/ongrid_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              </a>
               </div>
               
               <!--  参数信息显示 -->
@@ -68,12 +80,12 @@ export default {
             ],
             // 储能电池实时数据
             params_battery : [
-              {paramName : "电池电压",              paramValue : 0, byte : 2, unit : "V"  },
-              {paramName : "电池电流",              paramValue : 0, byte : 2, unit : "A"  },
-              {paramName : "温度",                  paramValue : 0, byte : 2, unit : "℃" },
-              {paramName : "SOC",                   paramValue : 0, byte : 2, unit : "%"  },
-              {paramName : "SOH",                   paramValue : 0, byte : 2, unit : "%"  },
-              {paramName : "充放电状态",            paramValue : 0, byte : 1, unit : ""   }
+              { paramName : "电池电压",              paramValue : 0, byte : 2, unit : "V"  },
+              { paramName : "电池电流",              paramValue : 0, byte : 2, unit : "A"  },
+              { paramName : "温度",                  paramValue : 0, byte : 2, unit : "℃" },
+              { paramName : "SOC",                   paramValue : 0, byte : 2, unit : "%"  },
+              { paramName : "SOH",                   paramValue : 0, byte : 2, unit : "%"  },
+              { paramName : "充放电状态",            paramValue : 0, byte : 1, unit : ""   }
             ],
             // 控制柜实时数据
             params_ctrlcab : [
@@ -124,7 +136,40 @@ export default {
               { paramName : "模块C1 温度",          paramValue : 0, byte : 2, unit : "℃" }
             ],
 
+            // BMS告警信息 0表示无告警 1表示有告警
+            warning_bms : [ 
+              { paramName : "电池放电电流过高",     paramValue : 0, byte : 1, unit : "", isshow : 1},
+              { paramName : "电池充电电流过高",     paramValue : 0, byte : 1, unit : "", isshow : 1},
+              { paramName : "电池温度过低",         paramValue : 0, byte : 1, unit : "", isshow : 1},
+              { paramName : "电池温度过高",         paramValue : 0, byte : 1, unit : "", isshow : 1},
+              { paramName : "电池电压过低",         paramValue : 0, byte : 1, unit : "", isshow : 1},
+              { paramName : "电池电压过高",         paramValue : 0, byte : 1, unit : "", isshow : 1},
+            ],
+
+            // 设备运行状态字
+            running_status : [
+              { paramName : "设备运行状态字1",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+              { paramName : "设备运行状态字2",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+            ],
+
+            // 设备运行二进制编码
+            binary_running_status : [],
+
+
+            // 设备故障状态字
+            warning_status : [
+              {paramName : "故障状态字1",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+              {paramName : "故障状态字2",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+              {paramName : "故障状态字3",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+              {paramName : "故障状态字4",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+            ],
+
+            // 故障状态字儿进制编码
+            binary_warning_status : [],
+
             active : "",
+
+
             // isdeviceactive 设备是否在使用中
             isdeviceactive : [1,1,1,1,1,0],
         }
@@ -157,31 +202,167 @@ export default {
             console.log( "Received Message: " + evt.data);
             // var dv = new DataView(evt.data);
             // 造假数据
-            var buffer = new ArrayBuffer(19);
+            var buffer = new ArrayBuffer(98);
             var uint8View = new DataView(buffer);
+
             // 手动设置dataview
             //byteOffset   表示从内存的哪个字节开始
             //value           该对应字节将被设置的值
             //littleEndian  字节序，true为小端字节序，false或者不填为大端字节序
-            uint8View.setUint8(0, 0xfe); 
-            uint8View.setUint8(1, 0x55); 
-            uint8View.setUint8(2, 0x14); 
-            uint8View.setUint8(3, 0x64); 
-            uint8View.setUint8(4, 0x0a); 
-            uint8View.setUint8(5, 0x0b); 
-            uint8View.setUint8(6, 0x01); 
-            uint8View.setUint8(7, 0xF4); 
-            uint8View.setUint8(8, 0x00); 
-            uint8View.setUint8(9, 0x64); 
-            uint8View.setUint8(10, 0x00); 
-            uint8View.setUint8(11, 0x32); 
-            uint8View.setUint8(12, 0x00); 
-            uint8View.setUint8(13, 0x50); 
-            uint8View.setUint8(14, 0x00); 
-            uint8View.setUint8(15, 0x64); 
-            uint8View.setUint8(16, 0x11); 
-            uint8View.setUint8(17, 0x12); 
-            uint8View.setUint8(18, 0xAE);
+            // uint8View.setUint8(0, 0xfe);  // sum = 19
+            // uint8View.setUint8(1, 0x55); 
+            // uint8View.setUint8(2, 0x14); 
+            // uint8View.setUint8(3, 0x64); 
+            // uint8View.setUint8(4, 0x0a); 
+            // uint8View.setUint8(5, 0x0b); 
+            // uint8View.setUint8(6, 0x01); 
+            // uint8View.setUint8(7, 0xF4); 
+            // uint8View.setUint8(8, 0x00); 
+            // uint8View.setUint8(9, 0x64); 
+            // uint8View.setUint8(10, 0x00); 
+            // uint8View.setUint8(11, 0x32); 
+            // uint8View.setUint8(12, 0x00); 
+            // uint8View.setUint8(13, 0x50); 
+            // uint8View.setUint8(14, 0x00); 
+            // uint8View.setUint8(15, 0x64); 
+            // uint8View.setUint8(16, 0x11); 
+            // uint8View.setUint8(17, 0x12); 
+            // uint8View.setUint8(18, 0xAE);
+          
+            // 控制柜信息
+            // uint8View.setUint8(0, 0xfe); // sum = 98
+            // uint8View.setUint8(1, 0x55); 
+            // uint8View.setUint8(2, 0x14); 
+            // uint8View.setUint8(3, 0x64); 
+            // uint8View.setUint8(4, 0x0b); 
+            // uint8View.setUint8(5, 0x5a); // 90 byte
+            // uint8View.setUint8(6, 0x01); 
+            // uint8View.setUint8(7, 0xF4); 
+            // uint8View.setUint8(8, 0x00); 
+            // uint8View.setUint8(9, 0x64); 
+            // uint8View.setUint8(10, 0x00); 
+            // uint8View.setUint8(11, 0x32); 
+            // uint8View.setUint8(12, 0x00); 
+            // uint8View.setUint8(13, 0x50); 
+            // uint8View.setUint8(14, 0x00); 
+            // uint8View.setUint8(15, 0x64);
+            // uint8View.setUint8(16, 0x01); 
+            // uint8View.setUint8(17, 0xF4); 
+            // uint8View.setUint8(18, 0x00); 
+            // uint8View.setUint8(19, 0x64); 
+            // uint8View.setUint8(20, 0x00); 
+            // uint8View.setUint8(21, 0x32); 
+            // uint8View.setUint8(22, 0x00); 
+            // uint8View.setUint8(23, 0x50); 
+            // uint8View.setUint8(24, 0x00); 
+            // uint8View.setUint8(25, 0x64); 
+            // uint8View.setUint8(26, 0x01); 
+            // uint8View.setUint8(27, 0xF4); 
+            // uint8View.setUint8(28, 0x00); 
+            // uint8View.setUint8(29, 0x64); 
+            // uint8View.setUint8(30, 0x00); 
+            // uint8View.setUint8(31, 0x32); 
+            // uint8View.setUint8(32, 0x00); 
+            // uint8View.setUint8(33, 0x50); 
+            // uint8View.setUint8(34, 0x00); 
+            // uint8View.setUint8(35, 0x64); 
+            // uint8View.setUint8(36, 0x01); 
+            // uint8View.setUint8(37, 0xF4); 
+            // uint8View.setUint8(38, 0x00); 
+            // uint8View.setUint8(39, 0x64); 
+            // uint8View.setUint8(40, 0x00); 
+            // uint8View.setUint8(41, 0x32); 
+            // uint8View.setUint8(42, 0x00); 
+            // uint8View.setUint8(43, 0x50); 
+            // uint8View.setUint8(44, 0x00); 
+            // uint8View.setUint8(45, 0x64); 
+            // uint8View.setUint8(46, 0x01); 
+            // uint8View.setUint8(47, 0xF4); 
+            // uint8View.setUint8(48, 0x00); 
+            // uint8View.setUint8(49, 0x64); 
+            // uint8View.setUint8(50, 0x00); 
+            // uint8View.setUint8(51, 0x32); 
+            // uint8View.setUint8(52, 0x00); 
+            // uint8View.setUint8(53, 0x50); 
+            // uint8View.setUint8(54, 0x00); 
+            // uint8View.setUint8(55, 0x64); 
+            // uint8View.setUint8(56, 0x01); 
+            // uint8View.setUint8(57, 0xF4); 
+            // uint8View.setUint8(58, 0x00); 
+            // uint8View.setUint8(59, 0x64); 
+            // uint8View.setUint8(60, 0x00); 
+            // uint8View.setUint8(61, 0x32); 
+            // uint8View.setUint8(62, 0x00); 
+            // uint8View.setUint8(63, 0x50); 
+            // uint8View.setUint8(64, 0x00); 
+            // uint8View.setUint8(65, 0x64); 
+            // uint8View.setUint8(66, 0x01); 
+            // uint8View.setUint8(67, 0xF4); 
+            // uint8View.setUint8(68, 0x00); 
+            // uint8View.setUint8(69, 0x64); 
+            // uint8View.setUint8(70, 0x00); 
+            // uint8View.setUint8(71, 0x32); 
+            // uint8View.setUint8(72, 0x00); 
+            // uint8View.setUint8(73, 0x50); 
+            // uint8View.setUint8(74, 0x00); 
+            // uint8View.setUint8(75, 0x64); 
+            // uint8View.setUint8(76, 0x01); 
+            // uint8View.setUint8(77, 0xF4); 
+            // uint8View.setUint8(78, 0x00); 
+            // uint8View.setUint8(79, 0x64); 
+            // uint8View.setUint8(80, 0x00); 
+            // uint8View.setUint8(81, 0x32); 
+            // uint8View.setUint8(82, 0x00); 
+            // uint8View.setUint8(83, 0x50); 
+            // uint8View.setUint8(84, 0x00); 
+            // uint8View.setUint8(85, 0x64); 
+            // uint8View.setUint8(86, 0x01); 
+            // uint8View.setUint8(87, 0xF4); 
+            // uint8View.setUint8(88, 0x00); 
+            // uint8View.setUint8(89, 0x64); 
+            // uint8View.setUint8(90, 0x00); 
+            // uint8View.setUint8(91, 0x32); 
+            // uint8View.setUint8(92, 0x00); 
+            // uint8View.setUint8(93, 0x50); 
+            // uint8View.setUint8(94, 0x00); 
+            // uint8View.setUint8(95, 0x64); 
+            // uint8View.setUint8(96, 0x12); 
+            // uint8View.setUint8(97, 0xAE);
+
+            // BMS告警信息
+            // uint8View.setUint8(0, 0xfe);
+            // uint8View.setUint8(1, 0x55); 
+            // uint8View.setUint8(2, 0x14); 
+            // uint8View.setUint8(3, 0x64); 
+            // uint8View.setUint8(4, 0x1E);  
+            // uint8View.setUint8(5, 0x06); 
+            // uint8View.setUint8(6, 0x01); 
+            // uint8View.setUint8(7, 0x01); 
+            // uint8View.setUint8(8, 0x01); 
+            // uint8View.setUint8(9, 0x01); 
+            // uint8View.setUint8(10, 0x01); 
+            // uint8View.setUint8(11, 0x01); 
+            // uint8View.setUint8(12, 0x12); 
+            // uint8View.setUint8(13, 0xAE);
+             
+            // 系统故障状态显示
+            // uint8View.setUint8(0, 0xfe);
+            // uint8View.setUint8(1, 0x55); 
+            // uint8View.setUint8(2, 0x14); 
+            // uint8View.setUint8(3, 0x64); 
+            // uint8View.setUint8(4, 0x1F); // COMMOND  
+            // uint8View.setUint8(5, 0x08);  
+            // uint8View.setUint8(6, 0x01); 
+            // uint8View.setUint8(7, 0x00); 
+            // uint8View.setUint8(8, 0x01); 
+            // uint8View.setUint8(9, 0x00); 
+            // uint8View.setUint8(10, 0x00); 
+            // uint8View.setUint8(11, 0x66); 
+            // uint8View.setUint8(12, 0x00); 
+            // uint8View.setUint8(13, 0x77); 
+            // uint8View.setUint8(14, 0x12); 
+            // uint8View.setUint8(15, 0xAE);
+
             _this.praseData(uint8View);
 
           };
@@ -192,6 +373,7 @@ export default {
 
         // 解析二进制 batearray 数据
         praseData : function(dataview){
+
             if(dataview.byteLength > 0){
                 var start       =  dataview.getUint16(0,false);  // 起始帧   2字节
                 var start_addr  =  dataview.getUint8(2,false);   // 起始地址 1字节
@@ -210,23 +392,47 @@ export default {
                             case 0x0A: // 储能电池信息 
                               
                               this.praseBatteryData(dataview, 6, length); // 数据从6开始 截止是6+length
-
                               this.$store.commit('PARAM_BATTERY_CHANGE', this.params_battery);
                               break;
 
                             case 0x0B: // 控制柜信息
                               
                               this.prasCtrlcabData(dataview, 6, length);
+                              this.$store.commit('PARAM_CTRLCAB_CHANGE', this.params_ctrlcab);
+                              break;
+                            case 0x1E: // BMS告警信息 warning_bms
 
-                              // this.$store.commit('PARAM_BATTERY_CHANGE', this.params_battery);
+                              this.prasBMSWarningData(dataview, 6, length);
+
+                              // console.log(JSON.stringify(this.warning_bms, " ", 4));
+                              this.$store.commit('WARNING_BMS_CHANGE', this.warning_bms);
+                              break;
+                            case 0x0C: // 设备运行状态信息 4个字节 
+                              this.prasDeviceRunningStatus(dataview, 6, length);
+
+                              // 将数据解析成二进制位
+                              this.binary_running_status = [];
+                              for(var i = 0; i < this.running_status.length; i++){
+                                this.binary_running_status.push(this.parseVauleToBinary(this.running_status[i]));
+                              }
+                              // console.log(JSON.stringify(this.binary_running_status, " ", 4));
                               break;
 
-
+                            case 0x1F: // 系统故障状态显示 8个字节 
+                              
+                              this.prasDeviceWarningStatus(dataview, 6, length);
+                              // 将数据解析成二进制位
+                              this.binary_warning_status = [];
+                              for(var i = 0; i < this.warning_status.length; i++){
+                                this.binary_warning_status.push(this.parseVauleToBinary(this.warning_status[i]));
+                              }
+                              this.$store.commit('WARNING_SYS_CHANGE', this.binary_warning_status);
+                              // console.log(JSON.stringify(this.binary_warning_status, " ", 4));
+                              break;
                             default:
                               // statements_def
                               break;
                           }
-
                           // 解析完成
                           // console.log(JSON.stringify(this.params_battery, 4, " "));
                         }
@@ -257,6 +463,7 @@ export default {
         }
       },
 
+
       // 解析控制柜数据
       prasCtrlcabData : function(datalist, start, length){
 
@@ -274,7 +481,75 @@ export default {
           }
         }
 
-      }
+      },
+
+      // 解析电池BMS告警信息
+      prasBMSWarningData : function(datalist, start, length){
+
+        var offset = 0;
+        for(var i = 0; i < this.warning_bms.length; i++){
+
+          if(this.warning_bms[i].byte == 2){ // 2个字节的数据
+
+            this.warning_bms[i].paramValue = datalist.getUint16(start + offset, false);
+            offset += 2;
+          }else{ // 1个字节的数据
+
+            this.warning_bms[i].paramValue = datalist.getUint8(start + offset, false);
+            offset += 1;
+          }
+        }
+
+      },
+
+      // 解析设备运行状态信息 两个字节
+      prasDeviceRunningStatus : function(datalist, start, length){
+
+        var offset = 0;
+        for(var i = 0; i < this.running_status.length; i++){
+          if(this.running_status[i].byte == 2){ // 2个字节的数据
+
+            this.running_status[i].paramValue = datalist.getUint16(start + offset, false);
+            offset += 2;
+          }else{ // 1个字节的数据
+
+            this.running_status[i].paramValue = datalist.getUint8(start + offset, false);
+            offset += 1;
+          }
+        }
+      },
+
+      // 解析系统设备故障状态
+      prasDeviceWarningStatus : function(datalist, start, length){
+
+        var offset = 0;
+        for(var i = 0; i < this.warning_status.length; i++){
+          if(this.warning_status[i].byte == 2){ // 2个字节的数据
+
+            this.warning_status[i].paramValue = datalist.getUint16(start + offset, false);
+            offset += 2;
+          }else{ // 1个字节的数据
+
+            this.warning_status[i].paramValue = datalist.getUint8(start + offset, false);
+            offset += 1;
+          }
+        }
+
+      },
+
+      // 解析数字成为二进制数组
+      // 例如一个字节 16 =>  00010000
+      // 例如两个字节 16 =>  00000000 00010000
+      // running_status : [
+      //   { paramName : "设备运行状态字1",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+      // ],
+      // 
+      parseVauleToBinary : function(object){
+        var result = object.byte == 2 ? "0000000000000000" : "00000000";
+        var value = Number(object.paramValue).toString(2);
+        return  result.substring(0, result.length - value.length) + value;
+      },
+
     },
     mounted : function(){
       // 连接websocket
@@ -412,6 +687,15 @@ export default {
   .path4 {
       stroke-dasharray: 2.5;
       animation: dash4 10s linear infinite;
+  }
+</style>
+
+<style>
+  .list li:nth-child(2n-1){
+    background-color: #fbfbfb;
+  }
+  .list li:nth-child(2n){
+    background-color: #fff;
   }
 </style>
 

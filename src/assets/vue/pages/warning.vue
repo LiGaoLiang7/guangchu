@@ -28,3 +28,24 @@
 
   };
 </script>
+<style lang="scss">
+  @import "../../sass/publicSize";
+  .paramlist .item-title{
+    padding-left: 45px;
+    // float: right;
+    // width: 87% !important;
+    line-height: 38px;
+    font-weight: inherit;
+  }
+  .paramlist i.icon{
+    font-size: 29px;
+    color: $base-active-color;
+    color: #3b55e6;
+    position: absolute;
+    left: 0;
+  }
+  .paramlist.media-list .item-inner{
+    padding: 0;
+   }
+
+</style>

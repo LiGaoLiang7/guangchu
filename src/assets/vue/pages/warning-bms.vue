@@ -14,32 +14,59 @@
 import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
   export default {
     props : {
-      params : {
-        type : Array,
-        default : function(){
-          return []
-        }
-      }
+      
     },
     data : function(){
       return {
         datalist : [
-          {paramName : "电池高电流放电",  paramValue : 1, unit : ""},
-          {paramName : "电池高电流充电",  paramValue : 0, unit : ""},
-          {paramName : "电池温度过低",    paramValue : 0, unit : ""},
-          {paramName : "电池温度过高",    paramValue : 0, unit : ""},
-          {paramName : "电池电压过低",    paramValue : 0, unit : ""},
-          {paramName : "电池电压过高",    paramValue : 0, unit : ""},
+          { paramName : "电池放电电流过高",  paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池充电电流过高",  paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池温度过低",      paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池温度过高",      paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池电压过低",      paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池电压过高",      paramValue : 0, unit : "", isshow : 1},
         ]
+      }
+    },
+
+    computed : {
+      paramsdata : function(){
+        // 从store中获取参数
+        return this.$store.getters.warningBMS;  // 从getters中获取
+      }
+    },
+
+    watch : {
+      paramsdata : function(){
+        
+        this.setValueInParamList();
       }
     },
     methods : {
       gitstatusname : function(num){
         return num == 1 ? "异常" : "正常"
+      },
+      setValueInParamList : function(){
+
+        if(this.paramsdata.length > 0){
+
+          for(var i = 0; i < this.datalist.length; i++){
+
+              if(this.datalist[i].isshow == 1){
+
+                for(var j = 0; j < this.paramsdata.length; j++){
+                  if(this.paramsdata[j].paramName == this.datalist[i].paramName){
+                    this.datalist[i].paramValue = this.paramsdata[j].paramValue;
+                    continue;
+                  }
+                }
+              }
+          }
+        }
       }
     },
     mounted : function(){
-      // this.datalist =  this.params;
+      this.setValueInParamList();
     },
     components: {
       f7Navbar,
@@ -68,5 +95,11 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     width: 20%;
     display: inline-block;
     line-height: 30px;
+  }
+  .list li:nth-child(2n-1){
+    background-color: #fbfbfb;
+  }
+  .list li:nth-child(2n){
+    background-color: #fff;
   }
 </style>

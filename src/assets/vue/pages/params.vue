@@ -14,24 +14,22 @@
       <f7-list-item link="/output/" title="系统输出">
         <i class="icon iconfont icon-xitongshuchu"></i>
       </f7-list-item>
-      <f7-list-item link="/baseinfo/" title="基础信息">
-        <i class="icon iconfont icon-jichuxinxi"></i>
-      </f7-list-item>
       <f7-list-item link="/battery/" title="电池参数">
         <i class="icon iconfont icon-iconset0252"></i>
       </f7-list-item>
       <f7-list-item link="/load/"  title="系统负载">
         <i class="icon iconfont icon-xitongfuzai"></i>
       </f7-list-item>
+      <f7-list-item link="/baseinfo/" title="基础信息">
+        <i class="icon iconfont icon-jichuxinxi"></i>
+      </f7-list-item>
     </f7-list>
   </f7-page>
 </template>
 <script>
  export default {
-
   };
 </script>
-
 <style lang="scss">
   @import "../../sass/publicSize";
   .paramlist .item-title{
