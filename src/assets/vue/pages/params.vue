@@ -8,20 +8,20 @@
     </f7-navbar>
     <!-- <f7-block-title>参数设置</f7-block-title> -->
     <f7-list class="paramlist link-list">
-      <f7-list-item link="/photovoltaic/" title="光伏输入">
-        <i class="icon iconfont icon-guangfushuru"></i>
+      <f7-list-item link="/photovoltaic/" title="光伏输入" class="parambackicon1 parambackicon">
+        <!-- <i class="icon iconfont icon-guangfushuru"></i> -->
       </f7-list-item>
-      <f7-list-item link="/output/" title="系统输出">
-        <i class="icon iconfont icon-xitongshuchu"></i>
+      <f7-list-item link="/output/" title="系统输出" class="parambackicon2 parambackicon">
+        <!-- <i class="icon iconfont icon-xitongshuchu"></i> -->
       </f7-list-item>
-      <f7-list-item link="/battery/" title="电池参数">
-        <i class="icon iconfont icon-iconset0252"></i>
+      <f7-list-item link="/battery/" title="电池参数" class="parambackicon3 parambackicon">
+        <!-- <i class="icon iconfont icon-iconset0252"></i> -->
       </f7-list-item>
-      <f7-list-item link="/load/"  title="系统负载">
-        <i class="icon iconfont icon-xitongfuzai"></i>
+      <f7-list-item link="/load/"  title="系统负载" class="parambackicon4 parambackicon">
+        <!-- <i class="icon iconfont icon-xitongfuzai"></i> -->
       </f7-list-item>
-      <f7-list-item link="/baseinfo/" title="基础信息">
-        <i class="icon iconfont icon-jichuxinxi"></i>
+      <f7-list-item link="/baseinfo/" title="基础信息" class="parambackicon5 parambackicon">
+        <!-- <i class="icon iconfont icon-jichuxinxi"></i> -->
       </f7-list-item>
     </f7-list>
   </f7-page>
@@ -49,5 +49,26 @@
   .paramlist.media-list .item-inner{
     padding: 0;
    }
+   .parambackicon{
+    background-size: 34px;
+    background-repeat: no-repeat;
+    background-position: 18px 12px;
+   }
+   .parambackicon1{
+    background-image: url(../../images/stats_solar@2x.png);
+   }
+   .parambackicon2{
+    background-image: url(../../images/dianfei@2x.png);
+   }
+   .parambackicon3{
+    background-image: url(../../images/stats_solar@2x.png);
+   }
+   .parambackicon4{
+    background-image: url(../../images/fuzailist@2x.png);
+   }
+   .parambackicon5{
+    background-image: url(../../images/stats_solar@2x.png);
+   }
+
 
 </style>

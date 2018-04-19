@@ -6,8 +6,9 @@
             </f7-nav-left>
             <div class="title">首页</div>
         </f7-navbar>
-          <button class="button button-outline cusbutton">工作状态     NA</button>
+         
         <f7-block class="relt systopology">
+              <button class="button button-outline cusbutton">工作状态     NA</button>
               <!-- 连线 -->
               <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
 
@@ -17,43 +18,48 @@
 
               <svg id="图层_1" data-name="图层 1" class="svg svg4 absCV" :class="{path2 : isdeviceactive[5] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/></svg>
 
-              <svg id="图层_1" data-name="图层 1" class="path svg svg5 absCV" :class="{path4 : isdeviceactive[4] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 50"><defs></defs><title>line142</title><line class="cls-1" x1="0.5" x2="0.5" y2="50" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="10"/></svg>
+              <!-- <svg id="图层_1" data-name="图层 1" class="path svg svg5 absCV" :class="{path4 : isdeviceactive[4] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 50"><defs></defs><title>line142</title><line class="cls-1" x1="0.5" x2="0.5" y2="50" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="10"/></svg> -->
               
               <!-- 设备图标 -->
               <div class="iconitem abs absCV iconitem1">
-              <a href="/photovoltaic/">
-                <img v-if="isdeviceactive[0] == 1" src="../../images/solar@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
-                <img v-if="isdeviceactive[0] == 0" src="../../images/solar_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              <a href="/photovoltaic/" class="relt">
+                <img v-if="isdeviceactive[0] == 1" src="../../images/solar@2x.png" class="imageicon pure-img" height="112" width="111" alt="">
+                <img v-if="isdeviceactive[0] == 0" src="../../images/solar_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="">
+                <span class="abs devicename absC">PV 组件</span>
               </a>
               </div>
               <div class="iconitem abs absCV iconitem2">
-              <a href="/output/">
-                <img v-if="isdeviceactive[1] == 1" src="../../images/elect@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
-                <img v-if="isdeviceactive[1] == 0" src="../../images/elect_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              <a href="/output/" class="relt">
+                <img v-if="isdeviceactive[1] == 1" src="../../images/elect@2x.png" class="imageicon pure-img" height="112" width="111" alt="">
+                <img v-if="isdeviceactive[1] == 0" src="../../images/elect_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="">
+                <span class="abs devicename absC">电网</span>
               </a>
               </div>
               <div class="iconitem abs absCV iconitem3">
-              <a href="/params/">
-                <img v-if="isdeviceactive[2] == 1" src="../../images/backuo@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
-                <img v-if="isdeviceactive[2] == 0" src="../../images/backuo_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              <a href="/params/" class="relt">
+                <img v-if="isdeviceactive[2] == 1" src="../../images/backuo@2x.png" class="imageicon pure-img" height="112" width="111" alt="" style="margin: -9px 5px 0px;">
+                <img v-if="isdeviceactive[2] == 0" src="../../images/backuo_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="" style="margin: -9px 5px 0px;">
+                <!-- <span class="abs devicename absC">光储一体机</span> -->
               </a>  
               </div>
               <div class="iconitem abs absCV iconitem4">
-              <a href="/battery/">
-                <img v-if="isdeviceactive[3] == 1" src="../../images/battery@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
-                <img v-if="isdeviceactive[3] == 0" src="../../images/battery_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+              <a href="/battery/" class="relt">
+                <img v-if="isdeviceactive[3] == 1" src="../../images/battery@2x.png" class="imageicon pure-img" height="109" width="108" alt="">
+                <img v-if="isdeviceactive[3] == 0" src="../../images/battery_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="">
+                <span class="abs devicename absC">电池</span>
               </a>
               </div>
-              <div class="iconitem abs absCV iconitem5">
+<!--               <div class="iconitem abs absCV iconitem5">
               <a href="/load/">
                 <img v-if="isdeviceactive[4] == 1" src="../../images/fuzai@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
                 <img v-if="isdeviceactive[4] == 0" src="../../images/fuzai_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
               </a>
-              </div>
+              </div> -->
               <div class="iconitem abs absCV iconitem6">
               <a href="/load/">
-                <img v-if="isdeviceactive[5] == 1" src="../../images/ongrid@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
-                <img v-if="isdeviceactive[5] == 0" src="../../images/ongrid_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                <img v-if="isdeviceactive[5] == 1" src="../../images/bavkufuzai@2x.png" class="imageicon pure-img" height="115" width="114" alt="">
+                <img v-if="isdeviceactive[5] == 0" src="../../images/bavkufuzai-gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="">
+                <span class="abs devicename absC">负载</span>
               </a>
               </div>
               
@@ -61,10 +67,25 @@
               <span class="statustext statustext1 abs absCV">NA</span>
               <span class="statustext statustext2 abs absCV">NA</span>
               <span class="statustext statustext3 abs absCV">NA</span>
-              <span class="statustext statustext4 abs absCV">NA</span>
               <span class="statustext statustext5 abs absCV">NA</span>
-
         </f7-block>
+        <!-- 统计信息显示 -->
+          <div class="staticitem abs absC">
+            <ul>
+              <li class="backicon icon1">
+                <div>光伏日发电量<em class="r">{{statistics.solarToday}} kWh</em></div>
+                <div>光伏总发电量<em class="r">{{statistics.solarTotal}} kWh</em></div>
+              </li>
+              <li class="backicon icon2">
+                <div>负载日用电量<em class="r">{{statistics.loadToday}} kWh</em></div>
+                <div>负载总用电量<em class="r">{{statistics.loadTotal}} kWh</em></div>
+              </li>
+              <li class="backicon icon3">
+                <div>今日节省电费<em class="r">{{statistics.earningsToday}} 元</em></div>
+                <div>总节省电费<em class="r">{{statistics.earningTotal}} 元</em></div>
+              </li>
+            </ul>
+          </div>
     </f7-page>
 </template>
 <script>
@@ -76,8 +97,17 @@ export default {
             wssstring : "10.211.4.137:9001", 
             // wssstring : "10.211.4.132:31337", 
             app : null,
+            WS : null,
             params : [
             ],
+            statistics : {
+              solarToday : 0,
+              solarTotal : 0,
+              loadToday : 0,
+              loadTotal : 0,
+              earningsToday : 0,
+              earningTotal : 0,
+            },
             // 储能电池实时数据
             params_battery : [
               { paramName : "电池电压",              paramValue : 0, byte : 2, unit : "V"  },
@@ -168,37 +198,41 @@ export default {
             binary_warning_status : [],
 
             active : "",
-
-
             // isdeviceactive 设备是否在使用中
-            isdeviceactive : [1,1,1,1,1,0],
+            isdeviceactive : [1,1,1,1,0,1],
         }
     },
     computed : {
+      ctrlflag : function(){
+        // 从store中获取参数
+        return this.$store.getters.ctrlSysSwitch;  // 从getters中获取
+      }
+    },
+    watch : {
+      ctrlflag : function(){   // 设置 - 参数设置 开关机指令
+        
+        this.sendSwitchFlagCommand(this.ctrlflag);
+      }
     },
     methods : {
+
         initSocket : function(){
           this.connWebsocket("ws://" + this.wssstring);
         },
 
-        // 把数据提交到状态管理中
-        pushDataIntoStore : function(){
-          this.$store.commit('PARAM_CHANGE', this.params);
-        },
         connWebsocket : function(socketurl){
           var _this = this;
-
           var count = 0;
 
-          console.log(socketurl);
+          this.WS = new WebSocket(socketurl);
 
-          var  ws = new WebSocket(socketurl);
-          ws.onopen = function(evt) {
-            ws.binaryType = 'arraybuffer';
-            ws.send("Hello WebSockets!");
+          this.WS.onopen = function(evt) {
+            this.WS.binaryType = 'arraybuffer';
+
+            this.WS.send("Hello WebSockets!");
           };
 
-          ws.onmessage = function(evt) {
+          this.WS.onmessage = function(evt) {
             console.log( "Received Message: " + evt.data);
             // var dv = new DataView(evt.data);
             // 造假数据
@@ -366,7 +400,7 @@ export default {
             _this.praseData(uint8View);
 
           };
-          ws.onclose = function(evt) {
+          this.WS.onclose = function(evt) {
             console.log("Connection closed.");
           };  
         },
@@ -446,109 +480,145 @@ export default {
             }
         }, 
 
-      // 解析电池数据段
-      praseBatteryData : function(datalist, start, length){
-        var offset = 0;
-        for(var i = 0; i < this.params_battery.length; i++){
+        // 解析电池数据段
+        praseBatteryData : function(datalist, start, length){
+          var offset = 0;
+          for(var i = 0; i < this.params_battery.length; i++){
 
-          if(this.params_battery[i].byte == 2){ // 2个字节的数据
+            if(this.params_battery[i].byte == 2){ // 2个字节的数据
 
-            this.params_battery[i].paramValue = datalist.getUint16(start + offset, false);
-            offset += 2;
-          }else{ // 1个字节的数据
+              this.params_battery[i].paramValue = datalist.getUint16(start + offset, false);
+              offset += 2;
+            }else{ // 1个字节的数据
 
-            this.params_battery[i].paramValue = datalist.getUint8(start + offset, false);
-            offset += 1;
+              this.params_battery[i].paramValue = datalist.getUint8(start + offset, false);
+              offset += 1;
+            }
           }
-        }
-      },
+        },
 
 
-      // 解析控制柜数据
-      prasCtrlcabData : function(datalist, start, length){
+        // 解析控制柜数据
+        prasCtrlcabData : function(datalist, start, length){
 
-        var offset = 0;
-        for(var i = 0; i < this.params_ctrlcab.length; i++){
+          var offset = 0;
+          for(var i = 0; i < this.params_ctrlcab.length; i++){
 
-          if(this.params_ctrlcab[i].byte == 2){ // 2个字节的数据
+            if(this.params_ctrlcab[i].byte == 2){ // 2个字节的数据
 
-            this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
-            offset += 2;
-          }else{ // 1个字节的数据
+              this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
+              offset += 2;
+            }else{ // 1个字节的数据
 
-            this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
-            offset += 1;
+              this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
+              offset += 1;
+            }
           }
-        }
 
-      },
+        },
 
-      // 解析电池BMS告警信息
-      prasBMSWarningData : function(datalist, start, length){
+        // 解析电池BMS告警信息
+        prasBMSWarningData : function(datalist, start, length){
 
-        var offset = 0;
-        for(var i = 0; i < this.warning_bms.length; i++){
+          var offset = 0;
+          for(var i = 0; i < this.warning_bms.length; i++){
 
-          if(this.warning_bms[i].byte == 2){ // 2个字节的数据
+            if(this.warning_bms[i].byte == 2){ // 2个字节的数据
 
-            this.warning_bms[i].paramValue = datalist.getUint16(start + offset, false);
-            offset += 2;
-          }else{ // 1个字节的数据
+              this.warning_bms[i].paramValue = datalist.getUint16(start + offset, false);
+              offset += 2;
+            }else{ // 1个字节的数据
 
-            this.warning_bms[i].paramValue = datalist.getUint8(start + offset, false);
-            offset += 1;
+              this.warning_bms[i].paramValue = datalist.getUint8(start + offset, false);
+              offset += 1;
+            }
           }
-        }
 
-      },
+        },
 
-      // 解析设备运行状态信息 两个字节
-      prasDeviceRunningStatus : function(datalist, start, length){
+        // 解析设备运行状态信息 两个字节
+        prasDeviceRunningStatus : function(datalist, start, length){
 
-        var offset = 0;
-        for(var i = 0; i < this.running_status.length; i++){
-          if(this.running_status[i].byte == 2){ // 2个字节的数据
+          var offset = 0;
+          for(var i = 0; i < this.running_status.length; i++){
+            if(this.running_status[i].byte == 2){ // 2个字节的数据
 
-            this.running_status[i].paramValue = datalist.getUint16(start + offset, false);
-            offset += 2;
-          }else{ // 1个字节的数据
+              this.running_status[i].paramValue = datalist.getUint16(start + offset, false);
+              offset += 2;
+            }else{ // 1个字节的数据
 
-            this.running_status[i].paramValue = datalist.getUint8(start + offset, false);
-            offset += 1;
+              this.running_status[i].paramValue = datalist.getUint8(start + offset, false);
+              offset += 1;
+            }
           }
-        }
-      },
+        },
 
-      // 解析系统设备故障状态
-      prasDeviceWarningStatus : function(datalist, start, length){
+        // 解析系统设备故障状态
+        prasDeviceWarningStatus : function(datalist, start, length){
 
-        var offset = 0;
-        for(var i = 0; i < this.warning_status.length; i++){
-          if(this.warning_status[i].byte == 2){ // 2个字节的数据
+          var offset = 0;
+          for(var i = 0; i < this.warning_status.length; i++){
+            if(this.warning_status[i].byte == 2){ // 2个字节的数据
 
-            this.warning_status[i].paramValue = datalist.getUint16(start + offset, false);
-            offset += 2;
-          }else{ // 1个字节的数据
+              this.warning_status[i].paramValue = datalist.getUint16(start + offset, false);
+              offset += 2;
+            }else{ // 1个字节的数据
 
-            this.warning_status[i].paramValue = datalist.getUint8(start + offset, false);
-            offset += 1;
+              this.warning_status[i].paramValue = datalist.getUint8(start + offset, false);
+              offset += 1;
+            }
           }
-        }
 
-      },
+        },
 
-      // 解析数字成为二进制数组
-      // 例如一个字节 16 =>  00010000
-      // 例如两个字节 16 =>  00000000 00010000
-      // running_status : [
-      //   { paramName : "设备运行状态字1",     paramValue : 0, byte : 2, unit : "", isshow : 0},
-      // ],
-      // 
-      parseVauleToBinary : function(object){
-        var result = object.byte == 2 ? "0000000000000000" : "00000000";
-        var value = Number(object.paramValue).toString(2);
-        return  result.substring(0, result.length - value.length) + value;
-      },
+        // 解析数字成为二进制数组
+        // 例如一个字节 16 =>  00010000
+        // 例如两个字节 16 =>  00000000 00010000
+        // running_status : [
+        //   { paramName : "设备运行状态字1",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+        // ],
+        // 
+        parseVauleToBinary : function(object){
+          var result = object.byte == 2 ? "0000000000000000" : "00000000";
+          var value = Number(object.paramValue).toString(2);
+          return  result.substring(0, result.length - value.length) + value;
+        },
+
+
+        // 将开关机的指令下发给设备PCU
+        sendSwitchFlagCommand : function(flag){
+            this.WS.binaryType = 'arraybuffer';
+            
+            // 加工二进制的 bytearray 发送控制命令 COMMOND 0x64
+            // PcuOnOff Wifi    change  Wifi SSID Wifi password
+            //  1 byte  1 byte  2 byte  2byte
+            var buffer = new ArrayBuffer(14);
+            var uint8View = new DataView(buffer);
+
+            uint8View.setUint8(0, 0xfe);
+            uint8View.setUint8(1, 0x55); 
+            uint8View.setUint8(2, 0x64);  // 发给 PCU
+            uint8View.setUint8(3, 0x14); 
+            uint8View.setUint8(4, 0x64);  
+            uint8View.setUint8(5, 0x06);
+
+            if(flag){
+              uint8View.setUint8(6, 0x55);  // 1byte 开关机 开机（0x55），关机（0xAA）
+            }else{
+              uint8View.setUint8(6, 0xAA);  // 1byte 开关机 开机（0x55），关机（0xAA）
+            }
+
+            
+            uint8View.setUint8(7, 0x01);  // 1byte Wifi  使能（0x5A）
+            uint8View.setUint8(8, 0x01);  // 2byte Wifi SSID  
+            uint8View.setUint8(9, 0x01);  
+            uint8View.setUint8(10, 0x01); // 2byte Wifi password
+            uint8View.setUint8(11, 0x01); 
+            uint8View.setUint8(12, 0x12); 
+            uint8View.setUint8(13, 0xAE);
+            // console.log(uint8View);
+            this.WS.send(buffer);
+        },
 
     },
     mounted : function(){
@@ -563,7 +633,8 @@ export default {
   @import "../../sass/publicSize";
   .cusbutton{
     width: 90%;
-    margin: 30px auto 10px auto; 
+    margin: 15px auto 10px auto;
+    transform: translateY(10px);
   }
   .iconitem1{
       margin: -29% 0 0 -28%;
@@ -575,18 +646,18 @@ export default {
       margin: 0%;
   }
   .iconitem4{
-      margin: 26% 0 0 -28%;
+      margin: 23% 0 0 -28%;
   }
   .iconitem5{
-      margin: 26% 0 0 0%;
+      margin: 23% 0 0 0%;
   }
   .iconitem6{
-      margin: 26% 0 0 30%;
+      margin: 23% 0 0 30%;
   }
-
-
   .systopology{
-    height: calc(100% - 34%)
+    height: calc(100% - 36%);
+    margin: 0px 0px 35px 0;
+    background-color: #fff;
   }
   .iconitem{
     width: 15%;
@@ -598,8 +669,37 @@ export default {
   .iconitem.active{
     background-color: $base-active-color;
   }
+  .iconitem a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+  }
   .imageicon{
-    margin: 0;
+    margin: 5px 0 0 0;
+  }
+  .staticitem{
+    bottom: 35px;
+    width: 100%;
+  }
+  .staticitem li{
+    padding: 5px 20px 5px 75px;
+    margin-top: -1px;
+    border-top: 1px solid $base-mainborder-color; 
+  }
+
+  .backicon.icon1{
+    background: #fff url(../../images/stats_solar@2x.png) 24px 6px no-repeat;
+    background-size: 38px;
+  }
+
+  .backicon.icon2{
+    background: #fff url(../../images/fuzailist@2x.png) 24px 6px no-repeat;
+    background-size: 38px;
+  }
+
+  .backicon.icon3{
+    background: #fff url(../../images/dianfei@2x.png) 24px 6px no-repeat;
+    background-size: 38px;
   }
   .svg{
     position: absolute;
@@ -614,7 +714,7 @@ export default {
   }
   .svg3{
     transform: translate(-50%,-50%) scale(0.3) rotateX(180deg);
-    margin: 18% 0px 0px -13%;
+    margin: 17% 0px 0px -13%;
   }
   .svg4{
     margin: 13% 0 0 19%;
@@ -630,6 +730,13 @@ export default {
     font-size: 14px;
     color: $base-active-color;
 
+  }
+  .devicename {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
   }
   .statustext1{
     margin: -8% 0 0 -15%;
@@ -667,27 +774,6 @@ export default {
       stroke-dasharray: 5;
       animation: dash2 5s linear infinite;
   }
-
-@keyframes dash3 {
-      to {
-          stroke-dashoffset: 50;
-      }
-  }
-
-  .path3 {
-      stroke-dasharray: 2.5;
-      animation: dash3 10s linear infinite;
-  }
-  @keyframes dash4 {
-      to {
-          stroke-dashoffset: -50;
-      }
-  }
-  
-  .path4 {
-      stroke-dasharray: 2.5;
-      animation: dash4 10s linear infinite;
-  }
 </style>
 
 <style>
@@ -697,6 +783,9 @@ export default {
   .list li:nth-child(2n){
     background-color: #fff;
   }
+/*  .ios .page{
+    background-color: #fff;
+  }*/
 </style>
 
 

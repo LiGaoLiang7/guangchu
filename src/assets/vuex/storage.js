@@ -6,10 +6,11 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     user: {},
-    paramsbattery : [], // 存储储能实时数据
-    paramscab : [], // 控制柜实时数据
-    warningbms : [], // BMS告警显示
-    binarysyswarning : [], // 系统故障
+    paramsbattery : [], // 实时数据 ： 存储储能实时数据
+    paramscab : [], // 实时数据 ： 控制柜实时数据
+    warningbms : [], // 告警数据 : BMS告警显示
+    binarysyswarning : [], // 告警数据 : 系统故障
+    switchFlag : null,    // 控制命令 1 开关机控制
   },
 
   actions: {
@@ -32,7 +33,11 @@ export default new Vuex.Store({
     },
     WARNING_SYS_CHANGE (state, binaryWarningData){  // 系统告警二进制数据
       state.binarysyswarning = binaryWarningData;
-    }
+    },
+    CTRL_SWITCH_CHANGE (state, flag){  // 开关机状态变化
+      state.switchFlag = flag;
+    },
+
   },
   getters: {
     paramsBattery: (state) => {
@@ -46,6 +51,9 @@ export default new Vuex.Store({
     },
     warningSysBinary : (state) => {
       return state.binarysyswarning;
+    },
+    ctrlSysSwitch : (state) => {
+      return state.switchFlag
     }
 
   }

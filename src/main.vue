@@ -87,7 +87,7 @@ export default {
     font-size: 22px;
   }
   .ios .toolbar a.link {
-      line-height: 25px;
+      line-height: 22px;
       height: 44px;
   }
   .ios .tabbar-labels a {
@@ -124,7 +124,7 @@ export default {
       height: 300px;
     }
     .toolicon{
-      font-size: 16px;
+      font-size: 14px;
     }
     .toolicon.active-state, 
     .toolicon.active{
