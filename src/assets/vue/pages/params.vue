@@ -55,19 +55,19 @@
     background-position: 18px 12px;
    }
    .parambackicon1{
-    background-image: url(../../images/stats_solar@2x.png);
+    background-image: url(../../images/solarjuxing@2x.png);
    }
    .parambackicon2{
-    background-image: url(../../images/dianfei@2x.png);
+    background-image: url(../../images/2systemexit@2x.png);
    }
    .parambackicon3{
-    background-image: url(../../images/stats_solar@2x.png);
+    background-image: url(../../images/2battery@2x.png);
    }
    .parambackicon4{
-    background-image: url(../../images/fuzailist@2x.png);
+    background-image: url(../../images/2fuzai@2x.png);
    }
    .parambackicon5{
-    background-image: url(../../images/stats_solar@2x.png);
+    background-image: url(../../images/2basicmassage@2x.png);
    }
 
 

@@ -10,16 +10,11 @@
         <f7-block class="relt systopology">
               <button class="button button-outline cusbutton">工作状态     NA</button>
               <!-- 连线 -->
-              <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
-
-              <svg id="图层_1" data-name="图层 1" class="svg svg2 absCV" :class="{path2 : isdeviceactive[1] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/></svg>
-
-              <svg id="图层_1" data-name="图层 1" class="svg svg3 absCV" :class="{path2 : isdeviceactive[3] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
-
-              <svg id="图层_1" data-name="图层 1" class="svg svg4 absCV" :class="{path2 : isdeviceactive[5] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="4"/></svg>
-
-              <!-- <svg id="图层_1" data-name="图层 1" class="path svg svg5 absCV" :class="{path4 : isdeviceactive[4] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 50"><defs></defs><title>line142</title><line class="cls-1" x1="0.5" x2="0.5" y2="50" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="10"/></svg> -->
-              
+              <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 30 0.5 144.33 150.75 144.33" fill="none" :stroke="scolor(0)" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 144.33)"/></svg>
+              <svg id="图层_1" data-name="图层 1" class="svg svg2 absCV" :class="{path2 : isdeviceactive[1] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" :stroke="scolor(1)" stroke-miterlimit="10" stroke-width="6"/></svg>
+              <svg id="图层_1" data-name="图层 1" class="svg svg3 absCV" :class="{path2 : isdeviceactive[3] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 0 0.5 144.33 150.75 144.33" fill="none" :stroke="scolor(3)" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 114.33)"/></svg>
+              <svg id="图层_1" data-name="图层 1" class="svg svg4 absCV" :class="{path2 : isdeviceactive[5] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" :stroke="scolor(5)" stroke-miterlimit="10" stroke-width="6"/></svg>
+              <!-- <svg id="图层_1" data-name="图层 1" class="path svg svg5 absCV" :class="{path4 : isdeviceactive[4] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 50"><defs></defs><title>line142</title><line class="cls-1" x1="0.5" x2="0.5" y2="50" fill="none" stroke="#3b55e6" stroke-miterlimit="10" stroke-width="10"/></svg> #3b55e6 #b1b1b1 -->
               <!-- 设备图标 -->
               <div class="iconitem abs absCV iconitem1">
               <a href="/photovoltaic/" class="relt">
@@ -37,8 +32,8 @@
               </div>
               <div class="iconitem abs absCV iconitem3">
               <a href="/params/" class="relt">
-                <img v-if="isdeviceactive[2] == 1" src="../../images/backuo@2x.png" class="imageicon pure-img" height="112" width="111" alt="" style="margin: -9px 5px 0px;">
-                <img v-if="isdeviceactive[2] == 0" src="../../images/backuo_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="" style="margin: -9px 5px 0px;">
+                <img v-if="isdeviceactive[2] == 1" src="../../images/yitiji@2x.png" class="imageicon pure-img" height="112" width="111" alt="" style="margin: -9px 5px 0px;">
+                <img v-if="isdeviceactive[2] == 0" src="../../images/yitiji_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="" style="margin: -9px 5px 0px;">
                 <!-- <span class="abs devicename absC">光储一体机</span> -->
               </a>  
               </div>
@@ -49,11 +44,11 @@
                 <span class="abs devicename absC">电池</span>
               </a>
               </div>
-<!--               <div class="iconitem abs absCV iconitem5">
-              <a href="/load/">
-                <img v-if="isdeviceactive[4] == 1" src="../../images/fuzai@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
-                <img v-if="isdeviceactive[4] == 0" src="../../images/fuzai_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
-              </a>
+        <!-- <div class="iconitem abs absCV iconitem5">
+                <a href="/load/">
+                  <img v-if="isdeviceactive[4] == 1" src="../../images/fuzai@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                  <img v-if="isdeviceactive[4] == 0" src="../../images/fuzai_gray@3x.png" class="imageicon pure-img" height="160" width="160" alt="">
+                </a>
               </div> -->
               <div class="iconitem abs absCV iconitem6">
               <a href="/load/">
@@ -94,7 +89,7 @@ export default {
         return{
             message : "",
             // wssstring : "echo.websocket.org", 
-            wssstring : "10.211.4.137:9001", 
+            wssstring : "10.211.4.130:9001", 
             // wssstring : "10.211.4.132:31337", 
             app : null,
             WS : null,
@@ -183,8 +178,24 @@ export default {
             ],
 
             // 设备运行二进制编码
-            binary_running_status : [],
+            binary_running_status : [], 
 
+            // 设备运行状态字解析
+            running_status_mean : [
+              // 运行状态字 1 
+              { paramName : "预留",                paramValue : 0, bit : 1, unit : "", isshow : 0},
+              { paramName : "预留",                paramValue : 0, bit : 1, unit : "", isshow : 0},
+              { paramName : "降额",                paramValue : 0, bit : 1, unit : "", isshow : 0},
+              { paramName : "单/并机标志",         paramValue : 0, bit : 1, unit : "", isshow : 0},
+              { paramName : "主/从机标志",         paramValue : 0, bit : 1, unit : "", isshow : 0},
+              { paramName : "主/被动模式",         paramValue : 0, bit : 1, unit : "", isshow : 0},
+              { paramName : "电池状态",            paramValue : 0, bit : 2, unit : "", isshow : 0},
+              { paramName : "系统状态",            paramValue : 0, bit : 3, unit : "", isshow : 0},
+              { paramName : "全范围 MPPT",         paramValue : 0, bit : 1, unit : "", isshow : 0},
+              { paramName : "工作模式",            paramValue : 0, bit : 3, unit : "", isshow : 0},
+              { paramName : "开关机状态",          paramValue : 0, bit : 1, unit : "", isshow : 0},
+              // 运行状态字 2
+            ],
 
             // 设备故障状态字
             warning_status : [
@@ -194,12 +205,105 @@ export default {
               {paramName : "故障状态字4",     paramValue : 0, byte : 2, unit : "", isshow : 0},
             ],
 
-            // 故障状态字儿进制编码
+            // 故障状态字二进制编码
             binary_warning_status : [],
 
             active : "",
             // isdeviceactive 设备是否在使用中
             isdeviceactive : [1,1,1,1,0,1],
+
+            // 设备参数设置命令下发
+            deviceParamster : [
+              { paramName : "运行模式",                         paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(int8)       1：并网  2：离网  
+              { paramName : "基本工作模式",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 通用模式 2:离网模式3：备用模式4：经济模式
+              { paramName : "并网模式设置",                     paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(int8)   R/W   1：恒流模式2：恒压模式3：恒功率模式（DC）4：恒功率模式（AC） 5：独立逆变
+              { paramName : "无功调节方式",                     paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(int8)   R/W   1:功率值2:百分比3:功率因数
+              { paramName : "电网电压跌落调节方式",             paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(int8)   R/W   1：孤岛保护（默认）2：低电压穿越3：无缝切换
+              { paramName : "离网自起机模式设置",               paramValue : 0, byte : 2, unit : "", isshow : 1 }, //       HEX(uint16)   W   0XEE00:使能0X00EE:禁止 
+              { paramName : "无缝切换手动模式并离网控制",       paramValue : 0, byte : 1, unit : "", isshow : 1 }, //    HEX(uint8)  R/W     1：并网转离网2：离网转并网其他：无效
+              { paramName : "恒流模式电流",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "恒压模式限制电流",                 paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "恒压模式电压",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
+              { paramName : "恒功率模式功率（DC）",             paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "恒功率模式功率（AC）",             paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "独立逆变电压",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
+              { paramName : "独立逆变频率",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "输出类型设置",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W      0:三相四线1:三相三线
+              { paramName : "无功比例",                         paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
+              { paramName : "自老化模式",                       paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   0XAA00:使能0X00AA:禁止
+              { paramName : "额定功率",                         paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "电网电压",                         paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 1:220V,2:315V3:380V
+              { paramName : "电网代码",                         paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   1：GBT199642：IEC617273：IEEE15474：CUSTOM_ISLAND5：CUSTOM_LVRT
+              { paramName : "遥设有功功率值",                   paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "遥设无功功率值",                   paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
+              { paramName : "遥设功率因数",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "并网过载系数设置",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   
+              { paramName : "PV侧电池类型",                     paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(uint16)   R/W 1:PV2:锂电池 3：铅酸电池
+              { paramName : "DC侧电池类型",                     paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(uint16)   R/W 1:锂电池 2：铅酸电池
+              { paramName : "有功功率变化率设置",               paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "无功功率变化率设置",               paramValue : 0, byte : 2, unit : "", isshow : 1 }, //       HEX(uint16)   R/W 
+              { paramName : "设置绝缘阻抗告警值",               paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   
+              { paramName : "设置绝缘阻抗保护值",               paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   
+              { paramName : "设置电网额定频率",                 paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
+              { paramName : "恢复出厂设置",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
+              { paramName : "电池均充电压",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 2.3V/cell 2: 2.32V/cell3: 2.35V/cell4: 2.37V/cell5: 2.40V/cell
+              { paramName : "电池浮充电压",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 1: 2.2V/cell 2: 2.22V/cell3: 2.25V/cell4: 2.27V/cell5: 2.30V/cell
+              { paramName : "电池周期自检",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 一个星期 2: 两个星期3: 一个月4: 二个月5: 六个月
+              { paramName : "电池AH设置",                       paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   1: 48AH2: 72AH3: 100AH
+              { paramName : "电池组数",                         paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(uint16)   R/W 
+              { paramName : "电池节数",                         paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "电池EOD设置",                      paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 1.65V/cell 2: 1.7V/cell2: 1.75V/cell
+              { paramName : "电池均充保护时间设置",             paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   1: 10小时 2: 24小时
+              { paramName : "电池强制均充使能",                 paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
+              { paramName : "电池预告警使能",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 0XBB00:使能 0X00BB:禁止
+              { paramName : "单体SOC过高",                      paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 1：异常 0：正常
+              { paramName : "单体SOC过低",                      paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "单体过温",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "单体欠温",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "组端过压",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "组端欠压",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "单体过压",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "单体欠压",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "保留",                             paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        HEX(uint8) R/W 1：异常 0：正常
+              { paramName : "保留",                             paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "模块温度下限告警",                 paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "模块温度上限告警",                 paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "电芯电压差异过大",                 paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "电池组绝缘故障标志",               paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "电池组充电过流",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "电池组放电过流",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
+              { paramName : "电网电压快保护上限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1V  HEX(uint16)   R/W 250V-300V
+              { paramName : "电网电压快保护上限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
+              { paramName : "电网电压慢保护上限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1V  HEX(uint16)   R/W   230V-270V
+              { paramName : "电网电压慢保护上限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
+              { paramName : "电网电压快保护下限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1V  HEX(uint16)   R/W   22V-200V
+              { paramName : "电网电压快保护下限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
+              { paramName : "电网电压慢保护下限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1V  HEX(uint16)   R/W   170V-210V
+              { paramName : "电网电压慢保护下限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W   500ms-10s
+              { paramName : "电网频率快保护上限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.01Hz  HEX(uint16)   R/W   50.5Hz-53Hz
+              { paramName : "电网频率快保护上限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W 50ms-27000ms 
+              { paramName : "电网频率慢保护上限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.01Hz  HEX(uint16)   R/W   50.2Hz-52Hz
+              { paramName : "电网频率慢保护上限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
+              { paramName : "电网频率快保护下限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.01Hz  HEX(uint16)   R/W   47Hz-48Hz
+              { paramName : "电网频率快保护下限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
+              { paramName : "电网频率慢保护下限保护设置",       paramValue : 0, byte : 2, unit : "", isshow : 0 }, //  0.01Hz  HEX(uint16)   R/W   47.5Hz-49Hz
+              { paramName : "电网频率慢保护下限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
+              { paramName : "脱网重连时间设置",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1s  HEX(uint16)   R/W   10s-10mins
+              { paramName : "并网给定电流有效值",               paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "直流母线给定电压值",               paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "直流母线比列系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "直流母线积分系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "D轴电流比例系数",                  paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "D轴电流积分系数",                  paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "Q轴电流比例系数",                  paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "Q轴电流积分系数",                  paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "正序电流比例系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "正序电流积分系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "负序电流比例系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "负序电流积分系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "锁相环比列系数",                   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
+              { paramName : "锁相环积分系数",                   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   
+            ],
         }
     },
     computed : {
@@ -216,6 +320,7 @@ export default {
     },
     methods : {
 
+
         initSocket : function(){
           this.connWebsocket("ws://" + this.wssstring);
         },
@@ -228,7 +333,6 @@ export default {
 
           this.WS.onopen = function(evt) {
             this.WS.binaryType = 'arraybuffer';
-
             this.WS.send("Hello WebSockets!");
           };
 
@@ -239,10 +343,11 @@ export default {
             var buffer = new ArrayBuffer(98);
             var uint8View = new DataView(buffer);
 
-            // 手动设置dataview
+            // 电池信息
             //byteOffset   表示从内存的哪个字节开始
             //value           该对应字节将被设置的值
             //littleEndian  字节序，true为小端字节序，false或者不填为大端字节序
+            
             // uint8View.setUint8(0, 0xfe);  // sum = 19
             // uint8View.setUint8(1, 0x55); 
             // uint8View.setUint8(2, 0x14); 
@@ -368,7 +473,7 @@ export default {
             // uint8View.setUint8(1, 0x55); 
             // uint8View.setUint8(2, 0x14); 
             // uint8View.setUint8(3, 0x64); 
-            // uint8View.setUint8(4, 0x1E);  
+            // uint8View.setUint8(4, 0x1E); // COMMOND 
             // uint8View.setUint8(5, 0x06); 
             // uint8View.setUint8(6, 0x01); 
             // uint8View.setUint8(7, 0x01); 
@@ -396,18 +501,37 @@ export default {
             // uint8View.setUint8(13, 0x77); 
             // uint8View.setUint8(14, 0x12); 
             // uint8View.setUint8(15, 0xAE);
+            // 
+             
+            // 系统故障状态显示
+            uint8View.setUint8(0, 0xfe);
+            uint8View.setUint8(1, 0x55); 
+            uint8View.setUint8(2, 0x14); 
+            uint8View.setUint8(3, 0x64); 
+            uint8View.setUint8(4, 0x0C); // COMMOND  
+            uint8View.setUint8(5, 0x04);  
+            uint8View.setUint8(6, 0x31); 
+            uint8View.setUint8(7, 0x21); 
+            uint8View.setUint8(8, 0x00); 
+            uint8View.setUint8(9, 0x00); 
+            uint8View.setUint8(10, 0x12); 
+            uint8View.setUint8(11, 0xAE);
 
             _this.praseData(uint8View);
-
           };
           this.WS.onclose = function(evt) {
             console.log("Connection closed.");
           };  
         },
 
+        // 变化线条颜色
+        scolor : function(num){
+          // isdeviceactive
+          return this.isdeviceactive[num] == 1 ? "#3b55e6" :  "#b1b1b1";
+        },
+
         // 解析二进制 batearray 数据
         praseData : function(dataview){
-
             if(dataview.byteLength > 0){
                 var start       =  dataview.getUint16(0,false);  // 起始帧   2字节
                 var start_addr  =  dataview.getUint8(2,false);   // 起始地址 1字节
@@ -443,13 +567,20 @@ export default {
                               break;
                             case 0x0C: // 设备运行状态信息 4个字节 
                               this.prasDeviceRunningStatus(dataview, 6, length);
-
+                              
                               // 将数据解析成二进制位
                               this.binary_running_status = [];
                               for(var i = 0; i < this.running_status.length; i++){
                                 this.binary_running_status.push(this.parseVauleToBinary(this.running_status[i]));
                               }
-                              // console.log(JSON.stringify(this.binary_running_status, " ", 4));
+
+                              // 将二进制报文转化为对象
+                              this.getRunningStatus(this.binary_running_status);
+
+
+                              console.log(JSON.stringify(this.binary_running_status, " ", 4));
+
+                              console.log(JSON.stringify(this.running_status_mean, " ", 4));
                               break;
 
                             case 0x1F: // 系统故障状态显示 8个字节 
@@ -497,10 +628,8 @@ export default {
           }
         },
 
-
         // 解析控制柜数据
         prasCtrlcabData : function(datalist, start, length){
-
           var offset = 0;
           for(var i = 0; i < this.params_ctrlcab.length; i++){
 
@@ -514,7 +643,6 @@ export default {
               offset += 1;
             }
           }
-
         },
 
         // 解析电池BMS告警信息
@@ -584,11 +712,19 @@ export default {
           return  result.substring(0, result.length - value.length) + value;
         },
 
+        getRunningStatus : function(binaryarray){
+          var pos = 0;
+          for(var i = 0; i < this.running_status_mean.length; i++){
+            this.running_status_mean[i].paramValue = parseInt(String(binaryarray[0]).substring(pos, pos + this.running_status_mean[i].bit), 2);
+            pos = pos + this.running_status_mean[i].bit;
+          }
+
+        },
 
         // 将开关机的指令下发给设备PCU
         sendSwitchFlagCommand : function(flag){
             this.WS.binaryType = 'arraybuffer';
-            
+            var message = "";
             // 加工二进制的 bytearray 发送控制命令 COMMOND 0x64
             // PcuOnOff Wifi    change  Wifi SSID Wifi password
             //  1 byte  1 byte  2 byte  2byte
@@ -604,11 +740,11 @@ export default {
 
             if(flag){
               uint8View.setUint8(6, 0x55);  // 1byte 开关机 开机（0x55），关机（0xAA）
+              message = "开机指令已下发";
             }else{
               uint8View.setUint8(6, 0xAA);  // 1byte 开关机 开机（0x55），关机（0xAA）
+              message = "关机指令已下发";
             }
-
-            
             uint8View.setUint8(7, 0x01);  // 1byte Wifi  使能（0x5A）
             uint8View.setUint8(8, 0x01);  // 2byte Wifi SSID  
             uint8View.setUint8(9, 0x01);  
@@ -618,6 +754,8 @@ export default {
             uint8View.setUint8(13, 0xAE);
             // console.log(uint8View);
             this.WS.send(buffer);
+
+            this.$f7.dialog.alert(message,"提示");
         },
 
     },
@@ -633,30 +771,31 @@ export default {
   @import "../../sass/publicSize";
   .cusbutton{
     width: 90%;
-    margin: 15px auto 10px auto;
-    transform: translateY(10px);
+    margin: 0px auto 10px auto;
+    // transform: translateY(10px);
   }
   .iconitem1{
-      margin: -29% 0 0 -28%;
+      margin: -25% 0 0 -28%;
   }
   .iconitem2{
-      margin: -29% 0 0 30%;
+      margin: -25% 0 0 30%;
   }
   .iconitem3{
       margin: 0%;
   }
   .iconitem4{
-      margin: 23% 0 0 -28%;
+      margin: 19% 0 0 -28%;
   }
   .iconitem5{
-      margin: 23% 0 0 0%;
+      margin: 19% 0 0 0%;
   }
   .iconitem6{
-      margin: 23% 0 0 30%;
+      margin: 19% 0 0 30%;
   }
   .systopology{
     height: calc(100% - 36%);
-    margin: 0px 0px 35px 0;
+    margin: 2% 0px 2% 0;
+    padding: 10px 15px 0 15px;
     background-color: #fff;
   }
   .iconitem{
@@ -678,27 +817,27 @@ export default {
     margin: 5px 0 0 0;
   }
   .staticitem{
-    bottom: 35px;
+    bottom: 2%;
     width: 100%;
   }
   .staticitem li{
-    padding: 5px 20px 5px 75px;
+    padding: 2% 20px 2% 75px;
     margin-top: -1px;
     border-top: 1px solid $base-mainborder-color; 
   }
 
   .backicon.icon1{
-    background: #fff url(../../images/stats_solar@2x.png) 24px 6px no-repeat;
+    background: #fff url(../../images/solarjuxing@2x.png) 7% 43% no-repeat;
     background-size: 38px;
   }
 
   .backicon.icon2{
-    background: #fff url(../../images/fuzailist@2x.png) 24px 6px no-repeat;
+    background: #fff url(../../images/2fuzai@2x.png) 7% 43% no-repeat;
     background-size: 38px;
   }
 
   .backicon.icon3{
-    background: #fff url(../../images/dianfei@2x.png) 24px 6px no-repeat;
+    background: #fff url(../../images/dianfei@2x.png) 7% 43% no-repeat;
     background-size: 38px;
   }
   .svg{
@@ -706,23 +845,23 @@ export default {
   }
   .svg1{
     transform: translate(-50%,-50%) scale(0.3);
-    margin: -19% 0 0 -13%;
+    margin: -17% 0 0 -13%;
   }
   .svg2{
     transform: translate(-50%,-50%) scale(0.3);
-    margin: -15% 0 0 19%;
+    margin: -13% 0 0 19%;
   }
   .svg3{
     transform: translate(-50%,-50%) scale(0.3) rotateX(180deg);
-    margin: 17% 0px 0px -13%;
+    margin: 15% 0px 0px -13%;
   }
   .svg4{
-    margin: 13% 0 0 19%;
+    margin: 11% 0 0 19%;
     transform: translate(-50%,-50%) scale(0.3) rotateX(180deg);
   }
   .svg5{
       width: 7px;
-      margin-top: 17%;
+      margin-top: 15%;
       transform: translate(-50%,-50%) scale(0.3);
   }
 
@@ -733,7 +872,7 @@ export default {
   }
   .devicename {
     font-size: 14px;
-    width: 100%;
+    width: 107%;
     text-align: center;
     background-color: #fff;
     color: #000;
