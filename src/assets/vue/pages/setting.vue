@@ -28,7 +28,7 @@
               <div class="item-inner">
                 <div class="item-title">运行模式</div>
                   <div class="item-after">
-                    <select name="runningmodel" v-model="deviceParamster[0].paramValue">
+                    <select name="runningmodel" @change="setDatatoParameter($event, 0)">
                       <option value="0" selected>请选择</option>
                       <option value="1">并网模式</option>
                       <option value="2">离网模式</option>
@@ -43,7 +43,7 @@
               <div class="item-inner">
                 <div class="item-title">基本工作模式</div>
                   <div class="item-after">
-                    <select name="runningmodel" v-model="deviceParamster[1].paramValue">
+                    <select name="runningmodel" @change="setDatatoParameter($event, 1)">
                       <option value="0" selected>请选择</option>
                       <option value="1">通用模式</option>
                       <option value="2">离网模式</option>
@@ -60,7 +60,7 @@
               <div class="item-inner">
                 <div class="item-title">并网模式设置</div>
                 <div class="item-after">
-                  <select name="runningmodel" v-model="deviceParamster[2].paramValue">
+                  <select name="runningmodel" @change="setDatatoParameter($event, 2)">
                     <option value="0" selected>请选择</option>
                     <option value="1" >恒流模式</option>
                     <option value="2">恒压模式</option>
@@ -78,7 +78,7 @@
               <div class="item-inner">
                 <div class="item-title">无功调节方式</div>
                 <div class="item-after">
-                  <select name="runningmodel" v-model="deviceParamster[3].paramValue">
+                  <select @change="setDatatoParameter($event, 3)">
                     <option value="0" selected>请选择</option>
                     <option value="1">功率值</option>
                     <option value="2">百分比</option>
@@ -95,7 +95,7 @@
               <div class="item-inner">
                 <div class="item-title">电网电压跌落调节方式</div>
                 <div class="item-after">
-                  <select name="gender" v-model="deviceParamster[4].paramValue">
+                  <select @change="setDatatoParameter($event, 4)">
                     <option value="0" selected>请选择</option>
                     <option value="1">孤岛保护 默认</option>
                     <option value="2">低电压穿越</option>
@@ -111,10 +111,10 @@
               <div class="item-inner">
                 <div class="item-title">离网自起机模式设置</div>
                 <div class="item-after">
-                  <select name="gender" v-model="deviceParamster[5].paramValue">
+                  <select @change="setDatatoParameter($event, 5)">
                     <option value="0" selected>请选择</option>
-                    <option value="0xEE00">使能</option>
-                    <option value="0x00EE">禁止</option>
+                    <option value="60928">使能</option> <!--EE00-->
+                    <option value="238">禁止</option>   <!--00EE-->
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -126,10 +126,10 @@
               <div class="item-inner">
                 <div class="item-title">无缝切换手动模式并离网控制</div>
                 <div class="item-after">
-                  <select name="gender" v-model="deviceParamster[6].paramValue">
+                  <select @change="setDatatoParameter($event, 6)">
                     <option value="0" selected>请选择</option>
-                    <option value="0xEE00">并网转离网</option>
-                    <option value="0x00EE">离网转并网</option>
+                    <option value="60928">并网转离网</option>
+                    <option value="238">离网转并网</option>
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -141,7 +141,7 @@
                 <div class="item-inner">
                   <div class="item-title">恒流模式电流</div>
                   <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[7].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 7)">
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@
                 <div class="item-inner">
                   <div class="item-title">恒压模式限制电流</div>
                   <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[8].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 8)">
                   </div>
                 </div>
               </div>
@@ -161,7 +161,7 @@
                 <div class="item-inner">
                   <div class="item-title">恒压模式电压</div>
                   <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[9].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 9)">
                   </div>
                 </div>
               </div>
@@ -171,7 +171,7 @@
                 <div class="item-inner">
                   <div class="item-title">恒功率模式功率（DC）</div>
                   <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[10].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 10)">
                   </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@
                 <div class="item-inner">
                   <div class="item-title">恒功率模式功率（AC）</div>
                   <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[11].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 11)">
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@
                 <div class="item-inner">
                   <div class="item-title">独立逆变电压</div>
                   <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[12].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 12)">
                   </div>
                 </div>
               </div>
@@ -201,7 +201,7 @@
               <div class="item-inner">
                 <div class="item-title">独立逆变频率</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[13].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 13)">
                   </div>
               </div>
             </div>
@@ -211,7 +211,7 @@
               <div class="item-inner">
                 <div class="item-title">无功比例</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[15].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 15)">
                   </div>
               </div>
             </div>
@@ -221,7 +221,7 @@
               <div class="item-inner">
                 <div class="item-title">额定功率</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[17].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 17)">
                   </div>
               </div>
             </div>
@@ -231,7 +231,7 @@
               <div class="item-inner">
                 <div class="item-title">电网电压</div>
                 <div class="item-after">
-                    <select name="gender" v-model="deviceParamster[18].paramValue">
+                    <select @change="setDatatoParameter($event, 18)">
                       <option value="0" selected>请选择</option>
                       <option value="1">220V</option>
                       <option value="2">315V</option>
@@ -248,7 +248,7 @@
               <div class="item-inner">
                 <div class="item-title">遥设有功功率值</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[20].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 20)">
                   </div>
               </div>
             </div>
@@ -260,7 +260,7 @@
               <div class="item-inner">
                 <div class="item-title">遥设无功功率值</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[21].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 21)">
                   </div>
               </div>
             </div>
@@ -271,7 +271,7 @@
               <div class="item-inner">
                 <div class="item-title">遥设功率因数</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[22].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 22)">
                   </div>
               </div>
             </div>
@@ -283,7 +283,7 @@
               <div class="item-inner">
                 <div class="item-title">有功功率变化率设置</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[26].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 26)">
                   </div>
               </div>
             </div>
@@ -294,7 +294,7 @@
               <div class="item-inner">
                 <div class="item-title">无功功率变化率设置</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[27].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 27)">
                   </div>
               </div>
             </div>
@@ -307,7 +307,7 @@
               <div class="item-inner">
                 <div class="item-title">设置电网额定频率</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[30].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 30)">
                   </div>
               </div>
             </div>
@@ -318,7 +318,7 @@
               <div class="item-inner">
                 <div class="item-title">恢复出厂设置</div>
                 <div class="item-after">
-                    <input type="number" name="email" placeholder="0" v-model="deviceParamster[31].paramValue">
+                    <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 31)">
                   </div>
               </div>
             </div>
@@ -329,7 +329,7 @@
               <div class="item-inner">
                 <div class="item-title">电池均充电压</div>
                 <div class="item-after">
-                  <select name="gender" v-model="deviceParamster[32].paramValue">
+                  <select @change="setDatatoParameter($event, 32)">
                     <option value="0" selected>请选择</option>
                     <option value="1">2.30V/cell</option>
                     <option value="2">2.32V/cell</option>
@@ -348,7 +348,7 @@
               <div class="item-inner">
                 <div class="item-title">电池浮充电压</div>
                 <div class="item-after">
-                  <select name="gender" v-model="deviceParamster[33].paramValue">
+                  <select  @change="setDatatoParameter($event, 33)">
                     <option value="0" selected>请选择</option>
                     <option value="1">2.20V/cell </option>
                     <option value="2">2.22V/cell</option>
@@ -366,7 +366,7 @@
               <div class="item-inner">
                 <div class="item-title">电池周期自检</div>
                 <div class="item-after">
-                  <select name="gender" v-model="deviceParamster[34].paramValue">
+                  <select  @change="setDatatoParameter($event, 34)">
                     <option value="0" selected>请选择</option>
                     <option value="1">一个星期</option>
                     <option value="2">两个星期</option>
@@ -384,7 +384,7 @@
               <div class="item-inner">
                 <div class="item-title">电池EOD设置</div>
                 <div class="item-after">
-                  <select name="gender" v-model="deviceParamster[38].paramValue">
+                  <select @change="setDatatoParameter($event, 38)">
                     <option value="0" selected>请选择</option>
                     <option value="1">1.65V/cell</option>
                     <option value="2">1.70V/cell</option>
@@ -400,10 +400,10 @@
               <div class="item-inner">
                 <div class="item-title">电池强制均充使能</div>
                 <div class="item-after">
-                  <select name="gender" v-model="deviceParamster[40].paramValue">
+                  <select @change="setDatatoParameter($event, 40)">
                     <option value="0" selected>请选择</option>
-                    <option value="0xCC00">使能</option>
-                    <option value="0x00CC">禁止</option>
+                    <option value="52224">使能</option> <!-- 0xCC00 -->
+                    <option value="204">禁止</option> <!-- 0x00CC -->
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -465,8 +465,9 @@
           { paramName : "电池节数",                         paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
           { paramName : "电池EOD设置",                      paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 1.65V/cell 2: 1.7V/cell2: 1.75V/cell
           { paramName : "电池均充保护时间设置",             paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   1: 10小时 2: 24小时
-          { paramName : "电池强制均充使能",                 paramValue : 0, byte : 1, unit : "", isshow : 1 }, //  40 HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
+          { paramName : "电池强制均充使能",                 paramValue : 0, byte : 2, unit : "", isshow : 1 }, //  40 HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
           { paramName : "电池预告警使能",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 0XBB00:使能 0X00BB:禁止
+          { paramName : "Backup模式使能",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 0: 禁止 1:使能
           { paramName : "单体SOC过高",                      paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 1：异常 0：正常
           { paramName : "单体SOC过低",                      paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
           { paramName : "单体过温",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
@@ -514,17 +515,47 @@
           { paramName : "负序电流积分系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
           { paramName : "锁相环比列系数",                   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
           { paramName : "锁相环积分系数",                   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   
+          { paramName : "AB线电压系数",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "AC线电压系数",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "BC线电压系数",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "母线电压系数",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "正母线电压系数",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "负母线电压系数",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "并网电流A系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "并网电流B系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "并网电流C系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "输出电流A系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "输出电流B系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "输出电流C系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "电池充电系数",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "电池放电系数",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "PV1电感系数",                      paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "PV2电感系数",                      paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "环境温度系数",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "输出电压A系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "输出电压B系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "输出电压C系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "逆变电压A系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "逆变电压B系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "逆变电压C系数",                    paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
+          { paramName : "系数预留1",                        paramValue : 0, byte : 1, unit : "", isshow : 0 }, //   
         ],
       }
     },
     computed : {
-
-
-
     },
     watch : {
     },
     methods : {
+      // 设置参数到数组列表中
+      setDatatoParameter : function(e, index){
+        var temp = this.deviceParamster[index];
+        temp.paramValue = e.target.value;
+        // console.log(JSON.stringify(temp, " ", 4));
+        this.deviceParamster.splice(index, 1, temp);
+
+      },
+      // 下发开关机命令
       sendOpenCtrl : function(){
         var _this = this;
         var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗";
@@ -534,11 +565,12 @@
           _this.openflag = !_this.openflag;
         });
       },
+      // 下发参数设置
       sendSetParameter : function(){
         var _this = this;
-        this.$f7.dialog.confirm("确定下发参数设置吗？", "确认信息", function(){
-            console.log(JSON.stringify(_this.deviceParamster, " ", 4));
-          // _this.$store.commit('CTRL_SWITCH_CHANGE', _this.openflag);
+        this.$f7.dialog.confirm("确定下发参数设置吗？", "确认参数", function(){
+          // console.log(JSON.stringify(_this.deviceParamster, " ", 4));
+          _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster);
         }, function(){
         });
       }

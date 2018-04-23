@@ -6,7 +6,6 @@
             </f7-nav-left>
             <div class="title">首页</div>
         </f7-navbar>
-         
         <f7-block class="relt systopology">
               <button class="button button-outline cusbutton">工作状态     NA</button>
               <!-- 连线 -->
@@ -34,7 +33,6 @@
               <a href="/params/" class="relt">
                 <img v-if="isdeviceactive[2] == 1" src="../../images/yitiji@2x.png" class="imageicon pure-img" height="112" width="111" alt="" style="margin: -9px 5px 0px;">
                 <img v-if="isdeviceactive[2] == 0" src="../../images/yitiji_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="" style="margin: -9px 5px 0px;">
-                <!-- <span class="abs devicename absC">光储一体机</span> -->
               </a>  
               </div>
               <div class="iconitem abs absCV iconitem4">
@@ -211,111 +209,27 @@ export default {
             active : "",
             // isdeviceactive 设备是否在使用中
             isdeviceactive : [1,1,1,1,0,1],
-
-            // 设备参数设置命令下发
-            deviceParamster : [
-              { paramName : "运行模式",                         paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(int8)       1：并网  2：离网  
-              { paramName : "基本工作模式",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 通用模式 2:离网模式3：备用模式4：经济模式
-              { paramName : "并网模式设置",                     paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(int8)   R/W   1：恒流模式2：恒压模式3：恒功率模式（DC）4：恒功率模式（AC） 5：独立逆变
-              { paramName : "无功调节方式",                     paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(int8)   R/W   1:功率值2:百分比3:功率因数
-              { paramName : "电网电压跌落调节方式",             paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(int8)   R/W   1：孤岛保护（默认）2：低电压穿越3：无缝切换
-              { paramName : "离网自起机模式设置",               paramValue : 0, byte : 2, unit : "", isshow : 1 }, //       HEX(uint16)   W   0XEE00:使能0X00EE:禁止 
-              { paramName : "无缝切换手动模式并离网控制",       paramValue : 0, byte : 1, unit : "", isshow : 1 }, //    HEX(uint8)  R/W     1：并网转离网2：离网转并网其他：无效
-              { paramName : "恒流模式电流",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "恒压模式限制电流",                 paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "恒压模式电压",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
-              { paramName : "恒功率模式功率（DC）",             paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "恒功率模式功率（AC）",             paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "独立逆变电压",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
-              { paramName : "独立逆变频率",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "输出类型设置",                     paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W      0:三相四线1:三相三线
-              { paramName : "无功比例",                         paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
-              { paramName : "自老化模式",                       paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   0XAA00:使能0X00AA:禁止
-              { paramName : "额定功率",                         paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "电网电压",                         paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 1:220V,2:315V3:380V
-              { paramName : "电网代码",                         paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   1：GBT199642：IEC617273：IEEE15474：CUSTOM_ISLAND5：CUSTOM_LVRT
-              { paramName : "遥设有功功率值",                   paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "遥设无功功率值",                   paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
-              { paramName : "遥设功率因数",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "并网过载系数设置",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   
-              { paramName : "PV侧电池类型",                     paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(uint16)   R/W 1:PV2:锂电池 3：铅酸电池
-              { paramName : "DC侧电池类型",                     paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(uint16)   R/W 1:锂电池 2：铅酸电池
-              { paramName : "有功功率变化率设置",               paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "无功功率变化率设置",               paramValue : 0, byte : 2, unit : "", isshow : 1 }, //       HEX(uint16)   R/W 
-              { paramName : "设置绝缘阻抗告警值",               paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   
-              { paramName : "设置绝缘阻抗保护值",               paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   
-              { paramName : "设置电网额定频率",                 paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 
-              { paramName : "恢复出厂设置",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   
-              { paramName : "电池均充电压",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 2.3V/cell 2: 2.32V/cell3: 2.35V/cell4: 2.37V/cell5: 2.40V/cell
-              { paramName : "电池浮充电压",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(uint16)   R/W 1: 2.2V/cell 2: 2.22V/cell3: 2.25V/cell4: 2.27V/cell5: 2.30V/cell
-              { paramName : "电池周期自检",                     paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 一个星期 2: 两个星期3: 一个月4: 二个月5: 六个月
-              { paramName : "电池AH设置",                       paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   1: 48AH2: 72AH3: 100AH
-              { paramName : "电池组数",                         paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(uint16)   R/W 
-              { paramName : "电池节数",                         paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "电池EOD设置",                      paramValue : 0, byte : 2, unit : "", isshow : 1 }, //     HEX(int16)  R/W   1: 1.65V/cell 2: 1.7V/cell2: 1.75V/cell
-              { paramName : "电池均充保护时间设置",             paramValue : 0, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   1: 10小时 2: 24小时
-              { paramName : "电池强制均充使能",                 paramValue : 0, byte : 1, unit : "", isshow : 1 }, //     HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
-              { paramName : "电池预告警使能",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 0XBB00:使能 0X00BB:禁止
-              { paramName : "单体SOC过高",                      paramValue : 0, byte : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 1：异常 0：正常
-              { paramName : "单体SOC过低",                      paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "单体过温",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "单体欠温",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "组端过压",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "组端欠压",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "单体过压",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "单体欠压",                         paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "保留",                             paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        HEX(uint8) R/W 1：异常 0：正常
-              { paramName : "保留",                             paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "模块温度下限告警",                 paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "模块温度上限告警",                 paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "电芯电压差异过大",                 paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "电池组绝缘故障标志",               paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "电池组充电过流",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "电池组放电过流",                   paramValue : 0, byte : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
-              { paramName : "电网电压快保护上限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1V  HEX(uint16)   R/W 250V-300V
-              { paramName : "电网电压快保护上限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
-              { paramName : "电网电压慢保护上限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1V  HEX(uint16)   R/W   230V-270V
-              { paramName : "电网电压慢保护上限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
-              { paramName : "电网电压快保护下限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1V  HEX(uint16)   R/W   22V-200V
-              { paramName : "电网电压快保护下限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
-              { paramName : "电网电压慢保护下限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1V  HEX(uint16)   R/W   170V-210V
-              { paramName : "电网电压慢保护下限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W   500ms-10s
-              { paramName : "电网频率快保护上限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.01Hz  HEX(uint16)   R/W   50.5Hz-53Hz
-              { paramName : "电网频率快保护上限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W 50ms-27000ms 
-              { paramName : "电网频率慢保护上限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.01Hz  HEX(uint16)   R/W   50.2Hz-52Hz
-              { paramName : "电网频率慢保护上限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
-              { paramName : "电网频率快保护下限设置",           paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.01Hz  HEX(uint16)   R/W   47Hz-48Hz
-              { paramName : "电网频率快保护下限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
-              { paramName : "电网频率慢保护下限保护设置",       paramValue : 0, byte : 2, unit : "", isshow : 0 }, //  0.01Hz  HEX(uint16)   R/W   47.5Hz-49Hz
-              { paramName : "电网频率慢保护下限保护时间设置",   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
-              { paramName : "脱网重连时间设置",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   0.1s  HEX(uint16)   R/W   10s-10mins
-              { paramName : "并网给定电流有效值",               paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "直流母线给定电压值",               paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "直流母线比列系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "直流母线积分系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "D轴电流比例系数",                  paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "D轴电流积分系数",                  paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "Q轴电流比例系数",                  paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "Q轴电流积分系数",                  paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "正序电流比例系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "正序电流积分系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "负序电流比例系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "负序电流积分系数",                 paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "锁相环比列系数",                   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //         
-              { paramName : "锁相环积分系数",                   paramValue : 0, byte : 2, unit : "", isshow : 0 }, //   
-            ],
         }
     },
     computed : {
       ctrlflag : function(){
         // 从store中获取参数
         return this.$store.getters.ctrlSysSwitch;  // 从getters中获取
+      },
+      // 全局的
+      settingParamsters : function(){
+        // 从store中获取参数
+        return this.$store.getters.settingDatas;  // 从getters中获取
       }
     },
     watch : {
       ctrlflag : function(){   // 设置 - 参数设置 开关机指令
         
         this.sendSwitchFlagCommand(this.ctrlflag);
+      },
+      settingParamsters : function(){ //设置 - 下发运行参数设置
+        // this.settingParamster = this.settingParamsters;
+        this.sendDeviceRunningParameters();
       }
     },
     methods : {
@@ -577,10 +491,8 @@ export default {
                               // 将二进制报文转化为对象
                               this.getRunningStatus(this.binary_running_status);
 
-
-                              console.log(JSON.stringify(this.binary_running_status, " ", 4));
-
-                              console.log(JSON.stringify(this.running_status_mean, " ", 4));
+                              // console.log(JSON.stringify(this.binary_running_status, " ", 4));
+                              // console.log(JSON.stringify(this.running_status_mean, " ", 4));
                               break;
 
                             case 0x1F: // 系统故障状态显示 8个字节 
@@ -758,10 +670,43 @@ export default {
             this.$f7.dialog.alert(message,"提示");
         },
 
+        sendDeviceRunningParameters : function(){
+            this.WS.binaryType = 'arraybuffer';
+            // 获取 datalength
+            let datalength = 0;
+            console.log(JSON.stringify(this.settingParamsters, " ", 4));
+            for(var i = 0; i < this.settingParamsters.length; i++){
+                datalength += this.settingParamsters[i].byte;
+            }
+            var buffer = new ArrayBuffer(datalength + 8); // 数据长度+8 
+            var uint8View = new DataView(buffer);
+            uint8View.setUint8(0, 0xfe);
+            uint8View.setUint8(1, 0x55); 
+            uint8View.setUint8(2, 0x64);  // 发给 PCU
+            uint8View.setUint8(3, 0x14); 
+            uint8View.setUint8(4, 0x65);  // COMMAND 
+            uint8View.setUint8(5, datalength.toString(16)); // datalength
+
+            var offset = 0; 
+            for(i = 0; i < this.settingParamsters.length; i++){   // 数据区
+              if(this.settingParamsters[i].byte == 1){
+                  uint8View.setUint8(6 + offset, this.settingParamsters[i].paramValue.toString(16));
+              }else{
+                  uint8View.setUint16(6 + offset, this.settingParamsters[i].paramValue.toString(16));
+              }
+              offset += this.settingParamsters[i].byte;
+            }
+            uint8View.setUint8(6 + offset, 0x12);  // 校验位
+            uint8View.setUint8(7 + offset, 0xAE);  // 结束位
+            this.WS.send(buffer);
+            console.log(uint8View);
+            this.$f7.dialog.alert("参数设置已下发","提示");
+        },
     },
     mounted : function(){
       // 连接websocket
       this.initSocket();
+      this.$store.commit('TAB_INDEX_CHANGE', 1);
     }
 };
 </script>

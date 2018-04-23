@@ -67,6 +67,7 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
 
     mounted : function(){
       this.setValueInParamList();
+      this.$store.commit('TAB_INDEX_CHANGE', 2);
     },
 
     components: {

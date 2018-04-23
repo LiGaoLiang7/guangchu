@@ -28,12 +28,10 @@ export default [
   {
     path: '/output/', // 系统输出实时数据
     component: require('./assets/vue/pages/param-output.vue')
-
   },
   {
     path: '/load/', // 系统负载实时数据
     component: require('./assets/vue/pages/param-load.vue')
-
   },
   {
     path: '/baseinfo/',  // 系统信息实时数据

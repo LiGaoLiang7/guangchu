@@ -29,6 +29,18 @@ export default {
             tabindex : 1,
         }
     },
+    computed : {
+      // 全局的tabIndex
+      tabIndex : function(){
+        return this.$store.getters.tabIndex;
+      }
+    },
+    watch : {
+      tabIndex : function(){
+        this.tabindex = this.tabIndex;
+      }
+    }
+
 }
 </script>
 
