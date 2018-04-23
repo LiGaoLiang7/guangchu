@@ -30555,7 +30555,7 @@ exports.push([module.i, "\n.baseBorderRadius[data-v-04097691] {\n  border-radius
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 __webpack_require__(/*! ./assets/css/normalize.css */ 169);
@@ -30565,14 +30565,27 @@ __webpack_require__(/*! ./assets/css/common.css */ 170);
 __webpack_require__(/*! ./assets/css/iconfont.css */ 171);
 
 exports.default = {
-    mounted: function mounted() {
-        console.log(this.$device);
-    },
-    data: function data() {
-        return {
-            tabindex: 1
-        };
+  mounted: function mounted() {
+    console.log(this.$device);
+  },
+  data: function data() {
+    return {
+      tabindex: 1
+    };
+  },
+
+  computed: {
+    // 全局的tabIndex
+    tabIndex: function tabIndex() {
+      return this.$store.getters.tabIndex;
     }
+  },
+  watch: {
+    tabIndex: function tabIndex() {
+      this.tabindex = this.tabIndex;
+    }
+  }
+
 }; //
 //
 //
@@ -30768,11 +30781,9 @@ exports.default = [{
 }, {
   path: '/output/', // 系统输出实时数据
   component: __webpack_require__(/*! ./assets/vue/pages/param-output.vue */ 218)
-
 }, {
   path: '/load/', // 系统负载实时数据
   component: __webpack_require__(/*! ./assets/vue/pages/param-load.vue */ 223)
-
 }, {
   path: '/baseinfo/', // 系统信息实时数据
   component: __webpack_require__(/*! ./assets/vue/pages/param-baseinfo.vue */ 228)
@@ -31050,8 +31061,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
 
 exports.default = {
   data: function data() {
@@ -31098,98 +31107,7 @@ exports.default = {
 
       active: "",
       // isdeviceactive 设备是否在使用中
-      isdeviceactive: [1, 1, 1, 1, 0, 1],
-
-      // 设备参数设置命令下发
-      deviceParamster: [{ paramName: "运行模式", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //     HEX(int8)       1：并网  2：离网  
-      { paramName: "基本工作模式", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   1: 通用模式 2:离网模式3：备用模式4：经济模式
-      { paramName: "并网模式设置", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1：恒流模式2：恒压模式3：恒功率模式（DC）4：恒功率模式（AC） 5：独立逆变
-      { paramName: "无功调节方式", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1:功率值2:百分比3:功率因数
-      { paramName: "电网电压跌落调节方式", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1：孤岛保护（默认）2：低电压穿越3：无缝切换
-      { paramName: "离网自起机模式设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //       HEX(uint16)   W   0XEE00:使能0X00EE:禁止 
-      { paramName: "无缝切换手动模式并离网控制", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //    HEX(uint8)  R/W     1：并网转离网2：离网转并网其他：无效
-      { paramName: "恒流模式电流", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "恒压模式限制电流", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "恒压模式电压", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 
-      { paramName: "恒功率模式功率（DC）", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "恒功率模式功率（AC）", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "独立逆变电压", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 
-      { paramName: "独立逆变频率", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "输出类型设置", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W      0:三相四线1:三相三线
-      { paramName: "无功比例", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 
-      { paramName: "自老化模式", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   0XAA00:使能0X00AA:禁止
-      { paramName: "额定功率", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "电网电压", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 1:220V,2:315V3:380V
-      { paramName: "电网代码", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   1：GBT199642：IEC617273：IEEE15474：CUSTOM_ISLAND5：CUSTOM_LVRT
-      { paramName: "遥设有功功率值", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "遥设无功功率值", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 
-      { paramName: "遥设功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "并网过载系数设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   
-      { paramName: "PV侧电池类型", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(uint16)   R/W 1:PV2:锂电池 3：铅酸电池
-      { paramName: "DC侧电池类型", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(uint16)   R/W 1:锂电池 2：铅酸电池
-      { paramName: "有功功率变化率设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "无功功率变化率设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //       HEX(uint16)   R/W 
-      { paramName: "设置绝缘阻抗告警值", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   
-      { paramName: "设置绝缘阻抗保护值", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   
-      { paramName: "设置电网额定频率", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 
-      { paramName: "恢复出厂设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "电池均充电压", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   1: 2.3V/cell 2: 2.32V/cell3: 2.35V/cell4: 2.37V/cell5: 2.40V/cell
-      { paramName: "电池浮充电压", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 1: 2.2V/cell 2: 2.22V/cell3: 2.25V/cell4: 2.27V/cell5: 2.30V/cell
-      { paramName: "电池周期自检", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   1: 一个星期 2: 两个星期3: 一个月4: 二个月5: 六个月
-      { paramName: "电池AH设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   1: 48AH2: 72AH3: 100AH
-      { paramName: "电池组数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(uint16)   R/W 
-      { paramName: "电池节数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "电池EOD设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   1: 1.65V/cell 2: 1.7V/cell2: 1.75V/cell
-      { paramName: "电池均充保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   1: 10小时 2: 24小时
-      { paramName: "电池强制均充使能", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //     HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
-      { paramName: "电池预告警使能", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 0XBB00:使能 0X00BB:禁止
-      { paramName: "单体SOC过高", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 1：异常 0：正常
-      { paramName: "单体SOC过低", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "单体过温", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "单体欠温", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "组端过压", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "组端欠压", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "单体过压", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "单体欠压", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "保留", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        HEX(uint8) R/W 1：异常 0：正常
-      { paramName: "保留", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "模块温度下限告警", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "模块温度上限告警", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电芯电压差异过大", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电池组绝缘故障标志", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电池组充电过流", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电池组放电过流", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电网电压快保护上限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1V  HEX(uint16)   R/W 250V-300V
-      { paramName: "电网电压快保护上限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
-      { paramName: "电网电压慢保护上限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1V  HEX(uint16)   R/W   230V-270V
-      { paramName: "电网电压慢保护上限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
-      { paramName: "电网电压快保护下限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1V  HEX(uint16)   R/W   22V-200V
-      { paramName: "电网电压快保护下限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
-      { paramName: "电网电压慢保护下限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1V  HEX(uint16)   R/W   170V-210V
-      { paramName: "电网电压慢保护下限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    ms  HEX(uint16)   R/W   500ms-10s
-      { paramName: "电网频率快保护上限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.01Hz  HEX(uint16)   R/W   50.5Hz-53Hz
-      { paramName: "电网频率快保护上限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    ms  HEX(uint16)   R/W 50ms-27000ms 
-      { paramName: "电网频率慢保护上限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.01Hz  HEX(uint16)   R/W   50.2Hz-52Hz
-      { paramName: "电网频率慢保护上限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
-      { paramName: "电网频率快保护下限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.01Hz  HEX(uint16)   R/W   47Hz-48Hz
-      { paramName: "电网频率快保护下限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
-      { paramName: "电网频率慢保护下限保护设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //  0.01Hz  HEX(uint16)   R/W   47.5Hz-49Hz
-      { paramName: "电网频率慢保护下限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
-      { paramName: "脱网重连时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1s  HEX(uint16)   R/W   10s-10mins
-      { paramName: "并网给定电流有效值", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "直流母线给定电压值", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "直流母线比列系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "直流母线积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "D轴电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "D轴电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "Q轴电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "Q轴电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "正序电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "正序电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "负序电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "负序电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "锁相环比列系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "锁相环积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }]
+      isdeviceactive: [1, 1, 1, 1, 0, 1]
     };
   },
 
@@ -31197,6 +31115,11 @@ exports.default = {
     ctrlflag: function ctrlflag() {
       // 从store中获取参数
       return this.$store.getters.ctrlSysSwitch; // 从getters中获取
+    },
+    // 全局的
+    settingParamsters: function settingParamsters() {
+      // 从store中获取参数
+      return this.$store.getters.settingDatas; // 从getters中获取
     }
   },
   watch: {
@@ -31204,6 +31127,11 @@ exports.default = {
       // 设置 - 参数设置 开关机指令
 
       this.sendSwitchFlagCommand(this.ctrlflag);
+    },
+    settingParamsters: function settingParamsters() {
+      //设置 - 下发运行参数设置
+      // this.settingParamster = this.settingParamsters;
+      this.sendDeviceRunningParameters();
     }
   },
   methods: {
@@ -31471,9 +31399,8 @@ exports.default = {
                   // 将二进制报文转化为对象
                   this.getRunningStatus(this.binary_running_status);
 
-                  console.log(JSON.stringify(this.binary_running_status, " ", 4));
-
-                  console.log(JSON.stringify(this.running_status_mean, " ", 4));
+                  // console.log(JSON.stringify(this.binary_running_status, " ", 4));
+                  // console.log(JSON.stringify(this.running_status_mean, " ", 4));
                   break;
 
                 case 0x1F:
@@ -31656,12 +31583,46 @@ exports.default = {
       this.WS.send(buffer);
 
       this.$f7.dialog.alert(message, "提示");
-    }
+    },
 
+    sendDeviceRunningParameters: function sendDeviceRunningParameters() {
+      this.WS.binaryType = 'arraybuffer';
+      // 获取 datalength
+      var datalength = 0;
+      console.log(JSON.stringify(this.settingParamsters, " ", 4));
+      for (var i = 0; i < this.settingParamsters.length; i++) {
+        datalength += this.settingParamsters[i].byte;
+      }
+      var buffer = new ArrayBuffer(datalength + 8); // 数据长度+8 
+      var uint8View = new DataView(buffer);
+      uint8View.setUint8(0, 0xfe);
+      uint8View.setUint8(1, 0x55);
+      uint8View.setUint8(2, 0x64); // 发给 PCU
+      uint8View.setUint8(3, 0x14);
+      uint8View.setUint8(4, 0x65); // COMMAND 
+      uint8View.setUint8(5, datalength.toString(16)); // datalength
+
+      var offset = 0;
+      for (i = 0; i < this.settingParamsters.length; i++) {
+        // 数据区
+        if (this.settingParamsters[i].byte == 1) {
+          uint8View.setUint8(6 + offset, this.settingParamsters[i].paramValue.toString(16));
+        } else {
+          uint8View.setUint16(6 + offset, this.settingParamsters[i].paramValue.toString(16));
+        }
+        offset += this.settingParamsters[i].byte;
+      }
+      uint8View.setUint8(6 + offset, 0x12); // 校验位
+      uint8View.setUint8(7 + offset, 0xAE); // 结束位
+      this.WS.send(buffer);
+      console.log(uint8View);
+      this.$f7.dialog.alert("参数设置已下发", "提示");
+    }
   },
   mounted: function mounted() {
     // 连接websocket
     this.initSocket();
+    this.$store.commit('TAB_INDEX_CHANGE', 1);
   }
 };
 
@@ -32230,7 +32191,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+exports.default = {
+  mounted: function mounted() {
+    console.log(this.$f7.views.current.router.currentRoute.path);
+    this.$store.commit('TAB_INDEX_CHANGE', 2);
+  }
+};
 
 /***/ }),
 /* 199 */
@@ -32455,8 +32421,9 @@ exports.default = {
       { paramName: "电池节数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
       { paramName: "电池EOD设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   1: 1.65V/cell 2: 1.7V/cell2: 1.75V/cell
       { paramName: "电池均充保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   1: 10小时 2: 24小时
-      { paramName: "电池强制均充使能", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //  40 HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
+      { paramName: "电池强制均充使能", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //  40 HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
       { paramName: "电池预告警使能", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 0XBB00:使能 0X00BB:禁止
+      { paramName: "Backup模式使能", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 0: 禁止 1:使能
       { paramName: "单体SOC过高", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 1：异常 0：正常
       { paramName: "单体SOC过低", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
       { paramName: "单体过温", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
@@ -32503,12 +32470,44 @@ exports.default = {
       { paramName: "负序电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
       { paramName: "负序电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
       { paramName: "锁相环比列系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "锁相环积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }]
+      { paramName: "锁相环积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "AB线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "AC线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "BC线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "母线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "正母线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "负母线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "并网电流A系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "并网电流B系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "并网电流C系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "输出电流A系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "输出电流B系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "输出电流C系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "电池充电系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "电池放电系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "PV1电感系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "PV2电感系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "环境温度系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "输出电压A系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "输出电压B系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "输出电压C系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "逆变电压A系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "逆变电压B系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "逆变电压C系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
+      { paramName: "系数预留1", paramValue: 0, byte: 1, unit: "", isshow: 0 }]
     };
   },
   computed: {},
   watch: {},
   methods: {
+    // 设置参数到数组列表中
+    setDatatoParameter: function setDatatoParameter(e, index) {
+      var temp = this.deviceParamster[index];
+      temp.paramValue = e.target.value;
+      // console.log(JSON.stringify(temp, " ", 4));
+      this.deviceParamster.splice(index, 1, temp);
+    },
+    // 下发开关机命令
     sendOpenCtrl: function sendOpenCtrl() {
       var _this = this;
       var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗";
@@ -32518,11 +32517,12 @@ exports.default = {
         _this.openflag = !_this.openflag;
       });
     },
+    // 下发参数设置
     sendSetParameter: function sendSetParameter() {
       var _this = this;
-      this.$f7.dialog.confirm("确定下发参数设置吗？", "确认信息", function () {
-        console.log(JSON.stringify(_this.deviceParamster, " ", 4));
-        // _this.$store.commit('CTRL_SWITCH_CHANGE', _this.openflag);
+      this.$f7.dialog.confirm("确定下发参数设置吗？", "确认参数", function () {
+        // console.log(JSON.stringify(_this.deviceParamster, " ", 4));
+        _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster);
       }, function () {});
     }
   },
@@ -33035,24 +33035,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("运行模式")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[0].paramValue),
-      expression: "deviceParamster[0].paramValue"
-    }],
     attrs: {
       "name": "runningmodel"
     },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[0], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 0)
       }
     }
   }, [_c('option', {
@@ -33079,24 +33067,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("基本工作模式")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[1].paramValue),
-      expression: "deviceParamster[1].paramValue"
-    }],
     attrs: {
       "name": "runningmodel"
     },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[1], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 1)
       }
     }
   }, [_c('option', {
@@ -33131,24 +33107,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("并网模式设置")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[2].paramValue),
-      expression: "deviceParamster[2].paramValue"
-    }],
     attrs: {
       "name": "runningmodel"
     },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[2], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 2)
       }
     }
   }, [_c('option', {
@@ -33187,24 +33151,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("无功调节方式")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[3].paramValue),
-      expression: "deviceParamster[3].paramValue"
-    }],
-    attrs: {
-      "name": "runningmodel"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[3], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 3)
       }
     }
   }, [_c('option', {
@@ -33235,24 +33184,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("电网电压跌落调节方式")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[4].paramValue),
-      expression: "deviceParamster[4].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[4], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 4)
       }
     }
   }, [_c('option', {
@@ -33283,24 +33217,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("离网自起机模式设置")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[5].paramValue),
-      expression: "deviceParamster[5].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[5], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 5)
       }
     }
   }, [_c('option', {
@@ -33310,11 +33229,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
     attrs: {
-      "value": "0xEE00"
+      "value": "60928"
     }
   }, [_vm._v("使能")]), _vm._v(" "), _c('option', {
     attrs: {
-      "value": "0x00EE"
+      "value": "238"
     }
   }, [_vm._v("禁止")])]), _vm._v(" "), _c('i', {
     staticClass: "f7-icons size-50"
@@ -33327,24 +33246,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("无缝切换手动模式并离网控制")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[6].paramValue),
-      expression: "deviceParamster[6].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[6], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 6)
       }
     }
   }, [_c('option', {
@@ -33354,11 +33258,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
     attrs: {
-      "value": "0xEE00"
+      "value": "60928"
     }
   }, [_vm._v("并网转离网")]), _vm._v(" "), _c('option', {
     attrs: {
-      "value": "0x00EE"
+      "value": "238"
     }
   }, [_vm._v("离网转并网")])]), _vm._v(" "), _c('i', {
     staticClass: "f7-icons size-50"
@@ -33371,24 +33275,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("恒流模式电流")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[7].paramValue),
-      expression: "deviceParamster[7].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[7].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[7], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 7)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33400,24 +33294,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("恒压模式限制电流")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[8].paramValue),
-      expression: "deviceParamster[8].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[8].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[8], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 8)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33429,24 +33313,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("恒压模式电压")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[9].paramValue),
-      expression: "deviceParamster[9].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[9].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[9], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 9)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33458,24 +33332,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("恒功率模式功率（DC）")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[10].paramValue),
-      expression: "deviceParamster[10].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[10].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[10], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 10)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33487,24 +33351,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("恒功率模式功率（AC）")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[11].paramValue),
-      expression: "deviceParamster[11].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[11].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[11], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 11)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33516,24 +33370,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("独立逆变电压")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[12].paramValue),
-      expression: "deviceParamster[12].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[12].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[12], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 12)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33545,24 +33389,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("独立逆变频率")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[13].paramValue),
-      expression: "deviceParamster[13].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[13].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[13], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 13)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33574,24 +33408,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("无功比例")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[15].paramValue),
-      expression: "deviceParamster[15].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[15].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[15], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 15)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33603,24 +33427,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("额定功率")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[17].paramValue),
-      expression: "deviceParamster[17].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[17].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[17], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 17)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33632,24 +33446,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("电网电压")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[18].paramValue),
-      expression: "deviceParamster[18].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[18], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 18)
       }
     }
   }, [_c('option', {
@@ -33680,24 +33479,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("遥设有功功率值")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[20].paramValue),
-      expression: "deviceParamster[20].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[20].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[20], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 20)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33709,24 +33498,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("遥设无功功率值")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[21].paramValue),
-      expression: "deviceParamster[21].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[21].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[21], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 21)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33738,24 +33517,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("遥设功率因数")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[22].paramValue),
-      expression: "deviceParamster[22].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[22].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[22], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 22)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33767,24 +33536,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("有功功率变化率设置")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[26].paramValue),
-      expression: "deviceParamster[26].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[26].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[26], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 26)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33796,24 +33555,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("无功功率变化率设置")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[27].paramValue),
-      expression: "deviceParamster[27].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[27].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[27], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 27)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33825,24 +33574,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("设置电网额定频率")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[30].paramValue),
-      expression: "deviceParamster[30].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[30].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[30], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 30)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33854,24 +33593,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("恢复出厂设置")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[31].paramValue),
-      expression: "deviceParamster[31].paramValue"
-    }],
     attrs: {
       "type": "number",
       "name": "email",
       "placeholder": "0"
     },
-    domProps: {
-      "value": (_vm.deviceParamster[31].paramValue)
-    },
     on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.deviceParamster[31], "paramValue", $event.target.value)
+      "change": function($event) {
+        _vm.setDatatoParameter($event, 31)
       }
     }
   })])])])]), _vm._v(" "), _c('li', [_c('div', {
@@ -33883,24 +33612,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("电池均充电压")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[32].paramValue),
-      expression: "deviceParamster[32].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[32], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 32)
       }
     }
   }, [_c('option', {
@@ -33939,24 +33653,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("电池浮充电压")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[33].paramValue),
-      expression: "deviceParamster[33].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[33], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 33)
       }
     }
   }, [_c('option', {
@@ -33995,24 +33694,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("电池周期自检")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[34].paramValue),
-      expression: "deviceParamster[34].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[34], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 34)
       }
     }
   }, [_c('option', {
@@ -34051,24 +33735,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("电池EOD设置")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[38].paramValue),
-      expression: "deviceParamster[38].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[38], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 38)
       }
     }
   }, [_c('option', {
@@ -34099,24 +33768,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("电池强制均充使能")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.deviceParamster[40].paramValue),
-      expression: "deviceParamster[40].paramValue"
-    }],
-    attrs: {
-      "name": "gender"
-    },
     on: {
       "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.deviceParamster[40], "paramValue", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+        _vm.setDatatoParameter($event, 40)
       }
     }
   }, [_c('option', {
@@ -34126,11 +33780,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
     attrs: {
-      "value": "0xCC00"
+      "value": "52224"
     }
   }, [_vm._v("使能")]), _vm._v(" "), _c('option', {
     attrs: {
-      "value": "0x00CC"
+      "value": "204"
     }
   }, [_vm._v("禁止")])]), _vm._v(" "), _c('i', {
     staticClass: "f7-icons size-50"
@@ -34470,6 +34124,7 @@ exports.default = {
   },
   mounted: function mounted() {
     this.setValueInParamList();
+    this.$store.commit('TAB_INDEX_CHANGE', 2);
   },
   components: {
     f7Navbar: _framework7Vue.f7Navbar,
@@ -34707,6 +34362,7 @@ exports.default = {
 
   mounted: function mounted() {
     this.setValueInParamList();
+    this.$store.commit('TAB_INDEX_CHANGE', 2);
   },
 
   components: {
@@ -34939,8 +34595,8 @@ exports.default = {
     }
   },
   mounted: function mounted() {
-
     this.setValueInParamList();
+    this.$store.commit('TAB_INDEX_CHANGE', 2);
   },
   components: {
     f7Navbar: _framework7Vue.f7Navbar,
@@ -35175,6 +34831,7 @@ exports.default = {
   mounted: function mounted() {
     // 
     this.setValueInParamList();
+    this.$store.commit('TAB_INDEX_CHANGE', 2);
   },
   components: {
     f7Navbar: _framework7Vue.f7Navbar,
@@ -35412,6 +35069,7 @@ exports.default = {
   },
   mounted: function mounted() {
     this.setValueInParamList();
+    this.$store.commit('TAB_INDEX_CHANGE', 2);
   },
   components: {
     f7Navbar: _framework7Vue.f7Navbar,
@@ -36434,17 +36092,17 @@ var _vuex2 = _interopRequireDefault(_vuex);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.use(_vuex2.default);
-
 exports.default = new _vuex2.default.Store({
   state: {
+    tabindex: 1, // 页面打开的index
     user: {},
     paramsbattery: [], // 实时数据 ： 存储储能实时数据
     paramscab: [], // 实时数据 ： 控制柜实时数据
     warningbms: [], // 告警数据 : BMS告警显示
     binarysyswarning: [], // 告警数据 : 系统故障
-    switchFlag: null // 控制命令 1 开关机控制
+    switchFlag: null, // 控制命令 1 开关机控制
+    settingData: [] // 参数设置数据
   },
-
   actions: {
     userLogged: function userLogged(_ref, user) {
       var commit = _ref.commit;
@@ -36455,6 +36113,9 @@ exports.default = new _vuex2.default.Store({
   mutations: {
     USER_LOGGED: function USER_LOGGED(state, user) {
       state.user = user;
+    },
+    TAB_INDEX_CHANGE: function TAB_INDEX_CHANGE(state, index) {
+      state.tabindex = index;
     },
     PARAM_BATTERY_CHANGE: function PARAM_BATTERY_CHANGE(state, batteryParamData) {
       // 储能电池实时数据
@@ -36475,6 +36136,9 @@ exports.default = new _vuex2.default.Store({
     CTRL_SWITCH_CHANGE: function CTRL_SWITCH_CHANGE(state, flag) {
       // 开关机状态变化
       state.switchFlag = flag;
+    },
+    CTRL_PARAMETER_CHANGE: function CTRL_PARAMETER_CHANGE(state, settingData) {
+      state.settingData = settingData;
     }
   },
   getters: {
@@ -36492,10 +36156,14 @@ exports.default = new _vuex2.default.Store({
     },
     ctrlSysSwitch: function ctrlSysSwitch(state) {
       return state.switchFlag;
+    },
+    settingDatas: function settingDatas(state) {
+      return state.settingData;
+    },
+    tabIndex: function tabIndex(state) {
+      return state.tabindex;
     }
-
   }
-
 });
 
 /***/ }),

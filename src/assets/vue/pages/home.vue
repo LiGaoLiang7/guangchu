@@ -219,16 +219,14 @@ export default {
       // 全局的
       settingParamsters : function(){
         // 从store中获取参数
-        return this.$store.getters.settingDatas;  // 从getters中获取
+        return this.$store.state.settingData.slice(0);  // 从state中获取
       }
     },
     watch : {
       ctrlflag : function(){   // 设置 - 参数设置 开关机指令
-        
         this.sendSwitchFlagCommand(this.ctrlflag);
       },
       settingParamsters : function(){ //设置 - 下发运行参数设置
-        // this.settingParamster = this.settingParamsters;
         this.sendDeviceRunningParameters();
       }
     },

@@ -567,10 +567,11 @@
       },
       // 下发参数设置
       sendSetParameter : function(){
+
         var _this = this;
         this.$f7.dialog.confirm("确定下发参数设置吗？", "确认参数", function(){
-          // console.log(JSON.stringify(_this.deviceParamster, " ", 4));
-          _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster);
+          // 深拷贝
+          _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster.slice(0));
         }, function(){
         });
       }

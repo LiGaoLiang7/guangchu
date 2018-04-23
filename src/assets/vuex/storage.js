@@ -40,10 +40,9 @@ export default new Vuex.Store({
     CTRL_SWITCH_CHANGE (state, flag){               // 开关机状态变化
       state.switchFlag = flag;
     },
-    CTRL_PARAMETER_CHANGE (state, settingData){
+    CTRL_PARAMETER_CHANGE (state, settingData){    // 设置参数
       state.settingData = settingData;
     },
-
   },
   getters: {
     paramsBattery: (state) => {
@@ -60,9 +59,6 @@ export default new Vuex.Store({
     },
     ctrlSysSwitch : (state) => {
       return state.switchFlag;
-    },
-    settingDatas : (state) => {
-      return state.settingData;
     },
     tabIndex : (state) => {
       return state.tabindex;
