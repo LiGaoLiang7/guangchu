@@ -7,7 +7,7 @@
             <div class="title">首页</div>
         </f7-navbar>
         <f7-block class="relt systopology">
-              <button class="button button-outline cusbutton">工作状态     NA</button>
+              <span class="cusbutton">工作状态     NA</span>
               <!-- 连线 -->
               <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 30 0.5 144.33 150.75 144.33" fill="none" :stroke="scolor(0)" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 144.33)"/></svg>
               <svg id="图层_1" data-name="图层 1" class="svg svg2 absCV" :class="{path2 : isdeviceactive[1] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" :stroke="scolor(1)" stroke-miterlimit="10" stroke-width="6"/></svg>
@@ -206,6 +206,14 @@ export default {
             // 故障状态字二进制编码
             binary_warning_status : [],
 
+            // 系统信息
+            system_info : [
+              {paramName : "协议版本号",        paramValue : 0, byte : 2, unit : "", isshow : 0},
+              {paramName : "电池厂商号",        paramValue : 0, byte : 2, unit : "", isshow : 0},
+              {paramName : "Wifi SSID",         paramValue : 0, byte : 2, unit : "", isshow : 0},
+              {paramName : "Wifi password",     paramValue : 0, byte : 2, unit : "", isshow : 0},
+            ],
+
             active : "",
             // isdeviceactive 设备是否在使用中
             isdeviceactive : [1,1,1,1,0,1],
@@ -252,7 +260,7 @@ export default {
             console.log( "Received Message: " + evt.data);
             // var dv = new DataView(evt.data);
             // 造假数据
-            var buffer = new ArrayBuffer(98);
+            var buffer = new ArrayBuffer(17);
             var uint8View = new DataView(buffer);
 
             // 电池信息
@@ -260,174 +268,206 @@ export default {
             //value           该对应字节将被设置的值
             //littleEndian  字节序，true为小端字节序，false或者不填为大端字节序
             
+            // FE 55 14 64 0A 00 0C 11 23 22 34 33 45 55 67 66 78 88 99 CA AE
             // uint8View.setUint8(0, 0xfe);  // sum = 19
             // uint8View.setUint8(1, 0x55); 
             // uint8View.setUint8(2, 0x14); 
             // uint8View.setUint8(3, 0x64); 
-            // uint8View.setUint8(4, 0x0a); 
-            // uint8View.setUint8(5, 0x0b); 
-            // uint8View.setUint8(6, 0x01); 
-            // uint8View.setUint8(7, 0xF4); 
-            // uint8View.setUint8(8, 0x00); 
-            // uint8View.setUint8(9, 0x64); 
-            // uint8View.setUint8(10, 0x00); 
-            // uint8View.setUint8(11, 0x32); 
-            // uint8View.setUint8(12, 0x00); 
-            // uint8View.setUint8(13, 0x50); 
-            // uint8View.setUint8(14, 0x00); 
-            // uint8View.setUint8(15, 0x64); 
-            // uint8View.setUint8(16, 0x11); 
-            // uint8View.setUint8(17, 0x12); 
-            // uint8View.setUint8(18, 0xAE);
+            // uint8View.setUint8(4, 0x0a); // 命令字
+            // uint8View.setUint8(5, 0x00); 
+            // uint8View.setUint8(6, 0x0C); // 长度2字节
+            // uint8View.setUint8(7, 0x11); 
+            // uint8View.setUint8(8, 0x23); 
+            // uint8View.setUint8(9, 0x22); 
+            // uint8View.setUint8(10, 0x34); 
+            // uint8View.setUint8(11, 0x33); 
+            // uint8View.setUint8(12, 0x45); 
+            // uint8View.setUint8(13, 0x55); 
+            // uint8View.setUint8(14, 0x67); 
+            // uint8View.setUint8(15, 0x66); 
+            // uint8View.setUint8(16, 0x78); 
+            // uint8View.setUint8(17, 0x88); 
+            // uint8View.setUint8(18, 0x99); 
+            // uint8View.setUint8(19, 0xCA);
+            // uint8View.setUint8(20, 0xAE);
           
             // 控制柜信息
-            // uint8View.setUint8(0, 0xfe); // sum = 98
+            // FE 55 14 64 0B 00 5A 11 22 22 33 33 44 44 55 55 66 66 77 77 88 88 99 99 AA AA BB BB CC 00 00 11 22 22 33 33 44 44 55 55 66 66 77 77 88 88 99 99 AA AA BB BB CC CC DD 11 22 22 33 33 44 44 55 55 66 66 77 77 88 88 99 99 AA AA BB BB CC CC DD DD EE EE FF 11 22 22 33 33 44 44 55 55 66 66 77 77 88 2E AE 
+            // uint8View.setUint8(0, 0xFE); // sum = 99
             // uint8View.setUint8(1, 0x55); 
             // uint8View.setUint8(2, 0x14); 
             // uint8View.setUint8(3, 0x64); 
-            // uint8View.setUint8(4, 0x0b); 
-            // uint8View.setUint8(5, 0x5a); // 90 byte
-            // uint8View.setUint8(6, 0x01); 
-            // uint8View.setUint8(7, 0xF4); 
-            // uint8View.setUint8(8, 0x00); 
-            // uint8View.setUint8(9, 0x64); 
-            // uint8View.setUint8(10, 0x00); 
-            // uint8View.setUint8(11, 0x32); 
-            // uint8View.setUint8(12, 0x00); 
-            // uint8View.setUint8(13, 0x50); 
-            // uint8View.setUint8(14, 0x00); 
-            // uint8View.setUint8(15, 0x64);
-            // uint8View.setUint8(16, 0x01); 
-            // uint8View.setUint8(17, 0xF4); 
-            // uint8View.setUint8(18, 0x00); 
-            // uint8View.setUint8(19, 0x64); 
-            // uint8View.setUint8(20, 0x00); 
-            // uint8View.setUint8(21, 0x32); 
-            // uint8View.setUint8(22, 0x00); 
-            // uint8View.setUint8(23, 0x50); 
-            // uint8View.setUint8(24, 0x00); 
-            // uint8View.setUint8(25, 0x64); 
-            // uint8View.setUint8(26, 0x01); 
-            // uint8View.setUint8(27, 0xF4); 
-            // uint8View.setUint8(28, 0x00); 
-            // uint8View.setUint8(29, 0x64); 
+            // uint8View.setUint8(4, 0x0B); 
+            // uint8View.setUint8(5, 0x00); 
+            // uint8View.setUint8(6, 0x5A); // 90 byte
+            // uint8View.setUint8(7, 0x11); 
+            // uint8View.setUint8(8, 0x22); 
+            // uint8View.setUint8(9, 0x22); 
+            // uint8View.setUint8(10, 0x33); 
+            // uint8View.setUint8(11, 0x33); 
+            // uint8View.setUint8(12, 0x44); 
+            // uint8View.setUint8(13, 0x44); 
+            // uint8View.setUint8(14, 0x55); 
+            // uint8View.setUint8(15, 0x55); 
+            // uint8View.setUint8(16, 0x66);
+            // uint8View.setUint8(17, 0x66); 
+            // uint8View.setUint8(18, 0x77); 
+            // uint8View.setUint8(19, 0x77); 
+            // uint8View.setUint8(20, 0x88); 
+            // uint8View.setUint8(21, 0x88); 
+            // uint8View.setUint8(22, 0x99); 
+            // uint8View.setUint8(23, 0x99); 
+            // uint8View.setUint8(24, 0xAA); 
+            // uint8View.setUint8(25, 0xAA); 
+            // uint8View.setUint8(26, 0xBB); 
+            // uint8View.setUint8(27, 0xBB); 
+            // uint8View.setUint8(28, 0xCC); 
+            // uint8View.setUint8(29, 0x00); 
             // uint8View.setUint8(30, 0x00); 
-            // uint8View.setUint8(31, 0x32); 
-            // uint8View.setUint8(32, 0x00); 
-            // uint8View.setUint8(33, 0x50); 
-            // uint8View.setUint8(34, 0x00); 
-            // uint8View.setUint8(35, 0x64); 
-            // uint8View.setUint8(36, 0x01); 
-            // uint8View.setUint8(37, 0xF4); 
-            // uint8View.setUint8(38, 0x00); 
-            // uint8View.setUint8(39, 0x64); 
-            // uint8View.setUint8(40, 0x00); 
-            // uint8View.setUint8(41, 0x32); 
-            // uint8View.setUint8(42, 0x00); 
-            // uint8View.setUint8(43, 0x50); 
-            // uint8View.setUint8(44, 0x00); 
-            // uint8View.setUint8(45, 0x64); 
-            // uint8View.setUint8(46, 0x01); 
-            // uint8View.setUint8(47, 0xF4); 
-            // uint8View.setUint8(48, 0x00); 
-            // uint8View.setUint8(49, 0x64); 
-            // uint8View.setUint8(50, 0x00); 
-            // uint8View.setUint8(51, 0x32); 
-            // uint8View.setUint8(52, 0x00); 
-            // uint8View.setUint8(53, 0x50); 
-            // uint8View.setUint8(54, 0x00); 
-            // uint8View.setUint8(55, 0x64); 
-            // uint8View.setUint8(56, 0x01); 
-            // uint8View.setUint8(57, 0xF4); 
-            // uint8View.setUint8(58, 0x00); 
-            // uint8View.setUint8(59, 0x64); 
-            // uint8View.setUint8(60, 0x00); 
-            // uint8View.setUint8(61, 0x32); 
-            // uint8View.setUint8(62, 0x00); 
-            // uint8View.setUint8(63, 0x50); 
-            // uint8View.setUint8(64, 0x00); 
-            // uint8View.setUint8(65, 0x64); 
-            // uint8View.setUint8(66, 0x01); 
-            // uint8View.setUint8(67, 0xF4); 
-            // uint8View.setUint8(68, 0x00); 
-            // uint8View.setUint8(69, 0x64); 
-            // uint8View.setUint8(70, 0x00); 
-            // uint8View.setUint8(71, 0x32); 
-            // uint8View.setUint8(72, 0x00); 
-            // uint8View.setUint8(73, 0x50); 
-            // uint8View.setUint8(74, 0x00); 
-            // uint8View.setUint8(75, 0x64); 
-            // uint8View.setUint8(76, 0x01); 
-            // uint8View.setUint8(77, 0xF4); 
-            // uint8View.setUint8(78, 0x00); 
-            // uint8View.setUint8(79, 0x64); 
-            // uint8View.setUint8(80, 0x00); 
-            // uint8View.setUint8(81, 0x32); 
-            // uint8View.setUint8(82, 0x00); 
-            // uint8View.setUint8(83, 0x50); 
-            // uint8View.setUint8(84, 0x00); 
-            // uint8View.setUint8(85, 0x64); 
-            // uint8View.setUint8(86, 0x01); 
-            // uint8View.setUint8(87, 0xF4); 
-            // uint8View.setUint8(88, 0x00); 
-            // uint8View.setUint8(89, 0x64); 
-            // uint8View.setUint8(90, 0x00); 
-            // uint8View.setUint8(91, 0x32); 
-            // uint8View.setUint8(92, 0x00); 
-            // uint8View.setUint8(93, 0x50); 
-            // uint8View.setUint8(94, 0x00); 
-            // uint8View.setUint8(95, 0x64); 
-            // uint8View.setUint8(96, 0x12); 
-            // uint8View.setUint8(97, 0xAE);
+            // uint8View.setUint8(31, 0x11); 
+            // uint8View.setUint8(32, 0x22); 
+            // uint8View.setUint8(33, 0x22); 
+            // uint8View.setUint8(34, 0x33); 
+            // uint8View.setUint8(35, 0x33); 
+            // uint8View.setUint8(36, 0x44); 
+            // uint8View.setUint8(37, 0x44); 
+            // uint8View.setUint8(38, 0x55); 
+            // uint8View.setUint8(39, 0x55); 
+            // uint8View.setUint8(40, 0x66); 
+            // uint8View.setUint8(41, 0x66); 
+            // uint8View.setUint8(42, 0x77); 
+            // uint8View.setUint8(43, 0x77); 
+            // uint8View.setUint8(44, 0x88); 
+            // uint8View.setUint8(45, 0x88); 
+            // uint8View.setUint8(46, 0x99); 
+            // uint8View.setUint8(47, 0x99); 
+            // uint8View.setUint8(48, 0xAA); 
+            // uint8View.setUint8(49, 0xAA); 
+            // uint8View.setUint8(50, 0xBB); 
+            // uint8View.setUint8(51, 0xBB); 
+            // uint8View.setUint8(52, 0xCC); 
+            // uint8View.setUint8(53, 0xCC); 
+            // uint8View.setUint8(54, 0xDD); 
+            // uint8View.setUint8(55, 0x11); 
+            // uint8View.setUint8(56, 0x22); 
+            // uint8View.setUint8(57, 0x22); 
+            // uint8View.setUint8(58, 0x33); 
+            // uint8View.setUint8(59, 0x33); 
+            // uint8View.setUint8(60, 0x44); 
+            // uint8View.setUint8(61, 0x44); 
+            // uint8View.setUint8(62, 0x55); 
+            // uint8View.setUint8(63, 0x55); 
+            // uint8View.setUint8(64, 0x66); 
+            // uint8View.setUint8(65, 0x66); 
+            // uint8View.setUint8(66, 0x77); 
+            // uint8View.setUint8(67, 0x77); 
+            // uint8View.setUint8(68, 0x88); 
+            // uint8View.setUint8(69, 0x88); 
+            // uint8View.setUint8(70, 0x99); 
+            // uint8View.setUint8(71, 0x99); 
+            // uint8View.setUint8(72, 0xAA); 
+            // uint8View.setUint8(73, 0xAA); 
+            // uint8View.setUint8(74, 0xBB); 
+            // uint8View.setUint8(75, 0xBB); 
+            // uint8View.setUint8(76, 0xCC); 
+            // uint8View.setUint8(77, 0xCC); 
+            // uint8View.setUint8(78, 0xDD); 
+            // uint8View.setUint8(79, 0xDD); 
+            // uint8View.setUint8(80, 0xEE); 
+            // uint8View.setUint8(81, 0xEE); 
+            // uint8View.setUint8(82, 0xFF); 
+            // uint8View.setUint8(83, 0x11); 
+            // uint8View.setUint8(84, 0x22); 
+            // uint8View.setUint8(85, 0x22); 
+            // uint8View.setUint8(86, 0x33); 
+            // uint8View.setUint8(87, 0x33); 
+            // uint8View.setUint8(88, 0x44); 
+            // uint8View.setUint8(89, 0x44); 
+            // uint8View.setUint8(90, 0x55); 
+            // uint8View.setUint8(91, 0x55); 
+            // uint8View.setUint8(92, 0x66); 
+            // uint8View.setUint8(93, 0x66); 
+            // uint8View.setUint8(94, 0x77); 
+            // uint8View.setUint8(95, 0x77); 
+            // uint8View.setUint8(96, 0x88); 
+            // uint8View.setUint8(97, 0x2E); 
+            // uint8View.setUint8(98, 0xAE);
 
             // BMS告警信息
+            // FE 55 14 64 1E 00 06 01 00 01 00 01 00 11 AE
             // uint8View.setUint8(0, 0xfe);
             // uint8View.setUint8(1, 0x55); 
             // uint8View.setUint8(2, 0x14); 
             // uint8View.setUint8(3, 0x64); 
             // uint8View.setUint8(4, 0x1E); // COMMOND 
-            // uint8View.setUint8(5, 0x06); 
-            // uint8View.setUint8(6, 0x01); 
+            // uint8View.setUint8(5, 0x00); 
+            // uint8View.setUint8(6, 0x06); 
             // uint8View.setUint8(7, 0x01); 
-            // uint8View.setUint8(8, 0x01); 
+            // uint8View.setUint8(8, 0x00); 
             // uint8View.setUint8(9, 0x01); 
-            // uint8View.setUint8(10, 0x01); 
+            // uint8View.setUint8(10, 0x00); 
             // uint8View.setUint8(11, 0x01); 
-            // uint8View.setUint8(12, 0x12); 
-            // uint8View.setUint8(13, 0xAE);
+            // uint8View.setUint8(12, 0x00); 
+            // uint8View.setUint8(13, 0x11); 
+            // uint8View.setUint8(14, 0xAE);
              
             // 系统故障状态显示
+            // FE 55 14 64 1F 00 08 00 A1 00 A2 00 A3 00 A4 B8 AE
             // uint8View.setUint8(0, 0xfe);
             // uint8View.setUint8(1, 0x55); 
             // uint8View.setUint8(2, 0x14); 
             // uint8View.setUint8(3, 0x64); 
             // uint8View.setUint8(4, 0x1F); // COMMOND  
-            // uint8View.setUint8(5, 0x08);  
-            // uint8View.setUint8(6, 0x01); 
-            // uint8View.setUint8(7, 0x00); 
-            // uint8View.setUint8(8, 0x01); 
-            // uint8View.setUint8(9, 0x00); 
-            // uint8View.setUint8(10, 0x00); 
-            // uint8View.setUint8(11, 0x66); 
-            // uint8View.setUint8(12, 0x00); 
-            // uint8View.setUint8(13, 0x77); 
-            // uint8View.setUint8(14, 0x12); 
-            // uint8View.setUint8(15, 0xAE);
+            // uint8View.setUint8(5, 0x00);  
+            // uint8View.setUint8(6, 0x08);  
+            // uint8View.setUint8(7, 0x00);   //00000000
+            // uint8View.setUint8(8, 0xA1);  // 10100001
+            // uint8View.setUint8(9, 0x00);  // 00000000
+            // uint8View.setUint8(10, 0xA2); // 10100010
+            // uint8View.setUint8(11, 0x00); 
+            // uint8View.setUint8(12, 0xA3); 
+            // uint8View.setUint8(13, 0x00); 
+            // uint8View.setUint8(14, 0xA4); 
+            // uint8View.setUint8(15, 0xB8); 
+            // uint8View.setUint8(16, 0xAE);
             // 
              
-            // 系统故障状态显示
-            uint8View.setUint8(0, 0xfe);
+            // 设备运行状态 
+            // FE 55 14 64 0C 00 04 11 22 AA BB 13 AE
+            // uint8View.setUint8(0, 0xfe);
+            // uint8View.setUint8(1, 0x55); 
+            // uint8View.setUint8(2, 0x14); 
+            // uint8View.setUint8(3, 0x64); 
+            // uint8View.setUint8(4, 0x0C); // COMMOND  
+            // uint8View.setUint8(5, 0x00);  
+            // uint8View.setUint8(6, 0x04);  
+            // uint8View.setUint8(7, 0x11); 
+            // uint8View.setUint8(8, 0x22); 
+            // uint8View.setUint8(9, 0xAA); 
+            // uint8View.setUint8(10, 0xBB); 
+            // uint8View.setUint8(11, 0x13); 
+            // uint8View.setUint8(12, 0xAE);
+            // 
+            
+            // 系统信息
+            // FE 55 14 64 98 00 08 03 E9 00 01 00 00 00 00 70 AE
+            uint8View.setUint8(0, 0xFE);
             uint8View.setUint8(1, 0x55); 
             uint8View.setUint8(2, 0x14); 
             uint8View.setUint8(3, 0x64); 
-            uint8View.setUint8(4, 0x0C); // COMMOND  
-            uint8View.setUint8(5, 0x04);  
-            uint8View.setUint8(6, 0x31); 
-            uint8View.setUint8(7, 0x21); 
-            uint8View.setUint8(8, 0x00); 
+            uint8View.setUint8(4, 0x98); // COMMOND  
+            uint8View.setUint8(5, 0x00);  
+            uint8View.setUint8(6, 0x08);  
+            uint8View.setUint8(7, 0x03); 
+            uint8View.setUint8(8, 0xE9); 
             uint8View.setUint8(9, 0x00); 
-            uint8View.setUint8(10, 0x12); 
-            uint8View.setUint8(11, 0xAE);
+            uint8View.setUint8(10, 0x01); 
+            uint8View.setUint8(11, 0x00); 
+            uint8View.setUint8(12, 0x00);
+            uint8View.setUint8(13, 0x00);
+            uint8View.setUint8(14, 0x00);
+            uint8View.setUint8(15, 0x70);
+            uint8View.setUint8(16, 0xAE);
 
             _this.praseData(uint8View);
           };
@@ -453,32 +493,37 @@ export default {
                     
                     if(start_addr == 0x14 && target_addr == 0x64){ // PCU->APP 起始地址为0X14，目标地址0x64
 
-                        var length = dataview.getInt8(5,false);
+                        var length = dataview.getInt16(5,false);
 
-                        if(dataview.getUint8(6 + length + 1, false) == 0xAE){ // 数据包完整 有结束
+                        if(dataview.getUint8(7 + length + 1, false) == 0xAE){ // 数据包完整 有结束
 
                           switch (command) {
 
                             case 0x0A: // 储能电池信息 
                               
-                              this.praseBatteryData(dataview, 6, length); // 数据从6开始 截止是6+length
+                              this.praseBatteryData(dataview, 7, length); // 数据从6开始 截止是6+length
+                              console.log(JSON.stringify(this.params_battery, " ", 4));
                               this.$store.commit('PARAM_BATTERY_CHANGE', this.params_battery);
                               break;
 
                             case 0x0B: // 控制柜信息
                               
-                              this.prasCtrlcabData(dataview, 6, length);
+                              this.prasCtrlcabData(dataview, 7, length);
                               this.$store.commit('PARAM_CTRLCAB_CHANGE', this.params_ctrlcab);
+
+                              // console.log(JSON.stringify(this.params_ctrlcab," ", 2));
+
+
                               break;
                             case 0x1E: // BMS告警信息 warning_bms
 
-                              this.prasBMSWarningData(dataview, 6, length);
+                              this.prasBMSWarningData(dataview, 7, length);
 
                               // console.log(JSON.stringify(this.warning_bms, " ", 4));
                               this.$store.commit('WARNING_BMS_CHANGE', this.warning_bms);
                               break;
                             case 0x0C: // 设备运行状态信息 4个字节 
-                              this.prasDeviceRunningStatus(dataview, 6, length);
+                              this.prasDeviceRunningStatus(dataview, 7, length);
                               
                               // 将数据解析成二进制位
                               this.binary_running_status = [];
@@ -489,13 +534,13 @@ export default {
                               // 将二进制报文转化为对象
                               this.getRunningStatus(this.binary_running_status);
 
-                              // console.log(JSON.stringify(this.binary_running_status, " ", 4));
-                              // console.log(JSON.stringify(this.running_status_mean, " ", 4));
+                              console.log(JSON.stringify(this.binary_running_status, " ", 4));
+                              console.log(JSON.stringify(this.running_status_mean, " ", 4));
                               break;
 
                             case 0x1F: // 系统故障状态显示 8个字节 
                               
-                              this.prasDeviceWarningStatus(dataview, 6, length);
+                              this.prasDeviceWarningStatus(dataview, 7, length);
                               // 将数据解析成二进制位
                               this.binary_warning_status = [];
                               for(var i = 0; i < this.warning_status.length; i++){
@@ -503,6 +548,14 @@ export default {
                               }
                               this.$store.commit('WARNING_SYS_CHANGE', this.binary_warning_status);
                               // console.log(JSON.stringify(this.binary_warning_status, " ", 4));
+                              break;
+
+
+                            case 0x98: // 系统信息
+                              
+                              this.prasSystemData(dataview, 7, length);
+                              // this.$store.commit('PARAM_SYS_CHANGE', this.system_info);
+                              console.log(JSON.stringify(this.system_info," ", 2));
                               break;
                             default:
                               // statements_def
@@ -545,16 +598,32 @@ export default {
 
             if(this.params_ctrlcab[i].byte == 2){ // 2个字节的数据
 
-              this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
+              this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
               offset += 2;
             }else{ // 1个字节的数据
 
-              this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
+              this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
               offset += 1;
             }
           }
         },
 
+        // 解析系统基础信息
+        prasSystemData : function(datalist, start, length){
+            var offset = 0;
+          for(var i = 0; i < this.system_info.length; i++){
+
+            if(this.system_info[i].byte == 2){ // 2个字节的数据
+
+              this.system_info[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
+              offset += 2;
+            }else{ // 1个字节的数据
+
+              this.system_info[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
+              offset += 1;
+            }
+          }
+        },
         // 解析电池BMS告警信息
         prasBMSWarningData : function(datalist, start, length){
 
@@ -638,7 +707,7 @@ export default {
             // 加工二进制的 bytearray 发送控制命令 COMMOND 0x64
             // PcuOnOff Wifi    change  Wifi SSID Wifi password
             //  1 byte  1 byte  2 byte  2byte
-            var buffer = new ArrayBuffer(14);
+            var buffer = new ArrayBuffer(15);
             var uint8View = new DataView(buffer);
 
             uint8View.setUint8(0, 0xfe);
@@ -646,22 +715,23 @@ export default {
             uint8View.setUint8(2, 0x64);  // 发给 PCU
             uint8View.setUint8(3, 0x14); 
             uint8View.setUint8(4, 0x64);  
-            uint8View.setUint8(5, 0x06);
+            uint8View.setUint8(5, 0x00);
+            uint8View.setUint8(6, 0x06);
 
             if(flag){
-              uint8View.setUint8(6, 0x55);  // 1byte 开关机 开机（0x55），关机（0xAA）
+              uint8View.setUint8(7, 0x55);  // 1byte 开关机 开机（0x55），关机（0xAA）
               message = "开机指令已下发";
             }else{
-              uint8View.setUint8(6, 0xAA);  // 1byte 开关机 开机（0x55），关机（0xAA）
+              uint8View.setUint8(7, 0xAA);  // 1byte 开关机 开机（0x55），关机（0xAA）
               message = "关机指令已下发";
             }
-            uint8View.setUint8(7, 0x01);  // 1byte Wifi  使能（0x5A）
-            uint8View.setUint8(8, 0x01);  // 2byte Wifi SSID  
-            uint8View.setUint8(9, 0x01);  
-            uint8View.setUint8(10, 0x01); // 2byte Wifi password
-            uint8View.setUint8(11, 0x01); 
-            uint8View.setUint8(12, 0x12); 
-            uint8View.setUint8(13, 0xAE);
+            uint8View.setUint8(8, 0x01);  // 1byte Wifi  使能（0x5A）
+            uint8View.setUint8(9, 0x01);  // 2byte Wifi SSID  
+            uint8View.setUint8(10, 0x01);  
+            uint8View.setUint8(11, 0x01); // 2byte Wifi password
+            uint8View.setUint8(12, 0x01); 
+            uint8View.setUint8(13, 0x12); 
+            uint8View.setUint8(14, 0xAE);
             // console.log(uint8View);
             this.WS.send(buffer);
 
@@ -676,26 +746,26 @@ export default {
             for(var i = 0; i < this.settingParamsters.length; i++){
                 datalength += this.settingParamsters[i].byte;
             }
-            var buffer = new ArrayBuffer(datalength + 8); // 数据长度+8 
+            var buffer = new ArrayBuffer(datalength + 9); // 数据长度+8 
             var uint8View = new DataView(buffer);
             uint8View.setUint8(0, 0xfe);
             uint8View.setUint8(1, 0x55); 
             uint8View.setUint8(2, 0x64);  // 发给 PCU
             uint8View.setUint8(3, 0x14); 
             uint8View.setUint8(4, 0x65);  // COMMAND 
-            uint8View.setUint8(5, datalength.toString(16)); // datalength
+            uint8View.setUint16(5, datalength.toString(16)); // datalength
 
             var offset = 0; 
             for(i = 0; i < this.settingParamsters.length; i++){   // 数据区
               if(this.settingParamsters[i].byte == 1){
-                  uint8View.setUint8(6 + offset, this.settingParamsters[i].paramValue.toString(16));
+                  uint8View.setUint8(7 + offset, this.settingParamsters[i].paramValue);
               }else{
-                  uint8View.setUint16(6 + offset, this.settingParamsters[i].paramValue.toString(16));
+                  uint8View.setUint16(7 + offset, this.settingParamsters[i].paramValue);
               }
               offset += this.settingParamsters[i].byte;
             }
-            uint8View.setUint8(6 + offset, 0x12);  // 校验位
-            uint8View.setUint8(7 + offset, 0xAE);  // 结束位
+            uint8View.setUint8(7 + offset, 0x12);  // 校验位
+            uint8View.setUint8(8 + offset, 0xAE);  // 结束位
             this.WS.send(buffer);
             console.log(uint8View);
             this.$f7.dialog.alert("参数设置已下发","提示");
@@ -713,9 +783,11 @@ export default {
 <style  lang="scss" scoped>
   @import "../../sass/publicSize";
   .cusbutton{
-    width: 90%;
-    margin: 0px auto 10px auto;
-    // transform: translateY(10px);
+    width: 82%;
+    margin: 15px auto 0 auto;
+    display: block;
+    text-align: center;
+    color:  $base-active-color;
   }
   .iconitem1{
       margin: -25% 0 0 -28%;
@@ -860,7 +932,7 @@ export default {
 
 <style>
   .list li:nth-child(2n-1){
-    background-color: #fbfbfb;
+    background-color: rgba(239, 239, 244, 0.52);
   }
   .list li:nth-child(2n){
     background-color: #fff;

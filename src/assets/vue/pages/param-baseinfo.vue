@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar title="系统基础信息" back-link="Back" href="/params/"></f7-navbar>
+    <f7-navbar title="系统基础信息"  back-link="返回" href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item>
         <span>软件版本号</span>

@@ -54,6 +54,11 @@ export default new Vue({
   framework7: {
     id: 'io.framework7.testapp',
     theme, //theme  md or ios
+    dialog: {
+    // change default "OK" button text
+    buttonOk: '确认',
+    buttonCancel: '取消',
+  }
   },
   routes,
 });

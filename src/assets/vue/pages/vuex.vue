@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar title="About F7" back-link="Back" sliding></f7-navbar>
+    <f7-navbar title="About F7" back-link="返回" sliding></f7-navbar>
     <f7-block-title>{{user.name ? "You are already logged" : "Please login"}}</f7-block-title>
     <f7-list>
 			<f7-list-group v-if="user.name">

@@ -1,33 +1,25 @@
 <template>
   <f7-page>
-    <f7-navbar title="系统故障状态" back-link="Back" href="/params/"></f7-navbar>
+    <f7-navbar title="系统故障状态" back-link="返回" href="/params/"></f7-navbar>
     <f7-list class="media-list">
-      <f7-list-item title="故障状态字1"></f7-list-item>
+      <!-- <f7-list-item title="故障状态字1"></f7-list-item> -->
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName" v-if="item.isshow == 1 && index < 16">
         <span>{{item.paramName}}</span>
         <span class="params">{{gitstatusname(item.paramValue)}}</span>
         <em class="unit">{{item.unit}}</em>
       </f7-list-item>
-
-
-      <f7-list-item title="故障状态字2"></f7-list-item>
+      <!-- <f7-list-item title="故障状态字2"></f7-list-item> -->
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName" v-if="item.isshow == 1 && index > 15 && index < 32">
         <span>{{item.paramName}}</span>
         <span class="params">{{gitstatusname(item.paramValue)}}</span>
         <em class="unit">{{item.unit}}</em>
       </f7-list-item>
-
-
-      <f7-list-item title="故障状态字3"></f7-list-item>
+      <!-- <f7-list-item title="故障状态字3"></f7-list-item> -->
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName" v-if="item.isshow == 1 && index > 31">
         <span>{{item.paramName}}</span>
         <span class="params">{{gitstatusname(item.paramValue)}}</span>
         <em class="unit">{{item.unit}}</em>
       </f7-list-item>
-      
-
-
-
     </f7-list>
   </f7-page>
 </template>
@@ -127,9 +119,11 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     },
 
     methods : {
+
       gitstatusname : function(num){
         return num == 1 ? "异常" : "正常"
       },
+      
       // 将字符串二进制数据设置到datalist中
       setValueInParamList:  function(){
         if(this.paramsdata.length > 0) {
@@ -140,7 +134,6 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
              }
           }
         }
-        
       },
     },
     mounted : function(){

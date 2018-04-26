@@ -1,6 +1,7 @@
+<!--  给运维使用的设置量 -->
 <template>
   <f7-page>
-    <f7-navbar title="系统设置" back-link="Back" >
+    <f7-navbar title="系统设置"  back-link="返回" >
     </f7-navbar>
     <div class="block block-strong setting">
       <div class="block-title">控制命令设置</div>
@@ -253,8 +254,6 @@
               </div>
             </div>
           </li>
-
-
           <li>
             <div class="item-content">
               <div class="item-inner">
@@ -277,7 +276,6 @@
             </div>
           </li>
 
-          
           <li>
             <div class="item-content">
               <div class="item-inner">
@@ -300,7 +298,6 @@
             </div>
           </li>
         
-
 
           <li>
             <div class="item-content">

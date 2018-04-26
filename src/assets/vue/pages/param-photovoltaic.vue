@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar title="光伏输入" back-link="Back" href="/params/"></f7-navbar>
+    <f7-navbar title="光伏输入"  back-link="返回" href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName"  v-if="item.isshow == 1">
         <span>{{item.paramName}}</span>

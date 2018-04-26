@@ -18826,7 +18826,12 @@ exports.default = new _vue2.default({
   },
   framework7: {
     id: 'io.framework7.testapp',
-    theme: theme //theme  md or ios
+    theme: theme, //theme  md or ios
+    dialog: {
+      // change default "OK" button text
+      buttonOk: '确认',
+      buttonCancel: '取消'
+    }
   },
   routes: _routes2.default
 });
@@ -30766,7 +30771,7 @@ exports.default = [{
   component: __webpack_require__(/*! ./assets/vue/pages/params.vue */ 192)
 }, {
   path: '/setting/', // 系统设置主页
-  component: __webpack_require__(/*! ./assets/vue/pages/setting.vue */ 200)
+  component: __webpack_require__(/*! ./assets/vue/pages/setting-u.vue */ 200)
 }, {
   path: '/panel-left/',
   component: __webpack_require__(/*! ./assets/vue/pages/panel-left.vue */ 205)
@@ -30897,7 +30902,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.baseBorderRadius[data-v-7c69b0d7] {\n  border-radius: 3px !important;\n}\n.baseBorderRadiusTR[data-v-7c69b0d7] {\n  border-radius: 3px 3px 0 0 !important;\n}\n.baseBorderRadiusTL[data-v-7c69b0d7] {\n  border-radius: 3px 0 0 3px !important;\n}\n.baseBorderRadiusBR[data-v-7c69b0d7] {\n  border-radius: 0 3px 3px 0 !important;\n}\n.baseBorderRadiusBL[data-v-7c69b0d7] {\n  border-radius: 0 0 3px 3px !important;\n}\n.clearBorderRadius[data-v-7c69b0d7] {\n  border-radius: 0 !important;\n}\n.clearBorder[data-v-7c69b0d7] {\n  border-width: 0 !important;\n}\n.clearBorderTop[data-v-7c69b0d7] {\n  border-top-width: 0 !important;\n}\n.clearBorderRight[data-v-7c69b0d7] {\n  border-right-width: 0 !important;\n}\n.clearBorderBottom[data-v-7c69b0d7] {\n  border-bottom-width: 0 !important;\n}\n.clearBorderLeft[data-v-7c69b0d7] {\n  border-left-width: 0 !important;\n}\n.hasPadding[data-v-7c69b0d7] {\n  padding: 24px !important;\n}\n.hasPaddingTop[data-v-7c69b0d7] {\n  padding-top: 24px !important;\n}\n.hasPaddingRight[data-v-7c69b0d7] {\n  padding-right: 24px !important;\n}\n.hasPaddingBottom[data-v-7c69b0d7] {\n  padding-bottom: 24px !important;\n}\n.hasPaddingLeft[data-v-7c69b0d7] {\n  padding-left: 24px !important;\n}\n.clearPadding[data-v-7c69b0d7] {\n  padding: 0 !important;\n}\n.clearPaddingTop[data-v-7c69b0d7] {\n  padding-top: 0 !important;\n}\n.clearPaddingRight[data-v-7c69b0d7] {\n  padding-right: 0 !important;\n}\n.clearPaddingBottom[data-v-7c69b0d7] {\n  padding-bottom: 0 !important;\n}\n.clearPaddingLeft[data-v-7c69b0d7] {\n  padding-left: 0 !important;\n}\n.hasMargin[data-v-7c69b0d7] {\n  margin: 20px !important;\n}\n.hasMarginTop[data-v-7c69b0d7] {\n  margin-top: 20px !important;\n}\n.hasMarginRight[data-v-7c69b0d7] {\n  margin-right: 20px !important;\n}\n.hasMarginBottom[data-v-7c69b0d7] {\n  margin-bottom: 20px !important;\n}\n.hasMarginLeft[data-v-7c69b0d7] {\n  margin-left: 20px !important;\n}\n.clearMargin[data-v-7c69b0d7] {\n  margin: 0 !important;\n}\n.clearMarginTop[data-v-7c69b0d7] {\n  margin-top: 0 !important;\n}\n.clearMarginRight[data-v-7c69b0d7] {\n  margin-right: 0 !important;\n}\n.clearMarginBottom[data-v-7c69b0d7] {\n  margin-bottom: 0 !important;\n}\n.clearMarginLeft[data-v-7c69b0d7] {\n  margin-left: 0 !important;\n}\n.listPadding[data-v-7c69b0d7] {\n  padding: 20px !important;\n}\n.listPaddingTop[data-v-7c69b0d7] {\n  padding-top: 20px !important;\n}\n.listPaddingRight[data-v-7c69b0d7] {\n  padding-right: 20px !important;\n}\n.listPaddingBottom[data-v-7c69b0d7] {\n  padding-bottom: 20px !important;\n}\n.listPaddingLeft[data-v-7c69b0d7] {\n  padding-left: 20px !important;\n}\n.clearPadding[data-v-7c69b0d7] {\n  padding: 0 !important;\n}\n.clearPaddingTop[data-v-7c69b0d7] {\n  padding-top: 0 !important;\n}\n.clearPaddingRight[data-v-7c69b0d7] {\n  padding-right: 0 !important;\n}\n.clearPaddingBottom[data-v-7c69b0d7] {\n  padding-bottom: 0 !important;\n}\n.clearPaddingLeft[data-v-7c69b0d7] {\n  padding-left: 0 !important;\n}\n.listMargin[data-v-7c69b0d7] {\n  margin: 20px !important;\n}\n.listMarginTop[data-v-7c69b0d7] {\n  margin-top: 20px !important;\n}\n.listMarginRight[data-v-7c69b0d7] {\n  margin-right: 20px !important;\n}\n.listMarginBottom[data-v-7c69b0d7] {\n  margin-bottom: 20px !important;\n}\n.listMarginLeft[data-v-7c69b0d7] {\n  margin-left: 20px !important;\n}\n.clearMargin[data-v-7c69b0d7] {\n  margin: 0 !important;\n}\n.clearMarginTop[data-v-7c69b0d7] {\n  margin-top: 0 !important;\n}\n.clearMarginRight[data-v-7c69b0d7] {\n  margin-right: 0 !important;\n}\n.clearMarginBottom[data-v-7c69b0d7] {\n  margin-bottom: 0 !important;\n}\n.clearMarginLeft[data-v-7c69b0d7] {\n  margin-left: 0 !important;\n}\n.cusbutton[data-v-7c69b0d7] {\n  width: 90%;\n  margin: 0px auto 10px auto;\n}\n.iconitem1[data-v-7c69b0d7] {\n  margin: -25% 0 0 -28%;\n}\n.iconitem2[data-v-7c69b0d7] {\n  margin: -25% 0 0 30%;\n}\n.iconitem3[data-v-7c69b0d7] {\n  margin: 0%;\n}\n.iconitem4[data-v-7c69b0d7] {\n  margin: 19% 0 0 -28%;\n}\n.iconitem5[data-v-7c69b0d7] {\n  margin: 19% 0 0 0%;\n}\n.iconitem6[data-v-7c69b0d7] {\n  margin: 19% 0 0 30%;\n}\n.systopology[data-v-7c69b0d7] {\n  height: calc(100% - 36%);\n  margin: 2% 0px 2% 0;\n  padding: 10px 15px 0 15px;\n  background-color: #fff;\n}\n.iconitem[data-v-7c69b0d7] {\n  width: 15%;\n  height: 15%;\n  border-radius: 50%;\n}\n.iconitem.active[data-v-7c69b0d7] {\n  background-color: #3b55e6;\n}\n.iconitem a[data-v-7c69b0d7] {\n  width: 100%;\n  height: 100%;\n  display: inline-block;\n}\n.imageicon[data-v-7c69b0d7] {\n  margin: 5px 0 0 0;\n}\n.staticitem[data-v-7c69b0d7] {\n  bottom: 2%;\n  width: 100%;\n}\n.staticitem li[data-v-7c69b0d7] {\n  padding: 2% 20px 2% 75px;\n  margin-top: -1px;\n  border-top: 1px solid #eaeaea;\n}\n.backicon.icon1[data-v-7c69b0d7] {\n  background: #fff url(" + escape(__webpack_require__(/*! ../../images/solarjuxing@2x.png */ 76)) + ") 7% 43% no-repeat;\n  background-size: 38px;\n}\n.backicon.icon2[data-v-7c69b0d7] {\n  background: #fff url(" + escape(__webpack_require__(/*! ../../images/2fuzai@2x.png */ 77)) + ") 7% 43% no-repeat;\n  background-size: 38px;\n}\n.backicon.icon3[data-v-7c69b0d7] {\n  background: #fff url(" + escape(__webpack_require__(/*! ../../images/dianfei@2x.png */ 177)) + ") 7% 43% no-repeat;\n  background-size: 38px;\n}\n.svg[data-v-7c69b0d7] {\n  position: absolute;\n}\n.svg1[data-v-7c69b0d7] {\n  transform: translate(-50%, -50%) scale(0.3);\n  margin: -17% 0 0 -13%;\n}\n.svg2[data-v-7c69b0d7] {\n  transform: translate(-50%, -50%) scale(0.3);\n  margin: -13% 0 0 19%;\n}\n.svg3[data-v-7c69b0d7] {\n  transform: translate(-50%, -50%) scale(0.3) rotateX(180deg);\n  margin: 15% 0px 0px -13%;\n}\n.svg4[data-v-7c69b0d7] {\n  margin: 11% 0 0 19%;\n  transform: translate(-50%, -50%) scale(0.3) rotateX(180deg);\n}\n.svg5[data-v-7c69b0d7] {\n  width: 7px;\n  margin-top: 15%;\n  transform: translate(-50%, -50%) scale(0.3);\n}\n.statustext[data-v-7c69b0d7] {\n  font-size: 14px;\n  color: #3b55e6;\n}\n.devicename[data-v-7c69b0d7] {\n  font-size: 14px;\n  width: 107%;\n  text-align: center;\n  background-color: #fff;\n  color: #000;\n}\n.statustext1[data-v-7c69b0d7] {\n  margin: -8% 0 0 -15%;\n}\n.statustext2[data-v-7c69b0d7] {\n  margin: -8% 0 0 15%;\n}\n.statustext3[data-v-7c69b0d7] {\n  margin: 8% 0 0 -15%;\n}\n.statustext4[data-v-7c69b0d7] {\n  margin: 15% 0 0 4%;\n}\n.statustext5[data-v-7c69b0d7] {\n  margin: 8% 0 0 15%;\n}\n@keyframes dash-data-v-7c69b0d7 {\nto {\n    stroke-dashoffset: 50;\n}\n}\n.path[data-v-7c69b0d7] {\n  stroke-dasharray: 5;\n  animation: dash-data-v-7c69b0d7 5s linear infinite;\n}\n@keyframes dash2-data-v-7c69b0d7 {\nto {\n    stroke-dashoffset: -50;\n}\n}\n.path2[data-v-7c69b0d7] {\n  stroke-dasharray: 5;\n  animation: dash2-data-v-7c69b0d7 5s linear infinite;\n}\n", ""]);
+exports.push([module.i, "\n.baseBorderRadius[data-v-7c69b0d7] {\n  border-radius: 3px !important;\n}\n.baseBorderRadiusTR[data-v-7c69b0d7] {\n  border-radius: 3px 3px 0 0 !important;\n}\n.baseBorderRadiusTL[data-v-7c69b0d7] {\n  border-radius: 3px 0 0 3px !important;\n}\n.baseBorderRadiusBR[data-v-7c69b0d7] {\n  border-radius: 0 3px 3px 0 !important;\n}\n.baseBorderRadiusBL[data-v-7c69b0d7] {\n  border-radius: 0 0 3px 3px !important;\n}\n.clearBorderRadius[data-v-7c69b0d7] {\n  border-radius: 0 !important;\n}\n.clearBorder[data-v-7c69b0d7] {\n  border-width: 0 !important;\n}\n.clearBorderTop[data-v-7c69b0d7] {\n  border-top-width: 0 !important;\n}\n.clearBorderRight[data-v-7c69b0d7] {\n  border-right-width: 0 !important;\n}\n.clearBorderBottom[data-v-7c69b0d7] {\n  border-bottom-width: 0 !important;\n}\n.clearBorderLeft[data-v-7c69b0d7] {\n  border-left-width: 0 !important;\n}\n.hasPadding[data-v-7c69b0d7] {\n  padding: 24px !important;\n}\n.hasPaddingTop[data-v-7c69b0d7] {\n  padding-top: 24px !important;\n}\n.hasPaddingRight[data-v-7c69b0d7] {\n  padding-right: 24px !important;\n}\n.hasPaddingBottom[data-v-7c69b0d7] {\n  padding-bottom: 24px !important;\n}\n.hasPaddingLeft[data-v-7c69b0d7] {\n  padding-left: 24px !important;\n}\n.clearPadding[data-v-7c69b0d7] {\n  padding: 0 !important;\n}\n.clearPaddingTop[data-v-7c69b0d7] {\n  padding-top: 0 !important;\n}\n.clearPaddingRight[data-v-7c69b0d7] {\n  padding-right: 0 !important;\n}\n.clearPaddingBottom[data-v-7c69b0d7] {\n  padding-bottom: 0 !important;\n}\n.clearPaddingLeft[data-v-7c69b0d7] {\n  padding-left: 0 !important;\n}\n.hasMargin[data-v-7c69b0d7] {\n  margin: 20px !important;\n}\n.hasMarginTop[data-v-7c69b0d7] {\n  margin-top: 20px !important;\n}\n.hasMarginRight[data-v-7c69b0d7] {\n  margin-right: 20px !important;\n}\n.hasMarginBottom[data-v-7c69b0d7] {\n  margin-bottom: 20px !important;\n}\n.hasMarginLeft[data-v-7c69b0d7] {\n  margin-left: 20px !important;\n}\n.clearMargin[data-v-7c69b0d7] {\n  margin: 0 !important;\n}\n.clearMarginTop[data-v-7c69b0d7] {\n  margin-top: 0 !important;\n}\n.clearMarginRight[data-v-7c69b0d7] {\n  margin-right: 0 !important;\n}\n.clearMarginBottom[data-v-7c69b0d7] {\n  margin-bottom: 0 !important;\n}\n.clearMarginLeft[data-v-7c69b0d7] {\n  margin-left: 0 !important;\n}\n.listPadding[data-v-7c69b0d7] {\n  padding: 20px !important;\n}\n.listPaddingTop[data-v-7c69b0d7] {\n  padding-top: 20px !important;\n}\n.listPaddingRight[data-v-7c69b0d7] {\n  padding-right: 20px !important;\n}\n.listPaddingBottom[data-v-7c69b0d7] {\n  padding-bottom: 20px !important;\n}\n.listPaddingLeft[data-v-7c69b0d7] {\n  padding-left: 20px !important;\n}\n.clearPadding[data-v-7c69b0d7] {\n  padding: 0 !important;\n}\n.clearPaddingTop[data-v-7c69b0d7] {\n  padding-top: 0 !important;\n}\n.clearPaddingRight[data-v-7c69b0d7] {\n  padding-right: 0 !important;\n}\n.clearPaddingBottom[data-v-7c69b0d7] {\n  padding-bottom: 0 !important;\n}\n.clearPaddingLeft[data-v-7c69b0d7] {\n  padding-left: 0 !important;\n}\n.listMargin[data-v-7c69b0d7] {\n  margin: 20px !important;\n}\n.listMarginTop[data-v-7c69b0d7] {\n  margin-top: 20px !important;\n}\n.listMarginRight[data-v-7c69b0d7] {\n  margin-right: 20px !important;\n}\n.listMarginBottom[data-v-7c69b0d7] {\n  margin-bottom: 20px !important;\n}\n.listMarginLeft[data-v-7c69b0d7] {\n  margin-left: 20px !important;\n}\n.clearMargin[data-v-7c69b0d7] {\n  margin: 0 !important;\n}\n.clearMarginTop[data-v-7c69b0d7] {\n  margin-top: 0 !important;\n}\n.clearMarginRight[data-v-7c69b0d7] {\n  margin-right: 0 !important;\n}\n.clearMarginBottom[data-v-7c69b0d7] {\n  margin-bottom: 0 !important;\n}\n.clearMarginLeft[data-v-7c69b0d7] {\n  margin-left: 0 !important;\n}\n.cusbutton[data-v-7c69b0d7] {\n  width: 82%;\n  margin: 15px auto 0 auto;\n  display: block;\n  text-align: center;\n  color: #3b55e6;\n}\n.iconitem1[data-v-7c69b0d7] {\n  margin: -25% 0 0 -28%;\n}\n.iconitem2[data-v-7c69b0d7] {\n  margin: -25% 0 0 30%;\n}\n.iconitem3[data-v-7c69b0d7] {\n  margin: 0%;\n}\n.iconitem4[data-v-7c69b0d7] {\n  margin: 19% 0 0 -28%;\n}\n.iconitem5[data-v-7c69b0d7] {\n  margin: 19% 0 0 0%;\n}\n.iconitem6[data-v-7c69b0d7] {\n  margin: 19% 0 0 30%;\n}\n.systopology[data-v-7c69b0d7] {\n  height: calc(100% - 36%);\n  margin: 2% 0px 2% 0;\n  padding: 10px 15px 0 15px;\n  background-color: #fff;\n}\n.iconitem[data-v-7c69b0d7] {\n  width: 15%;\n  height: 15%;\n  border-radius: 50%;\n}\n.iconitem.active[data-v-7c69b0d7] {\n  background-color: #3b55e6;\n}\n.iconitem a[data-v-7c69b0d7] {\n  width: 100%;\n  height: 100%;\n  display: inline-block;\n}\n.imageicon[data-v-7c69b0d7] {\n  margin: 5px 0 0 0;\n}\n.staticitem[data-v-7c69b0d7] {\n  bottom: 2%;\n  width: 100%;\n}\n.staticitem li[data-v-7c69b0d7] {\n  padding: 2% 20px 2% 75px;\n  margin-top: -1px;\n  border-top: 1px solid #eaeaea;\n}\n.backicon.icon1[data-v-7c69b0d7] {\n  background: #fff url(" + escape(__webpack_require__(/*! ../../images/solarjuxing@2x.png */ 76)) + ") 7% 43% no-repeat;\n  background-size: 38px;\n}\n.backicon.icon2[data-v-7c69b0d7] {\n  background: #fff url(" + escape(__webpack_require__(/*! ../../images/2fuzai@2x.png */ 77)) + ") 7% 43% no-repeat;\n  background-size: 38px;\n}\n.backicon.icon3[data-v-7c69b0d7] {\n  background: #fff url(" + escape(__webpack_require__(/*! ../../images/dianfei@2x.png */ 177)) + ") 7% 43% no-repeat;\n  background-size: 38px;\n}\n.svg[data-v-7c69b0d7] {\n  position: absolute;\n}\n.svg1[data-v-7c69b0d7] {\n  transform: translate(-50%, -50%) scale(0.3);\n  margin: -17% 0 0 -13%;\n}\n.svg2[data-v-7c69b0d7] {\n  transform: translate(-50%, -50%) scale(0.3);\n  margin: -13% 0 0 19%;\n}\n.svg3[data-v-7c69b0d7] {\n  transform: translate(-50%, -50%) scale(0.3) rotateX(180deg);\n  margin: 15% 0px 0px -13%;\n}\n.svg4[data-v-7c69b0d7] {\n  margin: 11% 0 0 19%;\n  transform: translate(-50%, -50%) scale(0.3) rotateX(180deg);\n}\n.svg5[data-v-7c69b0d7] {\n  width: 7px;\n  margin-top: 15%;\n  transform: translate(-50%, -50%) scale(0.3);\n}\n.statustext[data-v-7c69b0d7] {\n  font-size: 14px;\n  color: #3b55e6;\n}\n.devicename[data-v-7c69b0d7] {\n  font-size: 14px;\n  width: 107%;\n  text-align: center;\n  background-color: #fff;\n  color: #000;\n}\n.statustext1[data-v-7c69b0d7] {\n  margin: -8% 0 0 -15%;\n}\n.statustext2[data-v-7c69b0d7] {\n  margin: -8% 0 0 15%;\n}\n.statustext3[data-v-7c69b0d7] {\n  margin: 8% 0 0 -15%;\n}\n.statustext4[data-v-7c69b0d7] {\n  margin: 15% 0 0 4%;\n}\n.statustext5[data-v-7c69b0d7] {\n  margin: 8% 0 0 15%;\n}\n@keyframes dash-data-v-7c69b0d7 {\nto {\n    stroke-dashoffset: 50;\n}\n}\n.path[data-v-7c69b0d7] {\n  stroke-dasharray: 5;\n  animation: dash-data-v-7c69b0d7 5s linear infinite;\n}\n@keyframes dash2-data-v-7c69b0d7 {\nto {\n    stroke-dashoffset: -50;\n}\n}\n.path2[data-v-7c69b0d7] {\n  stroke-dasharray: 5;\n  animation: dash2-data-v-7c69b0d7 5s linear infinite;\n}\n", ""]);
 
 // exports
 
@@ -30958,7 +30963,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.list li:nth-child(2n-1){\n    background-color: #fbfbfb;\n}\n.list li:nth-child(2n){\n    background-color: #fff;\n}\n/*  .ios .page{\n    background-color: #fff;\n  }*/\n", ""]);
+exports.push([module.i, "\n.list li:nth-child(2n-1){\n    background-color: rgba(239, 239, 244, 0.52);\n}\n.list li:nth-child(2n){\n    background-color: #fff;\n}\n/*  .ios .page{\n    background-color: #fff;\n  }*/\n", ""]);
 
 // exports
 
@@ -31105,6 +31110,9 @@ exports.default = {
       // 故障状态字二进制编码
       binary_warning_status: [],
 
+      // 系统信息
+      system_info: [{ paramName: "协议版本号", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "电池厂商号", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "Wifi SSID", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "Wifi password", paramValue: 0, byte: 2, unit: "", isshow: 0 }],
+
       active: "",
       // isdeviceactive 设备是否在使用中
       isdeviceactive: [1, 1, 1, 1, 0, 1]
@@ -31119,18 +31127,16 @@ exports.default = {
     // 全局的
     settingParamsters: function settingParamsters() {
       // 从store中获取参数
-      return this.$store.getters.settingDatas; // 从getters中获取
+      return this.$store.state.settingData.slice(0); // 从state中获取
     }
   },
   watch: {
     ctrlflag: function ctrlflag() {
       // 设置 - 参数设置 开关机指令
-
       this.sendSwitchFlagCommand(this.ctrlflag);
     },
     settingParamsters: function settingParamsters() {
       //设置 - 下发运行参数设置
-      // this.settingParamster = this.settingParamsters;
       this.sendDeviceRunningParameters();
     }
   },
@@ -31155,7 +31161,7 @@ exports.default = {
         console.log("Received Message: " + evt.data);
         // var dv = new DataView(evt.data);
         // 造假数据
-        var buffer = new ArrayBuffer(98);
+        var buffer = new ArrayBuffer(17);
         var uint8View = new DataView(buffer);
 
         // 电池信息
@@ -31163,174 +31169,206 @@ exports.default = {
         //value           该对应字节将被设置的值
         //littleEndian  字节序，true为小端字节序，false或者不填为大端字节序
 
+        // FE 55 14 64 0A 00 0C 11 23 22 34 33 45 55 67 66 78 88 99 CA AE
         // uint8View.setUint8(0, 0xfe);  // sum = 19
         // uint8View.setUint8(1, 0x55); 
         // uint8View.setUint8(2, 0x14); 
         // uint8View.setUint8(3, 0x64); 
-        // uint8View.setUint8(4, 0x0a); 
-        // uint8View.setUint8(5, 0x0b); 
-        // uint8View.setUint8(6, 0x01); 
-        // uint8View.setUint8(7, 0xF4); 
-        // uint8View.setUint8(8, 0x00); 
-        // uint8View.setUint8(9, 0x64); 
-        // uint8View.setUint8(10, 0x00); 
-        // uint8View.setUint8(11, 0x32); 
-        // uint8View.setUint8(12, 0x00); 
-        // uint8View.setUint8(13, 0x50); 
-        // uint8View.setUint8(14, 0x00); 
-        // uint8View.setUint8(15, 0x64); 
-        // uint8View.setUint8(16, 0x11); 
-        // uint8View.setUint8(17, 0x12); 
-        // uint8View.setUint8(18, 0xAE);
+        // uint8View.setUint8(4, 0x0a); // 命令字
+        // uint8View.setUint8(5, 0x00); 
+        // uint8View.setUint8(6, 0x0C); // 长度2字节
+        // uint8View.setUint8(7, 0x11); 
+        // uint8View.setUint8(8, 0x23); 
+        // uint8View.setUint8(9, 0x22); 
+        // uint8View.setUint8(10, 0x34); 
+        // uint8View.setUint8(11, 0x33); 
+        // uint8View.setUint8(12, 0x45); 
+        // uint8View.setUint8(13, 0x55); 
+        // uint8View.setUint8(14, 0x67); 
+        // uint8View.setUint8(15, 0x66); 
+        // uint8View.setUint8(16, 0x78); 
+        // uint8View.setUint8(17, 0x88); 
+        // uint8View.setUint8(18, 0x99); 
+        // uint8View.setUint8(19, 0xCA);
+        // uint8View.setUint8(20, 0xAE);
 
         // 控制柜信息
-        // uint8View.setUint8(0, 0xfe); // sum = 98
+        // FE 55 14 64 0B 00 5A 11 22 22 33 33 44 44 55 55 66 66 77 77 88 88 99 99 AA AA BB BB CC 00 00 11 22 22 33 33 44 44 55 55 66 66 77 77 88 88 99 99 AA AA BB BB CC CC DD 11 22 22 33 33 44 44 55 55 66 66 77 77 88 88 99 99 AA AA BB BB CC CC DD DD EE EE FF 11 22 22 33 33 44 44 55 55 66 66 77 77 88 2E AE 
+        // uint8View.setUint8(0, 0xFE); // sum = 99
         // uint8View.setUint8(1, 0x55); 
         // uint8View.setUint8(2, 0x14); 
         // uint8View.setUint8(3, 0x64); 
-        // uint8View.setUint8(4, 0x0b); 
-        // uint8View.setUint8(5, 0x5a); // 90 byte
-        // uint8View.setUint8(6, 0x01); 
-        // uint8View.setUint8(7, 0xF4); 
-        // uint8View.setUint8(8, 0x00); 
-        // uint8View.setUint8(9, 0x64); 
-        // uint8View.setUint8(10, 0x00); 
-        // uint8View.setUint8(11, 0x32); 
-        // uint8View.setUint8(12, 0x00); 
-        // uint8View.setUint8(13, 0x50); 
-        // uint8View.setUint8(14, 0x00); 
-        // uint8View.setUint8(15, 0x64);
-        // uint8View.setUint8(16, 0x01); 
-        // uint8View.setUint8(17, 0xF4); 
-        // uint8View.setUint8(18, 0x00); 
-        // uint8View.setUint8(19, 0x64); 
-        // uint8View.setUint8(20, 0x00); 
-        // uint8View.setUint8(21, 0x32); 
-        // uint8View.setUint8(22, 0x00); 
-        // uint8View.setUint8(23, 0x50); 
-        // uint8View.setUint8(24, 0x00); 
-        // uint8View.setUint8(25, 0x64); 
-        // uint8View.setUint8(26, 0x01); 
-        // uint8View.setUint8(27, 0xF4); 
-        // uint8View.setUint8(28, 0x00); 
-        // uint8View.setUint8(29, 0x64); 
+        // uint8View.setUint8(4, 0x0B); 
+        // uint8View.setUint8(5, 0x00); 
+        // uint8View.setUint8(6, 0x5A); // 90 byte
+        // uint8View.setUint8(7, 0x11); 
+        // uint8View.setUint8(8, 0x22); 
+        // uint8View.setUint8(9, 0x22); 
+        // uint8View.setUint8(10, 0x33); 
+        // uint8View.setUint8(11, 0x33); 
+        // uint8View.setUint8(12, 0x44); 
+        // uint8View.setUint8(13, 0x44); 
+        // uint8View.setUint8(14, 0x55); 
+        // uint8View.setUint8(15, 0x55); 
+        // uint8View.setUint8(16, 0x66);
+        // uint8View.setUint8(17, 0x66); 
+        // uint8View.setUint8(18, 0x77); 
+        // uint8View.setUint8(19, 0x77); 
+        // uint8View.setUint8(20, 0x88); 
+        // uint8View.setUint8(21, 0x88); 
+        // uint8View.setUint8(22, 0x99); 
+        // uint8View.setUint8(23, 0x99); 
+        // uint8View.setUint8(24, 0xAA); 
+        // uint8View.setUint8(25, 0xAA); 
+        // uint8View.setUint8(26, 0xBB); 
+        // uint8View.setUint8(27, 0xBB); 
+        // uint8View.setUint8(28, 0xCC); 
+        // uint8View.setUint8(29, 0x00); 
         // uint8View.setUint8(30, 0x00); 
-        // uint8View.setUint8(31, 0x32); 
-        // uint8View.setUint8(32, 0x00); 
-        // uint8View.setUint8(33, 0x50); 
-        // uint8View.setUint8(34, 0x00); 
-        // uint8View.setUint8(35, 0x64); 
-        // uint8View.setUint8(36, 0x01); 
-        // uint8View.setUint8(37, 0xF4); 
-        // uint8View.setUint8(38, 0x00); 
-        // uint8View.setUint8(39, 0x64); 
-        // uint8View.setUint8(40, 0x00); 
-        // uint8View.setUint8(41, 0x32); 
-        // uint8View.setUint8(42, 0x00); 
-        // uint8View.setUint8(43, 0x50); 
-        // uint8View.setUint8(44, 0x00); 
-        // uint8View.setUint8(45, 0x64); 
-        // uint8View.setUint8(46, 0x01); 
-        // uint8View.setUint8(47, 0xF4); 
-        // uint8View.setUint8(48, 0x00); 
-        // uint8View.setUint8(49, 0x64); 
-        // uint8View.setUint8(50, 0x00); 
-        // uint8View.setUint8(51, 0x32); 
-        // uint8View.setUint8(52, 0x00); 
-        // uint8View.setUint8(53, 0x50); 
-        // uint8View.setUint8(54, 0x00); 
-        // uint8View.setUint8(55, 0x64); 
-        // uint8View.setUint8(56, 0x01); 
-        // uint8View.setUint8(57, 0xF4); 
-        // uint8View.setUint8(58, 0x00); 
-        // uint8View.setUint8(59, 0x64); 
-        // uint8View.setUint8(60, 0x00); 
-        // uint8View.setUint8(61, 0x32); 
-        // uint8View.setUint8(62, 0x00); 
-        // uint8View.setUint8(63, 0x50); 
-        // uint8View.setUint8(64, 0x00); 
-        // uint8View.setUint8(65, 0x64); 
-        // uint8View.setUint8(66, 0x01); 
-        // uint8View.setUint8(67, 0xF4); 
-        // uint8View.setUint8(68, 0x00); 
-        // uint8View.setUint8(69, 0x64); 
-        // uint8View.setUint8(70, 0x00); 
-        // uint8View.setUint8(71, 0x32); 
-        // uint8View.setUint8(72, 0x00); 
-        // uint8View.setUint8(73, 0x50); 
-        // uint8View.setUint8(74, 0x00); 
-        // uint8View.setUint8(75, 0x64); 
-        // uint8View.setUint8(76, 0x01); 
-        // uint8View.setUint8(77, 0xF4); 
-        // uint8View.setUint8(78, 0x00); 
-        // uint8View.setUint8(79, 0x64); 
-        // uint8View.setUint8(80, 0x00); 
-        // uint8View.setUint8(81, 0x32); 
-        // uint8View.setUint8(82, 0x00); 
-        // uint8View.setUint8(83, 0x50); 
-        // uint8View.setUint8(84, 0x00); 
-        // uint8View.setUint8(85, 0x64); 
-        // uint8View.setUint8(86, 0x01); 
-        // uint8View.setUint8(87, 0xF4); 
-        // uint8View.setUint8(88, 0x00); 
-        // uint8View.setUint8(89, 0x64); 
-        // uint8View.setUint8(90, 0x00); 
-        // uint8View.setUint8(91, 0x32); 
-        // uint8View.setUint8(92, 0x00); 
-        // uint8View.setUint8(93, 0x50); 
-        // uint8View.setUint8(94, 0x00); 
-        // uint8View.setUint8(95, 0x64); 
-        // uint8View.setUint8(96, 0x12); 
-        // uint8View.setUint8(97, 0xAE);
+        // uint8View.setUint8(31, 0x11); 
+        // uint8View.setUint8(32, 0x22); 
+        // uint8View.setUint8(33, 0x22); 
+        // uint8View.setUint8(34, 0x33); 
+        // uint8View.setUint8(35, 0x33); 
+        // uint8View.setUint8(36, 0x44); 
+        // uint8View.setUint8(37, 0x44); 
+        // uint8View.setUint8(38, 0x55); 
+        // uint8View.setUint8(39, 0x55); 
+        // uint8View.setUint8(40, 0x66); 
+        // uint8View.setUint8(41, 0x66); 
+        // uint8View.setUint8(42, 0x77); 
+        // uint8View.setUint8(43, 0x77); 
+        // uint8View.setUint8(44, 0x88); 
+        // uint8View.setUint8(45, 0x88); 
+        // uint8View.setUint8(46, 0x99); 
+        // uint8View.setUint8(47, 0x99); 
+        // uint8View.setUint8(48, 0xAA); 
+        // uint8View.setUint8(49, 0xAA); 
+        // uint8View.setUint8(50, 0xBB); 
+        // uint8View.setUint8(51, 0xBB); 
+        // uint8View.setUint8(52, 0xCC); 
+        // uint8View.setUint8(53, 0xCC); 
+        // uint8View.setUint8(54, 0xDD); 
+        // uint8View.setUint8(55, 0x11); 
+        // uint8View.setUint8(56, 0x22); 
+        // uint8View.setUint8(57, 0x22); 
+        // uint8View.setUint8(58, 0x33); 
+        // uint8View.setUint8(59, 0x33); 
+        // uint8View.setUint8(60, 0x44); 
+        // uint8View.setUint8(61, 0x44); 
+        // uint8View.setUint8(62, 0x55); 
+        // uint8View.setUint8(63, 0x55); 
+        // uint8View.setUint8(64, 0x66); 
+        // uint8View.setUint8(65, 0x66); 
+        // uint8View.setUint8(66, 0x77); 
+        // uint8View.setUint8(67, 0x77); 
+        // uint8View.setUint8(68, 0x88); 
+        // uint8View.setUint8(69, 0x88); 
+        // uint8View.setUint8(70, 0x99); 
+        // uint8View.setUint8(71, 0x99); 
+        // uint8View.setUint8(72, 0xAA); 
+        // uint8View.setUint8(73, 0xAA); 
+        // uint8View.setUint8(74, 0xBB); 
+        // uint8View.setUint8(75, 0xBB); 
+        // uint8View.setUint8(76, 0xCC); 
+        // uint8View.setUint8(77, 0xCC); 
+        // uint8View.setUint8(78, 0xDD); 
+        // uint8View.setUint8(79, 0xDD); 
+        // uint8View.setUint8(80, 0xEE); 
+        // uint8View.setUint8(81, 0xEE); 
+        // uint8View.setUint8(82, 0xFF); 
+        // uint8View.setUint8(83, 0x11); 
+        // uint8View.setUint8(84, 0x22); 
+        // uint8View.setUint8(85, 0x22); 
+        // uint8View.setUint8(86, 0x33); 
+        // uint8View.setUint8(87, 0x33); 
+        // uint8View.setUint8(88, 0x44); 
+        // uint8View.setUint8(89, 0x44); 
+        // uint8View.setUint8(90, 0x55); 
+        // uint8View.setUint8(91, 0x55); 
+        // uint8View.setUint8(92, 0x66); 
+        // uint8View.setUint8(93, 0x66); 
+        // uint8View.setUint8(94, 0x77); 
+        // uint8View.setUint8(95, 0x77); 
+        // uint8View.setUint8(96, 0x88); 
+        // uint8View.setUint8(97, 0x2E); 
+        // uint8View.setUint8(98, 0xAE);
 
         // BMS告警信息
+        // FE 55 14 64 1E 00 06 01 00 01 00 01 00 11 AE
         // uint8View.setUint8(0, 0xfe);
         // uint8View.setUint8(1, 0x55); 
         // uint8View.setUint8(2, 0x14); 
         // uint8View.setUint8(3, 0x64); 
         // uint8View.setUint8(4, 0x1E); // COMMOND 
-        // uint8View.setUint8(5, 0x06); 
-        // uint8View.setUint8(6, 0x01); 
+        // uint8View.setUint8(5, 0x00); 
+        // uint8View.setUint8(6, 0x06); 
         // uint8View.setUint8(7, 0x01); 
-        // uint8View.setUint8(8, 0x01); 
+        // uint8View.setUint8(8, 0x00); 
         // uint8View.setUint8(9, 0x01); 
-        // uint8View.setUint8(10, 0x01); 
+        // uint8View.setUint8(10, 0x00); 
         // uint8View.setUint8(11, 0x01); 
-        // uint8View.setUint8(12, 0x12); 
-        // uint8View.setUint8(13, 0xAE);
+        // uint8View.setUint8(12, 0x00); 
+        // uint8View.setUint8(13, 0x11); 
+        // uint8View.setUint8(14, 0xAE);
 
         // 系统故障状态显示
+        // FE 55 14 64 1F 00 08 00 A1 00 A2 00 A3 00 A4 B8 AE
         // uint8View.setUint8(0, 0xfe);
         // uint8View.setUint8(1, 0x55); 
         // uint8View.setUint8(2, 0x14); 
         // uint8View.setUint8(3, 0x64); 
         // uint8View.setUint8(4, 0x1F); // COMMOND  
-        // uint8View.setUint8(5, 0x08);  
-        // uint8View.setUint8(6, 0x01); 
-        // uint8View.setUint8(7, 0x00); 
-        // uint8View.setUint8(8, 0x01); 
-        // uint8View.setUint8(9, 0x00); 
-        // uint8View.setUint8(10, 0x00); 
-        // uint8View.setUint8(11, 0x66); 
-        // uint8View.setUint8(12, 0x00); 
-        // uint8View.setUint8(13, 0x77); 
-        // uint8View.setUint8(14, 0x12); 
-        // uint8View.setUint8(15, 0xAE);
+        // uint8View.setUint8(5, 0x00);  
+        // uint8View.setUint8(6, 0x08);  
+        // uint8View.setUint8(7, 0x00);   //00000000
+        // uint8View.setUint8(8, 0xA1);  // 10100001
+        // uint8View.setUint8(9, 0x00);  // 00000000
+        // uint8View.setUint8(10, 0xA2); // 10100010
+        // uint8View.setUint8(11, 0x00); 
+        // uint8View.setUint8(12, 0xA3); 
+        // uint8View.setUint8(13, 0x00); 
+        // uint8View.setUint8(14, 0xA4); 
+        // uint8View.setUint8(15, 0xB8); 
+        // uint8View.setUint8(16, 0xAE);
         // 
 
-        // 系统故障状态显示
-        uint8View.setUint8(0, 0xfe);
+        // 设备运行状态 
+        // FE 55 14 64 0C 00 04 11 22 AA BB 13 AE
+        // uint8View.setUint8(0, 0xfe);
+        // uint8View.setUint8(1, 0x55); 
+        // uint8View.setUint8(2, 0x14); 
+        // uint8View.setUint8(3, 0x64); 
+        // uint8View.setUint8(4, 0x0C); // COMMOND  
+        // uint8View.setUint8(5, 0x00);  
+        // uint8View.setUint8(6, 0x04);  
+        // uint8View.setUint8(7, 0x11); 
+        // uint8View.setUint8(8, 0x22); 
+        // uint8View.setUint8(9, 0xAA); 
+        // uint8View.setUint8(10, 0xBB); 
+        // uint8View.setUint8(11, 0x13); 
+        // uint8View.setUint8(12, 0xAE);
+        // 
+
+        // 系统信息
+        // FE 55 14 64 98 00 08 03 E9 00 01 00 00 00 00 70 AE
+        uint8View.setUint8(0, 0xFE);
         uint8View.setUint8(1, 0x55);
         uint8View.setUint8(2, 0x14);
         uint8View.setUint8(3, 0x64);
-        uint8View.setUint8(4, 0x0C); // COMMOND  
-        uint8View.setUint8(5, 0x04);
-        uint8View.setUint8(6, 0x31);
-        uint8View.setUint8(7, 0x21);
-        uint8View.setUint8(8, 0x00);
+        uint8View.setUint8(4, 0x98); // COMMOND  
+        uint8View.setUint8(5, 0x00);
+        uint8View.setUint8(6, 0x08);
+        uint8View.setUint8(7, 0x03);
+        uint8View.setUint8(8, 0xE9);
         uint8View.setUint8(9, 0x00);
-        uint8View.setUint8(10, 0x12);
-        uint8View.setUint8(11, 0xAE);
+        uint8View.setUint8(10, 0x01);
+        uint8View.setUint8(11, 0x00);
+        uint8View.setUint8(12, 0x00);
+        uint8View.setUint8(13, 0x00);
+        uint8View.setUint8(14, 0x00);
+        uint8View.setUint8(15, 0x70);
+        uint8View.setUint8(16, 0xAE);
 
         _this.praseData(uint8View);
       };
@@ -31358,9 +31396,9 @@ exports.default = {
           if (start_addr == 0x14 && target_addr == 0x64) {
             // PCU->APP 起始地址为0X14，目标地址0x64
 
-            var length = dataview.getInt8(5, false);
+            var length = dataview.getInt16(5, false);
 
-            if (dataview.getUint8(6 + length + 1, false) == 0xAE) {
+            if (dataview.getUint8(7 + length + 1, false) == 0xAE) {
               // 数据包完整 有结束
 
               switch (command) {
@@ -31368,27 +31406,32 @@ exports.default = {
                 case 0x0A:
                   // 储能电池信息 
 
-                  this.praseBatteryData(dataview, 6, length); // 数据从6开始 截止是6+length
+                  this.praseBatteryData(dataview, 7, length); // 数据从6开始 截止是6+length
+                  console.log(JSON.stringify(this.params_battery, " ", 4));
                   this.$store.commit('PARAM_BATTERY_CHANGE', this.params_battery);
                   break;
 
                 case 0x0B:
                   // 控制柜信息
 
-                  this.prasCtrlcabData(dataview, 6, length);
+                  this.prasCtrlcabData(dataview, 7, length);
                   this.$store.commit('PARAM_CTRLCAB_CHANGE', this.params_ctrlcab);
+
+                  // console.log(JSON.stringify(this.params_ctrlcab," ", 2));
+
+
                   break;
                 case 0x1E:
                   // BMS告警信息 warning_bms
 
-                  this.prasBMSWarningData(dataview, 6, length);
+                  this.prasBMSWarningData(dataview, 7, length);
 
                   // console.log(JSON.stringify(this.warning_bms, " ", 4));
                   this.$store.commit('WARNING_BMS_CHANGE', this.warning_bms);
                   break;
                 case 0x0C:
                   // 设备运行状态信息 4个字节 
-                  this.prasDeviceRunningStatus(dataview, 6, length);
+                  this.prasDeviceRunningStatus(dataview, 7, length);
 
                   // 将数据解析成二进制位
                   this.binary_running_status = [];
@@ -31399,14 +31442,14 @@ exports.default = {
                   // 将二进制报文转化为对象
                   this.getRunningStatus(this.binary_running_status);
 
-                  // console.log(JSON.stringify(this.binary_running_status, " ", 4));
-                  // console.log(JSON.stringify(this.running_status_mean, " ", 4));
+                  console.log(JSON.stringify(this.binary_running_status, " ", 4));
+                  console.log(JSON.stringify(this.running_status_mean, " ", 4));
                   break;
 
                 case 0x1F:
                   // 系统故障状态显示 8个字节 
 
-                  this.prasDeviceWarningStatus(dataview, 6, length);
+                  this.prasDeviceWarningStatus(dataview, 7, length);
                   // 将数据解析成二进制位
                   this.binary_warning_status = [];
                   for (var i = 0; i < this.warning_status.length; i++) {
@@ -31414,6 +31457,14 @@ exports.default = {
                   }
                   this.$store.commit('WARNING_SYS_CHANGE', this.binary_warning_status);
                   // console.log(JSON.stringify(this.binary_warning_status, " ", 4));
+                  break;
+
+                case 0x98:
+                  // 系统信息
+
+                  this.prasSystemData(dataview, 7, length);
+                  // this.$store.commit('PARAM_SYS_CHANGE', this.system_info);
+                  console.log(JSON.stringify(this.system_info, " ", 2));
                   break;
                 default:
                   // statements_def
@@ -31458,17 +31509,35 @@ exports.default = {
         if (this.params_ctrlcab[i].byte == 2) {
           // 2个字节的数据
 
-          this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
+          this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
           offset += 2;
         } else {
           // 1个字节的数据
 
-          this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
+          this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
           offset += 1;
         }
       }
     },
 
+    // 解析系统基础信息
+    prasSystemData: function prasSystemData(datalist, start, length) {
+      var offset = 0;
+      for (var i = 0; i < this.system_info.length; i++) {
+
+        if (this.system_info[i].byte == 2) {
+          // 2个字节的数据
+
+          this.system_info[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
+          offset += 2;
+        } else {
+          // 1个字节的数据
+
+          this.system_info[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
+          offset += 1;
+        }
+      }
+    },
     // 解析电池BMS告警信息
     prasBMSWarningData: function prasBMSWarningData(datalist, start, length) {
 
@@ -31555,7 +31624,7 @@ exports.default = {
       // 加工二进制的 bytearray 发送控制命令 COMMOND 0x64
       // PcuOnOff Wifi    change  Wifi SSID Wifi password
       //  1 byte  1 byte  2 byte  2byte
-      var buffer = new ArrayBuffer(14);
+      var buffer = new ArrayBuffer(15);
       var uint8View = new DataView(buffer);
 
       uint8View.setUint8(0, 0xfe);
@@ -31563,22 +31632,23 @@ exports.default = {
       uint8View.setUint8(2, 0x64); // 发给 PCU
       uint8View.setUint8(3, 0x14);
       uint8View.setUint8(4, 0x64);
-      uint8View.setUint8(5, 0x06);
+      uint8View.setUint8(5, 0x00);
+      uint8View.setUint8(6, 0x06);
 
       if (flag) {
-        uint8View.setUint8(6, 0x55); // 1byte 开关机 开机（0x55），关机（0xAA）
+        uint8View.setUint8(7, 0x55); // 1byte 开关机 开机（0x55），关机（0xAA）
         message = "开机指令已下发";
       } else {
-        uint8View.setUint8(6, 0xAA); // 1byte 开关机 开机（0x55），关机（0xAA）
+        uint8View.setUint8(7, 0xAA); // 1byte 开关机 开机（0x55），关机（0xAA）
         message = "关机指令已下发";
       }
-      uint8View.setUint8(7, 0x01); // 1byte Wifi  使能（0x5A）
-      uint8View.setUint8(8, 0x01); // 2byte Wifi SSID  
-      uint8View.setUint8(9, 0x01);
-      uint8View.setUint8(10, 0x01); // 2byte Wifi password
-      uint8View.setUint8(11, 0x01);
-      uint8View.setUint8(12, 0x12);
-      uint8View.setUint8(13, 0xAE);
+      uint8View.setUint8(8, 0x01); // 1byte Wifi  使能（0x5A）
+      uint8View.setUint8(9, 0x01); // 2byte Wifi SSID  
+      uint8View.setUint8(10, 0x01);
+      uint8View.setUint8(11, 0x01); // 2byte Wifi password
+      uint8View.setUint8(12, 0x01);
+      uint8View.setUint8(13, 0x12);
+      uint8View.setUint8(14, 0xAE);
       // console.log(uint8View);
       this.WS.send(buffer);
 
@@ -31593,27 +31663,27 @@ exports.default = {
       for (var i = 0; i < this.settingParamsters.length; i++) {
         datalength += this.settingParamsters[i].byte;
       }
-      var buffer = new ArrayBuffer(datalength + 8); // 数据长度+8 
+      var buffer = new ArrayBuffer(datalength + 9); // 数据长度+8 
       var uint8View = new DataView(buffer);
       uint8View.setUint8(0, 0xfe);
       uint8View.setUint8(1, 0x55);
       uint8View.setUint8(2, 0x64); // 发给 PCU
       uint8View.setUint8(3, 0x14);
       uint8View.setUint8(4, 0x65); // COMMAND 
-      uint8View.setUint8(5, datalength.toString(16)); // datalength
+      uint8View.setUint16(5, datalength.toString(16)); // datalength
 
       var offset = 0;
       for (i = 0; i < this.settingParamsters.length; i++) {
         // 数据区
         if (this.settingParamsters[i].byte == 1) {
-          uint8View.setUint8(6 + offset, this.settingParamsters[i].paramValue.toString(16));
+          uint8View.setUint8(7 + offset, this.settingParamsters[i].paramValue);
         } else {
-          uint8View.setUint16(6 + offset, this.settingParamsters[i].paramValue.toString(16));
+          uint8View.setUint16(7 + offset, this.settingParamsters[i].paramValue);
         }
         offset += this.settingParamsters[i].byte;
       }
-      uint8View.setUint8(6 + offset, 0x12); // 校验位
-      uint8View.setUint8(7 + offset, 0xAE); // 结束位
+      uint8View.setUint8(7 + offset, 0x12); // 校验位
+      uint8View.setUint8(8 + offset, 0xAE); // 结束位
       this.WS.send(buffer);
       console.log(uint8View);
       this.$f7.dialog.alert("参数设置已下发", "提示");
@@ -31646,8 +31716,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "title"
   }, [_vm._v("首页")])], 1), _vm._v(" "), _c('f7-block', {
     staticClass: "relt systopology"
-  }, [_c('button', {
-    staticClass: "button button-outline cusbutton"
+  }, [_c('span', {
+    staticClass: "cusbutton"
   }, [_vm._v("工作状态     NA")]), _vm._v(" "), _c('svg', {
     staticClass: "svg svg1 absCV",
     class: {
@@ -32260,9 +32330,9 @@ if (false) {
 
 /***/ }),
 /* 200 */
-/*!******************************************!*\
-  !*** ./src/assets/vue/pages/setting.vue ***!
-  \******************************************/
+/*!********************************************!*\
+  !*** ./src/assets/vue/pages/setting-u.vue ***!
+  \********************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -32270,13 +32340,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-30ec5c08","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./setting.vue */ 201)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-b53adc20","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./setting-u.vue */ 201)
 }
 var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 5)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./setting.vue */ 203),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./setting-u.vue */ 203),
   /* template */
-  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-30ec5c08","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./setting.vue */ 204),
+  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-b53adc20","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./setting-u.vue */ 204),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -32284,9 +32354,9 @@ var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/ligaoliang/Public/project/guangchu/src/assets/vue/pages/setting.vue"
+Component.options.__file = "/Users/ligaoliang/Public/project/guangchu/src/assets/vue/pages/setting-u.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] setting.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] setting-u.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -32295,9 +32365,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-30ec5c08", Component.options)
+    hotAPI.createRecord("data-v-b53adc20", Component.options)
   } else {
-    hotAPI.reload("data-v-30ec5c08", Component.options)
+    hotAPI.reload("data-v-b53adc20", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -32309,9 +32379,9 @@ module.exports = Component.exports
 
 /***/ }),
 /* 201 */
-/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-30ec5c08","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/setting.vue ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-b53adc20","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/setting-u.vue ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -32319,17 +32389,17 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-30ec5c08","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./setting.vue */ 202);
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-b53adc20","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./setting-u.vue */ 202);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 2)("447a4829", content, false, {});
+var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 2)("3a3ae508", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30ec5c08\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./setting.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30ec5c08\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./setting.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b53adc20\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./setting-u.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b53adc20\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./setting-u.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -32340,9 +32410,9 @@ if(false) {
 
 /***/ }),
 /* 202 */
-/*!**********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-30ec5c08","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/setting.vue ***!
-  \**********************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-b53adc20","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/setting-u.vue ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -32352,16 +32422,16 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.setting  .list .item-title{\n    -webkit-flex-shrink: 0; \n    -ms-flex-negative: 0;\n    flex-shrink: 0;\n}\n.setting  .list .item-after {\n    -webkit-flex-shrink: 1;\n    -ms-flex-negative: 1;\n    flex-shrink: 1;\n}\n.setting .block-title {\n    font-size: 18px;\n    line-height: 24px;\n}\n.setting  .list input{\n    text-align: right;\n}\n.setting  .list select{\n    text-align: right !important;\n}\n.setting .block {\n    margin: -1px 0;\n    padding: 0 16px;\n}\n.ios .block-title {\n    margin: 0px 15px 10px;\n}\n.ios .toggle input[type=\"checkbox\"]:checked + .toggle-icon{\n  background: #19eec2;\n}\n.ios .list input[type=\"text\"], .ios .list input[type=\"password\"], .ios .list input[type=\"search\"], .ios .list input[type=\"email\"], .ios .list input[type=\"tel\"], .ios .list input[type=\"url\"], .ios .list input[type=\"date\"], .ios .list input[type=\"datetime-local\"], .ios .list input[type=\"time\"], .ios .list input[type=\"number\"], .ios .list select{\n  color: inherit;\n  direction: rtl;\n}\n.ios .list .item-after {\n    color: #666;\n    padding-left: 5px;\n}\n.ios .block-title {\n    font-weight: bold;\n}\n.f7-icons{\n  font-size: 20px;\n  line-height: 1.9;\n  margin-top: 4px;\n  margin-left: 6px;\n  color: #ababab;\n}\n", ""]);
+exports.push([module.i, "\n.setting.list ul {\n    list-style: none;\n    margin: 0;\n    padding: 7px 4px;\n    position: relative;\n}\n.setting.list .item-title{\n    -webkit-flex-shrink: 0; \n    -ms-flex-negative: 0;\n    flex-shrink: 0;\n}\n.setting.list .item-after {\n    -webkit-flex-shrink: 1;\n    -ms-flex-negative: 1;\n    flex-shrink: 1;\n}\n.setting .block-title {\n    font-size: 18px;\n    line-height: 24px;\n}\n.setting  .list input{\n    text-align: right;\n}\n.setting  .list select{\n    text-align: right !important;\n}\n.setting .block {\n    margin: -1px 0;\n    padding: 0 16px;\n}\n.ios .setting .block-title {\n    margin: 3px 0px 5px 15px;\n    border-bottom: 1px dotted #e6e6e8;\n    line-height: 59px;\n    font-weight: bold;\n}\n.ios .toggle input[type=\"checkbox\"]:checked + .toggle-icon{\n  background: #19eec2;\n}\n.ios .list input[type=\"text\"], .ios .list input[type=\"password\"], .ios .list input[type=\"search\"], .ios .list input[type=\"email\"], .ios .list input[type=\"tel\"], .ios .list input[type=\"url\"], .ios .list input[type=\"date\"], .ios .list input[type=\"datetime-local\"], .ios .list input[type=\"time\"], .ios .list input[type=\"number\"], .ios .list select{\n  color: inherit;\n  direction: rtl;\n}\n.ios .list .item-after {\n    color: #666;\n    padding-left: 5px;\n}\n.f7-icons{\n  font-size: 20px;\n  line-height: 1.9;\n  margin-top: 4px;\n  margin-left: 6px;\n  color: #ababab;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 203 */
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/setting.vue ***!
-  \*******************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/setting-u.vue ***!
+  \*********************************************************************************************************************************************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -32379,7 +32449,8 @@ exports.default = {
   data: function data() {
     return {
       openflag: null,
-
+      batteryType: 2,
+      // batteryAH : 72,
       // 设备参数设置命令下发
       deviceParamster: [{ paramName: "运行模式", paramValue: 1, byte: 1, unit: "", isshow: 1 }, //  0   HEX(int8)       1：并网  2：离网  
       { paramName: "基本工作模式", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   1: 通用模式 2:离网模式3：备用模式4：经济模式
@@ -32519,11 +32590,15 @@ exports.default = {
     },
     // 下发参数设置
     sendSetParameter: function sendSetParameter() {
+
       var _this = this;
       this.$f7.dialog.confirm("确定下发参数设置吗？", "确认参数", function () {
-        // console.log(JSON.stringify(_this.deviceParamster, " ", 4));
-        _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster);
+        // 深拷贝
+        _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster.slice(0));
       }, function () {});
+    },
+    changeBatteryType: function changeBatteryType(e) {
+      this.batteryType = e.target.value;
     }
   },
   components: {
@@ -32642,319 +32717,12 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 /* 204 */
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-30ec5c08","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/setting.vue ***!
-  \*****************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-b53adc20","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/setting-u.vue ***!
+  \*******************************************************************************************************************************************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -32963,18 +32731,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "系统设置",
-      "back-link": "Back"
+      "back-link": "返回"
     }
   }), _vm._v(" "), _c('div', {
-    staticClass: "block block-strong setting"
-  }, [_c('div', {
+    staticClass: "list inline-labels no-hairlines-md setting"
+  }, [_c('ul', [_c('div', {
     staticClass: "block-title"
-  }, [_vm._v("控制命令设置")]), _vm._v(" "), _c('form', {
-    staticClass: "list",
-    attrs: {
-      "id": "my-form"
-    }
-  }, [_c('ul', [_c('li', [_c('div', {
+  }, [_vm._v("控制命令设置")]), _vm._v(" "), _c('li', [_c('div', {
     staticClass: "item-content"
   }, [_c('div', {
     staticClass: "item-inner"
@@ -33022,43 +32785,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _c('i', {
     staticClass: "toggle-icon"
-  })])])])])])])]), _vm._v(" "), _c('div', {
+  })])])])])]), _vm._v(" "), _c('div', {
     staticClass: "block-title"
-  }, [_vm._v("工作参数设置")]), _vm._v(" "), _c('form', {
-    staticClass: "list"
-  }, [_c('ul', [_c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("运行模式")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    attrs: {
-      "name": "runningmodel"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 0)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("并网模式")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("离网模式")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('li', [_c('div', {
+  }, [_vm._v("工作参数设置")]), _vm._v(" "), _c('li', [_c('div', {
     staticClass: "item-content"
   }, [_c('div', {
     staticClass: "item-inner"
@@ -33104,250 +32833,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "item-inner"
   }, [_c('div', {
     staticClass: "item-title"
-  }, [_vm._v("并网模式设置")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    attrs: {
-      "name": "runningmodel"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 2)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("恒流模式")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("恒压模式")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "3"
-    }
-  }, [_vm._v("恒功率模式DC")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "4"
-    }
-  }, [_vm._v("恒功率模式AC")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "5"
-    }
-  }, [_vm._v("独立逆变")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("无功调节方式")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 3)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("功率值")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("百分比")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "3"
-    }
-  }, [_vm._v("功率因数")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("电网电压跌落调节方式")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 4)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("孤岛保护 默认")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("低电压穿越")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "3"
-    }
-  }, [_vm._v("无缝切换")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("离网自起机模式设置")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 5)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "60928"
-    }
-  }, [_vm._v("使能")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "238"
-    }
-  }, [_vm._v("禁止")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("无缝切换手动模式并离网控制")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 6)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "60928"
-    }
-  }, [_vm._v("并网转离网")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "238"
-    }
-  }, [_vm._v("离网转并网")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("恒流模式电流")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 7)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("恒压模式限制电流")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 8)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("恒压模式电压")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 9)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("恒功率模式功率（DC）")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 10)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
   }, [_vm._v("恒功率模式功率（AC）")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('input', {
@@ -33367,88 +32852,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "item-inner"
   }, [_c('div', {
     staticClass: "item-title"
-  }, [_vm._v("独立逆变电压")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 12)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("独立逆变频率")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 13)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("无功比例")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 15)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("额定功率")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 17)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("电网电压")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("电网代码")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
   }, [_c('select', {
+    attrs: {
+      "name": "netcode"
+    },
     on: {
       "change": function($event) {
-        _vm.setDatatoParameter($event, 18)
+        _vm.setDatatoParameter($event, 19)
       }
     }
   }, [_c('option', {
@@ -33460,15 +32872,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": "1"
     }
-  }, [_vm._v("220V")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("GBT19964")]), _vm._v(" "), _c('option', {
     attrs: {
       "value": "2"
     }
-  }, [_vm._v("315V")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("IEC61727")]), _vm._v(" "), _c('option', {
     attrs: {
       "value": "3"
     }
-  }, [_vm._v("380V")])]), _vm._v(" "), _c('i', {
+  }, [_vm._v("IEEE1547")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "4"
+    }
+  }, [_vm._v("CUSTOM_ISLAND")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "5"
+    }
+  }, [_vm._v("CUSTOM_LVRT")])]), _vm._v(" "), _c('i', {
     staticClass: "f7-icons size-50"
   }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('li', [_c('div', {
     staticClass: "item-content"
@@ -33476,115 +32896,70 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "item-inner"
   }, [_c('div', {
     staticClass: "item-title"
-  }, [_vm._v("遥设有功功率值")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("DC侧电池类型")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
-  }, [_c('input', {
+  }, [_c('select', {
     attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
+      "name": "batterytype"
     },
     on: {
       "change": function($event) {
-        _vm.setDatatoParameter($event, 20)
+        [_vm.setDatatoParameter($event, 25), _vm.changeBatteryType($event)]
       }
     }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
+  }, [_c('option', {
+    attrs: {
+      "value": "0",
+      "selected": ""
+    }
+  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "1"
+    }
+  }, [_vm._v("锂电池")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "2"
+    }
+  }, [_vm._v("铅酸电池")])]), _vm._v(" "), _c('i', {
+    staticClass: "f7-icons size-50"
+  }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('li', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.batteryType == 2),
+      expression: "batteryType == 2"
+    }],
+    staticClass: "item-content item-input"
   }, [_c('div', {
-    staticClass: "item-inner"
+    staticClass: "item-inner",
+    staticStyle: {
+      "padding": "17px 15px 17px 0px"
+    }
   }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("遥设无功功率值")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
+    staticClass: "item-title item-label"
+  }, [_vm._v("电池AH设置")]), _vm._v(" "), _c('div', {
+    staticClass: "item-input-wrap"
+  }, [_c('div', {
+    staticClass: "range-slider range-slider-init",
+    attrs: {
+      "data-label": "true"
+    }
   }, [_c('input', {
     attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
+      "type": "range",
+      "value": "72",
+      "min": "72",
+      "max": "5000",
+      "step": "1"
     },
     on: {
       "change": function($event) {
-        _vm.setDatatoParameter($event, 21)
+        _vm.setDatatoParameter($event, 35)
       }
     }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("遥设功率因数")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 22)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("有功功率变化率设置")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 26)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("无功功率变化率设置")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 27)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("设置电网额定频率")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('input', {
-    attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
-    },
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 30)
-      }
-    }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
+  })])])])]), _vm._v(" "), _c('div', {
+    staticClass: "block-title"
+  }, [_vm._v("恢复出厂设置")]), _vm._v(" "), _c('li', [_c('div', {
     staticClass: "item-content"
   }, [_c('div', {
     staticClass: "item-inner"
@@ -33592,206 +32967,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "item-title"
   }, [_vm._v("恢复出厂设置")]), _vm._v(" "), _c('div', {
     staticClass: "item-after"
+  }, [_c('label', {
+    staticClass: "toggle toggle-init"
   }, [_c('input', {
     attrs: {
-      "type": "number",
-      "name": "email",
-      "placeholder": "0"
+      "type": "checkbox",
+      "name": "toggle2",
+      "value": "yes"
     },
     on: {
       "change": function($event) {
         _vm.setDatatoParameter($event, 31)
       }
     }
-  })])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("电池均充电压")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 32)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("2.30V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("2.32V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "3"
-    }
-  }, [_vm._v("2.35V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "4"
-    }
-  }, [_vm._v("2.37V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "5"
-    }
-  }, [_vm._v("2.40V/cell")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("电池浮充电压")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 33)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("2.20V/cell ")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("2.22V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "3"
-    }
-  }, [_vm._v("2.25V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "4"
-    }
-  }, [_vm._v("2.27V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "5"
-    }
-  }, [_vm._v("2.30V/cell")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("电池周期自检")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 34)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("一个星期")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("两个星期")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "3"
-    }
-  }, [_vm._v("一个月")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "4"
-    }
-  }, [_vm._v("二个月")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "5"
-    }
-  }, [_vm._v("六个月")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("电池EOD设置")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 38)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "1"
-    }
-  }, [_vm._v("1.65V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "2"
-    }
-  }, [_vm._v("1.70V/cell")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "3"
-    }
-  }, [_vm._v("1.75V/cell")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "item-content"
-  }, [_c('div', {
-    staticClass: "item-inner"
-  }, [_c('div', {
-    staticClass: "item-title"
-  }, [_vm._v("电池强制均充使能")]), _vm._v(" "), _c('div', {
-    staticClass: "item-after"
-  }, [_c('select', {
-    on: {
-      "change": function($event) {
-        _vm.setDatatoParameter($event, 40)
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "0",
-      "selected": ""
-    }
-  }, [_vm._v("请选择")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "52224"
-    }
-  }, [_vm._v("使能")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "204"
-    }
-  }, [_vm._v("禁止")])]), _vm._v(" "), _c('i', {
-    staticClass: "f7-icons size-50"
-  }, [_vm._v("chevron_right")])])])])])])]), _vm._v(" "), _c('div', {
+  }), _c('i', {
+    staticClass: "toggle-icon"
+  })])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "col"
   }, [_c('a', {
-    staticClass: "button convert-form-to-data button-outline",
+    staticClass: "button convert-form-to-data button-outline button-big",
+    staticStyle: {
+      "width": "85%",
+      "margin": "10px auto"
+    },
     attrs: {
       "href": "#"
     },
@@ -33804,7 +33002,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-30ec5c08", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-b53adc20", module.exports)
   }
 }
 
@@ -33892,7 +33090,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   data: function data() {
     return {
-      message: "this is a text~!"
+      message: "现特锐德智能充电科技有限公司"
     };
   },
 
@@ -33929,30 +33127,7 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('f7-page', [_c('f7-block-title', [_vm._v("选择设备")]), _vm._v(" "), _c('f7-block', [_c('p', [_c('f7-link', {
-    attrs: {
-      "panel-close": ""
-    }
-  }, [_vm._v("close me")])], 1)]), _vm._v(" "), _c('f7-block-title', [_vm._v("Main View Navigation")]), _vm._v(" "), _c('f7-list', [_c('f7-list-item', {
-    attrs: {
-      "link": "/about/",
-      "title": "About",
-      "panel-close": ""
-    }
-  }), _vm._v(" "), _c('f7-list-item', {
-    attrs: {
-      "link": "/form/",
-      "title": "Form",
-      "panel-close": ""
-    }
-  })], 1), _vm._v(" "), _c('f7-block'), _vm._v(" "), _c('f7-block', [_vm._v("\n    " + _vm._s(_vm.message) + "\n  ")]), _vm._v(" "), _c('f7-button', {
-    attrs: {
-      "color": "green"
-    },
-    on: {
-      "click": _vm.ScanQRCode
-    }
-  }, [_vm._v("扫码")])], 1)
+  return _c('f7-page', [_c('f7-block'), _vm._v(" "), _c('f7-list'), _vm._v(" "), _c('f7-block'), _vm._v(" "), _c('f7-block', [_vm._v("\n      " + _vm._s(_vm.message) + "\n    ")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -34157,7 +33332,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "光伏输入",
-      "back-link": "Back",
+      "back-link": "返回",
       "href": "/params/"
     }
   }), _vm._v(" "), _c('f7-list', {
@@ -34396,7 +33571,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "电池信息",
-      "back-link": "Back",
+      "back-link": "返回",
       "href": "/params/"
     }
   }), _vm._v(" "), _c('f7-list', {
@@ -34629,7 +33804,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "系统输出",
-      "back-link": "Back",
+      "back-link": "返回",
       "href": "/params/"
     }
   }), _vm._v(" "), _c('f7-list', {
@@ -34864,7 +34039,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "系统负载",
-      "back-link": "Back",
+      "back-link": "返回",
       "href": "/params/"
     }
   }), _vm._v(" "), _c('f7-list', {
@@ -35107,7 +34282,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "系统基础信息",
-      "back-link": "Back",
+      "back-link": "返回",
       "href": "/params/"
     }
   }), _vm._v(" "), _c('f7-list', {
@@ -35566,7 +34741,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "BMS告警信息",
-      "back-link": "Back",
+      "back-link": "返回",
       "href": "/params/"
     }
   }), _vm._v(" "), _c('f7-list', {
@@ -35737,9 +34912,11 @@ exports.default = {
   },
 
   methods: {
+
     gitstatusname: function gitstatusname(num) {
       return num == 1 ? "异常" : "正常";
     },
+
     // 将字符串二进制数据设置到datalist中
     setValueInParamList: function setValueInParamList() {
       if (this.paramsdata.length > 0) {
@@ -35785,14 +34962,6 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 /* 251 */
@@ -35807,16 +34976,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "系统故障状态",
-      "back-link": "Back",
+      "back-link": "返回",
       "href": "/params/"
     }
   }), _vm._v(" "), _c('f7-list', {
     staticClass: "media-list"
-  }, [_c('f7-list-item', {
-    attrs: {
-      "title": "故障状态字1"
-    }
-  }), _vm._v(" "), _vm._l((_vm.datalist), function(item, index) {
+  }, [_vm._l((_vm.datalist), function(item, index) {
     return (item.isshow == 1 && index < 16) ? _c('f7-list-item', {
       key: item.paramName
     }, [_c('span', [_vm._v(_vm._s(item.paramName))]), _vm._v(" "), _c('span', {
@@ -35824,10 +34989,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(_vm.gitstatusname(item.paramValue)))]), _vm._v(" "), _c('em', {
       staticClass: "unit"
     }, [_vm._v(_vm._s(item.unit))])]) : _vm._e()
-  }), _vm._v(" "), _c('f7-list-item', {
-    attrs: {
-      "title": "故障状态字2"
-    }
   }), _vm._v(" "), _vm._l((_vm.datalist), function(item, index) {
     return (item.isshow == 1 && index > 15 && index < 32) ? _c('f7-list-item', {
       key: item.paramName
@@ -35836,10 +34997,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v(_vm._s(_vm.gitstatusname(item.paramValue)))]), _vm._v(" "), _c('em', {
       staticClass: "unit"
     }, [_vm._v(_vm._s(item.unit))])]) : _vm._e()
-  }), _vm._v(" "), _c('f7-list-item', {
-    attrs: {
-      "title": "故障状态字3"
-    }
   }), _vm._v(" "), _vm._l((_vm.datalist), function(item, index) {
     return (item.isshow == 1 && index > 31) ? _c('f7-list-item', {
       key: item.paramName
@@ -36023,7 +35180,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('f7-page', [_c('f7-navbar', {
     attrs: {
       "title": "历史功率数据",
-      "back-link": "Back",
+      "back-link": "返回",
       "href": "/params/"
     }
   }), _vm._v(" "), _c('f7-list', {
@@ -36138,6 +35295,7 @@ exports.default = new _vuex2.default.Store({
       state.switchFlag = flag;
     },
     CTRL_PARAMETER_CHANGE: function CTRL_PARAMETER_CHANGE(state, settingData) {
+      // 设置参数
       state.settingData = settingData;
     }
   },
@@ -36156,9 +35314,6 @@ exports.default = new _vuex2.default.Store({
     },
     ctrlSysSwitch: function ctrlSysSwitch(state) {
       return state.switchFlag;
-    },
-    settingDatas: function settingDatas(state) {
-      return state.settingData;
     },
     tabIndex: function tabIndex(state) {
       return state.tabindex;

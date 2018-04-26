@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar title="历史功率数据" back-link="Back" href="/params/"></f7-navbar>
+    <f7-navbar title="历史功率数据" back-link="返回" href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName">
         <span>{{item.paramName}}</span>

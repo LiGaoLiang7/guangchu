@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/setting/', // 系统设置主页
-    component: require('./assets/vue/pages/setting.vue')
+    component: require('./assets/vue/pages/setting-u.vue')
   },
   {
     path: '/panel-left/',
