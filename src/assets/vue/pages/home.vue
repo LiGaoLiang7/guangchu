@@ -775,6 +775,8 @@ export default {
       // 连接websocket
       this.initSocket();
       this.$store.commit('TAB_INDEX_CHANGE', 1);
+
+      // console.log(this.$f7.views.history);
     }
 };
 </script>

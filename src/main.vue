@@ -22,7 +22,7 @@ import './assets/css/iconfont.css'
 
 export default {
     mounted() {
-        console.log(this.$device)
+        // console.log(this.$device);
     },
     data (){
         return{
@@ -40,7 +40,6 @@ export default {
         this.tabindex = this.tabIndex;
       }
     }
-
 }
 </script>
 

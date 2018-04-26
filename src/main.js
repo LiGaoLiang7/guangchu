@@ -55,11 +55,29 @@ export default new Vue({
     id: 'io.framework7.testapp',
     theme, //theme  md or ios
     dialog: {
-    // change default "OK" button text
-    buttonOk: '确认',
-    buttonCancel: '取消',
-  }
+     // change default "OK" button text
+     buttonOk: '确认',
+     buttonCancel: '取消',
+    }
   },
   routes,
+  methods : {
+    // add device backbutton listener
+    initBackButtonEvents : function(){
+      document.addEventListener("backbutton", this.onBackButton, false);
+    },
+    onBackButton : function(){
+        var currentHitstory = this.$f7.view[1].history;
+        if(currentHitstory.length > 1){
+          this.$f7.view[1].router.back({}); // 返回上一级
+        }else{
+          navigator.app.exitApp();
+        }
+    }
+  },
+  mounted : function(){
+    this.initBackButtonEvents();
+  },
+
 });
 
