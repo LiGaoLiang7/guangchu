@@ -18833,7 +18833,25 @@ exports.default = new _vue2.default({
       buttonCancel: '取消'
     }
   },
-  routes: _routes2.default
+  routes: _routes2.default,
+  methods: {
+    // add device backbutton listener
+    initBackButtonEvents: function initBackButtonEvents() {
+      document.addEventListener("backbutton", this.onBackButton, false);
+    },
+    onBackButton: function onBackButton() {
+      var currentHitstory = this.$f7.view[1].history;
+      if (currentHitstory.length > 1) {
+        this.$f7.view[1].router.back({}); // 返回上一级
+      } else {
+        navigator.app.exitApp();
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.initBackButtonEvents();
+  }
+
 });
 
 /***/ }),
@@ -30571,7 +30589,7 @@ __webpack_require__(/*! ./assets/css/iconfont.css */ 171);
 
 exports.default = {
   mounted: function mounted() {
-    console.log(this.$device);
+    // console.log(this.$device);
   },
   data: function data() {
     return {
@@ -30590,7 +30608,6 @@ exports.default = {
       this.tabindex = this.tabIndex;
     }
   }
-
 }; //
 //
 //
@@ -31693,6 +31710,8 @@ exports.default = {
     // 连接websocket
     this.initSocket();
     this.$store.commit('TAB_INDEX_CHANGE', 1);
+
+    // console.log(this.$f7.views.history);
   }
 };
 
