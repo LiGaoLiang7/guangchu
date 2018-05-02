@@ -15,10 +15,34 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-qrscanner": {
+  "cordova-plugin-chrome-apps-common": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-qrscanner"
+      "id": "cordova-plugin-chrome-apps-common@1"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-chrome-apps-system-network": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-chrome-apps-system-network@1"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-chrome-apps-iossocketscommon": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-chrome-apps-iossocketscommon"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cz.blocshop.socketsforcordova": {
+    "source": {
+      "type": "registry",
+      "id": "cz.blocshop.socketsforcordova@^1.1.0"
     },
     "is_top_level": true,
     "variables": {}

@@ -12,6 +12,10 @@ export default new Vuex.Store({
     binarysyswarning : [], // 告警数据 : 系统故障
     switchFlag : null,    // 控制命令 1 开关机控制
     settingData : [],     // 参数设置数据
+    connData : {
+      ip : "",
+      port : 0,
+    }
   },
   actions: {
     userLogged ({commit}, user) {
@@ -43,6 +47,9 @@ export default new Vuex.Store({
     CTRL_PARAMETER_CHANGE (state, settingData){    // 设置参数
       state.settingData = settingData;
     },
+    CONN_DATA_CHANGE (state, obj){
+      state.connData = obj;
+    }
   },
   getters: {
     paramsBattery: (state) => {

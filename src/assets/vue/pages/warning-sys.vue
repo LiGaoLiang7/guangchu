@@ -137,6 +137,7 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
       },
     },
     mounted : function(){
+      this.$store.commit('TAB_INDEX_CHANGE', 3);
       this.setValueInParamList();
     },
     components: {

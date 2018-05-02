@@ -261,7 +261,6 @@
       },
       // 下发参数设置
       sendSetParameter : function(){
-
         var _this = this;
         this.$f7.dialog.confirm("确定下发参数设置吗？", "确认参数", function(){
           // 深拷贝
@@ -272,6 +271,9 @@
       changeBatteryType : function(e){
         this.batteryType = e.target.value;
       }
+    },
+    mounted : function(){
+      this.$store.commit('TAB_INDEX_CHANGE', 4);
     },
     components: {
       f7Navbar,

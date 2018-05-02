@@ -25,7 +25,9 @@
 </template>
 <script>
  export default {
-
+    mounted : function(){
+      this.$store.commit('TAB_INDEX_CHANGE', 3);
+    }
   };
 </script>
 <style lang="scss">

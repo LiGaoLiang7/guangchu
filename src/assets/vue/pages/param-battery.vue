@@ -19,12 +19,12 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
       return {
         
         datalist : [
-          { paramName : "电池电压",    paramValue : 0,  unit : "V" },
-          { paramName : "电池电流",    paramValue : 0,  unit : "A" },
-          { paramName : "温度",        paramValue : 0,  unit : "℃"},
-          { paramName : "SOC",         paramValue : 0,  unit : "%" },
-          { paramName : "SOH",         paramValue : 0,  unit : "%" },
-          { paramName : "充放电状态",  paramValue : 0,  unit : "", format : function(num){
+          { paramName : "电池电压",              paramValue : 0, byte : 2, unit : "V"  },
+          { paramName : "电池电流",              paramValue : 0, byte : 2, unit : "A"  },
+          { paramName : "温度",                  paramValue : 0, byte : 2, unit : "℃" },
+          { paramName : "SOC",                   paramValue : 0, byte : 2, unit : "%"  },
+          { paramName : "SOH",                   paramValue : 0, byte : 2, unit : "%"  },
+          { paramName : "充放电状态",            paramValue : 0, byte : 1, unit : "", format : function(num){
               if(num == 0x11) return "充电";
               if(num == 0x22) return "放电";
               if(num == 0x33) return "待机";
@@ -55,12 +55,13 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
         if(this.paramsdata.length == 0) return;
         
         for(var i = 0; i < this.datalist.length; i++){
-          this.datalist[i].paramValue = this.paramsdata[i].paramValue;
           
           // 如果需要格式化解析
           if(this.datalist[i].hasOwnProperty("format")){
-            this.datalist[i].paramValue = this.datalist[i].format(this.paramsdata[i].paramValue);
+             this.paramsdata[i].paramValue = this.datalist[i].format(this.paramsdata[i].paramValue);
+             this.paramsdata[i].format     = this.datalist[i].format;
           }
+          this.datalist.splice(i, 1, this.paramsdata[i]);
         } 
       } 
     },
@@ -91,5 +92,10 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     height: 30px !important;
     border-radius: 9px;
     width: 20% !important;
+  }
+  .media-list span.params{
+    width: 20%;
+    display: inline-block;
+    line-height: 30px;
   }
 </style>

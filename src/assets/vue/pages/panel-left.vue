@@ -1,49 +1,53 @@
 <template>
   <f7-page>
-    <!-- <f7-block-title>选择设备</f7-block-title> -->
-    <f7-block>
-<!--       <p><f7-link panel-close>close me</f7-link></p> -->
-    </f7-block>
-    <!-- <f7-block-title>Main View Navigation</f7-block-title> -->
-    <f7-list>
-     <!--  <f7-list-item link="/about/" title="About" panel-close></f7-list-item>
-      <f7-list-item link="/form/" title="Form" panel-close></f7-list-item> -->
-    </f7-list>
-    <f7-block>
+    <f7-block class="block block-strong setting">
+      <div class="block-title">连接设置</div>
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-after">
+                  <label class="toggle toggle-init">
+                    <input type="text" name="IP" placeholder="IP" v-model="ip">
+                  </label>
+                </div>
+              </div>
+            </div>
+           </li>
+           <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-after">
+                  <label class="toggle toggle-init">
+                    <input type="number" name="PORT" min="0" max="9999" v-model="port" placeholder="端口">
+                  </label>
+                </div>
+              </div>
+            </div>
+           </li>
+         </ul>
+      <f7-button color="green" @click='connectSocket'>连接</f7-button>
     </f7-block>
     <f7-block>
       {{message}}
     </f7-block>
-    <!-- <f7-button color="green" @click='ScanQRCode'>扫码</f7-button> -->
-
   </f7-page>
 </template>
 <script>
   export default {
     data(){
       return{
-        message : "现特锐德智能充电科技有限公司"
+        message : "西安特锐德智能充电科技有限公司",
+        ip : "10.211.4.130",
+        port : 8234,
       }
     },
-
     methods : {
-      ScanQRCode : function(){
-        QRScanner.scan(this.displayContents);
-      },
-
-      displayContents : function(err, text){
-        if(err){
-          console.log(err);
-          this.message = err;
-        } else {
-          // The scan completed, display the contents of the QR code: 
-          this.message = text;
-        }
-      },
-
+      connectSocket : function(){
+        this.$store.commit('CONN_DATA_CHANGE', { ip : this.ip,  port : this.port });
+      }
     },
     mounted : function(){
-      // QRScanner.prepare(this.onDone);
     },
 
   };

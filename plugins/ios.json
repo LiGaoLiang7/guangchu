@@ -7,15 +7,18 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-qrscanner": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.ios.lincharge"
     },
-    "cordova-plugin-whitelist": {
+    "cz.blocshop.socketsforcordova": {
       "PACKAGE_NAME": "com.ios.lincharge"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-swift-support": {
+    "cordova-plugin-chrome-apps-common": {
+      "PACKAGE_NAME": "com.ios.lincharge"
+    },
+    "cordova-plugin-chrome-apps-system-network": {
       "PACKAGE_NAME": "com.ios.lincharge"
     }
   }

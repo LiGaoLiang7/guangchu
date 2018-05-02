@@ -573,6 +573,9 @@
         });
       }
     },
+    mounted : function(){
+      this.$store.commit('TAB_INDEX_CHANGE', 4);
+    },
     components: {
       f7Navbar,
       f7Page,
