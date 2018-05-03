@@ -30825,12 +30825,12 @@ exports.default = {
         if (this.params_ctrlcab[i].byte == 2) {
           // 2个字节的数据
 
-          this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
+          this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
           offset += 2;
         } else {
           // 1个字节的数据
 
-          this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
+          this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
           offset += 1;
         }
       }
@@ -30989,19 +30989,13 @@ exports.default = {
         if (this.settingParamsters[i].byte == 1) {
           data[7 + offset] = this.settingParamsters[i].paramValue;
         } else {
-          console.log(this.settingParamsters[i].paramValue.toString(16));
-
-          if (this.settingParamsters[i].paramValue.toString(16).length <= 2) {
+          if (this.settingParamsters[i].paramValue <= 255) {
             data[7 + offset] = 0x00;
             data[8 + offset] = this.settingParamsters[i].paramValue;
+          } else {
+            data[7 + offset] = this.settingParamsters[i].paramValue >> 8;
+            data[8 + offset] = this.settingParamsters[i].paramValue & 255;
           }
-          // else if(this.settingParamsters[i].paramValue.toString(16).length == 4){
-          //   data[7 + offset] =  this.settingParamsters[i].paramValue.toString(16).substring(0, 2);
-          //   data[8 + offset] =  this.settingParamsters[i].paramValue.toString(16).substring(2, 4);
-          // }else{
-          //   data[7 + offset] =  this.settingParamsters[i].paramValue.toString(16).substring(0, 1);
-          //   data[8 + offset] =  this.settingParamsters[i].paramValue.toString(16).substring(2, 3);
-          // }
         }
         offset += this.settingParamsters[i].byte;
       }
@@ -33649,8 +33643,8 @@ exports.default = {
 
         for (var i = 0; i < this.datalist.length; i++) {
 
-          if (true) {
-            // this.datalist[i].isshow == 1
+          if (this.datalist[i].isshow == 1) {
+            //将要显示的赋值
 
             for (var j = 0; j < this.paramsdata.length; j++) {
               if (this.paramsdata[j].paramName == this.datalist[i].paramName) {
@@ -33704,13 +33698,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('f7-list', {
     staticClass: "media-list"
   }, _vm._l((_vm.datalist), function(item, index) {
-    return _c('f7-list-item', {
+    return (item.isshow == 1) ? _c('f7-list-item', {
       key: item.paramName
     }, [_c('span', [_vm._v(_vm._s(item.paramName))]), _vm._v(" "), _c('span', {
       staticClass: "params"
-    }, [_vm._v(_vm._s(item.paramValue))]), _vm._v(" "), _c('em', {
+    }, [_vm._v(_vm._s(item.paramValue / item.resolution))]), _vm._v(" "), _c('em', {
       staticClass: "unit"
-    }, [_vm._v(_vm._s(item.unit))])])
+    }, [_vm._v(_vm._s(item.unit))])]) : _vm._e()
   }))], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true

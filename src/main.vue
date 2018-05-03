@@ -334,11 +334,11 @@ export default {
 
           if(this.params_ctrlcab[i].byte == 2){ // 2个字节的数据
 
-            this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
+            this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
             offset += 2;
           }else{ // 1个字节的数据
 
-            this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
+            this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
             offset += 1;
           }
         }
@@ -491,19 +491,13 @@ export default {
             if(this.settingParamsters[i].byte == 1){
                 data[7 + offset] =  this.settingParamsters[i].paramValue;
             }else{
-                console.log(this.settingParamsters[i].paramValue.toString(16));
-
-                if(this.settingParamsters[i].paramValue.toString(16).length <= 2){
+                if(this.settingParamsters[i].paramValue <= 255){
                   data[7 + offset] =  0x00;
                   data[8 + offset] =  this.settingParamsters[i].paramValue;
+                }else{
+                  data[7 + offset] =  this.settingParamsters[i].paramValue>>8;
+                  data[8 + offset] =  this.settingParamsters[i].paramValue&255;
                 }
-                // else if(this.settingParamsters[i].paramValue.toString(16).length == 4){
-                //   data[7 + offset] =  this.settingParamsters[i].paramValue.toString(16).substring(0, 2);
-                //   data[8 + offset] =  this.settingParamsters[i].paramValue.toString(16).substring(2, 4);
-                // }else{
-                //   data[7 + offset] =  this.settingParamsters[i].paramValue.toString(16).substring(0, 1);
-                //   data[8 + offset] =  this.settingParamsters[i].paramValue.toString(16).substring(2, 3);
-                // }
             }
             offset += this.settingParamsters[i].byte;
           }

@@ -2,9 +2,9 @@
   <f7-page>
     <f7-navbar title="系统输出"  back-link="返回" href="/params/"></f7-navbar>
     <f7-list class="media-list">
-      <f7-list-item v-for="(item, index) in datalist" :key="item.paramName"> <!-- v-if="item.isshow == 1" -->
+      <f7-list-item v-for="(item, index) in datalist" v-if="item.isshow == 1" :key="item.paramName">
         <span>{{item.paramName}}</span>
-        <span class="params">{{item.paramValue}}</span> <!-- item.resolution -->
+        <span class="params">{{item.paramValue/item.resolution}}</span>
         <em class="unit">{{item.unit}}</em>
       </f7-list-item>
     </f7-list>
@@ -87,7 +87,7 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
 
           for(var i = 0; i < this.datalist.length; i++){
 
-              if(true){ // this.datalist[i].isshow == 1
+              if(this.datalist[i].isshow == 1){ //将要显示的赋值
 
                 for(var j = 0; j < this.paramsdata.length; j++){
                   if(this.paramsdata[j].paramName == this.datalist[i].paramName){
