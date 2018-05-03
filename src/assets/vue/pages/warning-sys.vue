@@ -123,12 +123,11 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
       gitstatusname : function(num){
         return num == 1 ? "异常" : "正常"
       },
-      
       // 将字符串二进制数据设置到datalist中
       setValueInParamList:  function(){
         if(this.paramsdata.length > 0) {
           for(var i = 0; i < this.paramsdata.length; i++){
-            var binArray = this.paramsdata[i].split('');
+            var binArray = this.paramsdata[i].split('').reverse();
             for(var j = 0; j < binArray.length; j++){
                 this.datalist[i*16+j].paramValue = binArray[j];
              }

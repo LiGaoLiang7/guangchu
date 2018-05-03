@@ -18,7 +18,13 @@
     "cordova-plugin-chrome-apps-common": {
       "PACKAGE_NAME": "com.ios.lincharge"
     },
+    "cordova-plugin-chrome-apps-iossocketscommon": {
+      "PACKAGE_NAME": "com.ios.lincharge"
+    },
     "cordova-plugin-chrome-apps-system-network": {
+      "PACKAGE_NAME": "com.ios.lincharge"
+    },
+    "cordova-plugin-swift-support": {
       "PACKAGE_NAME": "com.ios.lincharge"
     }
   }

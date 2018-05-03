@@ -30589,12 +30589,12 @@ __webpack_require__(/*! ./assets/css/iconfont.css */ 171);
 
 exports.default = {
   mounted: function mounted() {
+    console.log(this);
     // console.log(this.$device);
   },
   data: function data() {
     return {
       tabindex: 1,
-
       // wssstring : "192.168.0.171",
       wssstring: "10.10.100.102",
       // port : 9001, 
@@ -30604,9 +30604,14 @@ exports.default = {
       params: [],
 
       // 储能电池实时数据
-      params_battery: [{ paramName: "电池电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "温度", paramValue: 0, byte: 2, unit: "℃" }, { paramName: "SOC", paramValue: 0, byte: 2, unit: "%" }, { paramName: "SOH", paramValue: 0, byte: 2, unit: "%" }, { paramName: "充放电状态", paramValue: 0, byte: 1, unit: "" }],
+      params_battery: [{ paramName: "电池电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "温度", paramValue: 0, byte: 2, unit: "℃" }, { paramName: "SOC", paramValue: 0, byte: 2, unit: "%" }, { paramName: "SOH", paramValue: 0, byte: 2, unit: "%" }, { paramName: "充放电状态", paramValue: 0, byte: 2, unit: "", format: function format(num) {
+          if (num == 0x11) return "充电";
+          if (num == 0x22) return "放电";
+          if (num == 0x33) return "待机";
+          return Number(num).toString(16);
+        } }],
       // 控制柜实时数据
-      params_ctrlcab: [{ paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W" }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W" }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz" }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "" }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA" }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W" }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var" }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W" }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃" }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%" }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min" }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "" }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "" }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "" }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "" }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "" }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "" }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "" }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃" }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃" }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃" }],
+      params_ctrlcab: [{ paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", resolution: 100 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", resolution: 1000 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", resolution: 1 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }],
 
       // BMS告警信息 0表示无告警 1表示有告警
       warning_bms: [{ paramName: "电池放电电流过高", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池充电电流过高", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池温度过低", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池温度过高", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池电压过低", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池电压过高", paramValue: 0, byte: 1, unit: "", isshow: 1 }],
@@ -30624,10 +30629,8 @@ exports.default = {
 
       // 设备故障状态字
       warning_status: [{ paramName: "故障状态字1", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "故障状态字2", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "故障状态字3", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "故障状态字4", paramValue: 0, byte: 2, unit: "", isshow: 0 }],
-
       // 故障状态字二进制编码
       binary_warning_status: [],
-
       // 系统信息
       system_info: [{ paramName: "协议版本号", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "电池厂商号", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "Wifi SSID", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "Wifi password", paramValue: 0, byte: 2, unit: "", isshow: 0 }]
 
@@ -30647,6 +30650,9 @@ exports.default = {
     settingParamsters: function settingParamsters() {
       // 从store中获取参数
       return this.$store.state.settingData.slice(0); // 从state中获取
+    },
+    conndata: function conndata() {
+      return this.$store.state.connData;
     }
   },
   watch: {
@@ -30659,8 +30665,14 @@ exports.default = {
     },
     settingParamsters: function settingParamsters() {
       //设置 - 下发运行参数设置
-      console.log("in main");
       this.sendDeviceRunningParameters();
+    },
+    // 连接数据
+    conndata: function conndata() {
+      // 关闭socket连接
+      // this.socketclient.close();
+      this.socketclient = new Socket();
+      this.connectServirce(this.conndata.ip, this.conndata.port);
     }
   },
   methods: {
@@ -30670,26 +30682,28 @@ exports.default = {
       var _this = this;
       document.addEventListener('deviceready', function () {
         _this.socketclient = new Socket();
-        _this.connectServirce();
+        // _this.connectServirce();
       }, false);
     },
     // 连接socket
-    connectServirce: function connectServirce() {
+    connectServirce: function connectServirce(wssstring, port) {
+      var theport = Number(port);
       var _this = this;
       this.socketclient.onData = function (data) {
-        var uint8View = DataView(data);
-        // _this.praseData(uint8View);
-        _this.$f7.dialog.alert(data);
-        // console.log(uint8View);
-        // _this.message = JSON.stringify(uint8View," ", 4);
+        // _this.$f7.dialog.alert(typeof data);
+        // _this.$f7.dialog.alert(JSON.stringify(data));
+        var uint8View = new DataView(data.buffer);
+        _this.praseData(uint8View);
       };
       this.socketclient.onError = function (errorMessage) {
-        // invoked after error occurs during connection
+        _this.$f7.dialog.alert("服务出错" + errorMessage, "提示");
       };
       this.socketclient.onClose = function (hasError) {
         // invoked after connection close
+        this.$f7.dialog.alert("连接关闭", "提示");
       };
-      this.socketclient.open(this.wssstring, this.port, function () {
+
+      this.socketclient.open(wssstring, theport, function () {
         _this.$f7.dialog.alert("连接服务成功", "提示");
       }, function (errorMessage) {
         _this.$f7.dialog.alert("连接服务失败" + errorMessage, "提示");
@@ -30701,48 +30715,42 @@ exports.default = {
         var start = dataview.getUint16(0, false); // 起始帧   2字节
         var start_addr = dataview.getUint8(2, false); // 起始地址 1字节
         var target_addr = dataview.getUint8(3, false); // 目标地址 1字节
-        var command = dataview.getUint8(4, false); // 命令字   1字节
+        var command = dataview.getUint8(4, false); // 命令字 1字节
+        // this.$f7.dialog.alert('start : ' + start + "start_addr : " + start_addr + "target_addr : " + target_addr + "command : " + command);
         if (Number(start) == 0xFE55) {
           //    包起始帧 0xFE 0x55
 
           if (start_addr == 0x14 && target_addr == 0x64) {
             // PCU->APP 起始地址为0X14，目标地址0x64
-
             var length = dataview.getInt16(5, false);
-
             if (dataview.getUint8(7 + length + 1, false) == 0xAE) {
               // 数据包完整 有结束
-
+              // this.$f7.dialog.alert("数据包完整");
               switch (command) {
-
                 case 0x0A:
                   // 储能电池信息 
-
                   this.praseBatteryData(dataview, 7, length); // 数据从6开始 截止是6+length
-                  console.log(JSON.stringify(this.params_battery, " ", 4));
+                  // console.log(JSON.stringify(this.params_battery, " ", 4));
+                  // this.$f7.dialog.alert(JSON.stringify(this.params_battery, " ", 4));
                   this.$store.commit('PARAM_BATTERY_CHANGE', this.params_battery);
                   break;
-
                 case 0x0B:
                   // 控制柜信息
-
+                  // this.$f7.dialog.alert("控制柜信息");
                   this.prasCtrlcabData(dataview, 7, length);
                   this.$store.commit('PARAM_CTRLCAB_CHANGE', this.params_ctrlcab);
-
                   // console.log(JSON.stringify(this.params_ctrlcab," ", 2));
-
-
                   break;
                 case 0x1E:
                   // BMS告警信息 warning_bms
-
+                  // this.$f7.dialog.alert("BMS告警信息");
                   this.prasBMSWarningData(dataview, 7, length);
-
                   // console.log(JSON.stringify(this.warning_bms, " ", 4));
                   this.$store.commit('WARNING_BMS_CHANGE', this.warning_bms);
                   break;
                 case 0x0C:
                   // 设备运行状态信息 4个字节 
+                  // this.$f7.dialog.alert("设备运行状态信息");
                   this.prasDeviceRunningStatus(dataview, 7, length);
 
                   // 将数据解析成二进制位
@@ -30757,10 +30765,9 @@ exports.default = {
                   console.log(JSON.stringify(this.binary_running_status, " ", 4));
                   console.log(JSON.stringify(this.running_status_mean, " ", 4));
                   break;
-
                 case 0x1F:
                   // 系统故障状态显示 8个字节 
-
+                  // this.$f7.dialog.alert("系统故障状态显示");
                   this.prasDeviceWarningStatus(dataview, 7, length);
                   // 将数据解析成二进制位
                   this.binary_warning_status = [];
@@ -30768,12 +30775,9 @@ exports.default = {
                     this.binary_warning_status.push(this.parseVauleToBinary(this.warning_status[i]));
                   }
                   this.$store.commit('WARNING_SYS_CHANGE', this.binary_warning_status);
-                  // console.log(JSON.stringify(this.binary_warning_status, " ", 4));
                   break;
-
                 case 0x98:
                   // 系统信息
-
                   this.prasSystemData(dataview, 7, length);
                   // this.$store.commit('PARAM_SYS_CHANGE', this.system_info);
                   console.log(JSON.stringify(this.system_info, " ", 2));
@@ -30907,14 +30911,12 @@ exports.default = {
         }
       }
     },
-
     // 解析数字成为二进制数组
     // 例如一个字节 16 =>  00010000
     // 例如两个字节 16 =>  00000000 00010000
     // running_status : [
     //   { paramName : "设备运行状态字1",     paramValue : 0, byte : 2, unit : "", isshow : 0},
     // ],
-    // 
     parseVauleToBinary: function parseVauleToBinary(object) {
       var result = object.byte == 2 ? "0000000000000000" : "00000000";
       var value = Number(object.paramValue).toString(2);
@@ -30976,7 +30978,10 @@ exports.default = {
       data[3] = 0x14;
       data[4] = 0x65;
       data[5] = 0x00;
-      data[6] = datalength.toString(16);
+
+      data[6] = Number(datalength);
+
+      // this.$f7.dialog.alert(datalength);
 
       var offset = 0;
       for (i = 0; i < this.settingParamsters.length; i++) {
@@ -32418,7 +32423,6 @@ exports.default = {
     },
     // 下发参数设置
     sendSetParameter: function sendSetParameter() {
-
       var _this = this;
       this.$f7.dialog.confirm("确定下发参数设置吗？", "确认参数", function () {
         // 深拷贝
@@ -32428,6 +32432,9 @@ exports.default = {
     changeBatteryType: function changeBatteryType(e) {
       this.batteryType = e.target.value;
     }
+  },
+  mounted: function mounted() {
+    this.$store.commit('TAB_INDEX_CHANGE', 4);
   },
   components: {
     f7Navbar: _framework7Vue.f7Navbar,
@@ -32914,34 +32921,37 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   data: function data() {
     return {
-      message: "现特锐德智能充电科技有限公司"
+      message: "西安特锐德智能充电科技有限公司",
+      ip: "10.211.4.130",
+      port: 8234
     };
   },
 
-
   methods: {
-    ScanQRCode: function ScanQRCode() {
-      QRScanner.scan(this.displayContents);
-    },
-
-    displayContents: function displayContents(err, text) {
-      if (err) {
-        console.log(err);
-        this.message = err;
-      } else {
-        // The scan completed, display the contents of the QR code: 
-        this.message = text;
-      }
+    connectSocket: function connectSocket() {
+      this.$store.commit('CONN_DATA_CHANGE', { ip: this.ip, port: this.port });
     }
-
   },
-  mounted: function mounted() {
-    // QRScanner.prepare(this.onDone);
-  }
+  mounted: function mounted() {}
 
 };
 
@@ -32955,7 +32965,78 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('f7-page', [_c('f7-block'), _vm._v(" "), _c('f7-list'), _vm._v(" "), _c('f7-block'), _vm._v(" "), _c('f7-block', [_vm._v("\n      " + _vm._s(_vm.message) + "\n    ")])], 1)
+  return _c('f7-page', [_c('f7-block', {
+    staticClass: "block block-strong setting"
+  }, [_c('div', {
+    staticClass: "block-title"
+  }, [_vm._v("连接设置")]), _vm._v(" "), _c('ul', [_c('li', [_c('div', {
+    staticClass: "item-content"
+  }, [_c('div', {
+    staticClass: "item-inner"
+  }, [_c('div', {
+    staticClass: "item-after"
+  }, [_c('label', {
+    staticClass: "toggle toggle-init"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.ip),
+      expression: "ip"
+    }],
+    attrs: {
+      "type": "text",
+      "name": "IP",
+      "placeholder": "IP"
+    },
+    domProps: {
+      "value": (_vm.ip)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.ip = $event.target.value
+      }
+    }
+  })])])])])]), _vm._v(" "), _c('li', [_c('div', {
+    staticClass: "item-content"
+  }, [_c('div', {
+    staticClass: "item-inner"
+  }, [_c('div', {
+    staticClass: "item-after"
+  }, [_c('label', {
+    staticClass: "toggle toggle-init"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.port),
+      expression: "port"
+    }],
+    attrs: {
+      "type": "number",
+      "name": "PORT",
+      "min": "0",
+      "max": "9999",
+      "placeholder": "端口"
+    },
+    domProps: {
+      "value": (_vm.port)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.port = $event.target.value
+      }
+    }
+  })])])])])])]), _vm._v(" "), _c('f7-button', {
+    attrs: {
+      "color": "green"
+    },
+    on: {
+      "click": _vm.connectSocket
+    }
+  }, [_vm._v("连接")])], 1), _vm._v(" "), _c('f7-block', [_vm._v("\n    " + _vm._s(_vm.message) + "\n  ")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -33059,7 +33140,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.media-list span[data-v-fbaffc40]{\n    display: inline-block;\n    width: 69%;\n    text-align: left;\n}\n.media-list .params[data-v-fbaffc40]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n", ""]);
+exports.push([module.i, "\n.media-list span[data-v-fbaffc40]{\n    display: inline-block;\n    width: 69%;\n    text-align: left;\n}\n.media-list .params[data-v-fbaffc40]{\n  display: inline;\n  text-align: center;\n  border: 1px solid #e2e2e2;\n  height: 30px !important;\n  border-radius: 9px;\n  width: 20% !important;\n}\n.media-list span.params[data-v-fbaffc40]{\n  width: 20%;\n  display: inline-block;\n  line-height: 30px;\n}\n", ""]);
 
 // exports
 
@@ -33087,7 +33168,7 @@ exports.default = {
   data: function data() {
     return {
 
-      datalist: [{ paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 1 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 1 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 1 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }]
+      datalist: [{ paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 1 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1000 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0, resolution: 1 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 10 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0, resolution: 10 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }]
     };
   },
 
@@ -33168,28 +33249,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.datalist), function(item, index) {
     return (item.isshow == 1) ? _c('f7-list-item', {
       key: item.paramName
-    }, [_c('span', [_vm._v(_vm._s(item.paramName))]), _vm._v(" "), _c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (item.paramValue),
-        expression: "item.paramValue"
-      }],
-      staticClass: "params",
-      attrs: {
-        "type": "text",
-        "disabled": ""
-      },
-      domProps: {
-        "value": (item.paramValue)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          _vm.$set(item, "paramValue", $event.target.value)
-        }
-      }
-    }), _vm._v(" "), _c('em', {
+    }, [_c('span', [_vm._v(_vm._s(item.paramName))]), _vm._v(" "), _c('span', {
+      staticClass: "params"
+    }, [_vm._v(_vm._s(item.paramValue / item.resolution))]), _vm._v(" "), _c('em', {
       staticClass: "unit"
     }, [_vm._v(_vm._s(item.unit))])]) : _vm._e()
   }))], 1)
@@ -33296,7 +33358,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.media-list span[data-v-05f0bc05]{\n    display: inline-block;\n    width: 68%;\n    text-align: left;\n}\n.media-list .params[data-v-05f0bc05]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n", ""]);
+exports.push([module.i, "\n.media-list span[data-v-05f0bc05]{\n    display: inline-block;\n    width: 68%;\n    text-align: left;\n}\n.media-list .params[data-v-05f0bc05]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n.media-list span.params[data-v-05f0bc05]{\n    width: 20%;\n    display: inline-block;\n    line-height: 30px;\n}\n", ""]);
 
 // exports
 
@@ -33324,7 +33386,7 @@ exports.default = {
   data: function data() {
     return {
 
-      datalist: [{ paramName: "电池电压", paramValue: 0, unit: "V" }, { paramName: "电池电流", paramValue: 0, unit: "A" }, { paramName: "温度", paramValue: 0, unit: "℃" }, { paramName: "SOC", paramValue: 0, unit: "%" }, { paramName: "SOH", paramValue: 0, unit: "%" }, { paramName: "充放电状态", paramValue: 0, unit: "", format: function format(num) {
+      datalist: [{ paramName: "电池电压", paramValue: 0, byte: 2, unit: "V" }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A" }, { paramName: "温度", paramValue: 0, byte: 2, unit: "℃" }, { paramName: "SOC", paramValue: 0, byte: 2, unit: "%" }, { paramName: "SOH", paramValue: 0, byte: 2, unit: "%" }, { paramName: "充放电状态", paramValue: 0, byte: 2, unit: "", format: function format(num) {
           if (num == 0x11) return "充电";
           if (num == 0x22) return "放电";
           if (num == 0x33) return "待机";
@@ -33353,12 +33415,13 @@ exports.default = {
       if (this.paramsdata.length == 0) return;
 
       for (var i = 0; i < this.datalist.length; i++) {
-        this.datalist[i].paramValue = this.paramsdata[i].paramValue;
 
         // 如果需要格式化解析
         if (this.datalist[i].hasOwnProperty("format")) {
-          this.datalist[i].paramValue = this.datalist[i].format(this.paramsdata[i].paramValue);
+          this.paramsdata[i].paramValue = this.datalist[i].format(this.paramsdata[i].paramValue);
+          this.paramsdata[i].format = this.datalist[i].format;
         }
+        this.datalist.splice(i, 1, this.paramsdata[i]);
       }
     }
   },
@@ -33535,7 +33598,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.media-list span[data-v-65fc7d39]{\n    display: inline-block;\n    width: 66%;\n    text-align: left;\n}\n.media-list .params[data-v-65fc7d39]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n", ""]);
+exports.push([module.i, "\n.media-list span[data-v-65fc7d39]{\n    display: inline-block;\n    width: 66%;\n    text-align: left;\n}\n.media-list .params[data-v-65fc7d39]{\n  display: inline;\n  text-align: center;\n  border: 1px solid #e2e2e2;\n  height: 30px !important;\n  border-radius: 9px;\n  width: 20% !important;\n}\n.media-list span.params[data-v-65fc7d39]{\n  width: 20%;\n  display: inline-block;\n  line-height: 30px;\n}\n", ""]);
 
 // exports
 
@@ -33562,7 +33625,7 @@ exports.default = {
   props: {},
   data: function data() {
     return {
-      datalist: [{ paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 1 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 1 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 1 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 1 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }]
+      datalist: [{ paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 1, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 100 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 1, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 100 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1000 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 1, resolution: 1 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1, resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }]
     };
   },
   computed: {
@@ -33580,11 +33643,14 @@ exports.default = {
   methods: {
 
     setValueInParamList: function setValueInParamList() {
+
+      // this.$f7.dialog.alert(JSON.stringify(this.paramsdata, " ", 4));
       if (this.paramsdata.length > 0) {
 
         for (var i = 0; i < this.datalist.length; i++) {
 
-          if (this.datalist[i].isshow == 1) {
+          if (true) {
+            // this.datalist[i].isshow == 1
 
             for (var j = 0; j < this.paramsdata.length; j++) {
               if (this.paramsdata[j].paramName == this.datalist[i].paramName) {
@@ -33638,32 +33704,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('f7-list', {
     staticClass: "media-list"
   }, _vm._l((_vm.datalist), function(item, index) {
-    return (item.isshow == 1) ? _c('f7-list-item', {
+    return _c('f7-list-item', {
       key: item.paramName
-    }, [_c('span', [_vm._v(_vm._s(item.paramName))]), _vm._v(" "), _c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (item.paramValue),
-        expression: "item.paramValue"
-      }],
-      staticClass: "params",
-      attrs: {
-        "type": "text",
-        "disabled": ""
-      },
-      domProps: {
-        "value": (item.paramValue)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          _vm.$set(item, "paramValue", $event.target.value)
-        }
-      }
-    }), _vm._v(" "), _c('em', {
+    }, [_c('span', [_vm._v(_vm._s(item.paramName))]), _vm._v(" "), _c('span', {
+      staticClass: "params"
+    }, [_vm._v(_vm._s(item.paramValue))]), _vm._v(" "), _c('em', {
       staticClass: "unit"
-    }, [_vm._v(_vm._s(item.unit))])]) : _vm._e()
+    }, [_vm._v(_vm._s(item.unit))])])
   }))], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
@@ -33768,7 +33815,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.media-list span[data-v-422bb69e]{\n    display: inline-block;\n    width: 66%;\n    text-align: left;\n}\n.media-list .params[data-v-422bb69e]{\n    display: inline;\n    text-align: center;\n    border: 1px solid #e2e2e2;\n    height: 30px !important;\n    border-radius: 9px;\n    width: 20% !important;\n}\n", ""]);
+exports.push([module.i, "\n.media-list span[data-v-422bb69e]{\n    display: inline-block;\n    width: 66%;\n    text-align: left;\n}\n.media-list .params[data-v-422bb69e]{\n  display: inline;\n  text-align: center;\n  border: 1px solid #e2e2e2;\n  height: 30px !important;\n  border-radius: 9px;\n  width: 20% !important;\n}\n.media-list span.params[data-v-422bb69e]{\n  width: 20%;\n  display: inline-block;\n  line-height: 30px;\n}\n\n", ""]);
 
 // exports
 
@@ -33802,7 +33849,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      datalist: [{ paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 1 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 1 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 1 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 1 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }]
+      datalist: [{ paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 1, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 100 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 1, resolution: 1 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 100 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 1 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 1, resolution: 10 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1, resolution: 100 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1000 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }]
     };
   },
   computed: {
@@ -33875,28 +33922,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.datalist), function(item, index) {
     return (item.isshow == 1) ? _c('f7-list-item', {
       key: item.paramName
-    }, [_c('span', [_vm._v(_vm._s(item.paramName))]), _vm._v(" "), _c('input', {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: (item.paramValue),
-        expression: "item.paramValue"
-      }],
-      staticClass: "params",
-      attrs: {
-        "type": "text",
-        "disabled": ""
-      },
-      domProps: {
-        "value": (item.paramValue)
-      },
-      on: {
-        "input": function($event) {
-          if ($event.target.composing) { return; }
-          _vm.$set(item, "paramValue", $event.target.value)
-        }
-      }
-    }), _vm._v(" "), _c('em', {
+    }, [_c('span', [_vm._v(_vm._s(item.paramName))]), _vm._v(" "), _c('span', {
+      staticClass: "params"
+    }, [_vm._v(_vm._s(item.paramValue / item.resolution))]), _vm._v(" "), _c('em', {
       staticClass: "unit"
     }, [_vm._v(_vm._s(item.unit))])]) : _vm._e()
   }))], 1)
@@ -34318,7 +34346,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+exports.default = {
+  mounted: function mounted() {
+    this.$store.commit('TAB_INDEX_CHANGE', 3);
+  }
+};
 
 /***/ }),
 /* 241 */
@@ -34537,6 +34569,7 @@ exports.default = {
   },
   mounted: function mounted() {
     this.setValueInParamList();
+    this.$store.commit('TAB_INDEX_CHANGE', 3);
   },
   components: {
     f7Navbar: _framework7Vue.f7Navbar,
@@ -34744,12 +34777,11 @@ exports.default = {
     gitstatusname: function gitstatusname(num) {
       return num == 1 ? "异常" : "正常";
     },
-
     // 将字符串二进制数据设置到datalist中
     setValueInParamList: function setValueInParamList() {
       if (this.paramsdata.length > 0) {
         for (var i = 0; i < this.paramsdata.length; i++) {
-          var binArray = this.paramsdata[i].split('');
+          var binArray = this.paramsdata[i].split('').reverse();
           for (var j = 0; j < binArray.length; j++) {
             this.datalist[i * 16 + j].paramValue = binArray[j];
           }
@@ -34758,6 +34790,7 @@ exports.default = {
     }
   },
   mounted: function mounted() {
+    this.$store.commit('TAB_INDEX_CHANGE', 3);
     this.setValueInParamList();
   },
   components: {
@@ -34976,6 +35009,7 @@ exports.default = {
   },
   mounted: function mounted() {
     // this.datalist =  this.params;
+    this.$store.commit('TAB_INDEX_CHANGE', 3);
   },
   components: {
     f7Navbar: _framework7Vue.f7Navbar,
@@ -35086,7 +35120,11 @@ exports.default = new _vuex2.default.Store({
     warningbms: [], // 告警数据 : BMS告警显示
     binarysyswarning: [], // 告警数据 : 系统故障
     switchFlag: null, // 控制命令 1 开关机控制
-    settingData: [] // 参数设置数据
+    settingData: [], // 参数设置数据
+    connData: {
+      ip: "",
+      port: 0
+    }
   },
   actions: {
     userLogged: function userLogged(_ref, user) {
@@ -35124,8 +35162,10 @@ exports.default = new _vuex2.default.Store({
     },
     CTRL_PARAMETER_CHANGE: function CTRL_PARAMETER_CHANGE(state, settingData) {
       // 设置参数
-      console.log("in storage");
       state.settingData = settingData;
+    },
+    CONN_DATA_CHANGE: function CONN_DATA_CHANGE(state, obj) {
+      state.connData = obj;
     }
   },
   getters: {

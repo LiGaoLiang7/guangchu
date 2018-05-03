@@ -43,7 +43,7 @@ export default {
               { paramName : "温度",                  paramValue : 0, byte : 2, unit : "℃" },
               { paramName : "SOC",                   paramValue : 0, byte : 2, unit : "%"  },
               { paramName : "SOH",                   paramValue : 0, byte : 2, unit : "%"  },
-              { paramName : "充放电状态",            paramValue : 0, byte : 1, unit : "", format : function(num){
+              { paramName : "充放电状态",            paramValue : 0, byte : 2, unit : "", format : function(num){
                   if(num == 0x11) return "充电";
                   if(num == 0x22) return "放电";
                   if(num == 0x33) return "待机";
@@ -202,6 +202,7 @@ export default {
       },
       // 连接socket
       connectServirce : function(wssstring, port){
+        var theport = Number(port);
           var _this = this;
           this.socketclient.onData = function(data) {
               // _this.$f7.dialog.alert(typeof data);
@@ -219,7 +220,7 @@ export default {
 
         this.socketclient.open(
           wssstring,
-          port,
+          theport,
           function() {
             _this.$f7.dialog.alert("连接服务成功", "提示");
           },
@@ -286,7 +287,6 @@ export default {
                               this.binary_warning_status.push(this.parseVauleToBinary(this.warning_status[i]));
                             }
                             this.$store.commit('WARNING_SYS_CHANGE', this.binary_warning_status);
-                            // console.log(JSON.stringify(this.binary_warning_status, " ", 4));
                             break;
                           case 0x98: // 系统信息
                             this.prasSystemData(dataview, 7, length);
@@ -334,11 +334,11 @@ export default {
 
           if(this.params_ctrlcab[i].byte == 2){ // 2个字节的数据
 
-            this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
+            this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
             offset += 2;
           }else{ // 1个字节的数据
 
-            this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
+            this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
             offset += 1;
           }
         }
@@ -413,14 +413,12 @@ export default {
         }
 
       },
-
       // 解析数字成为二进制数组
       // 例如一个字节 16 =>  00010000
       // 例如两个字节 16 =>  00000000 00010000
       // running_status : [
       //   { paramName : "设备运行状态字1",     paramValue : 0, byte : 2, unit : "", isshow : 0},
       // ],
-      // 
       parseVauleToBinary : function(object){
         var result = object.byte == 2 ? "0000000000000000" : "00000000";
         var value = Number(object.paramValue).toString(2);
@@ -483,7 +481,10 @@ export default {
           data[3] = 0x14;
           data[4] = 0x65;
           data[5] = 0x00;
-          data[6] = datalength.toString(16);
+
+          data[6] = Number(datalength);
+
+          // this.$f7.dialog.alert(datalength);
 
           var offset = 0; 
           for(i = 0; i < this.settingParamsters.length; i++){   // 数据区

@@ -24,7 +24,7 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
           { paramName : "温度",                  paramValue : 0, byte : 2, unit : "℃" },
           { paramName : "SOC",                   paramValue : 0, byte : 2, unit : "%"  },
           { paramName : "SOH",                   paramValue : 0, byte : 2, unit : "%"  },
-          { paramName : "充放电状态",            paramValue : 0, byte : 1, unit : "", format : function(num){
+          { paramName : "充放电状态",            paramValue : 0, byte : 2, unit : "", format : function(num){
               if(num == 0x11) return "充电";
               if(num == 0x22) return "放电";
               if(num == 0x33) return "待机";
