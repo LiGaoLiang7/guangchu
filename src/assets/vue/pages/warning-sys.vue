@@ -101,8 +101,7 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
           { paramName : "预留",                     paramValue : 0, unit : "", isshow : 0},
           { paramName : "预留",                     paramValue : 0, unit : "", isshow : 0},
           { paramName : "预留",                     paramValue : 0, unit : "", isshow : 0},
-          { paramName : "预留",                     paramValue : 0, unit : "", isshow : 0},
-
+          { paramName : "总故障标志位",             paramValue : 0, unit : "", isshow : 1},
         ]
       }
     },
@@ -117,9 +116,7 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
         this.setValueInParamList();
       }
     },
-
     methods : {
-
       gitstatusname : function(num){
         return num == 1 ? "异常" : "正常"
       },

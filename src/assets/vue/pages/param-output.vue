@@ -62,7 +62,19 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
           { paramName : "放电次数",             paramValue : 0, byte : 2, unit : ""   , isshow : 0, resolution : 1   },
           { paramName : "模块A1 温度",          paramValue : 0, byte : 2, unit : "℃" , isshow : 0, resolution : 10  },
           { paramName : "模块B1 温度",          paramValue : 0, byte : 2, unit : "℃" , isshow : 0, resolution : 10  },
-          { paramName : "模块C1 温度",          paramValue : 0, byte : 2, unit : "℃" , isshow : 0, resolution : 10  }
+          { paramName : "模块C1 温度",          paramValue : 0, byte : 2, unit : "℃" , isshow : 0, resolution : 10  },
+          { paramName : "Backup输出A相电压",    paramValue : 0, byte : 2, unit : "V"  , isshow : 0, resolution : 10  },
+          { paramName : "Backup输出B相电压",    paramValue : 0, byte : 2, unit : "V"  , isshow : 0, resolution : 10  },
+          { paramName : "Backup输出C相电压",    paramValue : 0, byte : 2, unit : "V"  , isshow : 0, resolution : 10  },
+          { paramName : "Backup输出频率",       paramValue : 0, byte : 2, unit : "Hz" , isshow : 0, resolution : 100 },
+          { paramName : "Backup输出A相电流",    paramValue : 0, byte : 2, unit : "A" ,  isshow : 0, resolution : 10  },
+          { paramName : "Backup输出B相电流",    paramValue : 0, byte : 2, unit : "A" ,  isshow : 0, resolution : 10  },
+          { paramName : "Backup输出C相电流",    paramValue : 0, byte : 2, unit : "A" ,  isshow : 0, resolution : 10  },
+          { paramName : "Backup输出功率因数",   paramValue : 0, byte : 2, unit : "" ,   isshow : 0, resolution : 1000},
+          { paramName : "Backup输出有功功率",   paramValue : 0, byte : 2, unit : "VA",  isshow : 0, resolution : 1   },
+          { paramName : "Backup输出无功功率",   paramValue : 0, byte : 2, unit : "Var", isshow : 0, resolution : 1   },
+          { paramName : "Backup输出视在功率",   paramValue : 0, byte : 2, unit : "W" ,  isshow : 0, resolution : 1   }
+
         ]
       }
     },

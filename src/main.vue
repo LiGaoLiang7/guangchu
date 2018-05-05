@@ -96,7 +96,18 @@ export default {
               { paramName : "放电次数",             paramValue : 0, byte : 2, unit : ""   , resolution : 1   },
               { paramName : "模块A1 温度",          paramValue : 0, byte : 2, unit : "℃" , resolution : 10  },
               { paramName : "模块B1 温度",          paramValue : 0, byte : 2, unit : "℃" , resolution : 10  },
-              { paramName : "模块C1 温度",          paramValue : 0, byte : 2, unit : "℃" , resolution : 10  }
+              { paramName : "模块C1 温度",          paramValue : 0, byte : 2, unit : "℃" , resolution : 10  },
+              { paramName : "Backup输出A相电压",    paramValue : 0, byte : 2, unit : "V"  , resolution : 10  },
+              { paramName : "Backup输出B相电压",    paramValue : 0, byte : 2, unit : "V"  , resolution : 10  },
+              { paramName : "Backup输出C相电压",    paramValue : 0, byte : 2, unit : "V"  , resolution : 10  },
+              { paramName : "Backup输出频率",       paramValue : 0, byte : 2, unit : "Hz" , resolution : 100 },
+              { paramName : "Backup输出A相电流",    paramValue : 0, byte : 2, unit : "A" ,  resolution : 10  },
+              { paramName : "Backup输出B相电流",    paramValue : 0, byte : 2, unit : "A" ,  resolution : 10  },
+              { paramName : "Backup输出C相电流",    paramValue : 0, byte : 2, unit : "A" ,  resolution : 10  },
+              { paramName : "Backup输出功率因数",   paramValue : 0, byte : 2, unit : "" ,   resolution : 1000},
+              { paramName : "Backup输出有功功率",   paramValue : 0, byte : 2, unit : "VA",  resolution : 1   },
+              { paramName : "Backup输出无功功率",   paramValue : 0, byte : 2, unit : "Var", resolution : 1   },
+              { paramName : "Backup输出视在功率",   paramValue : 0, byte : 2, unit : "W" ,  resolution : 1   }
             ],
 
             // BMS告警信息 0表示无告警 1表示有告警
@@ -182,6 +193,7 @@ export default {
       settingParamsters : function(){ //设置 - 下发运行参数设置
         this.sendDeviceRunningParameters();
       },
+
       // 连接数据
       conndata : function(){
         // 关闭socket连接
@@ -473,24 +485,34 @@ export default {
           for(var i = 0; i < this.settingParamsters.length; i++){
               datalength += this.settingParamsters[i].byte;
           }
-          var data = new Uint8Array(datalength + 9); // 数据长度+9 
+          var data = new Uint8Array(datalength + 9 + 4); // 数据长度+9  +4是2两个位解析的字节
 
           data[0] = 0xfe;
           data[1] = 0x55;
           data[2] = 0x64;
           data[3] = 0x14;
           data[4] = 0x65;
-          data[5] = 0x00;
 
-          data[6] = Number(datalength);
-
-          // this.$f7.dialog.alert(datalength);
-
-          var offset = 0; 
-          for(i = 0; i < this.settingParamsters.length; i++){   // 数据区
-            if(this.settingParamsters[i].byte == 1){
-                data[7 + offset] =  this.settingParamsters[i].paramValue;
+          if(datalength + 4 <= 255){
+              data[5] =  0x00;
+              data[6] =  Number(datalength + 4);
             }else{
+              data[5] =   Number(datalength + 4)>>8;
+              data[6] =   Number(datalength + 4)&255;
+            }
+          // this.$f7.dialog.alert(datalength + 4);
+
+          var offset = 0, bitBuffer = [];
+
+          for(i = 0; i < this.settingParamsters.length; i++){   // 数据区
+
+            if(this.settingParamsters[i].byte == 1){  // 一个字节的
+
+                data[7 + offset] =  this.settingParamsters[i].paramValue;
+                offset += this.settingParamsters[i].byte;
+
+            }else if(this.settingParamsters[i].byte == 2){ // 两个字节的
+
                 if(this.settingParamsters[i].paramValue <= 255){
                   data[7 + offset] =  0x00;
                   data[8 + offset] =  this.settingParamsters[i].paramValue;
@@ -498,18 +520,25 @@ export default {
                   data[7 + offset] =  this.settingParamsters[i].paramValue>>8;
                   data[8 + offset] =  this.settingParamsters[i].paramValue&255;
                 }
+                offset += this.settingParamsters[i].byte;
+            }else{ // 按位
+                bitBuffer.push(this.settingParamsters[i].paramValue);
+                if(bitBuffer.length == 8){
+                  data[7 + offset] = 0x00; 
+                  data[8 + offset] = parseInt(bitBuffer.join(""), 2); 
+                  offset += 2;
+                  bitBuffer = [];
+                }
             }
-            offset += this.settingParamsters[i].byte;
           }
+
           data[7 + offset] =  0x12;  // 校验位
           data[8 + offset] =  0xAE;  // 结束位
 
-          console.log(data);
-
+          // console.log(data);
           this.socketclient.write(data);
-
           this.$f7.dialog.alert("参数设置已下发","提示");
-      },
+      }
     },
 
     created : function(){
