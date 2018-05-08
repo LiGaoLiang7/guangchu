@@ -139,7 +139,7 @@ export default {
               { paramName : "主/从机标志",         paramValue : 0, bit : 1, unit : "", isshow : 0},
               { paramName : "主/被动模式",         paramValue : 0, bit : 1, unit : "", isshow : 0},
               { paramName : "电池状态",            paramValue : 0, bit : 2, unit : "", isshow : 0},
-              { paramName : "系统状态",            paramValue : 0, bit : 3, unit : "", isshow : 0},
+              { paramName : "逆变器状态",            paramValue : 0, bit : 3, unit : "", isshow : 0},
               { paramName : "全范围 MPPT",         paramValue : 0, bit : 1, unit : "", isshow : 0},
               { paramName : "工作模式",            paramValue : 0, bit : 3, unit : "", isshow : 0},
               { paramName : "开关机状态",          paramValue : 0, bit : 1, unit : "", isshow : 0},
@@ -220,7 +220,7 @@ export default {
               // _this.$f7.dialog.alert(typeof data);
               // _this.$f7.dialog.alert(JSON.stringify(data));
               var uint8View = new DataView(data.buffer);
-              _this.praseData(uint8View);
+              _this.praseData(data, uint8View);
           };
         this.socketclient.onError = function(errorMessage) {
             _this.$f7.dialog.alert("服务出错"+errorMessage, "提示");
@@ -242,7 +242,7 @@ export default {
           
       },
       // 解析二进制 batearray 数据
-      praseData : function(dataview){
+      praseData : function(buffer, dataview){
           if(dataview.byteLength > 0){
               var start       =  dataview.getUint16(0,false);  // 起始帧   2字节
               var start_addr  =  dataview.getUint8(2,false);   // 起始地址 1字节
@@ -253,7 +253,12 @@ export default {
 
                   if(start_addr == 0x14 && target_addr == 0x64){ // PCU->APP 起始地址为0X14，目标地址0x64
                       var length = dataview.getInt16(5,false);
-                      if(dataview.getUint8(7 + length + 1, false) == 0xAE){ // 数据包完整 有结束
+
+                      if(dataview.getUint8(7 + length, false) != this.getCheckData(buffer)){
+                        this.$f7.dialog.alert("校验位1：" + dataview.getUint8(7 + length, false).toString(16) 
+                      + " 校验位2 ：" +  this.getCheckData(buffer).toString(16)  + " 指令： " + command.toString(16) + "数据："+buffer);
+                      }
+                      if(dataview.getUint8(7 + length + 1, false) == 0xAE   && dataview.getUint8(7 + length, false) == this.getCheckData(buffer)) { // 数据包完整 有结束 有校验位
                         // this.$f7.dialog.alert("数据包完整");
                         switch (command) {
                           case 0x0A: // 储能电池信息 
@@ -287,8 +292,8 @@ export default {
                             // 将二进制报文转化为对象
                             this.getRunningStatus(this.binary_running_status);
 
-                            console.log(JSON.stringify(this.binary_running_status, " ", 4));
-                            console.log(JSON.stringify(this.running_status_mean, " ", 4));
+                            // this.$f7.dialog.alert(this.binary_running_status, " ", 4);
+                            // this.$f7.dialog.alert(JSON.stringify(this.running_status_mean, " ", 4));
                             break;
                           case 0x1F: // 系统故障状态显示 8个字节 
                             // this.$f7.dialog.alert("系统故障状态显示");
@@ -363,11 +368,11 @@ export default {
 
           if(this.system_info[i].byte == 2){ // 2个字节的数据
 
-            this.system_info[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
+            this.system_info[i].paramValue = datalist.getUint16(start + offset, false);
             offset += 2;
           }else{ // 1个字节的数据
 
-            this.system_info[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
+            this.system_info[i].paramValue = datalist.getUint8(start + offset, false);
             offset += 1;
           }
         }
@@ -446,6 +451,18 @@ export default {
 
       },
 
+
+      // 校验函数
+
+      getCheckData : function(binaryarray){
+          var checkdata = 0x0f;
+          for(var i = 0; i < binaryarray.byteLength - 2; i++){
+            checkdata = checkdata ^ binaryarray[i];
+          }
+
+          return checkdata;
+      },
+
       // 将开关机的指令下发给设备PCU
       sendSwitchFlagCommand : function(flag){
           var message = "";
@@ -472,7 +489,7 @@ export default {
             data[10] = 0x01;
             data[11] = 0x01;
             data[12] = 0x01;
-            data[13] = 0x12;
+            data[13] = this.getCheckData(data);
             data[14] = 0xAE;
           this.socketclient.write(data);
           this.$f7.dialog.alert(message,"提示");
@@ -532,7 +549,7 @@ export default {
             }
           }
 
-          data[7 + offset] =  0x12;  // 校验位
+          data[7 + offset] =  this.getCheckData(data);  // 校验位
           data[8 + offset] =  0xAE;  // 结束位
 
           // console.log(data);

@@ -161,7 +161,7 @@
           { paramName : "电池均充保护时间设置",             paramValue : 0x03, byte : 2, unit : "", isshow : 0 }, //     HEX(int16)  R/W   1: 10小时 2: 24小时
           { paramName : "电池强制均充使能",                 paramValue : 0x04, byte : 2, unit : "", isshow : 1 }, //  40 HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
           { paramName : "电池预告警使能",                   paramValue : 0x05, byte : 2, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 0XBB00:使能 0X00BB:禁止
-          { paramName : "Backup模式使能",                   paramValue : 0x06, byte : 2, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 0: 禁止 1:使能
+          { paramName : "锂电池故障",                   paramValue : 0x06, byte : 2, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 0: 禁止 1:使能
           { paramName : "单体SOC过高",                      paramValue : 0x01, byte : 0, bit : 1, unit : "", isshow : 0 }, //     HEX(uint8)  R/W 1：异常 0：正常
           { paramName : "单体SOC过低",                      paramValue : 0x0, byte : 0, bit : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
           { paramName : "单体过温",                         paramValue : 0x0, byte : 0, bit : 1, unit : "", isshow : 0 }, //        ：异常 0：正常
