@@ -30611,7 +30611,7 @@ exports.default = {
           return Number(num).toString(16);
         } }],
       // 控制柜实时数据
-      params_ctrlcab: [{ paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", resolution: 100 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", resolution: 1000 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", resolution: 1 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }],
+      params_ctrlcab: [{ paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", resolution: 100 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", resolution: 100 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", resolution: 1000 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", resolution: 1 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", resolution: 10 }, { paramName: "Backup输出A相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "Backup输出B相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "Backup输出C相电压", paramValue: 0, byte: 2, unit: "V", resolution: 10 }, { paramName: "Backup输出频率", paramValue: 0, byte: 2, unit: "Hz", resolution: 100 }, { paramName: "Backup输出A相电流", paramValue: 0, byte: 2, unit: "A", resolution: 10 }, { paramName: "Backup输出B相电流", paramValue: 0, byte: 2, unit: "A", resolution: 10 }, { paramName: "Backup输出C相电流", paramValue: 0, byte: 2, unit: "A", resolution: 10 }, { paramName: "Backup输出功率因数", paramValue: 0, byte: 2, unit: "", resolution: 1000 }, { paramName: "Backup输出有功功率", paramValue: 0, byte: 2, unit: "VA", resolution: 1 }, { paramName: "Backup输出无功功率", paramValue: 0, byte: 2, unit: "Var", resolution: 1 }, { paramName: "Backup输出视在功率", paramValue: 0, byte: 2, unit: "W", resolution: 1 }],
 
       // BMS告警信息 0表示无告警 1表示有告警
       warning_bms: [{ paramName: "电池放电电流过高", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池充电电流过高", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池温度过低", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池温度过高", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池电压过低", paramValue: 0, byte: 1, unit: "", isshow: 1 }, { paramName: "电池电压过高", paramValue: 0, byte: 1, unit: "", isshow: 1 }],
@@ -30667,6 +30667,7 @@ exports.default = {
       //设置 - 下发运行参数设置
       this.sendDeviceRunningParameters();
     },
+
     // 连接数据
     conndata: function conndata() {
       // 关闭socket连接
@@ -30970,25 +30971,37 @@ exports.default = {
       for (var i = 0; i < this.settingParamsters.length; i++) {
         datalength += this.settingParamsters[i].byte;
       }
-      var data = new Uint8Array(datalength + 9); // 数据长度+9 
+      var data = new Uint8Array(datalength + 9 + 4); // 数据长度+9  +4是2两个位解析的字节
 
       data[0] = 0xfe;
       data[1] = 0x55;
       data[2] = 0x64;
       data[3] = 0x14;
       data[4] = 0x65;
-      data[5] = 0x00;
 
-      data[6] = Number(datalength);
+      if (datalength + 4 <= 255) {
+        data[5] = 0x00;
+        data[6] = Number(datalength + 4);
+      } else {
+        data[5] = Number(datalength + 4) >> 8;
+        data[6] = Number(datalength + 4) & 255;
+      }
+      // this.$f7.dialog.alert(datalength + 4);
 
-      // this.$f7.dialog.alert(datalength);
+      var offset = 0,
+          bitBuffer = [];
 
-      var offset = 0;
       for (i = 0; i < this.settingParamsters.length; i++) {
         // 数据区
+
         if (this.settingParamsters[i].byte == 1) {
+          // 一个字节的
+
           data[7 + offset] = this.settingParamsters[i].paramValue;
-        } else {
+          offset += this.settingParamsters[i].byte;
+        } else if (this.settingParamsters[i].byte == 2) {
+          // 两个字节的
+
           if (this.settingParamsters[i].paramValue <= 255) {
             data[7 + offset] = 0x00;
             data[8 + offset] = this.settingParamsters[i].paramValue;
@@ -30996,16 +31009,25 @@ exports.default = {
             data[7 + offset] = this.settingParamsters[i].paramValue >> 8;
             data[8 + offset] = this.settingParamsters[i].paramValue & 255;
           }
+          offset += this.settingParamsters[i].byte;
+        } else {
+          // 按位
+          bitBuffer.push(this.settingParamsters[i].paramValue);
+          if (bitBuffer.length == 8) {
+            data[7 + offset] = 0x00;
+            data[8 + offset] = parseInt(bitBuffer.join(""), 2);
+            offset += 2;
+            bitBuffer = [];
+          }
         }
-        offset += this.settingParamsters[i].byte;
       }
+
       data[7 + offset] = 0x12; // 校验位
       data[8 + offset] = 0xAE; // 结束位
 
-      console.log(data);
-
+      this.$f7.dialog.alert(offset);
+      // console.log(data);
       this.socketclient.write(data);
-
       this.$f7.dialog.alert("参数设置已下发", "提示");
     }
   },
@@ -32279,13 +32301,13 @@ exports.default = {
       batteryType: 2,
       // batteryAH : 72,
       // 设备参数设置命令下发
-      deviceParamster: [{ paramName: "运行模式", paramValue: 1, byte: 1, unit: "", isshow: 1 }, //  0   HEX(int8)       1：并网  2：离网  
+      deviceParamster: [{ paramName: "运行模式", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //  0   HEX(int8)       1：并网  2：离网  
       { paramName: "基本工作模式", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   1: 通用模式 2:离网模式3：备用模式4：经济模式
-      { paramName: "并网模式设置", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1：恒流模式2：恒压模式3：恒功率模式（DC）4：恒功率模式（AC） 5：独立逆变
-      { paramName: "无功调节方式", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1:功率值2:百分比3:功率因数
-      { paramName: "电网电压跌落调节方式", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1：孤岛保护（默认）2：低电压穿越3：无缝切换
+      { paramName: "并网模式设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1：恒流模式2：恒压模式3：恒功率模式（DC）4：恒功率模式（AC） 5：独立逆变
+      { paramName: "无功调节方式", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1:功率值2:百分比3:功率因数
+      { paramName: "电网电压跌落调节方式", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int8)   R/W   1：孤岛保护（默认）2：低电压穿越3：无缝切换
       { paramName: "离网自起机模式设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //  5     HEX(uint16)   W   0XEE00:使能0X00EE:禁止 
-      { paramName: "无缝切换手动模式并离网控制", paramValue: 0, byte: 1, unit: "", isshow: 1 }, //    HEX(uint8)  R/W     1：并网转离网2：离网转并网其他：无效
+      { paramName: "无缝切换手动模式并离网控制", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //    HEX(uint8)  R/W     1：并网转离网2：离网转并网其他：无效
       { paramName: "恒流模式电流", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
       { paramName: "恒压模式限制电流", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
       { paramName: "恒压模式电压", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 
@@ -32293,7 +32315,7 @@ exports.default = {
       { paramName: "恒功率模式功率（AC）", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
       { paramName: "独立逆变电压", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(uint16)   R/W 
       { paramName: "独立逆变频率", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
-      { paramName: "输出类型设置", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W      0:三相四线1:三相三线
+      { paramName: "输出类型设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(uint8)  R/W      0:三相四线1:三相三线
       { paramName: "无功比例", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //  15 HEX(uint16)   R/W 
       { paramName: "自老化模式", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   0XAA00:使能0X00AA:禁止
       { paramName: "额定功率", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   
@@ -32320,24 +32342,29 @@ exports.default = {
       { paramName: "电池EOD设置", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //     HEX(int16)  R/W   1: 1.65V/cell 2: 1.7V/cell2: 1.75V/cell
       { paramName: "电池均充保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(int16)  R/W   1: 10小时 2: 24小时
       { paramName: "电池强制均充使能", paramValue: 0, byte: 2, unit: "", isshow: 1 }, //  40 HEX(uint8)  R/W 0XCC00:使能 0X00CC:禁止
-      { paramName: "电池预告警使能", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 0XBB00:使能 0X00BB:禁止
-      { paramName: "Backup模式使能", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 0: 禁止 1:使能
-      { paramName: "单体SOC过高", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 1：异常 0：正常
-      { paramName: "单体SOC过低", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "单体过温", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "单体欠温", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "组端过压", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "组端欠压", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "单体过压", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "单体欠压", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "保留", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        HEX(uint8) R/W 1：异常 0：正常
-      { paramName: "保留", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "模块温度下限告警", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "模块温度上限告警", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电芯电压差异过大", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电池组绝缘故障标志", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电池组充电过流", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
-      { paramName: "电池组放电过流", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "电池预告警使能", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 0XBB00:使能 0X00BB:禁止
+      { paramName: "Backup模式使能", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 0: 禁止 1:使能
+
+      { paramName: "单体SOC过高", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //     HEX(uint8)  R/W 1：异常 0：正常
+      { paramName: "单体SOC过低", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "单体过温", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "单体欠温", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "组端过压", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "组端欠压", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "单体过压", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "单体欠压", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "保留", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        HEX(uint8) R/W 1：异常 0：正常
+      { paramName: "保留", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "模块温度下限告警", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "模块温度上限告警", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "电芯电压差异过大", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "电池组绝缘故障标志", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "电池组充电过流", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+      { paramName: "电池组放电过流", paramValue: 0, byte: 0, bit: 1, unit: "", isshow: 0 }, //        ：异常 0：正常
+
+      { paramName: "Backup模式优先", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1V  HEX(uint16)   R/W 250V-300V
+      { paramName: "并机使能", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1V  HEX(uint16)   R/W 250V-300V
+
       { paramName: "电网电压快保护上限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1V  HEX(uint16)   R/W 250V-300V
       { paramName: "电网电压快保护上限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    ms  HEX(uint16)   R/W 50ms-5000ms
       { paramName: "电网电压慢保护上限设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1V  HEX(uint16)   R/W   230V-270V
@@ -32356,43 +32383,76 @@ exports.default = {
       { paramName: "电网频率慢保护下限保护时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //    0.1s  HEX(uint16)   R/W 500ms-10mins
       { paramName: "脱网重连时间设置", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   0.1s  HEX(uint16)   R/W   10s-10mins
       { paramName: "并网给定电流有效值", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "直流母线给定电压值", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "直流母线给定电压值", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //  
+
+      { paramName: "AB线电压系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "AC线电压系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "BC线电压系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "母线电压系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "正母线电压系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "负母线电压系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "并网电流A系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "并网电流B系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "并网电流C系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "输出电流A系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "输出电流B系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "输出电流C系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "电池充电系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "电池放电系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "PV1电感系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "PV2电感系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "环境温度系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "输出电压A系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "输出电压B系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "输出电压C系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "逆变电压A系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "逆变电压B系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "逆变电压C系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+
+      { paramName: "参数预留1", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留2", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留3", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留4", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留5", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留6", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留7", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留8", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留9", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "参数预留10", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
       { paramName: "直流母线比列系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
       { paramName: "直流母线积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "直流母线调节量限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "直流母线误差限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
       { paramName: "D轴电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
       { paramName: "D轴电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "Q轴电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "Q轴电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "正序电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "正序电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "负序电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "负序电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
-      { paramName: "锁相环比列系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "D轴电流误差限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "D轴电流调节量限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "D轴负序电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "D轴负序电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "D轴负序电流误差限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //         
+      { paramName: "D轴负序电流调节量限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "Q轴电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "Q轴电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "Q轴电流误差限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "Q轴电流调节量限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "Q轴负序电流比例系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "Q轴负序电流积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "Q轴负序电流误差限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "Q轴负序电流调节量限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "锁相环比列系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
       { paramName: "锁相环积分系数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
-      { paramName: "AB线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "AC线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "BC线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "母线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "正母线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "负母线电压系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "并网电流A系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "并网电流B系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "并网电流C系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "输出电流A系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "输出电流B系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "输出电流C系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "电池充电系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "电池放电系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "PV1电感系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "PV2电感系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "环境温度系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "输出电压A系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "输出电压B系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "输出电压C系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "逆变电压A系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "逆变电压B系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "逆变电压C系数", paramValue: 0, byte: 1, unit: "", isshow: 0 }, //   
-      { paramName: "系数预留1", paramValue: 0, byte: 1, unit: "", isshow: 0 }]
+      { paramName: "锁相环标准步长限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "锁相环锁相步长限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "锁相环误差限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "锁相环调节量输出限幅", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "算法调节系数预留3", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "算法调节系数预留4", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "算法调节系数预留5", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "算法调节系数预留6", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "算法调节系数预留7", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "算法调节系数预留8", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "算法调节系数预留9", paramValue: 0, byte: 2, unit: "", isshow: 0 }, //   
+      { paramName: "算法调节系数预留10", paramValue: 0, byte: 2, unit: "", isshow: 0 }]
     };
   },
   computed: {},
@@ -33161,8 +33221,7 @@ exports.default = {
   props: {},
   data: function data() {
     return {
-
-      datalist: [{ paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 1 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1000 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0, resolution: 1 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 10 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0, resolution: 10 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }]
+      datalist: [{ paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 1 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 10 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1000 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0, resolution: 1 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 10 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0, resolution: 10 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "Backup输出A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0, resolution: 100 }, { paramName: "Backup输出A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1000 }, { paramName: "Backup输出有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0, resolution: 1 }, { paramName: "Backup输出无功功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0, resolution: 1 }, { paramName: "Backup输出视在功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }]
     };
   },
 
@@ -33619,7 +33678,7 @@ exports.default = {
   props: {},
   data: function data() {
     return {
-      datalist: [{ paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 1, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 100 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 1, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 100 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1000 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 1, resolution: 1 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1, resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }]
+      datalist: [{ paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 1, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 100 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 1, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 100 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1000 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 1 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 1, resolution: 1 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1, resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "Backup输出A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0, resolution: 100 }, { paramName: "Backup输出A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1000 }, { paramName: "Backup输出有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0, resolution: 1 }, { paramName: "Backup输出无功功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0, resolution: 1 }, { paramName: "Backup输出视在功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }]
     };
   },
   computed: {
@@ -33843,7 +33902,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      datalist: [{ paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 1, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 100 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 1, resolution: 1 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 100 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 1 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 1, resolution: 10 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1, resolution: 100 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1000 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }]
+      datalist: [{ paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 1, resolution: 10 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 1, resolution: 100 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 1, resolution: 1 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 10 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 100 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 1, resolution: 1 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 100 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 1, resolution: 10 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 1, resolution: 10 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 1, resolution: 100 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 100 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 10 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 100 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1000 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 1 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 1 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 100 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0, resolution: 1 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0, resolution: 1 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0, resolution: 10 }, { paramName: "Backup输出A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0, resolution: 10 }, { paramName: "Backup输出频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0, resolution: 100 }, { paramName: "Backup输出A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0, resolution: 10 }, { paramName: "Backup输出功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0, resolution: 1000 }, { paramName: "Backup输出有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0, resolution: 1 }, { paramName: "Backup输出无功功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0, resolution: 1 }, { paramName: "Backup输出视在功率", paramValue: 0, byte: 2, unit: "W", isshow: 0, resolution: 1 }]
     };
   },
   computed: {
@@ -33858,7 +33917,6 @@ exports.default = {
       this.setValueInParamList();
     }
   },
-
   methods: {
     setValueInParamList: function setValueInParamList() {
       if (this.paramsdata.length > 0) {
@@ -33871,9 +33929,7 @@ exports.default = {
       }
     }
   },
-
   mounted: function mounted() {
-    // 
     this.setValueInParamList();
     this.$store.commit('TAB_INDEX_CHANGE', 2);
   },
@@ -34059,7 +34115,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      datalist: [{ paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }]
+      datalist: [{ paramName: "直流功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "直流正母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流负母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "直流双边母线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV1电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV1电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "PVI功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "PV2电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "PV2电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "PV2功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "逆变A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网AB线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "逆变B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网BC线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "逆变C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "逆变C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网CA线电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "电网C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电网频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0 }, { paramName: "功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "系统有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0 }, { paramName: "系统无功功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }, { paramName: "系统视在功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0 }, { paramName: "电池电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "电池电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "环境温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "铅酸电池剩余容量", paramValue: 0, byte: 2, unit: "%", isshow: 0 }, { paramName: "铅酸电池剩余备电时间", paramValue: 0, byte: 2, unit: "Min", isshow: 0 }, { paramName: "设备类型编码", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "软件版本号高位", paramValue: 0, byte: 2, unit: "", isshow: 1 }, { paramName: "软件版本号低位", paramValue: 0, byte: 2, unit: "", isshow: 1 }, { paramName: "并机地址", paramValue: 0, byte: 2, unit: "", isshow: 1 }, { paramName: "工作效率", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "充电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "放电次数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "模块A1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块B1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "模块C1 温度", paramValue: 0, byte: 2, unit: "℃", isshow: 0 }, { paramName: "Backup输出A相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "Backup输出B相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "Backup输出C相电压", paramValue: 0, byte: 2, unit: "V", isshow: 0 }, { paramName: "Backup输出频率", paramValue: 0, byte: 2, unit: "Hz", isshow: 0 }, { paramName: "Backup输出A相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "Backup输出B相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "Backup输出C相电流", paramValue: 0, byte: 2, unit: "A", isshow: 0 }, { paramName: "Backup输出功率因数", paramValue: 0, byte: 2, unit: "", isshow: 0 }, { paramName: "Backup输出有功功率", paramValue: 0, byte: 2, unit: "VA", isshow: 0 }, { paramName: "Backup输出无功功率", paramValue: 0, byte: 2, unit: "Var", isshow: 0 }, { paramName: "Backup输出视在功率", paramValue: 0, byte: 2, unit: "W", isshow: 0 }]
     };
   },
   computed: {
@@ -34751,7 +34807,7 @@ exports.default = {
       { paramName: "预留", paramValue: 0, unit: "", isshow: 1 }, { paramName: "产品未被授权", paramValue: 0, unit: "", isshow: 1 }, { paramName: "低穿故障", paramValue: 0, unit: "", isshow: 1 }, { paramName: "辅助电源故障", paramValue: 0, unit: "", isshow: 1 }, { paramName: "并网过流（单相）", paramValue: 0, unit: "", isshow: 1 }, { paramName: "并机主机冲突", paramValue: 0, unit: "", isshow: 1 }, { paramName: "并机地址超限", paramValue: 0, unit: "", isshow: 1 }, { paramName: "并机线故障", paramValue: 0, unit: "", isshow: 1 }, { paramName: "环境过温", paramValue: 0, unit: "", isshow: 1 }, { paramName: "散热器3过热", paramValue: 0, unit: "", isshow: 1 }, { paramName: "散热器2过热", paramValue: 0, unit: "", isshow: 1 }, { paramName: "散热器1过热", paramValue: 0, unit: "", isshow: 1 }, { paramName: "充电器故障", paramValue: 0, unit: "", isshow: 1 }, { paramName: "电池反接", paramValue: 0, unit: "", isshow: 1 }, { paramName: "电池过压", paramValue: 0, unit: "", isshow: 1 }, { paramName: "电池欠压（EOD）", paramValue: 0, unit: "", isshow: 1 },
 
       // 故障状态字4 bit15 -bit0
-      { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }]
+      { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "预留", paramValue: 0, unit: "", isshow: 0 }, { paramName: "总故障标志位", paramValue: 0, unit: "", isshow: 1 }]
     };
   },
   computed: {
@@ -34765,9 +34821,7 @@ exports.default = {
       this.setValueInParamList();
     }
   },
-
   methods: {
-
     gitstatusname: function gitstatusname(num) {
       return num == 1 ? "异常" : "正常";
     },

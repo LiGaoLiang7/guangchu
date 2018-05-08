@@ -124,7 +124,7 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
       setValueInParamList:  function(){
         if(this.paramsdata.length > 0) {
           for(var i = 0; i < this.paramsdata.length; i++){
-            var binArray = this.paramsdata[i].split('').reverse();
+            var binArray = this.paramsdata[i].split('');
             for(var j = 0; j < binArray.length; j++){
                 this.datalist[i*16+j].paramValue = binArray[j];
              }
