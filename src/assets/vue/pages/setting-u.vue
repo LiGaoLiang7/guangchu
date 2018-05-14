@@ -273,8 +273,26 @@
       }
     },
     computed : {
+        runningStatusData : function(){
+          // 从store中获取参数
+          return this.$store.getters.RunningStatusData;  // 从getters中获取
+        }
     },
     watch : {
+      // 判断开关机状态 
+      runningStatusData: {
+        handler : function(){
+          // this.$f7.dialog.alert("逆变器状态： " + this.runningStatusData[7].paramValue);
+          if(this.runningStatusData[7].paramValue == 6){
+            this.$f7.dialog.alert("关机成功", "提示");
+            this.openflag = false;
+          }else if(this.runningStatusData[7].paramValue < 6){
+            this.$f7.dialog.alert("开机成功", "提示");
+            this.openflag = true;
+          }
+        },
+        deep: true
+      }
     },
     methods : {
       // 设置参数到数组列表中
@@ -290,9 +308,12 @@
         var _this = this;
         var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗";
         this.$f7.dialog.confirm(message, "确认信息", function(){
+          // 确认下发
+          _this.openflag = !_this.openflag; // 先不要改变状态
           _this.$store.commit('CTRL_SWITCH_CHANGE', _this.openflag);
         }, function(){
-          _this.openflag = !_this.openflag;
+          // 取消下发
+          // _this.openflag = !_this.openflag;
         });
       },
       // 下发参数设置

@@ -15,7 +15,8 @@ export default new Vuex.Store({
     connData : {
       ip : "",
       port : 0,
-    }
+    },
+    runningStatusData: [], // 设备运行状态数据
   },
   actions: {
     userLogged ({commit}, user) {
@@ -47,8 +48,12 @@ export default new Vuex.Store({
     CTRL_PARAMETER_CHANGE (state, settingData){    // 设置参数
       state.settingData = settingData;
     },
-    CONN_DATA_CHANGE (state, obj){
+    CONN_DATA_CHANGE (state, obj){ // 连接的数据 IP 和端口
       state.connData = obj;
+    },
+    STATUS_SYS_CHANGE (state, statusArray){ // 系统运行状态数据
+      state.runningStatusData = statusArray;
+      // this.$f7.dialog.alert(JSON.stringify(statusArray, " ", 4));
     }
   },
   getters: {
@@ -69,6 +74,9 @@ export default new Vuex.Store({
     },
     tabIndex : (state) => {
       return state.tabindex;
+    },
+    RunningStatusData : (state) =>{
+     return state.runningStatusData;
     }
   }
 });

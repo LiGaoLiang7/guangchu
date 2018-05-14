@@ -139,7 +139,7 @@ export default {
               { paramName : "主/从机标志",         paramValue : 0, bit : 1, unit : "", isshow : 0},
               { paramName : "主/被动模式",         paramValue : 0, bit : 1, unit : "", isshow : 0},
               { paramName : "电池状态",            paramValue : 0, bit : 2, unit : "", isshow : 0},
-              { paramName : "逆变器状态",            paramValue : 0, bit : 3, unit : "", isshow : 0},
+              { paramName : "逆变器状态",          paramValue : 0, bit : 3, unit : "", isshow : 0},
               { paramName : "全范围 MPPT",         paramValue : 0, bit : 1, unit : "", isshow : 0},
               { paramName : "工作模式",            paramValue : 0, bit : 3, unit : "", isshow : 0},
               { paramName : "开关机状态",          paramValue : 0, bit : 1, unit : "", isshow : 0},
@@ -279,6 +279,7 @@ export default {
                             // console.log(JSON.stringify(this.warning_bms, " ", 4));
                             this.$store.commit('WARNING_BMS_CHANGE', this.warning_bms);
                             break;
+
                           case 0x0C: // 设备运行状态信息 4个字节 
                             // this.$f7.dialog.alert("设备运行状态信息");
                             this.prasDeviceRunningStatus(dataview, 7, length);
@@ -294,6 +295,7 @@ export default {
 
                             // this.$f7.dialog.alert(this.binary_running_status, " ", 4);
                             // this.$f7.dialog.alert(JSON.stringify(this.running_status_mean, " ", 4));
+                            this.$store.commit('STATUS_SYS_CHANGE', this.running_status_mean);
                             break;
                           case 0x1F: // 系统故障状态显示 8个字节 
                             // this.$f7.dialog.alert("系统故障状态显示");
@@ -451,15 +453,12 @@ export default {
 
       },
 
-
       // 校验函数
-
       getCheckData : function(binaryarray){
           var checkdata = 0x0f;
           for(var i = 0; i < binaryarray.byteLength - 2; i++){
             checkdata = checkdata ^ binaryarray[i];
           }
-
           return checkdata;
       },
 

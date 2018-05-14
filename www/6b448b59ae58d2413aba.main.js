@@ -30753,6 +30753,7 @@ exports.default = {
                   // console.log(JSON.stringify(this.warning_bms, " ", 4));
                   this.$store.commit('WARNING_BMS_CHANGE', this.warning_bms);
                   break;
+
                 case 0x0C:
                   // 设备运行状态信息 4个字节 
                   // this.$f7.dialog.alert("设备运行状态信息");
@@ -30769,6 +30770,7 @@ exports.default = {
 
                   // this.$f7.dialog.alert(this.binary_running_status, " ", 4);
                   // this.$f7.dialog.alert(JSON.stringify(this.running_status_mean, " ", 4));
+                  this.$store.commit('STATUS_SYS_CHANGE', this.running_status_mean);
                   break;
                 case 0x1F:
                   // 系统故障状态显示 8个字节 
@@ -30830,12 +30832,12 @@ exports.default = {
         if (this.params_ctrlcab[i].byte == 2) {
           // 2个字节的数据
 
-          this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
+          this.params_ctrlcab[i].paramValue = datalist.getUint16(start + offset, false);
           offset += 2;
         } else {
           // 1个字节的数据
 
-          this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
+          this.params_ctrlcab[i].paramValue = datalist.getUint8(start + offset, false);
           offset += 1;
         }
       }
@@ -30849,12 +30851,12 @@ exports.default = {
         if (this.system_info[i].byte == 2) {
           // 2个字节的数据
 
-          this.system_info[i].paramValue = datalist.getUint16(start + offset, false).toString(16);
+          this.system_info[i].paramValue = datalist.getUint16(start + offset, false);
           offset += 2;
         } else {
           // 1个字节的数据
 
-          this.system_info[i].paramValue = datalist.getUint8(start + offset, false).toString(16);
+          this.system_info[i].paramValue = datalist.getUint8(start + offset, false);
           offset += 1;
         }
       }
@@ -30937,13 +30939,11 @@ exports.default = {
     },
 
     // 校验函数
-
     getCheckData: function getCheckData(binaryarray) {
       var checkdata = 0x0f;
       for (var i = 0; i < binaryarray.byteLength - 2; i++) {
         checkdata = checkdata ^ binaryarray[i];
       }
-
       return checkdata;
     },
 
@@ -32467,8 +32467,28 @@ exports.default = {
       { paramName: "算法调节系数预留10", paramValue: 0x05, byte: 2, unit: "", isshow: 0 }]
     };
   },
-  computed: {},
-  watch: {},
+  computed: {
+    runningStatusData: function runningStatusData() {
+      // 从store中获取参数
+      return this.$store.getters.RunningStatusData; // 从getters中获取
+    }
+  },
+  watch: {
+    // 判断开关机状态 
+    runningStatusData: {
+      handler: function handler() {
+        // this.$f7.dialog.alert("逆变器状态： " + this.runningStatusData[7].paramValue);
+        if (this.runningStatusData[7].paramValue == 6) {
+          this.$f7.dialog.alert("关机成功", "提示");
+          this.openflag = false;
+        } else if (this.runningStatusData[7].paramValue < 6) {
+          this.$f7.dialog.alert("开机成功", "提示");
+          this.openflag = true;
+        }
+      },
+      deep: true
+    }
+  },
   methods: {
     // 设置参数到数组列表中
     setDatatoParameter: function setDatatoParameter(e, index) {
@@ -32482,9 +32502,12 @@ exports.default = {
       var _this = this;
       var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗";
       this.$f7.dialog.confirm(message, "确认信息", function () {
+        // 确认下发
+        _this.openflag = !_this.openflag; // 先不要改变状态
         _this.$store.commit('CTRL_SWITCH_CHANGE', _this.openflag);
       }, function () {
-        _this.openflag = !_this.openflag;
+        // 取消下发
+        // _this.openflag = !_this.openflag;
       });
     },
     // 下发参数设置
@@ -33007,8 +33030,8 @@ exports.default = {
   data: function data() {
     return {
       message: "西安特锐德智能充电科技有限公司",
-      ip: "10.211.4.130",
-      port: 8234
+      ip: "10.10.100.254",
+      port: 8899
     };
   },
 
@@ -35184,7 +35207,8 @@ exports.default = new _vuex2.default.Store({
     connData: {
       ip: "",
       port: 0
-    }
+    },
+    runningStatusData: [] // 设备运行状态数据
   },
   actions: {
     userLogged: function userLogged(_ref, user) {
@@ -35225,7 +35249,13 @@ exports.default = new _vuex2.default.Store({
       state.settingData = settingData;
     },
     CONN_DATA_CHANGE: function CONN_DATA_CHANGE(state, obj) {
+      // 连接的数据 IP 和端口
       state.connData = obj;
+    },
+    STATUS_SYS_CHANGE: function STATUS_SYS_CHANGE(state, statusArray) {
+      // 系统运行状态数据
+      state.runningStatusData = statusArray;
+      // this.$f7.dialog.alert(JSON.stringify(statusArray, " ", 4));
     }
   },
   getters: {
@@ -35246,6 +35276,9 @@ exports.default = new _vuex2.default.Store({
     },
     tabIndex: function tabIndex(state) {
       return state.tabindex;
+    },
+    RunningStatusData: function RunningStatusData(state) {
+      return state.runningStatusData;
     }
   }
 });
