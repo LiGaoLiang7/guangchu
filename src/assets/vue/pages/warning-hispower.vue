@@ -1,9 +1,9 @@
 <template>
   <f7-page>
-    <f7-navbar title="历史功率数据" back-link="返回" href="/params/"></f7-navbar>
+    <f7-navbar :title="$t('app.waringpage.Historical_power')" :back-link="$t('app.modal.back')"  href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName">
-        <span>{{item.paramName}}</span>
+        <span>{{$t('app.historical.'+ item.key)}}</span>
         <input type="text" class="params" v-model="item.paramValue" disabled>
         <em class="unit">{{item.unit}}</em>
       </f7-list-item>
@@ -24,8 +24,8 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     data : function(){
       return {
         datalist : [
-          { paramName : "总放电功率",  paramValue : 1, unit : "kWh" },
-          { paramName : "总充电功率",  paramValue : 0, unit : "kWh" },
+          { paramName : "总放电功率",  key: "Total_discharge_power", paramValue : 0, unit : "kWh" },
+          { paramName : "总充电功率",  key: "Total_charging_power", paramValue : 0, unit : "kWh" },
         ]
       }
     },

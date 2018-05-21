@@ -18,30 +18,34 @@ import FontAwesome from 'font-awesome/css/font-awesome.css'
 
 // Import App Custom Styles
 // import AppStyles from './assets/sass/main.scss'
-
 // Import App Component
 import app from './main.vue'
-
 // Import Routes
 import routes from './routes.js'
 
 // Import Vuex Storage
 import store from './assets/vuex/storage.js'
 
+// Import language file
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n)
+import enUS from './assets/lang/en_us'
+import zhCN from './assets/lang/zh_cn'
+
+Vue.config.lang =  localStorage.getItem('lang') || 'zh-CN';
+Vue.locale('en', enUS)
+Vue.locale('zh-CN', zhCN)
 // Import Amap 高德地图
 import VueAMap from 'vue-amap'
-
 Vue.use(VueAMap);
 
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
-
 let theme = 'auto';
 if (document.location.search.indexOf('theme=') >= 0) {
   theme = document.location.search.split('theme=')[1].split('&')[0];
 }
 theme = 'ios';
-
 // Init Vue App
 export default new Vue({
   // Root Element
@@ -55,9 +59,8 @@ export default new Vue({
     id: 'io.framework7.testapp',
     theme, //theme  md or ios
     dialog: {
-     // change default "OK" button text
-     buttonOk: '确认',
-     buttonCancel: '取消',
+     buttonOk: Vue.t('app.modal.button_ok'),
+     buttonCancel: Vue.t('app.modal.button_cancel'),
     }
   },
   routes,

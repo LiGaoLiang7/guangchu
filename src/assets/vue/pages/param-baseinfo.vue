@@ -1,14 +1,14 @@
 <template>
   <f7-page>
-    <f7-navbar title="系统基础信息"  back-link="返回" href="/params/"></f7-navbar>
+    <f7-navbar :title="$t('app.parampage.Basic_Info')" :back-link="$t('app.modal.back')"   href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item>
-        <span>软件版本号</span>
+        <span>{{$t('app.parambasic.Soft_V')}}</span>
         <span class="params">{{datalist[36].paramValue}}{{datalist[37].paramValue}}</span>
         <em class="unit"></em>
       </f7-list-item>
       <f7-list-item>
-        <span>并机地址</span>
+        <span>{{$t('app.parambasic.Parall_addr')}}</span>
         <span class="params">{{datalist[38].paramValue}}</span>
         <em class="unit"></em>
       </f7-list-item>

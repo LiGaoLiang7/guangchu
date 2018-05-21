@@ -1,10 +1,10 @@
 <template>
   <f7-page>
-    <f7-navbar title="BMS告警信息" back-link="返回" href="/params/"></f7-navbar>
+    <f7-navbar :title="$t('app.waringpage.BMS_alarm_information')" :back-link="$t('app.modal.back')" href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName">
-        <span>{{item.paramName}}</span>
-        <span class="params">{{gitstatusname(item.paramValue)}}</span>
+        <span>{{$t('app.bmswarning.' + item.key)}}</span>
+        <span class="params">{{$t('app.modal.'+gitstatusname(item.paramValue))}}</span>
         <em class="unit">{{item.unit}}</em>
       </f7-list-item>
     </f7-list>
@@ -19,12 +19,12 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     data : function(){
       return {
         datalist : [
-          { paramName : "电池放电电流过高",  paramValue : 0, unit : "", isshow : 1},
-          { paramName : "电池充电电流过高",  paramValue : 0, unit : "", isshow : 1},
-          { paramName : "电池温度过低",      paramValue : 0, unit : "", isshow : 1},
-          { paramName : "电池温度过高",      paramValue : 0, unit : "", isshow : 1},
-          { paramName : "电池电压过低",      paramValue : 0, unit : "", isshow : 1},
-          { paramName : "电池电压过高",      paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池放电电流过高", key: "Bat_HCD",  paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池充电电流过高", key: "Bat_HCC",  paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池温度过低",     key: "Bat_LT",  paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池温度过高",     key: "Bat_HT",  paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池电压过低",     key: "Bat_LV",  paramValue : 0, unit : "", isshow : 1},
+          { paramName : "电池电压过高",     key: "Bat_HV",  paramValue : 0, unit : "", isshow : 1},
         ]
       }
     },
@@ -44,7 +44,8 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     },
     methods : {
       gitstatusname : function(num){
-        return num == 1 ? "异常" : "正常"
+
+        return num == 1 ? "abnormal" : "normal"
       },
       setValueInParamList : function(){
 

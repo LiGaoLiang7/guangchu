@@ -4,23 +4,23 @@
         <f7-nav-left>
             <f7-link class="panel-open" open-panel="left" icon="fa fa-bars"></f7-link>
         </f7-nav-left>
-        <div class="title">参数</div>
+        <div class="title">{{$t('app.toolbox.param')}}</div>
     </f7-navbar>
     <!-- <f7-block-title>参数设置</f7-block-title> -->
     <f7-list class="paramlist link-list">
-      <f7-list-item link="/photovoltaic/" title="光伏输入" class="parambackicon1 parambackicon">
+      <f7-list-item link="/photovoltaic/" :title="$t('app.parampage.Photovoltaic_Input')" class="parambackicon1 parambackicon">
         <!-- <i class="icon iconfont icon-guangfushuru"></i> -->
       </f7-list-item>
-      <f7-list-item link="/output/" title="系统输出" class="parambackicon2 parambackicon">
+      <f7-list-item link="/output/" :title="$t('app.parampage.System_output')" class="parambackicon2 parambackicon">
         <!-- <i class="icon iconfont icon-xitongshuchu"></i> -->
       </f7-list-item>
-      <f7-list-item link="/battery/" title="电池参数" class="parambackicon3 parambackicon">
+      <f7-list-item link="/battery/" :title="$t('app.parampage.Battery_parameter')" class="parambackicon3 parambackicon">
         <!-- <i class="icon iconfont icon-iconset0252"></i> -->
       </f7-list-item>
-      <f7-list-item link="/load/"  title="系统负载" class="parambackicon4 parambackicon">
+      <f7-list-item link="/load/"  :title="$t('app.parampage.System_Load')" class="parambackicon4 parambackicon">
         <!-- <i class="icon iconfont icon-xitongfuzai"></i> -->
       </f7-list-item>
-      <f7-list-item link="/baseinfo/" title="基础信息" class="parambackicon5 parambackicon">
+      <f7-list-item link="/baseinfo/" :title="$t('app.parampage.Basic_Info')" class="parambackicon5 parambackicon">
         <!-- <i class="icon iconfont icon-jichuxinxi"></i> -->
       </f7-list-item>
     </f7-list>

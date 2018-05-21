@@ -4,10 +4,10 @@
             <f7-nav-left>
                 <f7-link class="panel-open" open-panel="left" icon="fa fa-bars"></f7-link>
             </f7-nav-left>
-            <div class="title">首页</div>
+            <div class="title">{{$t('app.toolbox.home')}}</div>
         </f7-navbar>
         <f7-block class="relt systopology">
-              <span class="cusbutton">工作状态     NA</span>
+              <span class="cusbutton">{{$t('app.homepage.Working_status')}}     NA</span>
               <!-- 连线 -->
               <svg id="图层_1" data-name="图层 1" class="svg svg1 absCV" :class="{path2 : isdeviceactive[0] == 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line</title><polyline class="cls-1" points="0.5 30 0.5 144.33 150.75 144.33" fill="none" :stroke="scolor(0)" stroke-miterlimit="10" stroke-width="4"/><path class="cls-1" d="M-172.25,7" transform="translate(214.83 144.33)"/></svg>
               <svg id="图层_1" data-name="图层 1" class="svg svg2 absCV" :class="{path2 : isdeviceactive[1] == 1}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.75 144.83"><defs></defs><title>line3</title><polyline points="150.25 0 150.25 144.33 0 144.33" fill="none" :stroke="scolor(1)" stroke-miterlimit="10" stroke-width="6"/></svg>
@@ -19,14 +19,14 @@
               <a href="/photovoltaic/" class="relt">
                 <img v-if="isdeviceactive[0] == 1" src="../../images/solar@2x.png" class="imageicon pure-img" height="112" width="111" alt="">
                 <img v-if="isdeviceactive[0] == 0" src="../../images/solar_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="">
-                <span class="abs devicename absC">PV 组件</span>
+                <span class="abs devicename absC">{{$t('app.homepage.Photovoltaic')}}</span>
               </a>
               </div>
               <div class="iconitem abs absCV iconitem2">
               <a href="/output/" class="relt">
                 <img v-if="isdeviceactive[1] == 1" src="../../images/elect@2x.png" class="imageicon pure-img" height="112" width="111" alt="">
                 <img v-if="isdeviceactive[1] == 0" src="../../images/elect_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="">
-                <span class="abs devicename absC">电网</span>
+                <span class="abs devicename absC">{{$t('app.homepage.Grid')}}</span>
               </a>
               </div>
               <div class="iconitem abs absCV iconitem3">
@@ -39,7 +39,7 @@
               <a href="/battery/" class="relt">
                 <img v-if="isdeviceactive[3] == 1" src="../../images/battery@2x.png" class="imageicon pure-img" height="109" width="108" alt="">
                 <img v-if="isdeviceactive[3] == 0" src="../../images/battery_gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="">
-                <span class="abs devicename absC">电池</span>
+                <span class="abs devicename absC">{{$t('app.homepage.Battery')}}</span>
               </a>
               </div>
         <!-- <div class="iconitem abs absCV iconitem5">
@@ -52,10 +52,9 @@
               <a href="/load/">
                 <img v-if="isdeviceactive[5] == 1" src="../../images/bavkufuzai@2x.png" class="imageicon pure-img" height="115" width="114" alt="">
                 <img v-if="isdeviceactive[5] == 0" src="../../images/bavkufuzai-gray@2x.png" class="imageicon pure-img" height="107" width="107" alt="">
-                <span class="abs devicename absC">负载</span>
+                <span class="abs devicename absC">{{$t('app.homepage.Load')}}</span>
               </a>
               </div>
-              
               <!--  参数信息显示 -->
               <span class="statustext statustext1 abs absCV">NA</span>
               <span class="statustext statustext2 abs absCV">NA</span>
@@ -66,16 +65,16 @@
           <div class="staticitem abs absC">
             <ul>
               <li class="backicon icon1">
-                <div>光伏日发电量<em class="r">{{statistics.solarToday}} kWh</em></div>
-                <div>光伏总发电量<em class="r">{{statistics.solarTotal}} kWh</em></div>
+                <div>{{$t('app.homepage.Today_PV_generation')}} <em class="r">{{statistics.solarToday}} kWh</em></div>
+                <div>{{$t('app.homepage.Total_PV_generation')}} <em class="r">{{statistics.solarTotal}} kWh</em></div>
               </li>
               <li class="backicon icon2">
-                <div>负载日用电量<em class="r">{{statistics.loadToday}} kWh</em></div>
-                <div>负载总用电量<em class="r">{{statistics.loadTotal}} kWh</em></div>
+                <div>{{$t('app.homepage.Today_load_consumption')}} <em class="r">{{statistics.loadToday}} kWh</em></div>
+                <div>{{$t('app.homepage.Total_load_consumption')}} <em class="r">{{statistics.loadTotal}} kWh</em></div>
               </li>
               <li class="backicon icon3">
-                <div>今日节省电费<em class="r">{{statistics.earningsToday}} 元</em></div>
-                <div>总节省电费<em class="r">{{statistics.earningTotal}} 元</em></div>
+                <div>{{$t('app.homepage.Save_electricity_today')}} <em class="r">{{statistics.earningsToday}} {{$t('app.units.money')}}</em></div>
+                <div>{{$t('app.homepage.Total_electricity_savings')}} <em class="r">{{statistics.earningTotal}} {{$t('app.units.money')}}</em></div>
               </li>
             </ul>
           </div>

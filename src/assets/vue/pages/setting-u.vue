@@ -1,15 +1,15 @@
 <!--  给用户使用的设置量 -->
 <template>
   <f7-page>
-    <f7-navbar title="系统设置" back-link="返回" >
+    <f7-navbar :title="$t('app.setting.title')" :back-link="$t('app.modal.back')"  >
     </f7-navbar>
     <div class="list inline-labels no-hairlines-md setting">
       <ul>
-         <div class="block-title">控制命令设置</div>
+         <div class="block-title">{{$t('app.setting.ct_cm_set')}}</div>
          <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">开关机</div>
+                <div class="item-title">{{$t('app.setting.sw_machine')}}</div>
                 <div class="item-after">
                   <label class="toggle toggle-init" @click="sendOpenCtrl">
                     <input type="checkbox" name="toggle" value="yes" v-model="openflag"><i class="toggle-icon"></i>
@@ -18,18 +18,18 @@
               </div>
             </div>
          </li>
-         <div class="block-title">工作参数设置</div>
+         <div class="block-title">{{$t('app.setting.workParam')}}</div>
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">基本工作模式</div>
+                <div class="item-title">{{$t('app.setting.basicWorkMode')}}</div>
                   <div class="item-after">
                     <select name="runningmodel" @change="setDatatoParameter($event, 1)">
-                      <option value="0" selected>请选择</option>
-                      <option value="1">通用模式</option>
-                      <option value="2">离网模式</option>
-                      <option value="3">备用模式</option>
-                      <option value="4">经济模式</option>
+                      <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                      <option value="1">{{$t('app.setting.Universal')}}</option>
+                      <option value="2">{{$t('app.setting.Off-grid')}}</option>
+                      <option value="3">{{$t('app.setting.Alternate')}}</option>
+                      <option value="4">{{$t('app.setting.Economic')}}</option>
                     </select>
                     <i class="f7-icons size-50">chevron_right</i>
                   </div>
@@ -39,7 +39,7 @@
             <li>
               <div class="item-content">
                 <div class="item-inner">
-                  <div class="item-title">恒功率模式功率（AC）</div>
+                  <div class="item-title">{{$t('app.setting.C_power_AC')}}</div>
                   <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 11)">
                   </div>
@@ -49,10 +49,10 @@
             <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电网代码</div>
+                <div class="item-title">{{$t('app.setting.GridCode')}}</div>
                   <div class="item-after">
                     <select name="netcode" @change="setDatatoParameter($event, 19)">
-                      <option value="0" selected>请选择</option>
+                      <option value="0" selected>{{$t('app.setting.choose')}}</option>
                       <option value="1">GBT19964</option>
                       <option value="2">IEC61727</option>
                       <option value="3">IEEE1547</option>
@@ -67,12 +67,12 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">DC侧电池类型</div>
+                <div class="item-title">{{$t('app.setting.DC_batteryType')}}</div>
                   <div class="item-after">
                     <select name="batterytype" @change="[setDatatoParameter($event, 25), changeBatteryType($event)]">
-                      <option value="0" selected>请选择</option>
-                      <option value="1">锂电池</option>
-                      <option value="2">铅酸电池</option>
+                      <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                      <option value="1">{{$t('app.setting.Li_Battery')}}</option>
+                      <option value="2">{{$t('app.setting.L_A_Battery')}}</option>
                     </select>
                     <i class="f7-icons size-50">chevron_right</i>
                   </div>
@@ -81,7 +81,7 @@
           </li>
           <li class="item-content item-input" v-show="batteryType == 2">
             <div class="item-inner" style="padding: 17px 15px 17px 0px;">
-              <div class="item-title item-label">电池AH设置</div>
+              <div class="item-title item-label">{{$t('app.setting.Battery_AH')}}</div>
               <div class="item-input-wrap">
                 <div class="range-slider range-slider-init" data-label="true">
                   <input type="range" value="72" min="72" max="5000" step="1"  @change="setDatatoParameter($event, 35)">
@@ -89,11 +89,11 @@
               </div>
             </div>
           </li>
-          <div class="block-title">恢复出厂设置</div>
+          <div class="block-title">{{$t('app.setting.reset')}}</div>
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">恢复出厂设置</div>
+                <div class="item-title">{{$t('app.setting.reset')}}</div>
                 <div class="item-after">
                   <label class="toggle toggle-init">
                     <input type="checkbox" name="toggle2" value="yes" @change="setDatatoParameter($event, 31)"><i class="toggle-icon"></i>
@@ -104,7 +104,7 @@
          </li>
       </ul>
 
-        <div class="col"><a class="button convert-form-to-data button-outline button-big" href="#" @click="sendSetParameter" style="width: 85%; margin: 10px auto;">下发控制</a></div>
+        <div class="col"><a class="button convert-form-to-data button-outline button-big" href="#" @click="sendSetParameter" style="width: 85%; margin: 10px auto;">{{$t('app.common.sendctrl')}}</a></div>
   
     </div>
   </f7-page>
@@ -306,20 +306,34 @@
       // 下发开关机命令
       sendOpenCtrl : function(){
         var _this = this;
-        var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗";
-        this.$f7.dialog.confirm(message, "确认信息", function(){
+        var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗",
+          title = "确认信息";
+
+
+        if(localStorage.getItem("lang") == "en"){
+          message = this.openflag == true ? "Send shutdown command?" : "Send a power-on command?";
+          title = "Confirm";
+        }
+
+        this.$f7.dialog.confirm(message, title, function(){
           // 确认下发
           _this.openflag = !_this.openflag; // 先不要改变状态
           _this.$store.commit('CTRL_SWITCH_CHANGE', _this.openflag);
         }, function(){
           // 取消下发
-          // _this.openflag = !_this.openflag;
+          _this.openflag = !_this.openflag;
         });
       },
       // 下发参数设置
       sendSetParameter : function(){
         var _this = this;
-        this.$f7.dialog.confirm("确定下发参数设置吗？", "确认参数", function(){
+        var message= "确定下发参数设置吗？",
+        title = "确认信息";
+        if(localStorage.getItem("lang") == "en"){
+          message = "Send parameter settings?";
+          title = "Confirm";
+        }
+        this.$f7.dialog.confirm(message, title, function(){
           // 深拷贝
           _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster.slice(0));
         }, function(){

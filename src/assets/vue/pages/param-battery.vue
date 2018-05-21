@@ -1,9 +1,9 @@
 <template>
   <f7-page>
-    <f7-navbar title="电池信息"  back-link="返回"  href="/params/"></f7-navbar>
+    <f7-navbar :title="$t('app.parampage.Battery_parameter')" :back-link="$t('app.modal.back')" href="/params/"></f7-navbar>
     <f7-list class="media-list">
       <f7-list-item v-for="(item, index) in datalist" :key="item.paramName">
-        <span>{{item.paramName}}</span>
+        <span>{{$t('app.battery.' + item.key)}}</span>
         <input type="text" class="params" v-model="item.paramValue" disabled>
         <em class="unit">{{item.unit}}</em>
       </f7-list-item>
@@ -17,14 +17,13 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     },
     data : function(){
       return {
-        
         datalist : [
-          { paramName : "电池电压",              paramValue : 0, byte : 2, unit : "V"  },
-          { paramName : "电池电流",              paramValue : 0, byte : 2, unit : "A"  },
-          { paramName : "温度",                  paramValue : 0, byte : 2, unit : "℃" },
-          { paramName : "SOC",                   paramValue : 0, byte : 2, unit : "%"  },
-          { paramName : "SOH",                   paramValue : 0, byte : 2, unit : "%"  },
-          { paramName : "充放电状态",            paramValue : 0, byte : 2, unit : "", format : function(num){
+          { paramName : "电池电压",     key : "bay_vol", paramValue : 0, byte : 2, unit : "V"  },
+          { paramName : "电池电流",     key : "Bay_cur", paramValue : 0, byte : 2, unit : "A"  },
+          { paramName : "温度",         key : "temper",  paramValue : 0, byte : 2, unit : "℃" },
+          { paramName : "SOC",          key : "SOC",     paramValue : 0, byte : 2, unit : "%"  },
+          { paramName : "SOH",          key : "SOH",     paramValue : 0, byte : 2, unit : "%"  },
+          { paramName : "充放电状态",   key : "Status",  paramValue : 0, byte : 2, unit : "", format : function(num){
               if(num == 0x11) return "充电";
               if(num == 0x22) return "放电";
               if(num == 0x33) return "待机";

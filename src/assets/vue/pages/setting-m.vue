@@ -4,13 +4,13 @@
     <f7-navbar title="系统设置"  back-link="返回" >
     </f7-navbar>
     <div class="block block-strong setting">
-      <div class="block-title">控制命令设置</div>
+      <div class="block-title">{{$t('app.setting.ct_cm_set')}}</div>
       <form class="list" id="my-form">
         <ul>
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">开关机</div>
+                <div class="item-title">{{$t('app.setting.sw_machine')}}</div>
                 <div class="item-after">
                   <label class="toggle toggle-init" @click="sendOpenCtrl">
                     <input type="checkbox" name="toggle" value="yes" v-model="openflag"><i class="toggle-icon"></i>
@@ -21,18 +21,18 @@
            </li>
          </ul>
      </form>
-     <div class="block-title">工作参数设置</div>
+     <div class="block-title">{{$t('app.setting.workParam')}}</div>
       <form class="list">
         <ul>
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">运行模式</div>
+                <div class="item-title">{{$t('app.setting.OperationMode')}}</div>
                   <div class="item-after">
                     <select name="runningmodel" @change="setDatatoParameter($event, 0)">
-                      <option value="0" selected>请选择</option>
-                      <option value="1">并网模式</option>
-                      <option value="2">离网模式</option>
+                      <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                      <option value="1">{{$t('app.setting.Grid_C_Mode')}}</option>
+                      <option value="2">{{$t('app.setting.Off-grid')}}</option>
                     </select>
                     <i class="f7-icons size-50">chevron_right</i>
                   </div>
@@ -42,14 +42,14 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">基本工作模式</div>
+                <div class="item-title">{{$t('app.setting.basicWorkMode')}}</div>
                   <div class="item-after">
                     <select name="runningmodel" @change="setDatatoParameter($event, 1)">
-                      <option value="0" selected>请选择</option>
-                      <option value="1">通用模式</option>
-                      <option value="2">离网模式</option>
-                      <option value="3">备用模式</option>
-                      <option value="4">经济模式</option>
+                      <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                      <option value="1">{{$t('app.setting.Universal')}}</option>
+                      <option value="2">{{$t('app.setting.Off-grid')}}</option>
+                      <option value="3">{{$t('app.setting.Alternate')}}</option>
+                      <option value="4">{{$t('app.setting.Economic')}}</option>
                     </select>
                     <i class="f7-icons size-50">chevron_right</i>
                   </div>
@@ -59,15 +59,15 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">并网模式设置</div>
+                <div class="item-title">{{$t('app.setting.Grid_C_Mode_set')}}</div>
                 <div class="item-after">
                   <select name="runningmodel" @change="setDatatoParameter($event, 2)">
-                    <option value="0" selected>请选择</option>
-                    <option value="1" >恒流模式</option>
-                    <option value="2">恒压模式</option>
-                    <option value="3">恒功率模式DC</option>
-                    <option value="4">恒功率模式AC</option>
-                    <option value="5">独立逆变</option>
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                    <option value="1" >{{$t('app.setting.ConstantC')}}</option>
+                    <option value="2">{{$t('app.setting.ConstantP')}}</option>
+                    <option value="3">{{$t('app.setting.ConstantP_DC')}}</option>
+                    <option value="4">{{$t('app.setting.ConstantP_AC')}}</option>
+                    <option value="5">{{$t('app.setting.Id_inverter')}}</option>
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -77,13 +77,13 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">无功调节方式</div>
+                <div class="item-title">{{$t('app.setting.R_power_reg')}}</div>
                 <div class="item-after">
                   <select @change="setDatatoParameter($event, 3)">
-                    <option value="0" selected>请选择</option>
-                    <option value="1">功率值</option>
-                    <option value="2">百分比</option>
-                    <option value="3">功率因数</option>
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                    <option value="1">{{$t('app.setting.PowerValue')}}</option>
+                    <option value="2">{{$t('app.setting.percentage')}}</option>
+                    <option value="3">{{$t('app.setting.PowerFactor')}}</option>
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -94,13 +94,13 @@
           </li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电网电压跌落调节方式</div>
+                <div class="item-title">{{$t('app.setting.Grid_V_drop')}}</div>
                 <div class="item-after">
                   <select @change="setDatatoParameter($event, 4)">
-                    <option value="0" selected>请选择</option>
-                    <option value="1">孤岛保护 默认</option>
-                    <option value="2">低电压穿越</option>
-                    <option value="3">无缝切换</option>
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                    <option value="1">{{$t('app.setting.Island_P')}}</option>
+                    <option value="2">{{$t('app.setting.Low_V_through')}}</option>
+                    <option value="3">{{$t('app.setting.sw_seamless')}}</option>
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -110,12 +110,12 @@
           </li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">离网自起机模式设置</div>
+                <div class="item-title">{{$t('app.setting.Off_N_start')}}</div>
                 <div class="item-after">
                   <select @change="setDatatoParameter($event, 5)">
-                    <option value="0" selected>请选择</option>
-                    <option value="60928">使能</option> <!--EE00-->
-                    <option value="238">禁止</option>   <!--00EE-->
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                    <option value="60928">{{$t('app.setting.Enable')}}</option> <!--EE00-->
+                    <option value="238">{{$t('app.setting.Prohibited')}}</option>   <!--00EE-->
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -128,9 +128,9 @@
                 <div class="item-title">无缝切换手动模式并离网控制</div>
                 <div class="item-after">
                   <select @change="setDatatoParameter($event, 6)">
-                    <option value="0" selected>请选择</option>
-                    <option value="60928">并网转离网</option>
-                    <option value="238">离网转并网</option>
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                    <option value="60928">{{$t('app.setting.On_Off_grid')}}</option>
+                    <option value="238">{{$t('app.setting.Off_On_grid')}}</option>
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -140,7 +140,7 @@
             <li>
               <div class="item-content">
                 <div class="item-inner">
-                  <div class="item-title">恒流模式电流</div>
+                  <div class="item-title">{{$t('app.setting.C_current_mode')}}</div>
                   <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 7)">
                   </div>
@@ -150,7 +150,7 @@
             <li>
               <div class="item-content">
                 <div class="item-inner">
-                  <div class="item-title">恒压模式限制电流</div>
+                  <div class="item-title">{{$t('app.setting.C_V_mode_L_C')}}</div>
                   <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 8)">
                   </div>
@@ -160,7 +160,7 @@
             <li>
               <div class="item-content">
                 <div class="item-inner">
-                  <div class="item-title">恒压模式电压</div>
+                  <div class="item-title">{{$t('app.setting.C_V_mode_V')}}</div>
                   <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 9)">
                   </div>
@@ -170,7 +170,7 @@
             <li>
               <div class="item-content">
                 <div class="item-inner">
-                  <div class="item-title">恒功率模式功率（DC）</div>
+                  <div class="item-title">{{$t('app.setting.C_power(DC)')}}</div>
                   <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 10)">
                   </div>
@@ -180,7 +180,7 @@
             <li>
               <div class="item-content">
                 <div class="item-inner">
-                  <div class="item-title">恒功率模式功率（AC）</div>
+                  <div class="item-title">{{$t('app.setting.C_power(AC)')}}</div>
                   <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 11)">
                   </div>
@@ -190,7 +190,7 @@
             <li>
               <div class="item-content">
                 <div class="item-inner">
-                  <div class="item-title">独立逆变电压</div>
+                  <div class="item-title">{{$t('app.setting.Id_inverter_V')}}</div>
                   <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 12)">
                   </div>
@@ -200,7 +200,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">独立逆变频率</div>
+                <div class="item-title">{{$t('app.setting.Id_inverter_F')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 13)">
                   </div>
@@ -210,7 +210,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">无功比例</div>
+                <div class="item-title">{{$t('app.setting.R_power_ratio')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 15)">
                   </div>
@@ -220,7 +220,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">额定功率</div>
+                <div class="item-title">{{$t('app.setting.ratedPower')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 17)">
                   </div>
@@ -230,10 +230,10 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电网电压</div>
+                <div class="item-title">{{$t('app.setting.powerVoltage')}}</div>
                 <div class="item-after">
                     <select @change="setDatatoParameter($event, 18)">
-                      <option value="0" selected>请选择</option>
+                      <option value="0" selected>{{$t('app.setting.choose')}}</option>
                       <option value="1">220V</option>
                       <option value="2">315V</option>
                       <option value="3">380V</option>
@@ -246,10 +246,10 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电网代码</div>
+                <div class="item-title">{{$t('app.setting.GridCode')}}</div>
                   <div class="item-after">
                     <select name="netcode" @change="setDatatoParameter($event, 19)">
-                      <option value="0" selected>请选择</option>
+                      <option value="0" selected>{{$t('app.setting.choose')}}</option>
                       <option value="1">GBT19964</option>
                       <option value="2">IEC61727</option>
                       <option value="3">IEEE1547</option>
@@ -264,7 +264,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">遥设有功功率值</div>
+                <div class="item-title">{{$t('app.setting.RemotePower')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 20)">
                   </div>
@@ -274,7 +274,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">遥设无功功率值</div>
+                <div class="item-title">{{$t('app.setting.RemoteRpower')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 21)">
                   </div>
@@ -285,7 +285,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">遥设功率因数</div>
+                <div class="item-title">{{$t('app.setting.RemotePower_F')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 22)">
                   </div>
@@ -296,7 +296,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">有功功率变化率设置</div>
+                <div class="item-title">{{$t('app.setting.A_powerRate_C')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 26)">
                   </div>
@@ -307,7 +307,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">无功功率变化率设置</div>
+                <div class="item-title">{{$t('app.setting.R_powerRate_C')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 27)">
                   </div>
@@ -319,7 +319,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">设置电网额定频率</div>
+                <div class="item-title">{{$t('app.setting.Set_gridRated_F')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 30)">
                   </div>
@@ -330,7 +330,7 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">恢复出厂设置</div>
+                <div class="item-title">{{$t('app.setting.reset')}}</div>
                 <div class="item-after">
                     <input type="number" name="email" placeholder="0" @change="setDatatoParameter($event, 31)">
                   </div>
@@ -341,10 +341,10 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电池均充电压</div>
+                <div class="item-title">{{$t('app.setting.Battery_C_V')}}</div>
                 <div class="item-after">
                   <select @change="setDatatoParameter($event, 32)">
-                    <option value="0" selected>请选择</option>
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
                     <option value="1">2.30V/cell</option>
                     <option value="2">2.32V/cell</option>
                     <option value="3">2.35V/cell</option>
@@ -360,10 +360,10 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电池浮充电压</div>
+                <div class="item-title">{{$t('app.setting.Battery_F_V')}}</div>
                 <div class="item-after">
                   <select  @change="setDatatoParameter($event, 33)">
-                    <option value="0" selected>请选择</option>
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
                     <option value="1">2.20V/cell </option>
                     <option value="2">2.22V/cell</option>
                     <option value="3">2.25V/cell</option>
@@ -378,15 +378,15 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电池周期自检</div>
+                <div class="item-title">{{$t('app.setting.Battery_C_T')}}</div>
                 <div class="item-after">
                   <select  @change="setDatatoParameter($event, 34)">
-                    <option value="0" selected>请选择</option>
-                    <option value="1">一个星期</option>
-                    <option value="2">两个星期</option>
-                    <option value="3">一个月</option>
-                    <option value="4">二个月</option>
-                    <option value="5">六个月</option>
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                    <option value="1">{{$t('app.setting.Aweek')}}</option>
+                    <option value="2">{{$t('app.setting.TwoWeeks')}}</option>
+                    <option value="3">{{$t('app.setting.OneMonth')}}</option>
+                    <option value="4">{{$t('app.setting.TwoMonths')}}</option>
+                    <option value="5">{{$t('app.setting.SixMonths')}}</option>
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -396,10 +396,10 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电池EOD设置</div>
+                <div class="item-title">{{$t('app.setting.Battery_EOD')}}</div>
                 <div class="item-after">
                   <select @change="setDatatoParameter($event, 38)">
-                    <option value="0" selected>请选择</option>
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
                     <option value="1">1.65V/cell</option>
                     <option value="2">1.70V/cell</option>
                     <option value="3">1.75V/cell</option>
@@ -412,12 +412,12 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
-                <div class="item-title">电池强制均充使能</div>
+                <div class="item-title">{{$t('app.setting.Battery_C_E')}}</div>
                 <div class="item-after">
                   <select @change="setDatatoParameter($event, 40)">
-                    <option value="0" selected>请选择</option>
-                    <option value="52224">使能</option> <!-- 0xCC00 -->
-                    <option value="204">禁止</option> <!-- 0x00CC -->
+                    <option value="0" selected>{{$t('app.setting.choose')}}</option>
+                    <option value="52224">{{$t('app.setting.Enable')}}</option> <!-- 0xCC00 -->
+                    <option value="204">{{$t('app.setting.Prohibited')}}</option> <!-- 0x00CC -->
                   </select>
                   <i class="f7-icons size-50">chevron_right</i>
                 </div>
@@ -426,7 +426,7 @@
           </li>
         </ul>
       </form>
-        <div class="col"><a class="button convert-form-to-data button-outline" href="#" @click="sendSetParameter">下发控制</a></div>
+        <div class="col"><a class="button convert-form-to-data button-outline" href="#" @click="sendSetParameter">{{$t('app.common.sendctrl')}}</a></div>
     </div>
   </f7-page>
 </template>
@@ -608,23 +608,39 @@
       // 下发开关机命令
       sendOpenCtrl : function(){
         var _this = this;
-        var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗";
-        this.$f7.dialog.confirm(message, "确认信息", function(){
+        var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗",
+          title = "确认信息";
+
+
+        if(localStorage.getItem("lang") == "en"){
+          message = this.openflag == true ? "Send shutdown command?" : "Send a power-on command?";
+          title = "Confirm";
+        }
+
+        this.$f7.dialog.confirm(message, title, function(){
+          // 确认下发
+          _this.openflag = !_this.openflag; // 先不要改变状态
           _this.$store.commit('CTRL_SWITCH_CHANGE', _this.openflag);
         }, function(){
+          // 取消下发
           _this.openflag = !_this.openflag;
         });
       },
       // 下发参数设置
       sendSetParameter : function(){
-
         var _this = this;
-        this.$f7.dialog.confirm("确定下发参数设置吗？", "确认参数", function(){
+        var message= "确定下发参数设置吗？",
+        title = "确认信息";
+        if(localStorage.getItem("lang") == "en"){
+          message = "Send parameter settings?";
+          title = "Confirm";
+        }
+        this.$f7.dialog.confirm(message, title, function(){
           // 深拷贝
           _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster.slice(0));
         }, function(){
         });
-      }
+      },
     },
     mounted : function(){
       this.$store.commit('TAB_INDEX_CHANGE', 4);

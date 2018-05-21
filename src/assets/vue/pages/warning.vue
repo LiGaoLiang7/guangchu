@@ -4,20 +4,20 @@
         <f7-nav-left>
             <f7-link class="panel-open" open-panel="left" icon="fa fa-bars"></f7-link>
         </f7-nav-left>
-        <div class="title">故障告警</div>
+        <div class="title">{{$t('app.toolbox.warning')}}</div>
     </f7-navbar>
     <!-- <f7-block-title>参数设置</f7-block-title> -->
     <f7-list class="paramlist link-list">
-      <f7-list-item link="/bmswarning/" title="BMS告警信息" class="warningicon warningicon1">
+      <f7-list-item link="/bmswarning/" :title="$t('app.waringpage.BMS_alarm_information')" class="warningicon warningicon1">
         <!-- <i class="icon iconfont icon-BMS"></i> -->
       </f7-list-item>
-      <f7-list-item link="/syswarning/" title="系统故障状态" class="warningicon warningicon2">
+      <f7-list-item link="/syswarning/" :title="$t('app.waringpage.System_fault_status')" class="warningicon warningicon2">
         <!-- <i class="icon iconfont icon-xitongguzhangzhuangtai"></i> -->
       </f7-list-item>
-      <f7-list-item link="/hiswarning/" title="历史告警" class="warningicon warningicon3">
+      <f7-list-item link="/hiswarning/" :title="$t('app.waringpage.Historical_alarm')" class="warningicon warningicon3">
         <!-- <i class="icon iconfont icon-lishigaojing"></i> -->
       </f7-list-item>
-      <f7-list-item link="/hispower/" title="历史功率" class="warningicon warningicon4">
+      <f7-list-item link="/hispower/" :title="$t('app.waringpage.Historical_power')" class="warningicon warningicon4">
         <!-- <i class="icon iconfont icon-lishigongshuai"></i> -->
       </f7-list-item>
     </f7-list>
