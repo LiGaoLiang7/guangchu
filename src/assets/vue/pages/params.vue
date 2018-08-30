@@ -29,7 +29,7 @@
 <script>
  export default {
   mounted : function(){
-    console.log(this.$f7.views.current.router.currentRoute.path);
+    // console.log(this.$f7.views.current.router.currentRoute.path);
     this.$store.commit('TAB_INDEX_CHANGE', 2);
   }
   };

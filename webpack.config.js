@@ -1,6 +1,5 @@
 const path = require('path'),
   fs = require('fs'),
-  
   webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   CordovaHtmlOutputPlugin = require('./webpack/plugins/CordovaHtmlOutputPlugin.js'),
@@ -9,7 +8,7 @@ const path = require('path'),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
   
   entryFile = path.join(__dirname, 'src/main.js'),
-  devServerPort = 8081
+  devServerPort = 8092
 
 let config = function (env) {
   let returner = {
@@ -26,7 +25,6 @@ let config = function (env) {
         'components': path.resolve(__dirname, 'src/assets/vue/components/')
       }
     },
-    
     output: {
       pathinfo: true,
       devtoolLineToLine: true,
@@ -103,7 +101,7 @@ let config = function (env) {
         headers: {
           "Access-Control-Allow-Origin": "*"
         },
-        host: "0.0.0.0"
+        host: "127.0.0.1"
       }
       returner.plugins.push(new webpack.NamedModulesPlugin())
     } else if (typeof env.release !== 'undefined' && env.release) {

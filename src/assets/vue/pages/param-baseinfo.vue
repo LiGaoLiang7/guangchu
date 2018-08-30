@@ -1,15 +1,15 @@
 <template>
   <f7-page>
     <f7-navbar :title="$t('app.parampage.Basic_Info')" :back-link="$t('app.modal.back')"   href="/params/"></f7-navbar>
-    <f7-list class="media-list">
-      <f7-list-item>
+    <f7-list class="media-list" style="width:96%;margin: 10px auto;border-radius:10px;overflow: hidden;">
+      <f7-list-item class="bg_2">
         <span>{{$t('app.parambasic.Soft_V')}}</span>
-        <span class="params">{{datalist[36].paramValue}}{{datalist[37].paramValue}}</span>
+        <span class="params">{{datalist[0].paramValue}}{{datalist[1].paramValue}}</span>
         <em class="unit"></em>
       </f7-list-item>
-      <f7-list-item>
+      <f7-list-item class="bg_2">
         <span>{{$t('app.parambasic.Parall_addr')}}</span>
-        <span class="params">{{datalist[38].paramValue}}</span>
+        <span class="params">{{datalist[2].paramValue}}</span>
         <em class="unit"></em>
       </f7-list-item>
     </f7-list>
@@ -18,73 +18,13 @@
 <script>
 import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
   export default {
-    props : {
-      // params : {
-      //   type : Array,
-      //   default : function(){
-      //     return []
-      //   }
-      // }
-    },
+
     data : function(){
       return {
         datalist : [
-          { paramName : "直流功率",             paramValue : 0, byte : 2, unit : "W"  , isshow : 0 },
-          { paramName : "直流正母线电压",       paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "直流负母线电压",       paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "直流双边母线电压",     paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "PV1电压",              paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "PV1电流",              paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "PVI功率",              paramValue : 0, byte : 2, unit : "W"  , isshow : 0 },
-          { paramName : "PV2电压",              paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "PV2电流",              paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "PV2功率",              paramValue : 0, byte : 2, unit : "W"  , isshow : 0 },
-          { paramName : "逆变A相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "逆变A相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "电网A相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "电网AB线电压",         paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "电网A相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "逆变B相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "逆变B相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "电网B相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "电网BC线电压",         paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "电网B相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "逆变C相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "逆变C相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "电网C相电压",          paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "电网CA线电压",         paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "电网C相电流",          paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "电网频率",             paramValue : 0, byte : 2, unit : "Hz" , isshow : 0 },
-          { paramName : "功率因数",             paramValue : 0, byte : 2, unit :  ""  , isshow : 0 },
-          { paramName : "系统有功功率",         paramValue : 0, byte : 2, unit : "VA" , isshow : 0 },
-          { paramName : "系统无功功率",         paramValue : 0, byte : 2, unit : "W"  , isshow : 0 },
-          { paramName : "系统视在功率",         paramValue : 0, byte : 2, unit : "Var", isshow : 0 },
-          { paramName : "电池电流",             paramValue : 0, byte : 2, unit : "A"  , isshow : 0 },
-          { paramName : "电池电压",             paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "环境温度",             paramValue : 0, byte : 2, unit : "℃" , isshow : 0 },
-          { paramName : "铅酸电池剩余容量",     paramValue : 0, byte : 2, unit : "%"  , isshow : 0 },
-          { paramName : "铅酸电池剩余备电时间", paramValue : 0, byte : 2, unit : "Min", isshow : 0 },
-          { paramName : "设备类型编码",         paramValue : 0, byte : 2, unit : ""   , isshow : 0 },
           { paramName : "软件版本号高位",       paramValue : 0, byte : 2, unit : ""   , isshow : 1 },
           { paramName : "软件版本号低位",       paramValue : 0, byte : 2, unit : ""   , isshow : 1 },
-          { paramName : "并机地址",             paramValue : 0, byte : 2, unit : ""   , isshow : 1 },
-          { paramName : "工作效率",             paramValue : 0, byte : 2, unit : ""   , isshow : 0 },
-          { paramName : "充电次数",             paramValue : 0, byte : 2, unit : ""   , isshow : 0 },
-          { paramName : "放电次数",             paramValue : 0, byte : 2, unit : ""   , isshow : 0 },
-          { paramName : "模块A1 温度",          paramValue : 0, byte : 2, unit : "℃" , isshow : 0 },
-          { paramName : "模块B1 温度",          paramValue : 0, byte : 2, unit : "℃" , isshow : 0 },
-          { paramName : "模块C1 温度",          paramValue : 0, byte : 2, unit : "℃" , isshow : 0 },
-          { paramName : "Backup输出A相电压",    paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "Backup输出B相电压",    paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "Backup输出C相电压",    paramValue : 0, byte : 2, unit : "V"  , isshow : 0 },
-          { paramName : "Backup输出频率",       paramValue : 0, byte : 2, unit : "Hz" , isshow : 0 },
-          { paramName : "Backup输出A相电流",    paramValue : 0, byte : 2, unit : "A" ,  isshow : 0 },
-          { paramName : "Backup输出B相电流",    paramValue : 0, byte : 2, unit : "A" ,  isshow : 0 },
-          { paramName : "Backup输出C相电流",    paramValue : 0, byte : 2, unit : "A" ,  isshow : 0 },
-          { paramName : "Backup输出功率因数",   paramValue : 0, byte : 2, unit : "" ,   isshow : 0 },
-          { paramName : "Backup输出有功功率",   paramValue : 0, byte : 2, unit : "VA",  isshow : 0 },
-          { paramName : "Backup输出无功功率",   paramValue : 0, byte : 2, unit : "Var", isshow : 0 },
-          { paramName : "Backup输出视在功率",   paramValue : 0, byte : 2, unit : "W" ,  isshow : 0 }
+          { paramName : "并机地址",            paramValue : 0, byte : 2, unit : ""   , isshow : 1 }
         ]
       }
     },
@@ -150,4 +90,10 @@ import { f7Navbar, f7Page, f7BlockTitle } from 'framework7-vue';
     display: inline-block;
     line-height: 30px;
   }
+.bg_2{
+  background: -webkit-linear-gradient(left,#cd81ed, #f73f85); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(left,#cd81ed, #f73f85); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(left,#cd81ed, #f73f85); /* Firefox 3.6 - 15 */
+  background: linear-gradient(left,#cd81ed, #f73f85); /* 标准的语法 */
+}
 </style>

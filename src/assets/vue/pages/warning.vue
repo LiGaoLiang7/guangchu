@@ -14,12 +14,12 @@
       <f7-list-item link="/syswarning/" :title="$t('app.waringpage.System_fault_status')" class="warningicon warningicon2">
         <!-- <i class="icon iconfont icon-xitongguzhangzhuangtai"></i> -->
       </f7-list-item>
-      <f7-list-item link="/hiswarning/" :title="$t('app.waringpage.Historical_alarm')" class="warningicon warningicon3">
-        <!-- <i class="icon iconfont icon-lishigaojing"></i> -->
-      </f7-list-item>
-      <f7-list-item link="/hispower/" :title="$t('app.waringpage.Historical_power')" class="warningicon warningicon4">
-        <!-- <i class="icon iconfont icon-lishigongshuai"></i> -->
-      </f7-list-item>
+      <!--<f7-list-item link="/hiswarning/" :title="$t('app.waringpage.Historical_alarm')" class="warningicon warningicon3">-->
+        <!--&lt;!&ndash; <i class="icon iconfont icon-lishigaojing"></i> &ndash;&gt;-->
+      <!--</f7-list-item>-->
+      <!--<f7-list-item link="/hispower/" :title="$t('app.waringpage.Historical_power')" class="warningicon warningicon4">-->
+        <!--&lt;!&ndash; <i class="icon iconfont icon-lishigongshuai"></i> &ndash;&gt;-->
+      <!--</f7-list-item>-->
     </f7-list>
   </f7-page>
 </template>

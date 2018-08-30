@@ -7,10 +7,16 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.ios.lincharge"
+    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.ios.lincharge"
     },
     "cz.blocshop.socketsforcordova": {
+      "PACKAGE_NAME": "com.ios.lincharge"
+    },
+    "cordova-plugin-qrscanner": {
       "PACKAGE_NAME": "com.ios.lincharge"
     }
   },
@@ -25,6 +31,9 @@
       "PACKAGE_NAME": "com.ios.lincharge"
     },
     "cordova-plugin-swift-support": {
+      "PACKAGE_NAME": "com.ios.lincharge"
+    },
+    "cordova-plugin-add-swift-support": {
       "PACKAGE_NAME": "com.ios.lincharge"
     }
   }

@@ -32,7 +32,7 @@
                     <select name="runningmodel" @change="setDatatoParameter($event, 0)">
                       <option value="0" selected>{{$t('app.setting.choose')}}</option>
                       <option value="1">{{$t('app.setting.Grid_C_Mode')}}</option>
-                      <option value="2">{{$t('app.setting.Off-grid')}}</option>
+                      <option value="2">{{$t('app.setting.Off_grid')}}</option>
                     </select>
                     <i class="f7-icons size-50">chevron_right</i>
                   </div>
@@ -47,7 +47,7 @@
                     <select name="runningmodel" @change="setDatatoParameter($event, 1)">
                       <option value="0" selected>{{$t('app.setting.choose')}}</option>
                       <option value="1">{{$t('app.setting.Universal')}}</option>
-                      <option value="2">{{$t('app.setting.Off-grid')}}</option>
+                      <option value="2">{{$t('app.setting.Off_grid')}}</option>
                       <option value="3">{{$t('app.setting.Alternate')}}</option>
                       <option value="4">{{$t('app.setting.Economic')}}</option>
                     </select>
@@ -91,7 +91,7 @@
             </div>
           </li>
 
-          </li>
+          <li>
             <div class="item-content">
               <div class="item-inner">
                 <div class="item-title">{{$t('app.setting.Grid_V_drop')}}</div>
@@ -107,7 +107,7 @@
               </div>
             </div>
           </li>
-          </li>
+          <li>
             <div class="item-content">
               <div class="item-inner">
                 <div class="item-title">{{$t('app.setting.Off_N_start')}}</div>
@@ -122,7 +122,7 @@
               </div>
             </div>
           </li>
-          </li>
+          <li>
             <div class="item-content">
               <div class="item-inner">
                 <div class="item-title">无缝切换手动模式并离网控制</div>
@@ -609,37 +609,52 @@
       sendOpenCtrl : function(){
         var _this = this;
         var message = this.openflag == true ? "下发关机命令吗" : "下发开机命令吗",
-          title = "确认信息";
+          title = "确认信息", buttonOk = "确认", buttonCancel = "取消";
 
 
         if(localStorage.getItem("lang") == "en"){
-          message = this.openflag == true ? "Send shutdown command?" : "Send a power-on command?";
-          title = "Confirm";
+          message = this.openflag == true ? "Send a shutdown command?" : "Send a power-on command?";
+          title = "Confirm",
+          buttonOk = "OK",
+          buttonCancel = "CANCEL";
+        }else{
         }
-
-        this.$f7.dialog.confirm(message, title, function(){
-          // 确认下发
-          _this.openflag = !_this.openflag; // 先不要改变状态
-          _this.$store.commit('CTRL_SWITCH_CHANGE', _this.openflag);
-        }, function(){
-          // 取消下发
-          _this.openflag = !_this.openflag;
-        });
+        this.$f7.dialog.create({
+          title : title,
+          text : message,
+          buttons : [{ text : buttonCancel }, { text: buttonOk }],
+          onClick : function(dialog, index){
+            if(index == 1){
+              _this.openflag = !_this.openflag;
+              _this.$store.commit('CTRL_SWITCH_CHANGE', _this.openflag);
+            }else if(index == 0){
+              _this.openflag = !_this.openflag;
+            }
+          }
+        }).open();
       },
       // 下发参数设置
       sendSetParameter : function(){
         var _this = this;
         var message= "确定下发参数设置吗？",
-        title = "确认信息";
+        title = "确认信息",
+        buttonOk = "确认", buttonCancel = "取消";
         if(localStorage.getItem("lang") == "en"){
+          buttonOk = "OK";
+          buttonCancel = "CANCEL";
           message = "Send parameter settings?";
           title = "Confirm";
         }
-        this.$f7.dialog.confirm(message, title, function(){
-          // 深拷贝
-          _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster.slice(0));
-        }, function(){
-        });
+        this.$f7.dialog.create({
+          title : title,
+          text : message,
+          buttons : [{ text : buttonCancel }, { text: buttonOk }],
+          onClick : function(dialog, index){
+            if(index == 1){
+              _this.$store.commit('CTRL_PARAMETER_CHANGE', _this.deviceParamster.slice(0));
+            }
+          }
+        }).open();
       },
     },
     mounted : function(){
@@ -654,6 +669,9 @@
 </script>
 
 <style>
+.setting .ios .block-title{
+     text-transform: none; 
+}
 .setting  .list .item-title{
     -webkit-flex-shrink: 0; 
     -ms-flex-negative: 0;
@@ -667,6 +685,7 @@
 .setting .block-title {
     font-size: 18px;
     line-height: 24px;
+    text-transform: none; 
 }
 .setting  .list input{
     text-align: right;

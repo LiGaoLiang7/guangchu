@@ -12,6 +12,12 @@
     },
     "cz.blocshop.socketsforcordova": {
       "PACKAGE_NAME": "com.ios.lincharge"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.ios.lincharge"
+    },
+    "cordova-plugin-qrscanner": {
+      "PACKAGE_NAME": "com.ios.lincharge"
     }
   },
   "dependent_plugins": {
@@ -20,6 +26,12 @@
     },
     "cordova-plugin-chrome-apps-system-network": {
       "PACKAGE_NAME": "com.ios.lincharge"
+    },
+    "cordova-plugin-chrome-apps-iossocketscommon": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-swift-support": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   }
 }

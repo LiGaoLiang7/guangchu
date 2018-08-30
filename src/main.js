@@ -20,9 +20,9 @@ import FontAwesome from 'font-awesome/css/font-awesome.css'
 // import AppStyles from './assets/sass/main.scss'
 // Import App Component
 import app from './main.vue'
+
 // Import Routes
 import routes from './routes.js'
-
 // Import Vuex Storage
 import store from './assets/vuex/storage.js'
 
@@ -35,52 +35,65 @@ import zhCN from './assets/lang/zh_cn'
 Vue.config.lang =  localStorage.getItem('lang') || 'zh-CN';
 Vue.locale('en', enUS)
 Vue.locale('zh-CN', zhCN)
-// Import Amap 高德地图
-import VueAMap from 'vue-amap'
-Vue.use(VueAMap);
 
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
+
 let theme = 'auto';
 if (document.location.search.indexOf('theme=') >= 0) {
   theme = document.location.search.split('theme=')[1].split('&')[0];
 }
 theme = 'ios';
 // Init Vue App
-export default new Vue({
-  // Root Element
-  el: '#app',
-  store,
-  render: c => c('app'),
-  components: {
-    app,
-  },
-  framework7: {
-    id: 'io.framework7.testapp',
-    theme, //theme  md or ios
-    dialog: {
-     buttonOk: Vue.t('app.modal.button_ok'),
-     buttonCancel: Vue.t('app.modal.button_cancel'),
-    }
-  },
-  routes,
-  methods : {
-    // add device backbutton listener
-    initBackButtonEvents : function(){
-      document.addEventListener("backbutton", this.onBackButton, false);
-    },
-    onBackButton : function(){
-        var currentHitstory = this.$f7.view[1].history;
-        if(currentHitstory.length > 1){
-          this.$f7.view[1].router.back({}); // 返回上一级
-        }else{
-          navigator.app.exitApp();
+// import toastRegistry from './toast/index'
+//
+// // 这里也可以直接执行 toastRegistry()
+// Vue.use(toastRegistry)
+
+    export default new Vue({
+      // Root Element
+      el: '#app',
+      store,
+
+      render: c => c('app'),
+      components: {
+        app,
+      },
+      framework7: {
+        root: "#app",
+        id: 'io.framework7.testapp',
+        theme,
+        routes,
+      },
+      data: {
+        beginDate : null,          // 两次点击退出按钮开始时间
+        endDate: null,
+        isToast : false  // 是否弹出弹框
+      },
+      mounted : function(){
+        this.initBackButtonEvents();
+      },
+      methods : {
+        initBackButtonEvents : function(){
+          document.addEventListener("backbutton", this.onBackButton, false);
+        },
+        // 点击退出按钮
+        onBackButton: function (){
+          this.endDate = new Date().getTime(); // 两次点击退出按钮结束时间
+          // 提示过Toast并且两次点击时间小于2S
+          if ( this.isToast && this.endDate - this.beginDate < 2000 ) {
+              this.beginDate = this.endDate;
+              this.isToast = false;
+              navigator.app.exitApp();
+          } else {
+              this.isToast = true;
+              this.beginDate = new Date().getTime();
+              this.$f7.toast.create({
+                text: "再次点击退出程序",
+                position: "center",
+                closeTimeout: 1500
+              }).open();
+          }
         }
-    }
-  },
-  mounted : function(){
-    this.initBackButtonEvents();
-  },
-
-});
-
+      }
+    });
